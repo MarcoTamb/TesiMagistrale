@@ -1,0 +1,394 @@
+% !TeX spellcheck = en_GB
+\chapter{The Alexandrov Reflection Method}
+
+The main result we want to establish in this chapter is theorem \ref{reflection}, a result in Geometric Analysis and the main topic of the thesis. Before we can tackle it, one has to go first through a couple of classical results. 
+
+\section{Geometry of immersed hypersurfaces (da espandere/sistemare)}
+
+
+The study of immersed hypersurfaces is a fundamental topic in differential geometry, and is especially important in the field of geometric analysis. An immersed hypersurface $X: M^n \rightarrow E^{n+1}$ is a submanifold of a higher-dimensional space that is embedded in that space in such a way that the submanifold has the same dimension as the space in which it is embedded minus one. In other words, it is a submanifold of codimension one. We will always assume the embedding to be smooth. The most common case is $E^{n+1}=\R^{n+1}$. 
+
+One of the most important concepts in the geometry of immersed hypersurfaces is the concept of a normal vector field. The normal vector field $\nu$ is a vector field on the pullback vector bundle $X^* TE$ on the manifold $M^n$ that is perpendicular to the tangent space of the hypersurface at each point. For hypersurfaces immersed in $=\R^{n+1}$, this vector field allows us to define the principal curvatures of the hypersurface, as the eigenvalues of the second fundamental form. The explicit form of this relationship is expressed by the Weingarten equations: these are a set of equations that relate the normal vector field of an immersed hypersurface to the shape operator of the hypersurface. In local coordinates, implying summation convention, these are:
+
+\begin{align}
+	\label{Weingarten1} \frac{\partial^2 X^\alpha}{\partial x^i \partial x^j} - \Gamma^k_{ij}\frac{\partial X^\alpha}{\partial x^k}+\overline{\Gamma}^\alpha_{\beta \delta}\frac{\partial X^\beta}{\partial x^i}\frac{\partial X^\delta}{\partial x^k}=-h_{ij}\nu^\alpha \\
+	\label{Weingarten2} \frac{\partial \nu^\alpha}{\partial x^i}+\overline{\Gamma}^\alpha_{\beta \delta}\frac{\partial X^\beta}{\partial x^i} \nu^\delta = h_{ij}g^{jl}\frac{\partial X^\alpha}{\partial x^l}
+\end{align}
+where $\nu$ is the normal vector at the point and $A=\{h_{ij}\}$ is the second fundamental form. Being the second fundamental form, $A$ is symmetric and the eigenvalues of $A$ are the principal curvatures $\kappa_i$. 
+
+% The Weingarten equations are important in the study of the local properties of immersed hypersurfaces, for example, the second kind equation relates the normal vector field to the shape operator and can be used to compute the mean curvature of the hypersurface. 
+
+% Another important concept in the geometry of immersed hypersurfaces is the Gaussian curvature. The Gaussian curvature is a scalar valued function that describes the total curvature of the hypersurface at each point. It is defined as the product of the eigenvalues of the shape operator and it is closely related to the sectional curvature of the ambient space.
+
+There exist many important partial differential equations (PDEs) which stem from the study of immersed hypersurfaces, for example, the minimal surface equation, which is a PDE that describes surfaces with minimal area, can be seen as a geometric condition on the mean curvature of an immersed hypersurface. Likewise, the mean curvature flow is a geometric flow that deforms an immersed hypersurface by moving each point along the normal vector field at that point by an amount proportional to the mean curvature at that point. This flow is important in the study of geometric PDEs and is used to obtain a lot of important results in differential geometry.
+
+% Some other important results useful for the study of PDEs on immersed manifolds are:
+
+
+%The Gauss-Codazzi equations: These are a set of equations that relate the curvature of an immersed hypersurface to the curvature of the ambient space. These equations are important in the study of geometric PDEs and are used to obtain a lot of important results in differential geometry.
+
+%The Gauss equation: This is an equation that relates the Gaussian curvature of an immersed hypersurface to the sectional curvatures of the ambient space. It is important in the study of the global properties of immersed hypersurfaces.
+
+%The Gauss-Bonnet theorem: This is a theorem that relates the Gaussian curvature of an immersed hypersurface to the topology of the hypersurface. It is important in the study of the global properties of immersed hypersurfaces and is used to prove many important results in differential geometry.
+
+
+{\vspace{10pt}\LARGE \bf [Da scrivere più avanti, in base a quello che usiamo\LARGE]}
+
+
+\section{Local representation as a graph}
+
+A well known result, Dini's Theorem\footnote{also known as Implicit Function Theorem}, states that, given a smooth function $F$ defined on an open subset of the product space $R^n \times R^m$, if $F(x,y) = 0$ and the partial derivative of $F$ with respect to $y$ is nonzero at a point $(x_0, y_0)$, then there exists an open neighborhood of $x_0$ in $R^n$ and a unique smooth function $y = g(x)$ defined on that neighborhood such that $y_0$ is a regular value of $g$ and $(x, g(x))$ is a smooth solution to the equation $F(x, y) = 0$.
+
+Consequence of the Dini's theorem is a powerful result that allows one to locally represent a submanifold of $\R^n \times \R^m$ as the graph of a smooth function. This theorem is widely used in differential geometry, geometric analysis, and many other fields of mathematics and physics. We provide a version of this theorem below:
+
+\begin{theorem}[Local representation as a graph]
+	Let $X^n$ be a submanifold $X^n\subset\R^{n+1}$ and let $x_0\in X$. Then there exists a neighbourhood of $x_0$, $U\subset X^n$, such that $U$ is the graph of a function. 
+	Moreover, this function can be of the form 
+	\begin{align*}
+		f:\pi(U)\subset&\R^n\rightarrow U \\
+		U=\{(x_0, \dots, x_n)\in \R^{n+1}&|x_0= f(x_1, ..., x_n)\}
+	\end{align*}
+	for any of the possible orders of the usual basis for $\R^n$, $(e_0, \dots, e_n)$, as long as $e_0\notin T_xM$, where $\pi(U)$ is the projection on the last $n$ coordinates ($(x_0, \dots, x_n) \mapsto (x_1, \dots, x_n)$). \label{localgraphclassic}
+\end{theorem}
+
+A proof of the 2D-case of the version of the theorem can be found in \cite{DoCarmo} which extends naturally to the $n$ dimensional case, with almost no changes. This immediately extends to:
+
+\begin{cor}[Local representation as a graph on the tangent]
+	Let $X^n$ be a submanifold $X^n\subset\R^{n+1}$ and let $x_0\in X$. Then there exists a neighbourhood of $x_0$ $U\subset X^n$ and a smooth function $f: T_x X^n\rightarrow \R$ such that any $x_0\in U$ can be expressed as \label{localgraphcorollary}
+	\begin{align*}
+		x_0= p + f(p) \nu 
+	\end{align*}
+	where $\nu$ is the vector normal to $T_{x_0} X^n$, for an appropriate point $p\in T_{x_0} X^n$. 
+	In other words, every submanifold $X^n\subset\R^{n+1}$ is locally expressible as a graph on its tangent space. 
+\end{cor}
+
+\begin{proof}
+	By rotation, we may assume $T_x X^n$ orthogonal to $e_1$. Then one can just apply the previous theorem. 
+\end{proof}
+
+We will use this later to prove Theorem \ref{localgraph}. 
+
+
+\section{Some well established results from analysis}
+
+We now introduce some well known results from analysis. The first result we introduce is the maximum principle.
+
+The maximum principle is a classical result of mathematical analysis, and it is usually introduced in a first course on partial differential equations. It is a fundamental tool in the theory of partial differential equations. It is a statement about the behavior of solutions to certain types of PDEs and provides a method for obtaining upper and lower bounds on the solutions. The principle states that the maximum and minimum values of a solution to elliptic or parabolic PDE occur on the boundary of the domain unless the function is constant. 
+
+The maximum principle can be used to prove the existence, uniqueness, and regularity of solutions to elliptic and parabolic PDEs. It can also be used to obtain estimates on the behavior of solutions and to study the asymptotic behavior of solutions as the domain becomes large. The principle is widely used in many fields of mathematics and physics, such as geometric analysis, mathematical physics, and fluid dynamics. One of the many versions of this well know theorem is this: 
+
+\begin{theorem}[Maximum principle for parabolic equations]\label{maximum_principle}
+	Let $\Omega$ be an open, bounded, connected set. Assume $u\in C^2_1(\Omega\times [0, T])\cap C^1(\overline{\Omega}\times [0, T])$. Suppose $u$ satisfies: 
+	\begin{align}
+		-\frac{\partial u}{\partial t} + \left(\sum_{i, j=1}^n a_{ij}\frac{\partial^2 }{\partial x_i\partial x_j}+\sum_{i}^n b_{i}\frac{\partial }{\partial x_i} + c\right)  u = -u_t + Lu \geq 0 \label{condition_max_principle}
+	\end{align}
+	where $L$ is an elliptic differential operator, i.e. there exists $\theta>0$ such that $\sum_{i,j=1}^{n} a_{ij}(x) \xi_i\xi_j \geq \theta |\xi |$ for all $\xi \in \R^n$ and $x \in \Omega$. Suppose also that $c\equiv 0$ in $\Omega$. Then:\label{maxprinc} \begin{itemize}
+		\item if $u$ attains its maximum in an interior point $(x_0, t_0)\in\Omega\times [0, T]$, then $u$ is constant in $\Omega\times [0, t_0]$.
+		\item If, instead, under the same conditions, $u_t+ Lu \geq 0$ and attains its minimum in an interior point of $\Omega\times [0, T]$, then $u$ is constant in $\Omega\times [0, t_0]$
+	\end{itemize}
+\end{theorem}
+A proof of this result can be found, for example, in \cite{Evans}. The theorem extends also to situations where the condition holds in a convex bounded connected region $R\subseteq \Omega \times [0, T]$: in that case, if $u$ attains its maximum in an interior point then $u$ has the same value at any point in $R$ that can be connected to it through a segment going in the backwards direction of time and a "horizontal" line contained in $\Omega$. This version of the theorem can be found for example in \cite{protterweinberger}: 
+\begin{theorem}
+	Let $u$ satisfy the uniformly parabolic differential inequality (\ref{condition_max_principle}) with $c(x)\geq 0$
+	in a region $R_T =\{(x_1,x_2, \dots ,x_n ,t)\vert t\leq T\}$ where $R$ is a non-empty connected open set, and suppose that the coefficients of $L$ are bounded. Suppose that the maximum of $u$ in $R_T$ is $M$ and that it is attained at a point $(x, t)$ of $R_T$. Thus if $(y,s)$ is a point of $R$ which can be connected to $(x,t)$ by a path in $R$ consisting only of horizontal segments and upward vertical segments, then $u(y,s) = M$.\label{maxprincprotterweinberger}
+\end{theorem}
+
+Hopf's boundary point lemma is another important classical tool in the study of PDEs that provides a criterion for determining the behavior of solutions to certain types of elliptic or parabolic PDEs near the boundary of the domain. The lemma states that if one has a solutions to some kinds of partial differential inequalities, then the normal derivative of the solution at that point is strictly positive.
+
+It is often used to obtain estimates on the behavior of solutions near the boundary, and to prove the existence and uniqueness of solutions to boundary value problems. The lemma is named after the German mathematician Eberhard Hopf, who first formulated it in the 1950s. In \cite{protterweinberger} we find the following version of the Hopf's boundary point lemma:
+
+\begin{theorem}
+	Let u be a solution to the inequality 
+	\begin{align*}
+		Lu\geq 0
+	\end{align*} 
+	with $L$ a differential parabolic operator with bounded coefficients in a domain $E$, and let $E_t = \{(x, s) \in E | s \leq t\}$. Suppose the maximum $M$ of $u$ is attained at a point $P=(x, t)$ on the boundary $\partial E$. \\
+	Assume that a sphere through $P$ can be constructed which is in $E_s$ such that
+	\begin{itemize}\itemsep0em 
+		\item tangent to $\partial E$ at $P$
+		\item the set of point of its interior $(y, s)$ such that $s\leq t$ lies in $E_s$, 
+		\item  $u < M$ in its interior.
+	\end{itemize}	
+	Also, suppose that the radial direction from the centre of the sphere to P is not parallel to the t-axis. \\
+	Then, if $\frac{\partial}{\partial \nu}$ denotes any directional derivative in an outward direction from $E_s$ , we have
+	\begin{align*}
+		\frac{\partial u}{\partial \nu} > 0
+	\end{align*}
+	at P.\label{HopfBPL}
+\end{theorem}
+\begin{proof}
+	Let the sphere through $P$ be $B_1$. We may construct a smaller sphere $B_2$ centred at $P$. Let now:
+	\begin{align*}
+		S_1 &= \partial B_1 \cap  B_2 \cap E_t, \\
+		S_2 &= B_1 \cap \partial  B_2 \cap E_t, \mathrm{ and} \\
+		S_3 &= B_1 \cap  B_2 \cap \partial E_t= B_1 \cap  B_2 \cap \{(x, s) \in E | s=t\}.
+	\end{align*}
+	The three sets satisfy $S_1\cup S_2 \cup S_3 = \partial (B_1 \cap  B_2 \cap E_t)$, we may call this region $R=B_1 \cap  B_2 \cap E_t$. Without loss of generality, potentially taking a smaller sphere $B_1$, we may assume that $u<M$ on $B_1$ except at $P$. As $R \subset B_1$, we also get  $u<M$ on $R$. 
+	We may thus conclude that: 
+	\begin{itemize}\itemsep0em 
+		\item  $u<M$ on $R$ except at $P$
+		\item  $u\leq M-\delta$ on $S_2$ for a sufficiently small $\delta>0$
+		\item  $u=M$ at $P$.
+	\end{itemize}	
+	Now, let the centre of $B_1$ be $Q=(z, t_0)$ and let $R$ be its radius. we can now introduce the function	
+	\begin{align*}
+		v(y, s) = exp \left(-\alpha(s-t_0)^2-\sum_{i=1}^n\alpha(y_i-z_i)^2\right) - exp\left(-\alpha R^2\right)
+	\end{align*}
+	This function is such that $v(y, s)=0$ if $(y, s)\in S_1$ - including  $v(x, t)=0$, as there the first term is $e^{-\alpha R^2}$, and $v(y, s)>0$ in the interior of $B_1$.  \\
+	Thus, in the region $R$, $v(y, s)\geq0$ and has a minimum point at the boundary on $v(x, t)=0$.
+	
+	We can also compute $Lv$. After some calculation, we get that 
+	\begin{align*}
+		Lv = 2 \alpha e^{\left(-\alpha(s-t_0)^2-\sum_{i=1}^n\alpha(y_i-z_i)^2\right)}[2\, \alpha\, (y-z&)^t A (y-z) \, a_{ij} +\\
+		+&\sum_{i}^n[ b_i (y_i-z_i)+a_{i,i}]+(s-t)]
+	\end{align*}
+	where $A$ is the matrix of the $a_{i,j}$. In particular, one can choose large enough $\alpha$ so that $Lv>0$ in $R\cup \partial R$.
+	
+	We can thus introduce $w=u+\varepsilon v$. As both $Lu$ and $Lv$ are positive in $R$, $Lw>0$ in $R$. We can also choose $\varepsilon$ small enough so that $w<M$ on $S_2$. Also, as $v=0$ on $S_1$, $w<M$ on $S_1$ except at $P$, and $w=M$ at $P$.
+	
+	Therefore, we can apply the Strong Maximum Principle \ref{maxprincprotterweinberger} to the region $R$ to conclude that the maximum of $w$ in $R$ is attained at $P$. Therefore:
+	\begin{align*}
+		\frac{\partial w}{\partial \nu}=\frac{\partial u}{\partial \nu}+\frac{\partial v}{\partial \nu}\geq0
+	\end{align*}
+	But:
+	\begin{align*}
+		\frac{\partial v}{\partial \nu}=\nu \cdot n\frac{\partial v}{\partial R} = - 2\nu \cdot n \alpha Re^{-\alpha R}<0
+	\end{align*}
+	Where $n$ is the vector orthogonal to the sphere $S_1$. Therefore, one must have:  
+	\begin{align*}
+		\frac{\partial u}{\partial \nu}>0
+	\end{align*}
+\end{proof}
+
+{\vspace{10pt}\LARGE \bf [L'ipotesi $c(x) \geq 0$ cosa diventa con la non-linearità?]}
+\begin{comment}
+\section{A step from Gidas-Ni-Niremberg}
+
+{\LARGE \bf [DA RIGUARDARE ALLA LUCE DELLE IPOTESI CHE CI SERVONO]}
+
+We can now introduce an important observation used in \cite{GidasNirenberg} that allows us to apply the maximum principle \ref{maxprincprotterweinberger} and Hopf's boundary point lemma \ref{HopfBPL} in some non-linear settings. 
+Suppose that $u$ solves:
+\begin{align}
+	u_t-L u+f(u)=0 \label{non-linear}
+\end{align}
+For an elliptic operator $L$, and where $u_t=\frac{\partial u}{\partial t}$. We note that this differs from the usual parabolic equation because here $f$ depends from the solution $u$, potentially in non-trivial ways, making the equation non-linear. 
+If a solution exists, and $f$ is a $C^1$ function, by the theorem of the mean, at any point $x$ in the domain of $u$ we can find a function $\xi(x)$ such that
+\begin{align*}
+	f'(\xi(x))&=\frac{f(u(x))-f(0)}{u(x)-0}\\
+	f'(\xi(x))u&=f(u(x))-f(0)
+\end{align*} 
+If $u$ solves (\ref{non-linear}), and if $f(0)\leq0$, then 
+\begin{align*}
+	u_t-L u+f(u)-f(0) &\geq 0\\
+	u_t-L u+ f'(\xi(x))u&\geq 0 \\
+	u_t-L u+ c(x)u&\geq 0
+\end{align*}
+Hence the function $u$ is the super-solution to a (different) linear parabolic partial differential equation and hence we can apply the maximum principle \ref{maxprincprotterweinberger} and Hopf's boundary point lemma \ref{HopfBPL} to solutions of (\ref{non-linear}) as long as the other hypothesis apply to $c(x)$. 
+
+{\vspace{10pt}\LARGE \bf [DA RIVEDERE SE EFFETTIVAMENTE RISOLVE IL PROBLEMA O CI SERVE ALTRO]}
+
+\begin{theorem}[Theorem of the mean's trick]\label{Gidas_trick}
+\end{theorem}
+
+contenuto...
+\end{comment}
+
+\section{Class of Equations we analyze}
+
+We consider manifolds $M^n$ embedded in $\R^{n+1}$, i.e. there is an embedding $X_0 : M^n \rightarrow \R^{n+1}$ parametrizing the hypersurface $X_0(M^n)$. 
+
+Let $F:\{(\kappa_1, \dots , \kappa_n)\in \R^n\vert \kappa_1\leq \dots \leq \kappa_n\}\rightarrow \R$ be a $C^1$ function satisfying:
+
+\begin{equation}
+	\frac{\partial F}{\partial \kappa_i} > 0 \mathrm{\; for \; all } \; i=1,\dots, n \label{parabolicità}
+\end{equation}
+and consider the evolution equation 
+\begin{align}
+	\begin{dcases}
+		\frac{\partial X_t}{\partial t} = F(\kappa_1(x), \dots , \kappa_n(x)) \nu\\
+		X(0)= X_0
+	\end{dcases} \label{evolutioneq}
+\end{align}
+where $\nu$ is the inward normal to $X_t(M^n)$ at the point $X_t(x)$ and $\kappa_1\leq \dots \leq \kappa_n$ are the principal curvatures at $X_t(x)$. 
+
+
+\section{Parabolicity of the differential equation (\ref{evolutioneq})}\label{parabolic}
+
+{\vspace{10pt}\LARGE \bf [Questo paragrafo è figlio di quello che ho messo insieme tra math stackexchange e alcune paper, ma mi piacerebbe trovare una reference migliore, quantomeno da citare, un po' più chiara per la linearizzazione, e sul perché valgono il principio del massimo ed Hbpl.]}
+
+The condition (\ref{parabolicità}) will  guarantee that the equation (\ref{evolutioneq}) resembles a parabolic equation. This may be confusing, as (\ref{evolutioneq}) is a non-linear partial differential equation. 
+
+To classify a non-linear partial differential equation one has to understand how it behaves "close to a solution". We want to prove that very close to any solution, moving in any direction, the change in the equation is always a parabolic PDE. This will then tell us that our equation is parabolic, and that the theorems that apply to solutions of parabolic partial differential equations apply to our equation as well. To do so, we can substitute in our equation $X_t$ with $X_t+\varepsilon u_t$ to get:
+
+\begin{align*}
+		\frac{\partial X_t}{\partial t} + \varepsilon\frac{\partial u_t}{\partial t}  &= F(\kappa_1(X_t+\varepsilon u_t), \dots , \kappa_n(X_t+\varepsilon u_t)) \nu\\
+		\cancel{\frac{\partial X_t}{\partial t}} + \varepsilon\frac{\partial u_t}{\partial t}  &= (\cancel{F(\kappa_1(X_t), \dots , \kappa_n(X_t))} + \varepsilon DF(\Delta\kappa_i(u_t)) +o(\varepsilon)) \nu \\
+		\varepsilon\frac{\partial u_t}{\partial t}  &= (\varepsilon DF(\Delta\kappa_i(u_t)) +o(\varepsilon)) \nu
+\end{align*}
+using the fact that $F$ is a $C^1$ function. We are interested in the behaviour for a small $\varepsilon$, so we consider the behaviour of the so-called linearisation of the PDE, by ignoring the $o(\varepsilon)$:
+\begin{align*}
+	\frac{\partial u_t}{\partial t}  &=  DF(\Delta\kappa_i(u_t)) \nu
+\end{align*}
+Like in \cite{huisken}, as $F$ is a symmetric function in the principal curvatures, we may interchangeably take $F$ to be a function of the Weingarten map tensor or of the second fundamental form, and using the Weingarten Equations this becomes, implying Einstein's summation convention: 
+\begin{align*}
+	\frac{\partial u_t}{\partial t} &= \frac{\partial F}{\partial h_{i j}} g^{i k}g^{jl}h_{k l} \nu\\
+	\frac{\partial u_t}{\partial t} &= \frac{\partial F}{\partial h_{i j}} g^{i k}g^{jl}\left\langle \frac{\partial^2 u_t}{\partial x_k\partial x_l} , \nu \right\rangle \nu+ \mathrm{lower \ order \ terms}
+\end{align*}
+For the second order term to be positive definite, then, 
+\begin{align*}
+		\left(\frac{\partial F}{\partial h_{i j}} \right)_{i, j}
+\end{align*}
+must be positive definite. Or equivalently, as the principal curvatures are the eigenvalues of the matrix $(h_{i j})_{i, j}$,
+\begin{align*}
+	\frac{\partial F}{\partial \kappa_{i}} > 0
+\end{align*}
+
+\begin{comment}
+	contenuto...
+If one considers the F which are linear in the $\kappa_{i}$, this yields:  
+
+\begin{align*}
+	\frac{\partial Y_t}{\partial t} &= \left(\frac{\partial F}{\partial\kappa_{i}} \kappa_{i} \right)\nu\\
+	\frac{\partial Y_t}{\partial t} &= \frac{\partial F}{\partial\kappa_{i}} o^{ik} h_{kl}o^{li}\,\nu \\ 
+	\frac{\partial Y_t}{\partial t} &= \frac{\partial F}{\partial\kappa_{i}}   o^{ik}o^{li}\left\langle \frac{\partial^2 Y_t}{\partial x_k\partial x_l} , \nu \right\rangle \,\nu + \text{lower order terms}
+\end{align*}
+implying summation convention, for an appropriate orthogonal matrix $o_{li}$ that makes $h_{ij}$ diagonal, which makes the equation parabolic if $\frac{\partial F}{\partial \kappa_i}$ is positive. 
+
+{\vspace{10pt}\LARGE \bf [NEED HELP WITH PARABOLICITY!]}
+
+In \cite{huisken}, the paper considers F as a function of the second fundamental form $h_{ij}$, as the principal curvatures are themselves function of it. The following is then said, speaking about "linearisation", while also citing the Weingarten equations:
+\begin{align*}
+	\frac{\partial Y_t}{\partial t} &= \frac{\partial F}{\partial h_{i j}} g^{i k}g^{jl}h_{k l} \nu+ \mathrm{lower \ order \ terms}\\
+	\frac{\partial Y_t}{\partial t} &= \frac{\partial F}{\partial h_{i j}} g^{i k}g^{jl}\left\langle \frac{\partial^2 Y_t}{\partial x_k\partial x_l} , \nu \right\rangle \nu+ \mathrm{lower \ order \ terms}
+\end{align*}
+Which I did not understand the implication of (especially with respect to maximum principle - there is probably something I am missing due to non-linearity of the equation). 
+
+\begin{theorem}[Parabolicity of the differential equation (\ref{evolutioneq})]
+	da scrivere\label{graphparabolic}
+\end{theorem}
+
+Il conto probabilmente è quello in \cite{hamilton}, pagina 262. Info sul nostro caso sono in \cite{huisken}, pagina 50. 
+
+{\vspace{10pt}\LARGE \bf [NEED HELP!]}
+
+\end{comment}
+
+\section{An existence result}
+The paper from Huisken and Polden \cite{huisken} proves the following comforting existence result for the class of equations we are analysing under very broad hypothesis, which we will not use, nor prove, but which we include for completeness: 
+
+\begin{theorem}[Short term existence of a solution for (\ref{evolutioneq})]
+	Suppose $X_0 : M^n \rightarrow \R^{n+1}$ is a smooth, closed hypersurface in $\R^{n+1}$, such that (\ref{parabolicità}) holds at all points in $X_0$, i.e. for all the values of the principal curvatures $\kappa_{i}$ realized at some point on $X_0$. Then, (\ref{evolutioneq}) has a smooth solution, at least on some short time interval $[0, T)$, $T > 0$.  \label{existence}
+\end{theorem}
+
+
+\section{Local representation as a graph of a solution of (\ref{evolutioneq})}
+As a first step, from the Corollary \ref{localgraphcorollary}, we can establish the following:
+
+\begin{theorem}[Local representation as a graph of a solution of (\ref{evolutioneq})]
+	Let $X^n$ be a submanifold $X^n\subset\R^{n+1}$ and let $F:X^n\times(0, T)\rightarrow \R^{n+1}$ be a solution of (\ref{evolutioneq}). Also let $t\in(0, T)$ and $x\in F(X^n, t)$.
+	Then there exists a neighbourhood of $(x, t)$, $U\subset F(X^n\times(0, T))$, and a smooth function $f: T_{x} F(X^n, t)\times(0, T)\rightarrow \R$ such that any $(x_0, t_0)\in U$ can be expressed as 
+	\begin{align*}
+		x_0= p +f(p, t_0) \nu 
+	\end{align*}
+	where $\nu$ is a vector normal to $T_{x} F(X^n, t)$, for an appropriate point $p\in T_x F(X^n, t)$. \label{localgraph}
+\end{theorem}
+\begin{comment}
+	{\vspace{10pt}\LARGE \bf [NON FUNZIONA! Difficile (impossibile?)dimostrare che è smooth]}
+	With a reasoning similar to \ref{localgraphclassic} and \ref{localgraphcorollary} one can prove that given any plane, we can represent locally a manifold $M\subset\R^{n+1}$ at $x\in M$ as a graph on that plane, i.e. as $x_0= p + f(p) \nu$ for $\nu$ the vector orthogonal to the plane, as long as $\nu\notin T_xM$. 
+	The function which associates to $t\in [0,T)$ the unit vector orthogonal to $T_{F(x, t)}F(X, t)$ is continuous, as $F$ is smooth and the vector can be computed from the derivatives of the local maps of the manifold. Thus we can find a neighbourhood $(a,b)$ of $ t_0$ such that for $t \in (a,b)$ the normal vector is not in $T_x F(X^n, t)$. In $(a,b)$ we can represent $F(X)
+\end{comment}
+
+
+\begin{proof}
+	We can consider the image of $F:X^n\times(0, T)\rightarrow \R^{n+1}$ as a manifold in $\R^{n+2}$ by considering $G:=(F(x, t), t)$. Moreover $\frac{\partial G_t}{\partial e_j}\equiv 0$ for all possible vectors of the canonical basis of $\R^{n+1}\times \R$ except for the one corresponding to the time coordinate, where it is $1$. Also, $\frac{\partial G_i}{\partial e_j}\equiv \frac{\partial F_i}{\partial e_j}$ and the first $n$ coordinates of  $\frac{\partial G}{\partial t}$ form a vector normal to $T_x X^n$ by (\ref{evolutioneq}).  Thus, the tangent space of $\mathrm{Im}(G)$ is $T_x X^n \times \{0\}\oplus  \mathrm{span}\langle (\nu, 1)\rangle$ and we can apply corollary  \ref{localgraphcorollary} to $\mathrm{Im}(G)$ to get a function $\tilde{f}$ such that 
+	\begin{align*}
+		(x_0, t)= \left[(p, 0) +  (s\nu, s)\right] + \tilde{f}(p, s)(\nu, -\Vert \nu\Vert)
+	\end{align*}
+	as $(\nu, -\Vert \nu\Vert)$ is the vector orthogonal to  $T_x X^n \times \{0\}\oplus  \mathrm{span}\langle (\nu, 1)\rangle$. Let $\sigma_p:I\subset\R\rightarrow\R$ be the function that associates to $t$ the appropriate $s$ in the expression above.  Projecting to the first $n+1$ coordinates and calling $f(p, t)=\sigma_p(t)+\tilde{f}(p, \sigma_p(t))$ one gets:
+	\begin{align*}
+		x_0= p + f(p, t)\nu 
+	\end{align*}
+	which is our thesis, as long as $\sigma_p(t)$ is smooth. This is indeed the case, as the graph function $\Gamma_f:x\mapsto(x, f(x))$ is smooth for any smooth function $f$ and has a smooth inverse (and thus, the inverse $(x_0, t)\mapsto ((p, 0) +  (s\nu, s))$ is smooth).
+\end{proof}
+One can show through direct calculation (see \cite{mantegazza}, Exercise 1.1.2) that, if an immersed hypersurface $\phi : M\rightarrow \R^{n+1}$ is locally the graph of a function (i.e., locally, $(x, f(x))=\phi$), then: 
+\begin{align*}
+	g_{ij}&=\delta_{ij}+ \frac{\partial f}{\partial x_i} \frac{\partial f}{\partial x_j}\\
+	\nu&= -\frac{(\nabla f, -1)}{\sqrt{1+|\nabla f|^2}}\\
+	h_{ij}&= -\frac{H_{ij}}{\sqrt{1+|\nabla f|^2}}
+\end{align*}
+Where the matrix $(H_{ij})_{ij}$ is the hessian of $f$. Thus, if one considers the principal curvatures, they are multiples of the eigenvalues of the hessian of $f$. 
+
+
+
+
+\section{The Alexandrov Reflection Method and the Chow result}
+
+%The Alexandrov Reflection method is a technique based on the Maximum Principle. 
+
+The key idea of the main result in the chapter is as follows: suppose we have an embedded smooth hypersurface $M^n$ evolving according to (\ref{evolutioneq}) and a fixed hyperplane $\Pi$, intersecting $M^n$. We can also consider $M^n_\Pi$, the reflection of $M^n$ with respect to $\Pi$, which will also evolve according to (\ref{evolutioneq}). Suppose that, at some time $t$, $M^n$ and  $M^n_\Pi$ touch outside of $\Pi$. We can consider $M^n$ and  $M^n_\Pi$ as local graphs over the same hyperplane $\Pi$, and we can show that these function evolve according to the same differential equation. Using the strong maximum principle and the Hopf boundary point lemma, then, one can conclude that the two functions coincide, and have been coinciding up until that point. We can then conclude that if  $M^n$ and  $M^n_\Pi$ only touch on $M^n\cap\Pi$ at the beginning of the evolution, then they will never touch elsewhere. We shall make this more precise in the following paragraph, loosely based on paragraph 2 in \cite{Chow}. 
+
+\section{Theorem 2.2 Chow}
+
+
+
+Let $\Pi$ be a hyperplane in $\R^{n+1}$. We may assume $\Pi$ orthogonal to a unit vector $V\in\R^{n+1}$, i.e. $\langle\Pi, V\rangle= C$ for some constant $C$. 
+
+Then, $R^{n+1}$ is divided by $\Pi$ into two half-spaces, which we will name  $H^+(\Pi)=\{x \in \R : \langle x, V\rangle > C\}$ and  $H^-(\Pi)=\{x \in \R | \langle x, V\rangle < C\}$. 
+
+\begin{defin}
+	We say we can reflect $M^n$ strictly with respect to $\Pi$ if 
+	\begin{align*}
+		M^n_\Pi\cap H^-(\Pi)\subset \mathrm{int}(M^n)\cap H^-(\Pi)
+	\end{align*} 
+	and $V\notin TM^n_x$ for all $x\in M^n \cap\Pi$, where $\mathrm{int}(M^n)$ is the region inside $M^n$. 
+\end{defin}
+This fundamentally means that the reflection of one of the halves of $M^n$ on the other side of $\Pi$ is contained in the region inside $M^n$ and the tangent spaces of $M^n$ and of the half-reflection do not form a ninety degree angle with $\Pi$, at all points on $\Pi\cap M^n$. 
+\begin{defin}
+	We say we can reflect $M^n$ strictly up to $(\Pi,V)$ if we can reflect $M^n$ strictly with respect to $\Pi_K$ for all hyperplanes $\Pi_K=\{x \in \R | \langle x, V\rangle = K\}$ such that $K<C$.  
+\end{defin}
+
+The main theorem is the following: 
+
+\begin{theorem}[Chow]
+	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ solution to \ref{evolutioneq}. Then, if we can reflect $X(M^n, 0)=M_0$ strictly with respect to $\Pi$, then for all $t\in [0,T)$ we can reflect $X(M^n, t)=M_t$ strictly with respect to $\Pi$. \label{reflection} 
+\end{theorem}
+
+\begin{proof}
+	By contradiction, suppose that there is a time $t$ such that the thesis is false, and that it is the smallest such $t$. Then, for all $\tau \in [0,t)$, $M_{\tau,\Pi}\cap H^-(\Pi)\subset \mathrm{int}(M_{\tau})\cap H^-(\Pi)$; the unit vector orthogonal to $\Pi$, $V$, is such that $V\notin T_xM_\tau$ for all $x\in M_\tau\cap \Pi$ and $\tau \in [0,t)$; and either of the conditions fails at $t$, i.e. either: 
+	\begin{itemize}
+		\item[(i)] $M_{t,\Pi}\cap H^-(\Pi)\cap M_{t}\neq \emptyset$
+		\item[(ii)] $V\in T_xM_t$  for some $x\in\Pi$. 
+	\end{itemize} 
+
+	(i) Suppose the first case is true. Then, there exists $x_0 \in M_{t,\Pi}\cap H^-(\Pi)\cap M_{t}$ such that at $x_0$ the two manifolds are tangent. \\
+	We can take a neighbourhood of $(x_0, t)\in M_{t}\times \R$ such that  both $M_{t,\Pi}$ and $M_{t}$ are graphs over $T_{x_0}M_{t}$ by \ref{localgraph}. \\
+	We can explicitly write the functions $f:U\times (t-\varepsilon, t+\varepsilon)\rightarrow M_t$, where $U\subset T_{x_0}M_{t}$, and the corresponding $f_\Pi$ for $M_{t,\Pi}$. 
+	We can also write 
+	\begin{align*}
+		f \; : \; (x, t) &\mapsto x+\tilde{f}(x, t)\nu \\
+		f_\Pi \; : \; (x, t) &\mapsto x+\tilde{f}_\Pi(x, t)\nu 
+	\end{align*}
+	for appropriate functions $\tilde{f}:U\times (t-\varepsilon, t+\varepsilon)\rightarrow \R$ and $\tilde{f}_\Pi:U\times (t-\varepsilon, t+\varepsilon)\rightarrow \R$, where $\nu$ is a fixed unit vector normal to $T_{x_0}M_{t}$.  $\tilde{f}$ and $\tilde{f_\Pi}$ are solutions to the same second order PDE, which is parabolic by what was discussed in paragraph \ref{parabolic}, hence we can apply \ref{maxprinc} to conclude that $\tilde{f}\equiv\tilde{f_\Pi}$, and thus $M_{t,\Pi}$ and $M_{t}$ coincide in a neighbourhood of $(x, t)$. \\ Iterating the procedure on all boundary points, the largest set on which they coincide must be an open set, but manifolds can only coincide on closed sets, and thus the two manifolds must completely coincide for all $\tau\leq T$, a contradiction.
+	
+	(ii) Suppose instead that $V\in T_xM_t$  for some $t\in [0, t)$ and some $x\in M_t\cap \Pi$. Then $T_xM_t= T_xM_{t, \Pi}$ and in a neighbourhood of $(x, t)$ both $M_t$ and $M_{t, \Pi}$ are graphs of two smooth functions over $T_xM_t$ by \ref{localgraph}, i.e. again
+	\begin{align*}
+		f \; : \; (x, t) &\mapsto x+\tilde{f}(x, t)\nu \\
+		f_\Pi \; : \; (x, t) &\mapsto x+\tilde{f}_\Pi(x, t)\nu 
+	\end{align*} 
+	Moreover, in $\overline{H^-(\Pi)}$, $f_\Pi\geq f$, because $M^n_\Pi\cap H^-(\Pi)\subset \mathrm{int}(M^n)\cap H^-(\Pi)$. Moreover, $f(x, t)=f_\Pi (x, t)$, and $f(x, t)$ is a minimum point for both functions. Also, we must have 
+	\begin{align*}
+		\frac{\partial f}{\partial V}(x,t)=\frac{\partial f_\Pi}{\partial V}(x,t)
+	\end{align*}
+	were we are taking $V$ as outward pointing normal to the boundary, because the graphs are both tangent to $T_xM_t$. At the same time, 
+	\begin{align*}
+		\frac{\partial f}{\partial V}(x,t)=-\frac{\partial f_\Pi}{\partial V}(x,t)
+	\end{align*}
+	by reflection. Hence $\frac{\partial f}{\partial V}(x,t)=0$. But $\tilde{f}$ and $\tilde{f_\Pi}$ are solutions to the same second order parabolic PDE, and thus by \ref{HopfBPL} we must have $\frac{\partial f}{\partial V}(x,t)>0$ at a minimum on the boundary, a contradiction.  
+\end{proof}
+The following is an immediate consequence of the main result:
+\begin{cor}
+	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ solution to \ref{evolutioneq}. Then, if we can reflect $M_0$ strictly up to $(\Pi, V)$, then for all $t\in [0,T)$ we can reflect $X(M, t)$ strictly up to $(\Pi, V)$.  
+\end{cor}
+\begin{proof}
+	The hypothesis of the theorem are true for each $\Pi_K$ in the definition, thus we can reflect strictly with respect to each $\Pi_K$ for all $t\in[0,T)$, and thus we can reflect $X(M, t)$ strictly up to $(\Pi, V)$.
+\end{proof}

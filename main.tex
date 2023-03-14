@@ -1,0 +1,101 @@
+% !TeX spellcheck = en_GB
+\documentclass[a4paper,12pt]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{cancel}
+\usepackage{subcaption}
+\usepackage{comment}
+\usepackage{tikz}
+\usetikzlibrary{arrows, automata, backgrounds, calendar, chains, matrix, mindmap, patterns, petri, shadows, shapes.geometric, shapes.misc, spy, trees}
+%\usetikzlibrary{decorations.text}
+
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{defin}[theorem]{Definition}
+\newtheorem{cor}[theorem]{Corollary}
+
+%
+%\newtheorem{theor}{Teorema}[chapter]
+%\newtheorem{lemma}[theor]{Lemma}
+%\newtheorem{prop}[theor]{Proposizione}
+%\newtheorem{coroll}[theor]{Corollario}
+
+%
+%\theoremstyle{definition}
+%\newtheorem{defn}{Definizione}[chapter]
+%\newtheorem{ex}{Esempio}[chapter]
+%\newtheorem*{definizione-numr}{Definizione}
+%
+%\theoremstyle{remark}
+%\newtheorem{oss}{Osservazione}[chapter]
+%
+%
+%\newenvironment{skproof}{%
+%	\renewcommand{\proofname}{Sketch di dimostrazione}\proof}{\endproof}
+%\newenvironment{necproof}{%
+%\renewcommand{\proofname}{Dimostrazione della necessarietà}\proof}{\endproof}
+%\newenvironment{sufproof}{%
+%\renewcommand{\proofname}{Dimostrazione della sufficienza}\proof}{\endproof}
+%
+\newcommand{\R}{\mathbb{R}}
+
+\author{Marco Tamburro \\ Relatore: Carlo Sinestrari}
+\title{To Be Confirmed}
+\date{\today}
+
+\begin{document}
+
+\frontmatter
+%\maketitle
+\include{./TeX_files/frontespizio}
+\tableofcontents
+
+\phantomsection
+\include{./TeX_files/introduzione}
+
+\mainmatter
+
+\include{./TeX_files/chapter1}
+
+\include{./TeX_files/chapter2}
+
+
+\backmatter
+% bibliography, glossary and index would go here.
+
+%\phantomsection
+
+\clearpage
+\begin{thebibliography}{8} 
+	\bibitem{Chow} Chow B.; {\em Geometric Aspects of Aleksandrov Reflection and Gradient Estimates for Parabolic Equations}, Communications in Analysis and Geometry, Volume 5, Number 2, 389-409, 1997.
+	
+	\bibitem{GidasNirenberg} Gidas B., Wei-Ming Ni, L.Nirenberg; {\em Symmetry and Related Properties via the Maximum Principle},  Commun. Math. Phys. 68, 209-243, 1979. 
+	\bibitem{Evans} Evans, L.C.; {\em Partial Differential Equations},  American Mathematical Society, 2010. 
+	
+	\bibitem{protterweinberger}  Protter, M. H.;  Weinberger, H. F.; {\em Maximum Principles in Differential Equations },  Springer, 1984. 
+	
+	\bibitem{DoCarmo} Do Carmo, M.P.; {\em Differential Geometry of Curves and Surfaces, Second Edition},  Dover Books on Mathematics, 2016. 
+	
+	\bibitem{Lee} Lee, J.M.; {\em Introduction to Smooth Manifolds, Second Edition},  Springer Graduate Texts in Mathematics 218, 2013. 
+	
+	\bibitem{paper3}  J. Scheuer; {\em Isotropic functions revisited},  Arch. Math. 110, 591–604, 2018.
+	
+	\bibitem{huisken} G. Huisken, A. Polden {\em Geometric evolution equations for	hypersurfaces}
+	
+	\bibitem{mantegazza} C.Mantegazza {\em Lecture Notes on Mean Curvature Flow}
+	
+	\bibitem{hamilton}  R.S. Hamilton, {\em Three-Manifolds with Positive Ricci Curvature}
+
+\end{thebibliography}
+\addcontentsline{toc}{chapter}{Bibliography}
+%\include{./TeX_files/ringraziamenti}
+
+
+\end{document}
