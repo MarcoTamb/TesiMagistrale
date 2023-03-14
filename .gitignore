@@ -276,3 +276,9 @@ TSWLatexianTemp*
 *.lpz
 *.aux
 *.log
+*.aux
+TeX_files/chapter1.aux
+TeX_files/chapter2.aux
+TeX_files/chapter2.log
+TeX_files/frontespizio.aux
+TeX_files/introduzione.aux
