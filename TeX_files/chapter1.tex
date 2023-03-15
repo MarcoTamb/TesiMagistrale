@@ -89,7 +89,7 @@ The maximum principle can be used to prove the existence, uniqueness, and regula
 \end{theorem}
 A proof of this result can be found, for example, in \cite{Evans}. The theorem extends also to situations where the condition holds in a convex bounded connected region $R\subseteq \Omega \times [0, T]$: in that case, if $u$ attains its maximum in an interior point then $u$ has the same value at any point in $R$ that can be connected to it through a segment going in the backwards direction of time and a "horizontal" line contained in $\Omega$. This version of the theorem can be found for example in \cite{protterweinberger}: 
 \begin{theorem}
-	Let $u$ satisfy the uniformly parabolic differential inequality (\ref{condition_max_principle}) with $c(x)\geq 0$
+	Let $u$ satisfy the uniformly parabolic differential inequality (\ref{condition_max_principle}) with $c(x)\leq 0$
 	in a region $R_T =\{(x_1,x_2, \dots ,x_n ,t)\vert t\leq T\}$ where $R$ is a non-empty connected open set, and suppose that the coefficients of $L$ are bounded. Suppose that the maximum of $u$ in $R_T$ is $M$ and that it is attained at a point $(x, t)$ of $R_T$. Thus if $(y,s)$ is a point of $R$ which can be connected to $(x,t)$ by a path in $R$ consisting only of horizontal segments and upward vertical segments, then $u(y,s) = M$.\label{maxprincprotterweinberger}
 \end{theorem}
 
@@ -102,7 +102,7 @@ It is often used to obtain estimates on the behavior of solutions near the bound
 	\begin{align*}
 		Lu\geq 0
 	\end{align*} 
-	with $L$ a differential parabolic operator with bounded coefficients in a domain $E$, and let $E_t = \{(x, s) \in E | s \leq t\}$. Suppose the maximum $M$ of $u$ is attained at a point $P=(x, t)$ on the boundary $\partial E$. \\
+	with $L$ a differential parabolic operator with bounded coefficients such that $c(x)\leq 0$,in a domain $E$, and let $E_t = \{(x, s) \in E | s \leq t\}$. Suppose the maximum $M$ of $u$ is attained at a point $P=(x, t)$ on the boundary $\partial E$. \\
 	Assume that a sphere through $P$ can be constructed which is in $E_s$ such that
 	\begin{itemize}\itemsep0em 
 		\item tangent to $\partial E$ at $P$
@@ -130,19 +130,19 @@ It is often used to obtain estimates on the behavior of solutions near the bound
 		\item  $u\leq M-\delta$ on $S_2$ for a sufficiently small $\delta>0$
 		\item  $u=M$ at $P$.
 	\end{itemize}	
-	Now, let the centre of $B_1$ be $Q=(z, t_0)$ and let $R$ be its radius. we can now introduce the function	
+	Now, let the centre of $B_1$ be $Q=(z, t_0)$ and let $r$ be its radius. we can now introduce the function	
 	\begin{align*}
-		v(y, s) = exp \left(-\alpha(s-t_0)^2-\sum_{i=1}^n\alpha(y_i-z_i)^2\right) - exp\left(-\alpha R^2\right)
+		v(y, s) = exp \left(-\alpha(s-t_0)^2-\sum_{i=1}^n\alpha(y_i-z_i)^2\right) - exp\left(-\alpha r^2\right)
 	\end{align*}
-	This function is such that $v(y, s)=0$ if $(y, s)\in S_1$ - including  $v(x, t)=0$, as there the first term is $e^{-\alpha R^2}$, and $v(y, s)>0$ in the interior of $B_1$.  \\
-	Thus, in the region $R$, $v(y, s)\geq0$ and has a minimum point at the boundary on $v(x, t)=0$.
+	This function is such that $v(y, s)=0$ if $(y, s)\in S_1$ - including  $v(x, t)=0$, as there the first term is $e^{-\alpha r^2}$, and $v(y, s)>0$ in the interior of $B_1$.  \\
+	Thus, in the region $R$, $v(y, s)\geq0$ and has a minimum point at the boundary on $(x, t)$, where  $v(x, t)=0$.
 	
 	We can also compute $Lv$. After some calculation, we get that 
 	\begin{align*}
-		Lv = 2 \alpha e^{\left(-\alpha(s-t_0)^2-\sum_{i=1}^n\alpha(y_i-z_i)^2\right)}[2\, \alpha\, (y-z&)^t A (y-z) \, a_{ij} +\\
+		Lv = 2 \alpha e^{\left(-\alpha(s-t_0)^2-\sum_{i=1}^n\alpha(y_i-z_i)^2\right)}[2\, \alpha\, (y-z&)^t A (y-z) +\\
 		+&\sum_{i}^n[ b_i (y_i-z_i)+a_{i,i}]+(s-t)]
 	\end{align*}
-	where $A$ is the matrix of the $a_{i,j}$. In particular, one can choose large enough $\alpha$ so that $Lv>0$ in $R\cup \partial R$.
+	where $A$ is the matrix of the $a_{i,j}$. In particular, one can choose an $\alpha$ large enough, so that $Lv>0$ in $R\cup \partial R$.
 	
 	We can thus introduce $w=u+\varepsilon v$. As both $Lu$ and $Lv$ are positive in $R$, $Lw>0$ in $R$. We can also choose $\varepsilon$ small enough so that $w<M$ on $S_2$. Also, as $v=0$ on $S_1$, $w<M$ on $S_1$ except at $P$, and $w=M$ at $P$.
 	
@@ -158,9 +158,16 @@ It is often used to obtain estimates on the behavior of solutions near the bound
 	\begin{align*}
 		\frac{\partial u}{\partial \nu}>0
 	\end{align*}
+	as we wanted.
+{\vspace{10pt}\LARGE \bf [da rivedere perché posso scegliere $c\neq0$, forse va aggiustata la derivata $Lv$]}
 \end{proof}
-
-{\vspace{10pt}\LARGE \bf [L'ipotesi $c(x) \geq 0$ cosa diventa con la non-linearità?]}
+\begin{oss}
+	\em If $c(x)$ is now just bounded, we can consider, instead of $u$, $v=e^{-\lambda t}$, thus, by change of variables 
+	\begin{align*}
+		Lv-\lambda v \geq 0
+	\end{align*}
+	and we can chose $\lambda$ large enough such that $c(x)-\lambda<0$ and thus we can remove the hypothesis $c(x)<0$ in both theorems. 
+\end{oss}
 \begin{comment}
 \section{A step from Gidas-Ni-Niremberg}
 
@@ -274,7 +281,7 @@ Il conto probabilmente è quello in \cite{hamilton}, pagina 262. Info sul nostro
 \end{comment}
 
 \section{An existence result}
-The paper from Huisken and Polden \cite{huisken} proves the following comforting existence result for the class of equations we are analysing under very broad hypothesis, which we will not use, nor prove, but which we include for completeness: 
+The paper from Huisken and Polden \cite{huisken} states the following comforting existence result for the class of equations we are analysing under very broad hypothesis. The same paper also includes a proof of the result with some more restrictive hypotheses. A complete proof is quite more involved. We will not use it, nor prove it, but we include it for completeness and peace of mind: 
 
 \begin{theorem}[Short term existence of a solution for (\ref{evolutioneq})]
 	Suppose $X_0 : M^n \rightarrow \R^{n+1}$ is a smooth, closed hypersurface in $\R^{n+1}$, such that (\ref{parabolicità}) holds at all points in $X_0$, i.e. for all the values of the principal curvatures $\kappa_{i}$ realized at some point on $X_0$. Then, (\ref{evolutioneq}) has a smooth solution, at least on some short time interval $[0, T)$, $T > 0$.  \label{existence}
