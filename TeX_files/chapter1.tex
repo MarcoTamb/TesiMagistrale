@@ -82,7 +82,7 @@ The maximum principle can be used to prove the existence, uniqueness, and regula
 	\begin{align}
 		-\frac{\partial u}{\partial t} + \left(\sum_{i, j=1}^n a_{ij}\frac{\partial^2 }{\partial x_i\partial x_j}+\sum_{i}^n b_{i}\frac{\partial }{\partial x_i} + c\right)  u = -u_t + Lu \geq 0 \label{condition_max_principle}
 	\end{align}
-	where $L$ is an elliptic differential operator, i.e. there exists $\theta>0$ such that $\sum_{i,j=1}^{n} a_{ij}(x) \xi_i\xi_j \geq \theta |\xi |$ for all $\xi \in \R^n$ and $x \in \Omega$. Suppose also that $c\equiv 0$ in $\Omega$. Then:\label{maxprinc} \begin{itemize}
+	where $L$ is an elliptic differential operator, i.e. there exists $\theta>0$ such that $\sum_{i,j=1}^{n} a_{ij}(x) \xi_i\xi_j \geq \theta |\xi |$ for all $\xi \in \R^n$ and $x \in \Omega$. Suppose also that $c\equiv 0$ in $\Omega$. Then: \begin{itemize}
 		\item if $u$ attains its maximum in an interior point $(x_0, t_0)\in\Omega\times [0, T]$, then $u$ is constant in $\Omega\times [0, t_0]$.
 		\item If, instead, under the same conditions, $u_t+ Lu \geq 0$ and attains its minimum in an interior point of $\Omega\times [0, T]$, then $u$ is constant in $\Omega\times [0, t_0]$
 	\end{itemize}
@@ -281,14 +281,17 @@ We can now introduce an important observation shown in \cite{protterweinberger} 
 	\end{align*}
 	Hence the function $u$ is the super-solution to a (different) linear parabolic partial differential equation and hence we can apply the maximum principle \ref{maxprincprotterweinberger} and Hopf's boundary point lemma \ref{HopfBPL} to solutions of (\ref{non-linear}) as long as the other hypothesis apply to $c(x)$. 
 \end{comment}
-First, we introduce the following generalized version of the theorem of the mean:
-
-{\vspace{10pt}\LARGE \bf [AGGIUNGERE TEOREMA DELLA MEDIA IN $\R^n$]}
-
+First, we remind the reader of the following generalized version of the theorem of the mean:
+\begin{theorem}
+	Given a convex open set $U\subseteq \R^n$ and a real function $F \in C^1(U)$, and given to points $x, y$ in $U$, there exists a point $z$ in the segment connecting $x$ and $y$ such that 
+	\begin{align*}
+		F(y)-F(x) =\left\langle \nabla F(z), (y-x) \right\rangle 
+	\end{align*}
+\end{theorem}
 Suppose that we have a solution to a non-linear parabolic problem $u$, i.e. $u$ solves:
-\begin{align*}
-	Lu= F\left(t, x, u, \frac{\partial u}{\partial x_i} , \frac{\partial^2 u}{\partial x_i \partial x_j}\right)-u_t = f(x, t)
-\end{align*}
+\begin{align}
+	Lu= F\left(t, x, u, \frac{\partial u}{\partial x_i} , \frac{\partial^2 u}{\partial x_i \partial x_j}\right)-u_t = f(x, t)\label{nonlinearexample}
+\end{align}
 for a non-linear elliptic operator $L$ in some region $E$, where we assume $F(t, x, y_i, z_{i,j})$ to be a given $C^1$ function. Suppose also that there is a $w$ which is a solution of the corresponding differential inequality:
 \begin{align*}
 	Lw= F\left(t, x, w, \frac{\partial w}{\partial x_i} , \frac{\partial^2 w}{\partial x_i \partial x_j}\right)-w_t \leq f(x, t)
@@ -296,16 +299,38 @@ for a non-linear elliptic operator $L$ in some region $E$, where we assume $F(t,
 One can then consider $v = u-w$, and by combining the above we get: 
 
 \begin{align*}
-	Lv= \left( F\left(t, x, w, \frac{\partial w}{\partial x_i} , \frac{\partial^2 w}{\partial x_i \partial x_j}\right) - F\left(t, x, w, \frac{\partial w}{\partial x_i} , \frac{\partial^2 w}{\partial x_i \partial x_j}\right)\right)-v_t \leq 0
+	Lv= \left( F\left(t, x, u, \frac{\partial u}{\partial x_i} , \frac{\partial^2 u}{\partial x_i \partial x_j}\right) - F\left(t, x, w, \frac{\partial w}{\partial x_i} , \frac{\partial^2 w}{\partial x_i \partial x_j}\right)\right)-v_t \leq 0
 \end{align*}
 
-Now, 
+Now, we can apply Lagrange's theorem to $F$ to get 
 
-{\vspace{10pt}\LARGE \bf [CONTINUARE CONTO]}
+\begin{align*}
+	Lv= \left\langle \nabla F(\xi), \left(t, x, v, \frac{\partial v}{\partial x_i} , \frac{\partial^2 v}{\partial x_i \partial x_j}\right) \right\rangle-v_t \leq 0
+\end{align*}
+for a fixed $\xi$. Thus, the difference $v$ of two sub-solutions to a non-linear parabolic problem is a sub-solution to a (different) \textit{linear} parabolic problem, as the derivatives of $F$ and $\xi$ do not depend on $v$ ($\xi$ can be chosen a-priori). We can thus apply the maximum principle and the Hopf's boundary point lemma to $v$. This can allow us to state the following two results which we will be using later:
 
-Thus, $v$ is a solution to a \textit{linear} parabolic problem, as the derivatives of $F$ are independent of $v$. We can thus apply the maximum principle and the Hopf's boundary point lemma to $v$. This can allow us to state the following two results which we will be using later:
+\begin{proposition}[Maximum principle for parabolic non-linear differential equations]
+	\label{firstapplication}
+	Suppose we have two solution $u$ and $w$ in the interval $[0, T]$ to the same parabolic non-linear differential equation (\ref{nonlinearexample}) on an open set $\Omega$, but with different start conditions: then, if $u>w$ in the interior of $\Omega$ at $t=0$ and $u\geq w$ on $\partial\Omega$,  $u>w$ for all $t\in[0, T]$ in the interior of $\Omega$.
+\end{proposition}
 
-{\vspace{10pt}\LARGE \bf [INSERIRE RISULTATI, leggere \ref{reflection} e cambiare citazioni ai teoremi]}
+\begin{proof}
+	$v=u-w\geq 0$ is a solution of a parabolic linear differential equation. At $t=0$, $v>0$ in the interior of $\Omega$. If at an interior point $x$ $u=w$ at a certain time $t=\tau$, $v(\tau, x)=0$, and thus $v$ is not constant. However, it attains minimum ($v=0$) at an interior point, thus by \ref{maximum_principle} it must be constant, a contradiction. 
+\end{proof}
+
+\begin{proposition}[Hopf's boundary point lemma for parabolic non-linear differential equations]
+\label{secondapplication}
+Suppose we have two solution $u$ and $w$ in the interval $[0, T]$ to the same parabolic non-linear differential equation (\ref{nonlinearexample}) on an open set $\Omega$, but with different start conditions. Let $v=u-w$: then, 
+\begin{align*}
+	\frac{\partial v}{\partial \nu} >0
+\end{align*}
+at all points in $\partial\Omega$, where we take $\nu$ as the normal to $\partial\Omega$. 
+\end{proposition}
+
+\begin{proof}
+	{\vspace{10pt}\LARGE \bf [SCRIVERE PROOF alla luce di fix a teorema \ref{HopfBPL}]}
+\end{proof}
+
 
 
 \section{Local representation as a graph of a solution of (\ref{evolutioneq})}
@@ -395,22 +420,30 @@ The main theorem is the following:
 		f \; : \; (x, t) &\mapsto x+\tilde{f}(x, t)\nu \\
 		f_\Pi \; : \; (x, t) &\mapsto x+\tilde{f}_\Pi(x, t)\nu 
 	\end{align*}
-	for appropriate functions $\tilde{f}:U\times (t-\varepsilon, t+\varepsilon)\rightarrow \R$ and $\tilde{f}_\Pi:U\times (t-\varepsilon, t+\varepsilon)\rightarrow \R$, where $\nu$ is a fixed unit vector normal to $T_{x_0}M_{t}$.  $\tilde{f}$ and $\tilde{f_\Pi}$ are solutions to the same second order PDE, which is parabolic by what was discussed in paragraph \ref{parabolic}, hence we can apply \ref{maxprinc} to conclude that $\tilde{f}\equiv\tilde{f_\Pi}$, and thus $M_{t,\Pi}$ and $M_{t}$ coincide in a neighbourhood of $(x, t)$. \\ Iterating the procedure on all boundary points, the largest set on which they coincide must be an open set, but manifolds can only coincide on closed sets, and thus the two manifolds must completely coincide for all $\tau\leq T$, a contradiction.
+	for appropriate functions $\tilde{f}:U\times (t-\varepsilon, t+\varepsilon)\rightarrow \R$ and $\tilde{f}_\Pi:U\times (t-\varepsilon, t+\varepsilon)\rightarrow \R$, where $\nu$ is a fixed unit vector normal to $T_{x_0}M_{t}$.  $\tilde{f}$ and $\tilde{f_\Pi}$ are solutions to the same second order PDE, which is parabolic by what was discussed in paragraph \ref{parabolic}, hence we can apply \ref{firstapplication} to conclude that $\tilde{f}\equiv\tilde{f_\Pi}$, and thus $M_{t,\Pi}$ and $M_{t}$ coincide in a neighbourhood of $(x, t)$. \\ Iterating the procedure on all boundary points of this neighbourhood, we find that the largest set on which they coincide must be an open set, but manifolds can only coincide on closed sets, and thus the two manifolds must completely coincide for all $\tau\leq T$, a contradiction.
 	
 	(ii) Suppose instead that $V\in T_xM_t$  for some $t\in [0, t)$ and some $x\in M_t\cap \Pi$. Then $T_xM_t= T_xM_{t, \Pi}$ and in a neighbourhood of $(x, t)$ both $M_t$ and $M_{t, \Pi}$ are graphs of two smooth functions over $T_xM_t$ by \ref{localgraph}, i.e. again
 	\begin{align*}
 		f \; : \; (x, t) &\mapsto x+\tilde{f}(x, t)\nu \\
 		f_\Pi \; : \; (x, t) &\mapsto x+\tilde{f}_\Pi(x, t)\nu 
 	\end{align*} 
-	Moreover, in $\overline{H^-(\Pi)}$, $f_\Pi\geq f$, because $M^n_\Pi\cap H^-(\Pi)\subset \mathrm{int}(M^n)\cap H^-(\Pi)$. Moreover, $f(x, t)=f_\Pi (x, t)$, and $f(x, t)$ is a minimum point for both functions. Also, we must have 
+	Moreover, in $\overline{H^-(\Pi)}$, $f_\Pi\geq f$, because $M^n_\Pi\cap H^-(\Pi)\subset \mathrm{int}(M^n)\cap H^-(\Pi)$. Finally, $f(x, t)=f_\Pi (x, t)$, and $f(x, t)$ is a minimum point for both functions. Also, we must have
 	\begin{align*}
-		\frac{\partial f}{\partial V}(x,t)=\frac{\partial f_\Pi}{\partial V}(x,t)
+		\frac{\partial f}{\partial V}(x,t)=\alpha\frac{\partial f_\Pi}{\partial V}(x,t)
 	\end{align*}
-	were we are taking $V$ as outward pointing normal to the boundary, because the graphs are both tangent to $T_xM_t$. At the same time, 
+	for a positive $\alpha\in [0, +\infty)$, where we are taking $V$ as outward pointing normal to the boundary, because the graphs are both tangent to $T_xM_t$ and they have nonpositive derivative, as the point is a minimum on the boundary. At the same time, 
 	\begin{align*}
 		\frac{\partial f}{\partial V}(x,t)=-\frac{\partial f_\Pi}{\partial V}(x,t)
 	\end{align*}
-	by reflection. Hence $\frac{\partial f}{\partial V}(x,t)=0$. But $\tilde{f}$ and $\tilde{f_\Pi}$ are solutions to the same second order parabolic PDE, and thus by \ref{HopfBPL} we must have $\frac{\partial f}{\partial V}(x,t)>0$ at a minimum on the boundary, a contradiction.  
+	by reflection. Hence $\frac{\partial f}{\partial V}(x,t)=\frac{\partial f_\Pi}{\partial V}(x,t)=0$. Thus, 
+	\begin{align*}
+		\frac{\partial (f- f_\Pi)}{\partial V}(x,t)=0
+	\end{align*}
+	But we must have 
+	\begin{align*}
+		\frac{\partial (f- f_\Pi)}{\partial V}(x,t)>0
+	\end{align*}
+	at a minimum on the boundary by \ref{secondapplication}, a contradiction.  
 \end{proof}
 The following is an immediate consequence of the main result:
 \begin{cor}
