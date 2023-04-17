@@ -16,6 +16,8 @@ One of the most important concepts in the geometry of immersed hypersurfaces is 
 \end{align}
 where $\nu$ is the normal vector at the point and $A=\{h_{ij}\}$ is the second fundamental form. Being the second fundamental form, $A$ is symmetric and the eigenvalues of $A$ are the principal curvatures $\kappa_i$. 
 
+{\vspace{10pt}\LARGE \bf [Definizione esplicita di $h_{ij}$?]}
+
 % The Weingarten equations are important in the study of the local properties of immersed hypersurfaces, for example, the second kind equation relates the normal vector field to the shape operator and can be used to compute the mean curvature of the hypersurface. 
 
 % Another important concept in the geometry of immersed hypersurfaces is the Gaussian curvature. The Gaussian curvature is a scalar valued function that describes the total curvature of the hypersurface at each point. It is defined as the product of the eigenvalues of the shape operator and it is closely related to the sectional curvature of the ambient space.
@@ -32,7 +34,7 @@ There exist many important partial differential equations (PDEs) which stem from
 %The Gauss-Bonnet theorem: This is a theorem that relates the Gaussian curvature of an immersed hypersurface to the topology of the hypersurface. It is important in the study of the global properties of immersed hypersurfaces and is used to prove many important results in differential geometry.
 
 
-{\vspace{10pt}\LARGE \bf [Da scrivere più avanti, in base a quello che usiamo\LARGE]}
+{\vspace{10pt}\LARGE \bf [Da espandere più avanti, in base a quello che usiamo\LARGE]}
 
 
 \section{Local representation as a graph}
@@ -148,7 +150,7 @@ It is often used to obtain estimates on the behavior of solutions near the bound
 	
 	Therefore, we can apply the Strong Maximum Principle \ref{maxprincprotterweinberger} to the region $R$ to conclude that the maximum of $w$ in $R$ is attained at $P$. Therefore:
 	\begin{align*}
-		\frac{\partial w}{\partial \nu}=\frac{\partial u}{\partial \nu}+\frac{\partial v}{\partial \nu}\geq0
+		\frac{\partial w}{\partial \nu}=\frac{\partial u}{\partial \nu}+\varepsilon\frac{\partial v}{\partial \nu}\geq0
 	\end{align*}
 	But:
 	\begin{align*}
@@ -159,16 +161,108 @@ It is often used to obtain estimates on the behavior of solutions near the bound
 		\frac{\partial u}{\partial \nu}>0
 	\end{align*}
 	as we wanted.
-{\vspace{10pt}\LARGE \bf [da rivedere perché posso scegliere $c\neq0$, forse va aggiustata la derivata $Lv$]}
 \end{proof}
 \begin{oss}\label{removecpositive}
-	\em If $c(x)$ is now just bounded, we can consider, instead of $u$, $v=e^{-\lambda t}$, thus, by change of variables 
+	\em If $c(x)$ is now just bounded, we can consider, instead of $u$, $v= u e^{-\lambda t}$, thus, by change of variables 
 	\begin{align*}
 		Lv-\lambda v \geq 0
 	\end{align*}
-	and we can chose $\lambda$ large enough such that $c(x)-\lambda<0$ and thus we can remove the hypothesis $c(x)<0$ in both theorems. 
+	whenever $Lu\geq 0$, and we can chose $\lambda$ large enough such that $c(x)-\lambda<0$ and thus we can remove the hypothesis $c(x)\leq0$ in both theorems when $c$ is bounded. 
 \end{oss}
 
+\section{Applying the maximum principle to non-linear PDEs}
+
+We can now introduce an important observation shown in \cite{protterweinberger} that allows us to apply the maximum principle \ref{maxprincprotterweinberger} and Hopf's boundary point lemma \ref{HopfBPL} in some non-linear settings.  Firstly, we must clarify what we mean by parabolic non-linear problem. 
+\begin{defin}\label{nonlinearpde}
+	A differential non-linear problem in the form 
+	\begin{align}
+		Lu= F\left(t, x, v, \frac{\partial v}{\partial x_i} , \frac{\partial^2 v}{\partial x_i \partial x_j}\right)-v_t = f(x, t)\label{nonlinearexample}
+	\end{align} 
+	given a smooth $F$ is parabolic if for any real vector $\xi$
+	\begin{align*}
+		\sum_{i, j=1}^n F_{ij}\xi_i\xi_j >0
+	\end{align*} 
+	where $F_{ij}$ are the derivatives of $F$ with respect to $\frac{\partial^2 v}{\partial x_i \partial x_j}$. 
+\end{defin}
+\begin{comment}
+	First, let's introduce an easier example from \cite{GidasNirenberg}: 
+	Suppose that $u$ solves:
+	\begin{align}
+		u_t-L u+f(u)=0 \label{non-linear}
+	\end{align}
+	For an elliptic operator $L$, and where $u_t=\frac{\partial u}{\partial t}$. We note that this differs from the usual parabolic equation because here $f$ depends from the solution $u$, potentially in non-trivial ways, making the equation non-linear. 
+	If a solution exists, and $f$ is a $C^1$ function, by the theorem of the mean, at any point $x$ in the domain of $u$ we can find a function $\xi(x)$ such that
+	\begin{align*}
+		f'(\xi(x))&=\frac{f(u(x))-f(0)}{u(x)-0}\\
+		f'(\xi(x))u&=f(u(x))-f(0)
+	\end{align*} 
+	If $u$ solves (\ref{non-linear}), and if $f(0)\leq0$, then 
+	\begin{align*}
+		u_t-L u+f(u)-f(0) &\geq 0\\
+		u_t-L u+ f'(\xi(x))u&\geq 0 \\
+		u_t-L u+ c(x)u&\geq 0
+	\end{align*}
+	Hence the function $u$ is the super-solution to a (different) linear parabolic partial differential equation and hence we can apply the maximum principle \ref{maxprincprotterweinberger} and Hopf's boundary point lemma \ref{HopfBPL} to solutions of (\ref{non-linear}) as long as the other hypothesis apply to $c(x)$. 
+\end{comment}
+Secondly, we remind the reader of the following generalized version of the theorem of the mean, a.k.a. Lagrange's theorem:
+\begin{theorem}[Lagrange's theorem]
+	Given a convex open set $U\subseteq \R^n$ and a real function $F \in C^1(U)$, and given to points $x, y$ in $U$, there exists a point $z$ in the segment connecting $x$ and $y$ such that 
+	\begin{align*}
+		F(y)-F(x) =\left\langle \nabla F(z), (y-x) \right\rangle 
+	\end{align*}
+\end{theorem}
+Suppose that we have a solution to a non-linear parabolic problem $v$, i.e. $v$ solves (\ref{nonlinearexample}):
+\begin{align*}
+	Lu= F\left(t, x, v, \frac{\partial v}{\partial x_i} , \frac{\partial^2 v}{\partial x_i \partial x_j}\right)-v_t = f(x, t)
+\end{align*}
+for a non-linear elliptic operator $L$ in some region $E$, where we assume $F(t, x, y_i, z_{i,j})$ to be a given $C^1$ function. Suppose also that there is a $w$ which is a solution of the corresponding differential inequality:
+\begin{align*}
+	Lw= F\left(t, x, w, \frac{\partial w}{\partial x_i} , \frac{\partial^2 w}{\partial x_i \partial x_j}\right)-w_t \leq f(x, t)
+\end{align*}
+One can then consider $u = v-w$, and by combining the above we get: 
+
+\begin{align*}
+	Lv= \left( F\left(t, x, v, \frac{\partial v}{\partial x_i} , \frac{\partial^2 v}{\partial x_i \partial x_j}\right) - F\left(t, x, w, \frac{\partial w}{\partial x_i} , \frac{\partial^2 w}{\partial x_i \partial x_j}\right)\right)-u_t \leq 0
+\end{align*}
+
+Now, we can apply Lagrange's theorem to $F$ to get 
+
+\begin{align*}
+	Lv= \left\langle \nabla F(\xi(x, t)), \left(t, x, u, \frac{\partial u}{\partial x_i} , \frac{\partial^2 u}{\partial x_i \partial x_j}\right) \right\rangle-u_t \leq 0
+\end{align*}
+for a fixed $\xi(x, t)$.
+
+
+Thus, the difference $u$ of two sub-solutions to a non-linear differential problem is a sub-solution to a (different) \textit{linear} parabolic problem, as the derivatives of $F$ and $\xi$ do not depend on $u$ ($\xi$ can be chosen a-priori).
+
+%An equivalent condition for a nonlinear problem to be parabolic is that for any real vector $\xi$
+%\begin{align*}
+%	\sum_{i, j=1}^n F_{ij}\xi_i\xi_j >0
+%\end{align*} 
+%where $F_{ij}$ are the derivatives of $F$ with respect to $\frac{\partial^2 v}{\partial x_i \partial x_j}$. 
+We can thus see that this new problem must be parabolic, and apply the maximum principle and the Hopf's boundary point lemma to $u$. This can allow us to state the following two results which we will be using later:
+
+\begin{proposition}[Maximum principle for parabolic non-linear differential equations]
+	\label{firstapplication}
+	Suppose we have two solution $v$ and $w$ in the interval $[0, T]$ to the same parabolic non-linear differential equation (\ref{nonlinearexample}) on an bounded open set $\Omega$, but with different start conditions. Suppose also that $F$ is smooth on  $\overline{\Omega}$. Then, if $v>w$ in the interior of $\Omega$ at $t=0$ and $v\geq w$ on $\partial\Omega$,  $v>w$ for all $t\in[0, T]$ in the interior of $\Omega$.
+\end{proposition}
+
+\begin{proof}
+	$u=v-w\geq 0$ is a solution of a parabolic \textit{linear} differential equation, where the term independent of $u$ is bounded. Furthermore, if we take $c(x, t)$ it must be bounded by compactness. At $t=0$, $u>0$ in the interior of $\Omega$. If, at an interior point $x$, $v=w$ at a certain time $t=\tau$, $u(\tau, x)=0$, and thus $u$ is not constant. However, it attains minimum ($u=0$) at an interior point, thus by \ref{maximum_principle} it must be constant, a contradiction. 
+\end{proof}
+
+\begin{proposition}[Hopf's boundary point lemma for parabolic non-linear differential equations]
+	\label{secondapplication}
+	Suppose we have two solution $v$ and $w$ to the same parabolic non-linear differential equation (\ref{nonlinearexample}) in a region $E$, but with different start conditions. Suppose also that $F$ is smooth on  $\overline{\Omega}$. Let $u=v-w$ and suppose that the maximum of $u$ is attained at the point $P$. Furthermore, assume that the conditions on the shape of the region $E$ from theorem \ref{HopfBPL} hold. Then, 
+	\begin{align*}
+		\frac{\partial u}{\partial \nu}(P) >0
+	\end{align*}
+	where we take $\nu$ as the normal to $\partial\Omega$.
+\end{proposition}
+
+\begin{proof}
+	$u$ is a solution of a parabolic \textit{linear} differential equation, where  $c(x, t)$ is bounded by compactness. We can then apply \ref{HopfBPL} to $v$ (see also remark \ref{removecpositive}).
+\end{proof}
 
 \section{Class of Equations we analyze}
 
@@ -191,26 +285,34 @@ where $\nu$ is the inward normal to $X_t(M^n)$ at the point $X_t(x)$ and $\kappa
 
 \section{Parabolicity of the differential equation (\ref{evolutioneq})}\label{parabolic}
 
-{\vspace{10pt}\LARGE \bf [Questo paragrafo è figlio di quello che ho messo insieme tra math stackexchange e alcune paper, ma mi piacerebbe trovare una reference migliore, quantomeno da citare, un po' più chiara per la linearizzazione, e sul perché valgono il principio del massimo ed Hbpl.]}
 
-{\vspace{10pt}\LARGE \bf [Sistema/semplifica alla luce del paragrafo sulla non-linearit\`a, magari usa una definizione univoca]}
+The condition (\ref{parabolicità}) will  guarantee that the equation (\ref{evolutioneq}) is  parabolic equation. This may be confusing, as (\ref{evolutioneq}) does not make it obvious how to apply definition \ref{nonlinearpde}. 
 
-The condition (\ref{parabolicità}) will  guarantee that the equation (\ref{evolutioneq}) resembles a parabolic equation. This may be confusing, as (\ref{evolutioneq}) is a non-linear partial differential equation. 
+Alternatively, to classify a non-linear partial differential equation one has to understand how it behaves ``close to a solution" in the solutions space. We want to prove that very close to any solution, ``moving in any direction", the change in the equation is always a parabolic PDE. This will then tell us that our equation is parabolic, and that the theorems that apply to solutions of parabolic partial differential equations apply to our equation as well. 
 
-To classify a non-linear partial differential equation one has to understand how it behaves ``close to a solution" in the solutions space. We want to prove that very close to any solution, ``moving in any direction", the change in the equation is always a parabolic PDE. This will then tell us that our equation is parabolic, and that the theorems that apply to solutions of parabolic partial differential equations apply to our equation as well. To do so, we can substitute in our equation $X_t$ with $X_t+\varepsilon u_t$ to get:
+Like in \cite{huisken}, as $F$ is a symmetric function in the principal curvatures, we may interchangeably take $F$ to be a function of the Weingarten map tensor or of the second fundamental form, and thus we get:
 
 \begin{align*}
-		\frac{\partial X_t}{\partial t} + \varepsilon\frac{\partial u_t}{\partial t}  &= F(\kappa_1(X_t+\varepsilon u_t), \dots , \kappa_n(X_t+\varepsilon u_t)) \nu\\
-		\cancel{\frac{\partial X_t}{\partial t}} + \varepsilon\frac{\partial u_t}{\partial t}  &= (\cancel{F(\kappa_1(X_t), \dots , \kappa_n(X_t))} + \varepsilon DF(\delta\kappa_i(u_t)) +o(\varepsilon)) \nu \\
-		\varepsilon\frac{\partial u_t}{\partial t}  &= (\varepsilon DF(\delta\kappa_i(u_t)) +o(\varepsilon)) \nu
+	\frac{\partial X_t}{\partial t} &= F(h_{ij}(X_t)) \nu
 \end{align*}
-using the fact that $F$ is a $C^1$ function. We are interested in the behaviour for a small $\varepsilon$, so we consider the behaviour of the so-called linearisation of the PDE, by ignoring the $o(\varepsilon)$:
+
+To understand the behaviour close to a solution, we can substitute in our equation $X_t$ with a $X_t+\varepsilon u_t$ to get:
+
 \begin{align*}
-	\frac{\partial u_t}{\partial t}  &=  DF(\delta\kappa_i(u_t)) \nu
+		\frac{\partial X_t}{\partial t} + \varepsilon\frac{\partial u_t}{\partial t}  &= F(h_{ij}(X_t+\varepsilon u_t)) \nu\\
+		\cancel{\frac{\partial X_t}{\partial t}} + \varepsilon\frac{\partial u_t}{\partial t}  &= \left(\cancel{F(h_{ij}(X_t))} + \varepsilon DF( h_{ij}(u_t)) +o(\varepsilon)\right) \nu \\
+		\varepsilon\frac{\partial u_t}{\partial t}  &= (\varepsilon DF( h_{ij}(u_t)) +o(\varepsilon)) \nu
 \end{align*}
-Like in \cite{huisken}, as $F$ is a symmetric function in the principal curvatures, we may interchangeably take $F$ to be a function of the Weingarten map tensor or of the second fundamental form, and using the Weingarten Equations this becomes, implying Einstein's summation convention: 
+using the fact that $F$ is a $C^1$ function. 
+%Here, $\delta h_{ij}(u_t)=\frac{h_{ij}(X_t+\varepsilon u_t)-h_{ij}(X_t)}{\varepsilon}=\frac{h_{ij}(\varepsilon u_t)}{\varepsilon}=h_{ij}(u_t)$ by linearity of the definition of the second fundamental form. 
+We are interested in the behaviour for a small $\varepsilon$, so we consider the behaviour of the so-called linearisation of the PDE, i.e. the limit for $\varepsilon \rightarrow 0$; we want this PDE to be a parabolic equation:
 \begin{align*}
-	\frac{\partial u_t}{\partial t} &= \frac{\partial F}{\partial h_{i j}} g^{i k}g^{jl}h_{k l} \nu\\
+	\frac{\partial u_t}{\partial t}  &=  DF(h_{ij}(u_t)) \nu\\
+	\frac{\partial u_t}{\partial t} &= \frac{\partial F}{\partial h_{i j}} g^{i k}g^{jl}h_{k l}(u_t) \nu
+\end{align*}
+
+Using the Weingarten Equations this becomes, implying Einstein's summation convention: 
+\begin{align*}
 	\frac{\partial u_t}{\partial t} &= \frac{\partial F}{\partial h_{i j}} g^{i k}g^{jl}\left\langle \frac{\partial^2 u_t}{\partial x_k\partial x_l} , \nu \right\rangle \nu+ \mathrm{lower \ order \ terms}
 \end{align*}
 For the second order term to be positive definite, then, 
@@ -222,6 +324,9 @@ must be positive definite. Or equivalently, as the principal curvatures are the 
 	\frac{\partial F}{\partial \kappa_{i}} > 0
 \end{align*}
 
+\begin{oss}
+	{\em Looking closely at what we are doing, we are indeed computing the derivative of $F$: in fact, if one follows the same procedure in our scenario we find that $\varepsilon u_t$ is the difference of the two solutions and by taking the limit for $\varepsilon\rightarrow 0$ and considering the second order term, we are in fact computing the derivative of $F$ with respect to the second order term, and showing that at every solution $\sum_{i, j=1}^n F_{ij}\xi_i\xi_j >0$.}
+\end{oss}
 \begin{comment}
 	contenuto...
 If one considers the F which are linear in the $\kappa_{i}$, this yields:  
@@ -260,92 +365,7 @@ Suppose $X_0 : M^n \rightarrow \R^{n+1}$ is a smooth, closed hypersurface in $\R
 \end{theorem}
 
 
-\section{Applying the maximum principle to non-linear equations}
 
-We can now introduce an important observation shown in \cite{protterweinberger} that allows us to apply the maximum principle \ref{maxprincprotterweinberger} and Hopf's boundary point lemma \ref{HopfBPL} in some non-linear settings. 
-\begin{comment}
-	First, let's introduce an easier example from \cite{GidasNirenberg}: 
-	Suppose that $u$ solves:
-	\begin{align}
-		u_t-L u+f(u)=0 \label{non-linear}
-	\end{align}
-	For an elliptic operator $L$, and where $u_t=\frac{\partial u}{\partial t}$. We note that this differs from the usual parabolic equation because here $f$ depends from the solution $u$, potentially in non-trivial ways, making the equation non-linear. 
-	If a solution exists, and $f$ is a $C^1$ function, by the theorem of the mean, at any point $x$ in the domain of $u$ we can find a function $\xi(x)$ such that
-	\begin{align*}
-		f'(\xi(x))&=\frac{f(u(x))-f(0)}{u(x)-0}\\
-		f'(\xi(x))u&=f(u(x))-f(0)
-	\end{align*} 
-	If $u$ solves (\ref{non-linear}), and if $f(0)\leq0$, then 
-	\begin{align*}
-		u_t-L u+f(u)-f(0) &\geq 0\\
-		u_t-L u+ f'(\xi(x))u&\geq 0 \\
-		u_t-L u+ c(x)u&\geq 0
-	\end{align*}
-	Hence the function $u$ is the super-solution to a (different) linear parabolic partial differential equation and hence we can apply the maximum principle \ref{maxprincprotterweinberger} and Hopf's boundary point lemma \ref{HopfBPL} to solutions of (\ref{non-linear}) as long as the other hypothesis apply to $c(x)$. 
-\end{comment}
-First, we remind the reader of the following generalized version of the theorem of the mean:
-\begin{theorem}[Lagrange's theorem]
-	Given a convex open set $U\subseteq \R^n$ and a real function $F \in C^1(U)$, and given to points $x, y$ in $U$, there exists a point $z$ in the segment connecting $x$ and $y$ such that 
-	\begin{align*}
-		F(y)-F(x) =\left\langle \nabla F(z), (y-x) \right\rangle 
-	\end{align*}
-\end{theorem}
-Suppose that we have a solution to a non-linear parabolic problem $v$, i.e. $v$ solves:
-\begin{align}
-	Lu= F\left(t, x, v, \frac{\partial v}{\partial x_i} , \frac{\partial^2 v}{\partial x_i \partial x_j}\right)-v_t = f(x, t)\label{nonlinearexample}
-\end{align}
-for a non-linear elliptic operator $L$ in some region $E$, where we assume $F(t, x, y_i, z_{i,j})$ to be a given $C^1$ function. Suppose also that there is a $w$ which is a solution of the corresponding differential inequality:
-\begin{align*}
-	Lw= F\left(t, x, w, \frac{\partial w}{\partial x_i} , \frac{\partial^2 w}{\partial x_i \partial x_j}\right)-w_t \leq f(x, t)
-\end{align*}
-One can then consider $u = v-w$, and by combining the above we get: 
-
-\begin{align*}
-	Lv= \left( F\left(t, x, v, \frac{\partial v}{\partial x_i} , \frac{\partial^2 v}{\partial x_i \partial x_j}\right) - F\left(t, x, w, \frac{\partial w}{\partial x_i} , \frac{\partial^2 w}{\partial x_i \partial x_j}\right)\right)-u_t \leq 0
-\end{align*}
-
-Now, we can apply Lagrange's theorem to $F$ to get 
-
-\begin{align*}
-	Lv= \left\langle \nabla F(\xi(x, t)), \left(t, x, u, \frac{\partial u}{\partial x_i} , \frac{\partial^2 u}{\partial x_i \partial x_j}\right) \right\rangle-u_t \leq 0
-\end{align*}
-for a fixed $\xi(x, t)$.
-
-
-Thus, the difference $u$ of two sub-solutions to a non-linear differential problem is a sub-solution to a (different) \textit{linear} parabolic problem, as the derivatives of $F$ and $\xi$ do not depend on $u$ ($\xi$ can be chosen a-priori).
-
-An equivalent condition for a nonlinear problem to be parabolic is that for any real vector $\xi$
-\begin{align*}
-	\sum_{i, j=1}^n F_{ij}\xi_i\xi_j >0
-\end{align*} 
-where $F_{ij}$ are the derivatives of $F$ with respect to $\frac{\partial^2 v}{\partial x_i \partial x_j}$. 
-We can thus see that this new problem must be parabolic, and apply the maximum principle and the Hopf's boundary point lemma to $u$. This can allow us to state the following two results which we will be using later:
-
-\begin{proposition}[Maximum principle for parabolic non-linear differential equations]
-	\label{firstapplication}
-	Suppose we have two solution $v$ and $w$ in the interval $[0, T]$ to the same parabolic non-linear differential equation (\ref{nonlinearexample}) on an bounded open set $\Omega$, but with different start conditions. Then, if $v>w$ in the interior of $\Omega$ at $t=0$ and $v\geq w$ on $\partial\Omega$,  $v>w$ for all $t\in[0, T]$ in the interior of $\Omega$.
-\end{proposition}
-
-\begin{proof}
-	$u=v-w\geq 0$ is a solution of a parabolic \textit{linear} differential equation, where the term independent of $u$ is bounded. Furthermore, if we take $c(x, t)$ At $t=0$, $u>0$ in the interior of $\Omega$. If, at an interior point $x$, $v=w$ at a certain time $t=\tau$, $u(\tau, x)=0$, and thus $u$ is not constant. However, it attains minimum ($u=0$) at an interior point, thus by \ref{maximum_principle} it must be constant, a contradiction. 
-\end{proof}
-
-\begin{proposition}[Hopf's boundary point lemma for parabolic non-linear differential equations]
-\label{secondapplication}
-Suppose we have two solution $v$ and $w$ to the same parabolic non-linear differential equation (\ref{nonlinearexample}) in a region $E$, but with different start conditions. Let $u=v-w$ and suppose that the maximum of $u$ is attained at the point $P$. Furthermore, assume that the conditions on the shape of the region $E$ from theorem \ref{HopfBPL} hold. Then, 
-\begin{align*}
-	\frac{\partial u}{\partial \nu}(P) >0
-\end{align*}
-where we take $\nu$ as the normal to $\partial\Omega$.
-\end{proposition}
-
-\begin{proof}
-	$u$ is a solution of a parabolic \textit{linear} differential equation, where the term independent of $u$ is bounded. We can then apply \ref{HopfBPL} to $v$ (see also remark \ref{removecpositive}).
-\end{proof}
-
-\begin{oss}
-	{\em What we did in paragraph \ref{parabolic} was indeed computing the derivative of $F$: in fact, if one follows the same procedure in our scenario we find that $\varepsilon u$ is the difference of the two solutions and by taking the limit for $\varepsilon\rightarrow 0$ and considering the second order term, we are in fact computing the derivative of $F$ with respect to the second order term, and showing that at every solution $\sum_{i, j=1}^n F_{ij}\xi_i\xi_j >0$.}
-\end{oss}
 \section{Local representation as a graph of a solution of (\ref{evolutioneq})}
 As a first step, from the Corollary \ref{localgraphcorollary}, we can establish the following:
 
@@ -433,7 +453,7 @@ The main theorem is the following:
 		f \; : \; (x, t) &\mapsto x+\tilde{f}(x, t)\nu \\
 		f_\Pi \; : \; (x, t) &\mapsto x+\tilde{f}_\Pi(x, t)\nu 
 	\end{align*}
-	for appropriate functions $\tilde{f}:U\times (t-\varepsilon, t+\varepsilon)\rightarrow \R$ and $\tilde{f}_\Pi:U\times (t-\varepsilon, t+\varepsilon)\rightarrow \R$, where $\nu$ is a fixed unit vector normal to $T_{x_0}M_{t}$.  $\tilde{f}$ and $\tilde{f_\Pi}$ are solutions to the same second order PDE, which is parabolic by what was discussed in paragraph \ref{parabolic}, hence we can apply \ref{firstapplication} to conclude that $\tilde{f}\equiv\tilde{f_\Pi}$, and thus $M_{t,\Pi}$ and $M_{t}$ coincide in a neighbourhood of $(x, t)$. \\ Iterating the procedure on all boundary points of this neighbourhood, we find that the largest set on which they coincide must be an open set, but manifolds can only coincide on closed sets, and thus the two manifolds must completely coincide for all $\tau\leq T$, a contradiction.
+	for appropriate functions $\tilde{f}:U\times (t-\varepsilon, t+\varepsilon)\rightarrow \R$ and $\tilde{f}_\Pi:U\times (t-\varepsilon, t+\varepsilon)\rightarrow \R$, where $\nu$ is a fixed unit vector normal to $T_{x_0}M_{t}$.  $\tilde{f}$ and $\tilde{f_\Pi}$ are solutions to the same second order PDE, which is parabolic by what was discussed in paragraph \ref{parabolic}, hence we can apply Proposition \ref{firstapplication} to conclude that $\tilde{f}\equiv\tilde{f_\Pi}$, and thus $M_{t,\Pi}$ and $M_{t}$ coincide in a neighbourhood of $(x, t)$. \\ Iterating the procedure on all boundary points of this neighbourhood, we find that the largest set on which they coincide must be an open set, but manifolds can only coincide on closed sets, and thus the two manifolds must completely coincide for all $\tau\leq T$, a contradiction.
 	
 	(ii) Suppose instead that $V\in T_xM_t$  for some $t\in [0, t)$ and some $x\in M_t\cap \Pi$. Then $T_xM_t= T_xM_{t, \Pi}$ and in a neighbourhood of $(x, t)$ both $M_t$ and $M_{t, \Pi}$ are graphs of two smooth functions over $T_xM_t$ by \ref{localgraph}, i.e. again
 	\begin{align*}
@@ -444,7 +464,7 @@ The main theorem is the following:
 	\begin{align*}
 		\frac{\partial f}{\partial V}(x,t)=\alpha\frac{\partial f_\Pi}{\partial V}(x,t)
 	\end{align*}
-	for a positive $\alpha\in [0, +\infty)$, where we are taking $V$ as outward pointing normal to the boundary, because the graphs are both tangent to $T_xM_t$ and they have nonpositive derivative, as the point is a minimum on the boundary. At the same time, 
+	for a positive $\alpha\in [0, +\infty)$, where we are taking $V$ as outward pointing normal to the boundary, because the graphs are both tangent to $T_xM_t$ and they have non-positive derivative, as the point is a minimum on the boundary. At the same time, 
 	\begin{align*}
 		\frac{\partial f}{\partial V}(x,t)=-\frac{\partial f_\Pi}{\partial V}(x,t)
 	\end{align*}
@@ -456,7 +476,7 @@ The main theorem is the following:
 	\begin{align*}
 		\frac{\partial (f- f_\Pi)}{\partial V}(x,t)>0
 	\end{align*}
-	at a minimum on the boundary by \ref{secondapplication}, a contradiction.  
+	at a minimum on the boundary by Proposition \ref{secondapplication}, a contradiction.  
 \end{proof}
 The following is an immediate consequence of the main result:
 \begin{cor}
