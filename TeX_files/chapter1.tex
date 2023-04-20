@@ -14,9 +14,11 @@ One of the most important concepts in the geometry of immersed hypersurfaces is 
 	\label{Weingarten1} \frac{\partial^2 X^\alpha}{\partial x^i \partial x^j} - \Gamma^k_{ij}\frac{\partial X^\alpha}{\partial x^k}+\overline{\Gamma}^\alpha_{\beta \delta}\frac{\partial X^\beta}{\partial x^i}\frac{\partial X^\delta}{\partial x^k}=-h_{ij}\nu^\alpha \\
 	\label{Weingarten2} \frac{\partial \nu^\alpha}{\partial x^i}+\overline{\Gamma}^\alpha_{\beta \delta}\frac{\partial X^\beta}{\partial x^i} \nu^\delta = h_{ij}g^{jl}\frac{\partial X^\alpha}{\partial x^l}
 \end{align}
-where $\nu$ is the normal vector at the point and $A=\{h_{ij}\}$ is the second fundamental form. Being the second fundamental form, $A$ is symmetric and the eigenvalues of $A$ are the principal curvatures $\kappa_i$. 
-
-{\vspace{10pt}\LARGE \bf [Definizione esplicita di $h_{ij}$?]}
+where $\nu$ is the normal vector at the point and $A=\{h_{ij}\}$ is the second fundamental form, thus 
+\begin{align}
+	h_{ij}=\langle \nabla_i \nu , e_j \rangle
+\end{align}
+where $ \nu $ is the normal vector. Being the second fundamental form, $A$ is symmetric and the eigenvalues of $A$ are the principal curvatures $\kappa_i$. 
 
 % The Weingarten equations are important in the study of the local properties of immersed hypersurfaces, for example, the second kind equation relates the normal vector field to the shape operator and can be used to compute the mean curvature of the hypersurface. 
 
@@ -285,6 +287,8 @@ where $\nu$ is the inward normal to $X_t(M^n)$ at the point $X_t(x)$ and $\kappa
 
 \section{Parabolicity of the differential equation (\ref{evolutioneq})}\label{parabolic}
 
+
+{\vspace{10pt}\LARGE \bf [Controllare conto]}
 
 The condition (\ref{parabolicità}) will  guarantee that the equation (\ref{evolutioneq}) is  parabolic equation. This may be confusing, as (\ref{evolutioneq}) does not make it obvious how to apply definition \ref{nonlinearpde}. 
 
