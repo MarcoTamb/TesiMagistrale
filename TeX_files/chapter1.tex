@@ -102,11 +102,11 @@ Hopf's boundary point lemma is another important classical tool in the study of 
 It is often used to obtain estimates on the behavior of solutions near the boundary, and to prove the existence and uniqueness of solutions to boundary value problems. The lemma is named after the German mathematician Eberhard Hopf, who first formulated it in the 1950s. In \cite{protterweinberger} we find the following version of the Hopf's boundary point lemma:
 
 \begin{theorem}
-	Let u be a solution to the inequality 
+	Let u be a solution to the parabolic inequality 
 	\begin{align*}
-		Lu\geq 0
+		-u_t+Lu\geq 0
 	\end{align*} 
-	with $L$ a linear differential parabolic operator with bounded coefficients such that $c(x)\leq 0$,in a domain $E$, and let $E_t = \{(x, s) \in E | s \leq t\}$. Suppose the maximum $M$ of $u$ is attained at a point $P=(x, t)$ on the boundary $\partial E$. \\
+	with $L$ an elliptic linear differential operator with bounded coefficients such that $c(x)\leq 0$,in a domain $E$, and let $E_t = \{(x, s) \in E | s \leq t\}$. Suppose the maximum $M$ of $u$ is attained at a point $P=(x, t)$ on the boundary $\partial E$. \\
 	Assume that a sphere through $P$ can be constructed which is in $E_s$ such that
 	\begin{itemize}\itemsep0em 
 		\item tangent to $\partial E$ at $P$
@@ -167,9 +167,9 @@ It is often used to obtain estimates on the behavior of solutions near the bound
 \begin{oss}\label{removecpositive}
 	\em If $c(x)$ is now just bounded, we can consider, instead of $u$, $v= u e^{-\lambda t}$, thus, by change of variables 
 	\begin{align*}
-		Lv-\lambda v \geq 0
+		-v_t+Lv-\lambda v \geq 0
 	\end{align*}
-	whenever $Lu\geq 0$, and we can chose $\lambda$ large enough such that $c(x)-\lambda<0$ and thus we can remove the hypothesis $c(x)\leq0$ in both theorems when $c$ is bounded. 
+	whenever $-u_t+Lu\geq 0$, and we can chose $\lambda$ large enough such that $c(x)-\lambda<0$ and thus we can remove the hypothesis $c(x)\leq0$ in both theorems when $c$ is bounded. 
 \end{oss}
 
 \section{Applying the maximum principle to non-linear PDEs}
@@ -288,11 +288,9 @@ where $\nu$ is the inward normal to $X_t(M^n)$ at the point $X_t(x)$ and $\kappa
 \section{Parabolicity of the differential equation (\ref{evolutioneq})}\label{parabolic}
 
 
-{\vspace{10pt}\LARGE \bf [Controllare conto]}
-
 The condition (\ref{parabolicità}) will  guarantee that the equation (\ref{evolutioneq}) is  parabolic equation. This may be confusing, as (\ref{evolutioneq}) does not make it obvious how to apply definition \ref{nonlinearpde}. 
 
-Alternatively, to classify a non-linear partial differential equation one has to understand how it behaves ``close to a solution" in the solutions space. We want to prove that very close to any solution, ``moving in any direction", the change in the equation is always a parabolic PDE. This will then tell us that our equation is parabolic, and that the theorems that apply to solutions of parabolic partial differential equations apply to our equation as well. 
+In order to classify a non-linear partial differential equation one has to understand how it behaves ``close to a solution" in the solutions space. We want to prove that very close to any solution, ``moving in any direction", the change in the equation is always a parabolic PDE. This will then tell us that our equation is parabolic, and that the theorems that apply to solutions of parabolic partial differential equations apply to our equation as well. 
 
 Like in \cite{huisken}, as $F$ is a symmetric function in the principal curvatures, we may interchangeably take $F$ to be a function of the Weingarten map tensor or of the second fundamental form, and thus we get:
 
@@ -362,7 +360,7 @@ Il conto probabilmente è quello in \cite{hamilton}, pagina 262. Info sul nostro
 \end{comment}
 
 \section{An existence result}
-The paper from Huisken and Polden \cite{huisken} states the following comforting existence result for the class of equations we are analysing under very broad hypothesis. The same paper also includes a proof of the result with some more restrictive hypotheses. A complete proof is quite more involved. We will not use it, nor prove it, but we include it for completeness and peace of mind: 
+The paper from Huisken and Polden \cite{huisken} states the following comforting existence result for the class of equations we are analysing under very broad hypothesis. The same paper also includes a proof of the result with some more restrictive hypotheses. A complete proof is quite more involved. We will not use it, nor prove it, but it is included here for completeness and peace of mind: 
 
 \begin{theorem}[Short term existence of a solution for (\ref{evolutioneq})]
 Suppose $X_0 : M^n \rightarrow \R^{n+1}$ is a smooth, closed hypersurface in $\R^{n+1}$, such that (\ref{parabolicità}) holds at all points in $X_0$, i.e. for all the values of the principal curvatures $\kappa_{i}$ realized at some point on $X_0$. Then, (\ref{evolutioneq}) has a smooth solution, at least on some short time interval $[0, T)$, $T > 0$.  \label{existence}
@@ -414,7 +412,7 @@ Where the matrix $(H_{ij})_{ij}$ is the hessian of $f$. Thus, if one considers t
 
 %The Alexandrov Reflection method is a technique based on the Maximum Principle. 
 
-The key idea of the main result in the chapter is as follows: suppose we have an embedded smooth hypersurface $M^n$ evolving according to (\ref{evolutioneq}) and a fixed hyperplane $\Pi$, intersecting $M^n$. We can also consider $M^n_\Pi$, the reflection of $M^n$ with respect to $\Pi$, which will also evolve according to (\ref{evolutioneq}). Suppose that, at some time $t$, $M^n$ and  $M^n_\Pi$ touch outside of $\Pi$. We can consider $M^n$ and  $M^n_\Pi$ as local graphs over the same hyperplane $\Pi$, and we can show that these function evolve according to the same differential equation. Using the strong maximum principle and the Hopf boundary point lemma, then, one can conclude that the two functions coincide, and have been coinciding up until that point. We can then conclude that if  $M^n$ and  $M^n_\Pi$ only touch on $M^n\cap\Pi$ at the beginning of the evolution, then they will never touch elsewhere. We shall make this more precise in the following paragraph, loosely based on paragraph 2 in \cite{Chow}. 
+The key idea of the main result in this chapter is as follows: suppose we have an embedded smooth hypersurface $M^n$ evolving according to (\ref{evolutioneq}) and a fixed hyperplane $\Pi$, intersecting $M^n$. We can also consider $M^n_\Pi$, the reflection of $M^n$ with respect to $\Pi$, which will also evolve according to (\ref{evolutioneq}). Suppose that, at some time $t$, $M^n$ and  $M^n_\Pi$ touch outside of $\Pi$. We can consider $M^n$ and  $M^n_\Pi$ as local graphs over the same hyperplane $\Pi$, and we can show that these function evolve according to the same differential equation. Using the strong maximum principle and the Hopf boundary point lemma, then, one can conclude that the two functions coincide, and have been coinciding up until that point. We can then conclude that if  $M^n$ and  $M^n_\Pi$ only touch on $M^n\cap\Pi$ at the beginning of the evolution, then they will never touch elsewhere. We shall make this more precise in the following paragraph, loosely based on paragraph 2 in \cite{Chow}. 
 
 \section{Theorem 2.2 Chow}
 
