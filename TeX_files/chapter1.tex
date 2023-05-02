@@ -455,22 +455,18 @@ The main theorem is the following:
 		f \; : \; (x, t) &\mapsto x+\tilde{f}(x, t)\nu \\
 		f_\Pi \; : \; (x, t) &\mapsto x+\tilde{f}_\Pi(x, t)\nu 
 	\end{align*}
-	for appropriate functions $\tilde{f}:U\times (t-\varepsilon, t+\varepsilon)\rightarrow \R$ and $\tilde{f}_\Pi:U\times (t-\varepsilon, t+\varepsilon)\rightarrow \R$, where $\nu$ is a fixed unit vector normal to $T_{x_0}M_{t}$.  $\tilde{f}$ and $\tilde{f_\Pi}$ are solutions to the same second order PDE, which is parabolic by what was discussed in paragraph \ref{parabolic}, hence we can apply Proposition \ref{firstapplication} to conclude that $\tilde{f}\equiv\tilde{f_\Pi}$, and thus $M_{t,\Pi}$ and $M_{t}$ coincide in a neighbourhood of $(x, t)$. \\ Iterating the procedure on all boundary points of this neighbourhood, we find that the largest set on which they coincide must be an open set, but manifolds can only coincide on closed sets, and thus the two manifolds must completely coincide for all $\tau\leq T$, a contradiction.
+	for appropriate functions $\tilde{f}:U\times (t-\varepsilon, t+\varepsilon)\rightarrow \R$ and $\tilde{f}_\Pi:U\times (t-\varepsilon, t+\varepsilon)\rightarrow \R$, where $\nu$ is a fixed unit vector normal to $T_{x_0}M_{t}$.  $\tilde{f}$ and $\tilde{f_\Pi}$ are solutions to the same second order PDE, which is parabolic by what was discussed in paragraph \ref{parabolic}, hence we can apply Proposition \ref{firstapplication} to conclude that $\tilde{f}\equiv\tilde{f_\Pi}$, and thus $M_{t,\Pi}$ and $M_{t}$ coincide in a neighbourhood of $(x, t)$, a contradiction as we assumed that $t$ is the first $t$ where the manifold touch.
 	
 	(ii) Suppose instead that $V\in T_xM_t$  for some $t\in [0, t)$ and some $x\in M_t\cap \Pi$. Then $T_xM_t= T_xM_{t, \Pi}$ and in a neighbourhood of $(x, t)$ both $M_t$ and $M_{t, \Pi}$ are graphs of two smooth functions over $T_xM_t$ by \ref{localgraph}, i.e. again
 	\begin{align*}
 		f \; : \; (x, t) &\mapsto x+\tilde{f}(x, t)\nu \\
 		f_\Pi \; : \; (x, t) &\mapsto x+\tilde{f}_\Pi(x, t)\nu 
 	\end{align*} 
-	Moreover, in $\overline{H^-(\Pi)}$, $f_\Pi\geq f$, because $M^n_\Pi\cap H^-(\Pi)\subset \mathrm{int}(M^n)\cap H^-(\Pi)$. Finally, $f(x, t)=f_\Pi (x, t)$, and $f(x, t)$ is a minimum point for both functions. Also, we must have
+	Moreover, in $\overline{H^-(\Pi)}$, $f_\Pi\geq f$, because $M^n_\Pi\cap H^-(\Pi)\subset \mathrm{int}(M^n)\cap H^-(\Pi)$. Finally, $f(x, t)=f_\Pi (x, t)$, hence $f_\Pi-f (x, t)=0$, and thus  $(x, t)$ is a minimum point on the boundary for $f_\Pi-f$. Also, we must have
 	\begin{align*}
-		\frac{\partial f}{\partial V}(x,t)=\alpha\frac{\partial f_\Pi}{\partial V}(x,t)
+		\frac{\partial f}{\partial V}(x,t)=\frac{\partial f_\Pi}{\partial V}(x,t)
 	\end{align*}
-	for a positive $\alpha\in [0, +\infty)$, where we are taking $V$ as outward pointing normal to the boundary, because the graphs are both tangent to $T_xM_t$ and they have non-positive derivative, as the point is a minimum on the boundary. At the same time, 
-	\begin{align*}
-		\frac{\partial f}{\partial V}(x,t)=-\frac{\partial f_\Pi}{\partial V}(x,t)
-	\end{align*}
-	by reflection. Hence $\frac{\partial f}{\partial V}(x,t)=\frac{\partial f_\Pi}{\partial V}(x,t)=0$. Thus, 
+	because the graphs are both tangent to $T_xM_t$, and $V$ here is the outward pointing normal to the boundary by definition of the reflection. Thus, 
 	\begin{align*}
 		\frac{\partial (f- f_\Pi)}{\partial V}(x,t)=0
 	\end{align*}
