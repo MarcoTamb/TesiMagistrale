@@ -288,8 +288,9 @@ where $\nu$ is the inward normal to $X_t(M^n)$ at the point $X_t(x)$ and $\kappa
 \section{Parabolicity of the differential equation (\ref{evolutioneq})}\label{parabolic}
 
 
-The condition (\ref{parabolicità}) will  guarantee that the equation (\ref{evolutioneq}) is  parabolic equation. This may be confusing, as (\ref{evolutioneq}) does not make it obvious how to apply definition \ref{nonlinearpde}. 
+The condition (\ref{parabolicità}) will  guarantee that equation (\ref{evolutioneq}) is a parabolic equation. This may be confusing, as (\ref{evolutioneq}) does not make it obvious how to apply definition \ref{nonlinearpde}. 
 
+{\vspace{10pt}\LARGE \bf [FIX PARAGRAPH]}
 In order to classify a non-linear partial differential equation one has to understand how it behaves ``close to a solution" in the solutions space. We want to prove that very close to any solution, ``moving in any direction", the change in the equation is always a parabolic PDE. This will then tell us that our equation is parabolic, and that the theorems that apply to solutions of parabolic partial differential equations apply to our equation as well. 
 
 Like in \cite{huisken}, as $F$ is a symmetric function in the principal curvatures, we may interchangeably take $F$ to be a function of the Weingarten map tensor or of the second fundamental form, and thus we get:
@@ -300,20 +301,46 @@ Like in \cite{huisken}, as $F$ is a symmetric function in the principal curvatur
 
 To understand the behaviour close to a solution, we can substitute in our equation $X_t$ with a $X_t+\varepsilon u_t$ to get:
 
-\begin{align*}
-		\frac{\partial X_t}{\partial t} + \varepsilon\frac{\partial u_t}{\partial t}  &= F(h_{ij}(X_t+\varepsilon u_t)) \nu\\
-		\cancel{\frac{\partial X_t}{\partial t}} + \varepsilon\frac{\partial u_t}{\partial t}  &= \left(\cancel{F(h_{ij}(X_t))} + \varepsilon DF( h_{ij}(u_t)) +o(\varepsilon)\right) \nu \\
-		\varepsilon\frac{\partial u_t}{\partial t}  &= (\varepsilon DF( h_{ij}(u_t)) +o(\varepsilon)) \nu
-\end{align*}
-using the fact that $F$ is a $C^1$ function. 
-%Here, $\delta h_{ij}(u_t)=\frac{h_{ij}(X_t+\varepsilon u_t)-h_{ij}(X_t)}{\varepsilon}=\frac{h_{ij}(\varepsilon u_t)}{\varepsilon}=h_{ij}(u_t)$ by linearity of the definition of the second fundamental form. 
-We are interested in the behaviour for a small $\varepsilon$, so we consider the behaviour of the so-called linearisation of the PDE, i.e. the limit for $\varepsilon \rightarrow 0$; we want this PDE to be a parabolic equation:
-\begin{align*}
-	\frac{\partial u_t}{\partial t}  &=  DF(h_{ij}(u_t)) \nu\\
-	\frac{\partial u_t}{\partial t} &= \frac{\partial F}{\partial h_{i j}} g^{i k}g^{jl}h_{k l}(u_t) \nu
-\end{align*}
+\begin{align}
+		\frac{\partial X_t}{\partial t} + \varepsilon\frac{\partial u_t}{\partial t}  &= F(h_{ij}(X_t+\varepsilon u_t)) \nu_{(X_t+\varepsilon u_t)}\label{linearizingevolutioneq}
+\end{align}
+where we mean that  $\nu_{(X_t+\varepsilon u_t)}$ is the normal to the perturbed immersion. 
+We are interested in the behaviour of this equation for a small $\varepsilon$. This equation when taking the limit for $\varepsilon \rightarrow 0$ is the so-called linearisation of the PDE; we want this PDE to be a parabolic equation to apply our results.
 
-Using the Weingarten Equations this becomes, implying Einstein's summation convention: 
+We can use the Weingarten equation (\ref{Weingarten1}) to write the RHS explicitly:
+
+\begin{align*}
+	h_{ij}(X_t& + \varepsilon u_t )=-\left\langle v, \nu_{(X_t+\varepsilon u_t)}\right\rangle\; \mathrm{where}\\
+	v^\alpha=&\; \frac{\partial^2 X_t^\alpha}{\partial x^i \partial x^j} - \Gamma^k_{ij}\frac{\partial X_t^\alpha}{\partial x^k}+\overline{\Gamma}^\alpha_{\beta \delta}\frac{\partial X_t^\beta}{\partial x^i}\frac{\partial X_t^\delta}{\partial x^k} +\\ %epsilon
+	&+\varepsilon\left(\frac{\partial^2 u_t^\alpha}{\partial x^i \partial x^j} - \Gamma^k_{ij}\frac{\partial u_t^\alpha}{\partial x^k}+\overline{\Gamma}^\alpha_{\beta \delta}\left(\frac{\partial X_t^\beta}{\partial x^i}\frac{\partial u_t^\delta}{\partial x^k} + \frac{\partial u_t^\beta}{\partial x^i}\frac{\partial X_t^\delta}{\partial x^k}\right)\right)+\\
+	%epsilon squared
+	&+\varepsilon^2\left(\overline{\Gamma}^\alpha_{\beta \delta}\frac{\partial u_t^\beta}{\partial x^i}\frac{\partial u_t^\delta}{\partial x^k}\right) \\
+	v^\alpha=&\; w +\varepsilon\left(\frac{\partial^2 u_t^\alpha}{\partial x^i \partial x^j} + \mathrm{lower \; order \;  terms}\right) + o(\varepsilon)
+\end{align*}
+where $h_{ij}(X_t)=-\left\langle w, \nu_{(X_t+\varepsilon u_t)}\right\rangle$. Putting it all together in the first line:
+\begin{align*}
+	h_{ij}(X_t + \varepsilon u_t ) &=-\left\langle  w +\varepsilon\left(\frac{\partial^2 u_t}{\partial x^i \partial x^j} + \mathrm{lower \; order \;  terms}\right) + o(\varepsilon), \nu_{(X_t+\varepsilon u_t)}\right\rangle\\
+	&= h_{ij}(X_t) -\varepsilon\left\langle  \left(\frac{\partial^2 u_t}{\partial x^i \partial x^j} + \mathrm{lower \; order \;  terms}\right), \nu_{(X_t+\varepsilon u_t)}\right\rangle + o(\varepsilon)\\
+		&= h_{ij}(X_t) -\varepsilon H + o(\varepsilon)
+\end{align*}
+We can then expand F in the RHS of the equation (\ref{linearizingevolutioneq}) to the first order, as it is a $C^1$ function: 
+\begin{align*}
+	\cancel{\frac{\partial X_t}{\partial t}} + \varepsilon\frac{\partial u_t}{\partial t}  &= \left(\cancel{F(h_{ij}(X_t)) }
+	- \varepsilon DF (H) + o(\varepsilon)\right)\nu_{(X_t+\varepsilon u_t)}\\
+	\varepsilon\frac{\partial u_t}{\partial t}  &= - \varepsilon\left(
+	\frac{\partial F}{\partial h_{i j}} g^{i k}g^{jl}\frac{\partial^2 u_t}{\partial x^i \partial x^j}  + \mathrm{lower \; order \;  terms}\right)\nu_{(X_t+\varepsilon u_t)} + o(\varepsilon)\\
+	\frac{\partial u_t}{\partial t}  &= 
+	- \frac{\partial F}{\partial h_{i j}} g^{i k}g^{jl}\frac{\partial^2 u_t}{\partial x^i \partial x^j} \nu_{(X_t+\varepsilon u_t)} + \mathrm{lower \; order \;  terms} + o(1)
+	\end{align*}
+Using a similar line of reasoning for $\nu_{(X_t+\varepsilon u_t)}$ to only keep the highest order terms, using \ref{Weingarten2},  and letting $\varepsilon\rightarrow 0$, we get to: 
+
+%Here, $\delta h_{ij}(u_t)=\frac{h_{ij}(X_t+\varepsilon u_t)-h_{ij}(X_t)}{\varepsilon}=\frac{h_{ij}(\varepsilon u_t)}{\varepsilon}=h_{ij}(u_t)$ by linearity of the definition of the second fundamental form. 
+%\begin{align*}
+%	\frac{\partial u_t}{\partial t}  &=  DF(h_{ij}(u_t)) \nu\\
+%	\frac{\partial u_t}{\partial t} &= \frac{\partial F}{\partial h_{i j}} g^{i k}g^{jl}h_{k l}(u_t) \nu
+%\end{align*}
+%
+%Using the Weingarten Equations this becomes, implying Einstein's summation convention: 
 \begin{align*}
 	\frac{\partial u_t}{\partial t} &= \frac{\partial F}{\partial h_{i j}} g^{i k}g^{jl}\left\langle \frac{\partial^2 u_t}{\partial x_k\partial x_l} , \nu \right\rangle \nu+ \mathrm{lower \ order \ terms}
 \end{align*}
@@ -326,8 +353,12 @@ must be positive definite. Or equivalently, as the principal curvatures are the 
 	\frac{\partial F}{\partial \kappa_{i}} > 0
 \end{align*}
 
+\begin{comment}
+	{\em Looking more closely at what we are doing, one can prove that it is equivalent to follow this linearisation procedure or to take the derivatives of $F$ with respect to the second order terms.}
+\end{comment}
+
 \begin{oss}
-	{\em Looking closely at what we are doing, we are indeed computing the derivative of $F$: in fact, if one follows the same procedure in our scenario we find that $\varepsilon u_t$ is the difference of the two solutions and by taking the limit for $\varepsilon\rightarrow 0$ and considering the second order term, we are in fact computing the derivative of $F$ with respect to the second order term, and showing that at every solution $\sum_{i, j=1}^n F_{ij}\xi_i\xi_j >0$.}
+	{\em While in this chapter we are using the standard metric of $\R^n$, the proof above is valid using any other metric.}
 \end{oss}
 \begin{comment}
 	contenuto...
