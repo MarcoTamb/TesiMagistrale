@@ -1,11 +1,12 @@
 % !TeX spellcheck = en_GB
-\documentclass[a4paper,12pt]{book}
+\documentclass[a4paper, 12pt]{book}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{amsthm}
+\usepackage{array}
 \usepackage{mathtools}
 \usepackage{graphicx}
 \usepackage{hyperref}
@@ -14,6 +15,8 @@
 \usepackage{subcaption}
 \usepackage{comment}
 \usepackage{tikz}
+\usepackage{geometry}
+\usepackage{lipsum}
 \usetikzlibrary{arrows, automata, backgrounds, calendar, chains, matrix, mindmap, patterns, petri, shadows, shapes.geometric, shapes.misc, spy, trees}
 %\usetikzlibrary{decorations.text}
 
@@ -46,16 +49,33 @@
 %\renewcommand{\proofname}{Dimostrazione della sufficienza}\proof}{\endproof}
 %
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\ttl}{TO BE CONFIRMED WHEN IT IS DONE}
 
 \author{Marco Tamburro \\ Relatore: Carlo Sinestrari}
-\title{To Be Confirmed}
+\title{\ttl}
 \date{\today}
+
+\newenvironment{localsize}[1]
+{%
+	\clearpage
+	\let\orignewcommand\newcommand
+	\let\newcommand\renewcommand
+	\makeatletter
+	\input{size#1.clo}%
+	\makeatother
+	\let\newcommand\orignewcommand
+}
+{%
+	\clearpage
+}
 
 \begin{document}
 
+%\maketitle 
 \frontmatter
-%\maketitle
-\include{./TeX_files/frontespizio}
+\begin{localsize}{11}
+	\include{./TeX_files/frontespizio}
+\end{localsize}
 \tableofcontents
 
 \phantomsection
