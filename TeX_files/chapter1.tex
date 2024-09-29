@@ -1,7 +1,7 @@
 % !TeX spellcheck = en_GB
 \chapter{The Alexandrov Reflection Method}
 
-\section{Geometry of immersed hypersurfaces (da espandere/sistemare)}
+\section{Geometry of immersed hypersurfaces (da espandere?)}
 
 
 The study of immersed hypersurfaces is a fundamental topic in differential geometry, and is especially important in the field of geometric analysis. An immersed hypersurface $X: M^n \rightarrow \overline{M}^{n+1}$ is a submanifold of a higher-dimensional space that is embedded in that space in such a way that the submanifold has the same dimension as the space in which it is embedded minus one. In other words, it is a submanifold of codimension one. We will always assume the embedding to be smooth. The most common case is $\overline{M}^{n+1}=\R^{n+1}$, usually extensively studied in undergraduate courses when $n=2$. We will be assuming that the embedding is also isometric, i.e. the metric $g$ on $M^n$ is the one induced by $(\overline{M}^{n+1}, \overline{g})$. \\
@@ -11,7 +11,7 @@ $M^{n}$ is a smooth vector bundle on $M^{n}$:
 	X^{*}T\overline{M}^{n+1}=T\overline{M}^{n+1}|_{M^n}= \amalg_{p \in M^n} T_p\overline{M}^{n+1}
 \end{align*} 
 
-One of the most important concepts in the geometry of immersed hypersurfaces is the concept of a normal vector field. The normal vector field $\nu$ is a vector field on the pullback vector bundle $X^* TE$ on the manifold $M^n$ that is perpendicular to the tangent space of the hypersurface at each point. At each point $p$:
+One of the most important concepts in the geometry of immersed hypersurfaces is the concept of a normal vector field. The normal vector field $\nu$ is a section of the pullback vector bundle $X^* TM^{n+1}$ on the manifold $M^n$ that is perpendicular to the tangent space of $M^n$ at each point. At each point $p$:
 \begin{align*}
 	T_p\overline{M}^{n+1}=T_pM^{n}\oplus N_pM^{n}
 \end{align*} 
@@ -30,45 +30,86 @@ Clearly, taking $\overline{\nabla}$ to be the Levi-Civita connection on $(\overl
 \end{defin}
 It is a bilinear symmetric tensor because $TM^n$ is involutive in $T\overline{M}^{n+1}$ and depends only on the local value of $v$ and $w$ by symmetry. we can therefore write it as
 \begin{align*}
-	\mathrm{I\!I} (v, w) = v^T A w = h_{ij}v^iw^j
+	\mathrm{I\!I} (v, w) = -(h_{ij}v^iw^j)\nu
 \end{align*} 
-for some matrix $A=\{h_{ij}\}$. we can define the principal curvatures of the hypersurface, as the eigenvalues of the second fundamental form.
+for some matrix $A(p)=\{h_{ij}\}$. we can define the principal curvatures of the hypersurface, as the eigenvalues of this matrix.
 
-It is also possible to check that $(\overline{\nabla}_v w )^\top$ satisfies the definition the Levi-Civita connection on $(M^n, g)$, therefore from uniqueness:
+It is also possible to check that $(\overline{\nabla}_v w )^\top$ satisfies the definition the Levi-Civita connection on $(M^n, g)$, therefore, from its uniqueness:
 \begin{align*}
 	\nabla_v w &=  (\overline{\nabla}_v w )^\top	\\
 	\overline{\nabla}_v w &= \nabla_v w  + \mathrm{I\!I} (v, w) 
 \end{align*} 
-This result is known as the {\em Gauss Formula}. 
+where $\nabla$ is the Levi-Civita connection on $(M^n, g)$. This result is known as the {\em Gauss Formula}. It has to be noted however that we are implicitly considering tangent vectors that are not in the same space. Indeed, making that more explicit, the formula should be:
+\begin{align*}
+	\overline{\nabla}_{X_*v} X_* w &= X_* (\nabla_v w)  + \mathrm{I\!I} (v, w) 
+\end{align*}
 
 \begin{proposition}
-	\textbf{\em (The Weingarten Equations)} If $v, w \in TM^n$ and $N \in NM^n$, if one considers the corresponding derivations in $T\overline{M}^{n+1}$ the following equation holds:
+	\textbf{\em (The Weingarten Equation)} If $v, w \in TM^n$ and $\nu \in NM^n$, if one considers the corresponding derivations in $T\overline{M}^{n+1}$ the following equation holds:
 	\begin{align*}
-			\left\langle \overline{\nabla}_v N, w \right\rangle_{\overline{g}} = - \left\langle N, \mathrm{I\!I} (v, w) \right\rangle_{\overline{g}}
+			\left\langle \overline{\nabla}_v \nu, w \right\rangle_{\overline{g}} = - \left\langle \nu, \mathrm{I\!I} (v, w) \right\rangle_{\overline{g}}
 	\end{align*}
 \end{proposition}
 \begin{proof}
-	As $\left\langle N, w \right\rangle_{\overline{g}}\equiv 0$ on $M$, 
+	As $\left\langle \nu, w \right\rangle_{\overline{g}}\equiv 0$ on $M$, 
 	\begin{align*}
-		0&=v\left\langle N, w \right\rangle_{\overline{g}}\\
-		&=\left\langle  \overline{\nabla}_v N, w \right\rangle_{\overline{g}} + \left\langle  N, \overline{\nabla}_v w \right\rangle_{\overline{g}}\\
-		&=\left\langle \overline{\nabla}_v N, w \right\rangle_{\overline{g}} + \left\langle N, \mathrm{I\!I} (v, w) \right\rangle_{\overline{g}}
+		0&=v\left\langle \nu, w \right\rangle_{\overline{g}}\\
+		&=\left\langle  \overline{\nabla}_v \nu, w \right\rangle_{\overline{g}} + \left\langle  \nu, \overline{\nabla}_v w \right\rangle_{\overline{g}}\\
+		&=\left\langle \overline{\nabla}_v \nu, w \right\rangle_{\overline{g}} + \left\langle \nu, \mathrm{I\!I} (v, w) \right\rangle_{\overline{g}}
 	\end{align*}
 	applying the Gauss Formula and the fact that $\nabla_v w \in TM^n$ in the last step
 \end{proof}
+It is also usual to define the associated Weingarten map, which is the linear map between sections of $M$  $s:\Gamma(M)\rightarrow\Gamma(M)$ satisfying:
+\begin{align*}
+	\left\langle s(v), w \right\rangle_{g} = \left\langle \nu, \mathrm{I\!I} (v, w) \right\rangle_{\overline{g}}
+\end{align*}
+the linear map $s$ is also known as the {\em shape operator of $M$}. 
+
+Combining this with the formula above, taking into account that it holds for a generic $w \in TM$:
+\begin{align*}
+	s(v) = -(\overline{\nabla}_v \nu)^\top
+\end{align*}
+
 
 We are going to use these equations in local coordinates, in the form shown below. 
 \begin{proposition}
-	The Weingarten Equations can be expressed in local coordinates as:
+	The above equations in local coordinates are equivalent to the following equations:
 	\begin{align}
 		\label{Weingarten1} \frac{\partial^2 X^\alpha}{\partial x^i \partial x^j} - \Gamma^k_{ij}\frac{\partial X^\alpha}{\partial x^k}+\overline{\Gamma}^\alpha_{\beta \delta}\frac{\partial X^\beta}{\partial x^i}\frac{\partial X^\delta}{\partial x^k}=-h_{ij}\nu^\alpha \\
 		\label{Weingarten2} \frac{\partial \nu^\alpha}{\partial x^i}+\overline{\Gamma}^\alpha_{\beta \delta}\frac{\partial X^\beta}{\partial x^i} \nu^\delta = h_{ij}g^{jl}\frac{\partial X^\alpha}{\partial x^l}
 	\end{align} 
-	where $\nu$ is the normal unit vector at the point and $A=\{h_{ij}\}$ is the second fundamental form, thus $h_{ij}=\langle \nabla_i \nu , e_j \rangle$
+	where $\nu$ is the normal unit vector at the point and $A=\{h_{ij}\}$ is the second fundamental form, thus $h_{ij}= \left\langle  \nu, \overline{\nabla}_{\overline{\partial_i}} \overline{\partial_j} \right\rangle_{\overline{g}} $
 \end{proposition}
 \begin{proof}
-	{\vspace{10pt}\LARGE \bf [DA SCRIVERE]}
-	\href{https://math.stackexchange.com/questions/4827394/derivation-of-the-gauss-weingarten-equations-for-an-abstract-hypersurface-immers}{Vedi qui}
+	For any connection $\nabla_\cdot$ and any derivations $v=v^i \partial_i$ and $w=w^j \partial_j$:
+	\begin{align*}
+		\nabla_{v} w = \nabla_{(v^i \partial_i)} (w^j \partial_j) = v(w^k)\partial_k + (v^i w^j \Gamma^{k}_{ij})\partial_k
+	\end{align*}
+	Let $\partial_1, \dots \partial_n$ be a basis of $TM^n$ at a point, and let $\overline{\partial_i} = X_*\partial_i$, $\overline{\partial_{n+1}}=\nu$.
+	Let's consider the Gauss Formula for two generic $\partial_i$, $\partial_j$, using roman letters for indices varying between $1$ and $n$ and greek letters for indices varying between $1$ and $n+1$, and $\delta^{ij}$ the Kronecker delta:
+	\begin{align*}
+		\overline{\nabla}_{X_*\partial_i} X_* \partial_j &= X_* (\nabla_{\partial_i} \partial_j)  + \mathrm{I\!I} (\partial_i, \partial_j) \\
+		(\overline{\partial_i}(X_*\partial_j)^\alpha) \partial_\alpha + ((X_*\partial_i)^\beta (X_*\partial_j)^\delta \overline{ \Gamma}^{\alpha}_{\beta \delta})\partial_\alpha &= X_* (\cancel{(\partial_i \delta^{jk})\partial_k} +  \delta^{ij}\Gamma^{k}_{ij}\partial_k)  - h_{ij}\nu^\alpha \overline{\partial_\alpha}\\
+		(\overline{\partial_i}(X_*\partial_j)^\alpha) \partial_\alpha + ((X_*\partial_i)^\beta (X_*\partial_j)^\delta\overline{ \Gamma}^{\alpha}_{\beta\delta})\partial_\alpha &= X_* (\Gamma^{k}_{ij}\partial_k)  - h_{ij}\nu^\alpha \overline{\partial_\alpha}\\
+		\frac{\partial^2 X^\alpha}{\partial x^i \partial x^j} +\overline{\Gamma}^\alpha_{\beta \delta}\frac{\partial X^\beta}{\partial x^i}\frac{\partial X^\delta}{\partial x^k}&=\Gamma^k_{ij}\frac{\partial X^\alpha}{\partial x^k}-h_{ij}\nu^\alpha
+	\end{align*}
+	Which is the formula (\ref{Weingarten1}). 
+	To get the second formula, first note that $s(v) = -(\overline{\nabla}_v \nu)^\top$. We then compute $-\langle s(\partial_i), \overline{\partial_\alpha}\rangle_{\overline{g}}$:
+	\begin{align*}
+		\left\langle\overline{\nabla}_{\overline{\partial_i}} \nu, \overline{\partial_\alpha}\right\rangle_{\overline{g}} &= -\left\langle s(\partial_i), \overline{\partial_\alpha}\right\rangle_{\overline{g}}\\
+		\left\langle \left(\frac{\partial \nu^\alpha}{\partial x^i}+\overline{\Gamma}^\alpha_{\beta \delta}\frac{\partial X^\beta}{\partial x^i} \nu^\delta \right)\overline{\partial_\alpha}, \overline{\partial_\alpha} \right\rangle_{\overline{g}}&= h_{ij}g^{jl}\frac{\partial X^\alpha}{\partial x^l}
+	\end{align*}
+	leading to (\ref{Weingarten2}).
+	\begin{comment}
+	Similarly, taking the Weingarten Equation and the definition of $h_{ij}$:
+	\begin{align*}
+		h_{ij} &=\left\langle  \nu, \overline{\nabla}_{\overline{\partial_i}} \overline{\partial_j} \right\rangle_{\overline{g}} = - \left\langle  \overline{\nabla}_{\overline{\partial_i}} \nu, \overline{\partial_j} \right\rangle_{\overline{g}}\\
+		&= - \left\langle \overline{\partial_i}(\nu^\alpha) \overline{\partial_{\alpha}} + ((\overline{\partial_i})^\beta \nu^\delta \Gamma^{\alpha}_{\beta\delta})\overline{\partial_\alpha}, \overline{\partial_j} \right\rangle_{\overline{g}} \\
+		&= - \left\langle  (\frac{\partial \nu^\alpha}{\partial x^i}+\overline{\Gamma}^\alpha_{\beta \delta}\frac{\partial X^\beta}{\partial x^i} \nu^\delta )\overline{\partial_\alpha}, \overline{\partial_j} \right\rangle_{\overline{g}}		
+	\end{align*}
+	Which leads to (\ref{Weingarten2}) by applying the inverse of the metric $g^{jl}$ to both sides. 
+	contenuto...
+	\end{comment}
 \end{proof}
 
 
