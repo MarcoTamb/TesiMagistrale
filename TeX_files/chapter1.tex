@@ -370,23 +370,54 @@ In what follows, we will focus on manifolds embedded in spaces which have consta
 
 As in \cite{italiani}, we will use the symbol $\mathbb{M}^n$ to indicate a Riemannian manifold that can be replaced by any one of  $\mathbb{S}^n$, $\mathbb{R}^n$ or $\mathbb{H}^n$: the $n$-dimensional sphere, Euclidean plane or Hyperbolic space respectively. 
 
-We will also use use the symbol $\mathbb{M}^n_+$ to indicate a Riemannian manifold that can be replaced by $\mathbb{S}^n_+$, $\mathbb{R}^n$ or $\mathbb{H}^n$: the $n$-dimensional hemisphere, Euclidean plane or Hyperbolic space, respectively
+We will also use use the symbol $\mathbb{M}^n_+$ to indicate a Riemannian manifold that can be replaced by $\mathbb{S}^n_+$, $\mathbb{R}^n$ or $\mathbb{H}^n$: the $n$-dimensional hemisphere, Euclidean plane or Hyperbolic space, respectively.
 
 
 \begin{defin}
-	$\mathbb{H}^n$
+	$\mathbb{H}^n$ is the {\em $n$-dimensional hyperbolic plane}. We can define it as the half space $\{x\in \R^n|x_n > 0\}$ with the Riemannian metric
+	\begin{align*}
+		g_x=\frac{1}{x_n^2} \langle\cdot, \cdot \rangle
+	\end{align*}
+	where $\langle\cdot, \cdot \rangle$ is the Euclidean dot product on $\R^n$
 \end{defin}
 
 
 \begin{oss}
-	$\mathbb{H}^n$ - modello alternativo
+	\em This is not the only way we could define the hyperbolic space $\mathbb{H}^n$. Another alternative is taking the $n$-dimensional disc $D^n = \{x\in \R^n|\lVert x \rVert  < 1 \}$ with the Riemannian metric 
+	\begin{align*}
+		g_x=\frac{4}{(1-\lVert x \rVert^2)^2} \langle\cdot, \cdot \rangle
+	\end{align*}
+	where $\langle\cdot, \cdot \rangle$ is the Euclidean dot product on $\R^n$.
 \end{oss}
 
 \begin{oss}
-	Let $\mathbb{S}^n \setminus \{P\}$ be the standard $n$-dimensional unitary sphere minus a point, with the standard induced Euclidean metric. Through stereographic projection it is isometric to the 
+	\em Let $\mathbb{S}^n \setminus \{P\}$ be the standard $n$-dimensional unitary sphere minus a point, with the standard induced Euclidean metric. Through stereographic projection it is isometric to $\R^n$ with metric:
+	\begin{align*}
+		g_x=\frac{4}{(1+\lVert x \rVert^2)^2} \langle\cdot, \cdot \rangle
+	\end{align*}
+	where $\langle\cdot, \cdot \rangle$ is again the Euclidean dot product on $\R^n$.
 \end{oss}
 
-We will now construct the moving planes in $\mathbb{M}^n_+$:
+
+\begin{oss}
+	\em The models above have curvature $\pm 1$. For other values of the curvature one has to consider the following Riemannian metrics
+	\begin{itemize}
+		\item for the half-space model of hyperbolic space:
+		\begin{align*}
+			g_x=\frac{R^2}{x_n^2} \langle\cdot, \cdot \rangle
+		\end{align*}
+		\item for the Poincaré ball model of hyperbolic space one has to take the disk with radius $R$ and:
+		\begin{align*}
+			g_x=\frac{4 R^4}{(R^2-\lVert x \rVert^2)^2} \langle\cdot, \cdot \rangle
+		\end{align*}
+		\item For the stereographic projection of a sphere with radius $R$:
+		\begin{align*}
+			g_x=\frac{4R^4}{(R^2+\lVert x \rVert^2)^2} \langle\cdot, \cdot \rangle
+		\end{align*}
+	\end{itemize}
+\end{oss}
+
+We will now define reflections in $\mathbb{M}^n$: 
 
 {\vspace{10pt}\LARGE \bf [DA SCRIVERE]}
 
