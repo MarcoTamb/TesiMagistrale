@@ -1,5 +1,5 @@
 % !TeX spellcheck = en_GB
-\chapter{The Chow Critical Planes Result}
+\chapter{The Chow-Gulliver Critical Planes Result}
 
 {\vspace{10pt}\LARGE \bf [FIX PARAGRAPH]}
 The main result we want to establish in this chapter is theorem \ref{reflection}, a result in Geometric Analysis and the main topic of the thesis. Before we can tackle it, one has to go first through a couple of classical results. 
@@ -74,7 +74,7 @@ We can then expand F in the RHS of the equation (\ref{linearizingevolutioneq}) t
 	\frac{\partial u_t}{\partial t}  &= 
 	- \frac{\partial F}{\partial h_{i j}} g^{i k}g^{jl}\frac{\partial^2 u_t}{\partial x^i \partial x^j} \nu_{(X_t+\varepsilon u_t)} + \mathrm{lower \; order \;  terms} + o(1)
 \end{align*}
-Using a similar line of reasoning for $\nu_{(X_t+\varepsilon u_t)}$ to only keep the highest order terms, using \ref{Weingarten2},  and letting $\varepsilon\rightarrow 0$, we get to: 
+Using a similar line of reasoning for $\nu_{(X_t+\varepsilon u_t)}$ to only keep the highest order terms, using \ref{Weingarten2} and the fact that in it there are no higher order terms,  and letting $\varepsilon\rightarrow 0$, we get to: 
 
 %Here, $\delta h_{ij}(u_t)=\frac{h_{ij}(X_t+\varepsilon u_t)-h_{ij}(X_t)}{\varepsilon}=\frac{h_{ij}(\varepsilon u_t)}{\varepsilon}=h_{ij}(u_t)$ by linearity of the definition of the second fundamental form. 
 %\begin{align*}
@@ -170,7 +170,7 @@ As a first step, from the Corollary \ref{localgraphcorollary}, we can establish 
 	\end{align*}
 	which is our thesis, as long as $\sigma_p(t)$ is smooth. This is indeed the case, as the graph function $\Gamma_f:x\mapsto(x, f(x))$ is smooth for any smooth function $f$ and has a smooth inverse (and thus, the inverse $(x_0, t)\mapsto ((p, 0) +  (s\nu, s))$ is smooth).
 \end{proof}
-One can show through direct calculation (see \cite{mantegazza}, Exercise 1.1.2) that, if an immersed hypersurface $\phi : M\rightarrow \R^{n+1}$ is locally the graph of a function (i.e., locally, $(x, f(x))=\phi$), then: 
+One can show through direct calculation (see \cite{mantegazza}, Exercise 1.1.2) that, if an immersed hypersurface $\phi : M\rightarrow \R^{n+1}$ is locally the graph of a function $f:\R^n \rightarrow \R$ (i.e., locally, $(x, f(x))=\phi$), then: 
 \begin{align*}
 	g_{ij}&=\delta_{ij}+ \frac{\partial f}{\partial x_i} \frac{\partial f}{\partial x_j}\\
 	\nu&= -\frac{(\nabla f, -1)}{\sqrt{1+|\nabla f|^2}}\\
@@ -187,7 +187,7 @@ Where the matrix $(H_{ij})_{ij}$ is the hessian of $f$. Thus, if one considers t
 
 The key idea of the main result in this chapter is as follows: suppose we have an embedded smooth hypersurface $M^n$ evolving according to (\ref{evolutioneq}) and a fixed hyperplane $\Pi$, intersecting $M^n$. We can also consider $M^n_\Pi$, the reflection of $M^n$ with respect to $\Pi$, which will also evolve according to (\ref{evolutioneq}). Suppose that, at some time $t$, $M^n$ and  $M^n_\Pi$ touch outside of $\Pi$. We can consider $M^n$ and  $M^n_\Pi$ as local graphs over the same hyperplane $\Pi$, and we can show that these function evolve according to the same differential equation. Using the strong maximum principle and the Hopf boundary point lemma, then, one can conclude that the two functions coincide, and have been coinciding up until that point. We can then conclude that if  $M^n$ and  $M^n_\Pi$ only touch on $M^n\cap\Pi$ at the beginning of the evolution, then they will never touch elsewhere. We shall make this more precise in the following paragraph, loosely based on paragraph 2 in \cite{Chow}. 
 
-\section{Theorem 2.2 Chow [RENAME]}
+\section{Theorem 2.2 Chow [RENAME and adjust notation]}
 
 
 
@@ -209,7 +209,7 @@ This fundamentally means that the reflection of one of the halves of $M^n$ on th
 
 The main theorem is the following: 
 
-\begin{theorem}[Chow]
+\begin{theorem}[Chow-Gulliver]
 	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ solution to \ref{evolutioneq}. Then, if we can reflect $X(M^n, 0)=M_0$ strictly with respect to $\Pi$, then for all $t\in [0,T)$ we can reflect $X(M^n, t)=M_t$ strictly with respect to $\Pi$. \label{reflection} 
 \end{theorem}
 

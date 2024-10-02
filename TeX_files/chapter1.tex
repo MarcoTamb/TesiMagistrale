@@ -1,7 +1,7 @@
 % !TeX spellcheck = en_GB
 \chapter{The Alexandrov Reflection Method}
 
-\section{Geometry of immersed hypersurfaces (da espandere?)}
+\section{Geometry of immersed hypersurfaces}
 
 
 The study of immersed hypersurfaces is a fundamental topic in differential geometry, and is especially important in the field of geometric analysis. An immersed hypersurface $X: M^n \rightarrow \overline{M}^{n+1}$ is a submanifold of a higher-dimensional space that is embedded in that space in such a way that the submanifold has the same dimension as the space in which it is embedded minus one. In other words, it is a submanifold of codimension one. We will always assume the embedding to be smooth. The most common case is $\overline{M}^{n+1}=\R^{n+1}$, usually extensively studied in undergraduate courses when $n=2$. We will be assuming that the embedding is also isometric, i.e. the metric $g$ on $M^n$ is the one induced by $(\overline{M}^{n+1}, \overline{g})$. \\
@@ -117,7 +117,7 @@ We are going to use these equations in local coordinates, in the form shown belo
 
 % Another important concept in the geometry of immersed hypersurfaces is the Gaussian curvature. The Gaussian curvature is a scalar valued function that describes the total curvature of the hypersurface at each point. It is defined as the product of the eigenvalues of the shape operator and it is closely related to the sectional curvature of the ambient space.
 
-There exist many important partial differential equations (PDEs) which stem from the study of immersed hypersurfaces, for example, the minimal surface equation, which is a PDE that describes surfaces with minimal area, can be seen as a geometric condition on the mean curvature of an immersed hypersurface. Likewise, the mean curvature flow is a geometric flow that deforms an immersed hypersurface by moving each point along the normal vector field at that point by an amount proportional to the mean curvature at that point. This flow is important in the study of geometric PDEs and is used to obtain a lot of important results in differential geometry.
+%There exist many important partial differential equations (PDEs) which stem from the study of immersed hypersurfaces, for example, the minimal surface equation, which is a PDE that describes surfaces with minimal area, can be seen as a geometric condition on the mean curvature of an immersed hypersurface. Likewise, the mean curvature flow is a geometric flow that deforms an immersed hypersurface by moving each point along the normal vector field at that point by an amount proportional to the mean curvature at that point. This flow is important in the study of geometric PDEs and is used to obtain a lot of important results in differential geometry.
 
 % Some other important results useful for the study of PDEs on immersed manifolds are:
 
@@ -127,10 +127,6 @@ There exist many important partial differential equations (PDEs) which stem from
 %The Gauss equation: This is an equation that relates the Gaussian curvature of an immersed hypersurface to the sectional curvatures of the ambient space. It is important in the study of the global properties of immersed hypersurfaces.
 
 %The Gauss-Bonnet theorem: This is a theorem that relates the Gaussian curvature of an immersed hypersurface to the topology of the hypersurface. It is important in the study of the global properties of immersed hypersurfaces and is used to prove many important results in differential geometry.
-
-
-{\vspace{10pt}\LARGE \bf [Da espandere più avanti, in base a quello che usiamo - forse]}
-
 
 \section{Local representation as a graph}
 
@@ -266,7 +262,7 @@ It is often used to obtain estimates on the behavior of solutions near the bound
 \end{oss}
 
 \section{Applying the maximum principle to non-linear PDEs}
-
+\label{non linear pde parabolic section}
 We can now introduce an important observation shown in \cite{protterweinberger} that allows us to apply the maximum principle \ref{maxprincprotterweinberger} and Hopf's boundary point lemma \ref{HopfBPL} in some non-linear settings.  Firstly, we must clarify what we mean by parabolic non-linear problem. 
 \begin{defin}\label{nonlinearpde}
 	A differential non-linear problem in the form 
@@ -419,19 +415,100 @@ We will also use use the symbol $\mathbb{M}^n_+$ to indicate a Riemannian manifo
 
 We will now define reflections in $\mathbb{M}^n$: 
 
-{\vspace{10pt}\LARGE \bf [DA SCRIVERE]}
+\begin{itemize}	
+	\item On $\R^n$ we choose an hyperplane and use the usual reflection 
+	\item On  $S^n$, reflections are those induced by $\R^n+1$ when the fixed plane passes through the origin. Each one can be identified by vector orthogonal to the plane we chose. 
+	\item On $\mathbb{H}^n$ we have to be more careful: 
+	\begin{itemize}	
+		\item As a first step, choose a point a point $O \in \mathbb{H}^n$. $\mathbb{M}^n$ is a homogeneous space, so the construction does not depend on the choice we make.
+		\item Choose any direction in $v\in T_O\mathbb{H}^n$ and consider the geodesic $\gamma_v: \R \rightarrow \mathbb{H}^n$ satisfying $\gamma_v (0) = O$ and $\dot{\gamma_v} (0) = v$. Assume that $\gamma$ is parametrised by arc-length. 
+		\item Consider the hyperplane $\pi_0$ passing through $\gamma_v(0)$ and orthogonal to  $\dot{\gamma_v}(0)$. Then consider the 1-parameter group of isometries of $\mathrm{H}^n$ such that $g_t(\gamma_v (0) )=\gamma_v (t) $ and such that the curves $t \mapsto g_t(x)$ are orthogonal to $\pi_0$ for each $x\in \pi_0$. This allows us to assign to each point in $\mathrm{H}^n$ coordinates $(x, t)$ where $x\in\pi_0$ and $t\in \R$.  
+		\item consider now any hyperplane  $\pi_t$ passing through $\gamma_v(t)$ and orthogonal to  $\dot{\gamma_v}(t)$. The reflection fixing $\pi_t$ will be the one given by the formula $(x, t)\mapsto (x, 2s-t)$.
+	\end{itemize}
+\end{itemize}
 
-\section{The Method of the Moving Planes (da scrivere)}
+
+\section{The Method of the Moving Planes}
+\label{method moving planes}
 
 To provide some justification and context to the next chapters, we describe Method of the Moving Planes in $\mathbb{M}^{n+1}_+$.  
 
-Let $X:M^n\rightarrow \mathbb{M}^{n+1}_+$ be a hypersurface in a constant curvature ambient space. 
+Let $X:M^n\rightarrow \mathbb{M}^{n+1}_+$ be a hypersurface in a constant curvature ambient space. If the ambient space is a sphere, $X$ must be contained in a hemisphere to avoid issues with multiple self-intersections. Assume also that $X=\partial\Omega$ for a bounded domain $\Omega$ in $\mathbb{M}^{n+1}_+$. 
+\begin{itemize}	
+	\item As a first step, choose a point a point $O \in \mathbb{M}^n$. As $\mathbb{M}^n$ is a homogeneous space, so the construction does not depend on the choice we make. Without loss of generality, we choose the origin in $\R^n$, $e_n$ in $\mathbb{H}^n$ and the north pole in $S^n$. 
+	\item Choose any direction in $v\in T_O\mathbb{M}^n$ and consider the geodesic $\gamma_v: I \rightarrow \mathbb{M}^n$ satisfying $\gamma_v (0) = O$ and $\dot{\gamma_v} (0) = v$. Assume that $\gamma$ is parametrised by arc-length. Here $I=\R$ if $\mathbb{M}^n_+$ is flat or hyperbolic, and  $I=(-\frac{\pi}{2}, \frac{\pi}{2})$ if $\mathbb{M}^n_+$ is a hemisphere.
+	\item Consider the hyperplanes $\pi_{v, s}$ passing through $\gamma_v(s)$ and orthogonal to  $\dot{\gamma_v}(s)$.
+\end{itemize}
+The method consists of reflecting the part of $X$ ``below" the hyperplane into the top part, and using properties of both halves of the hypersurface together to prove some statement about the non-reflected hypersurface. 
 
+To make this more precise, we can define: 
+\begin{align*}
+	X_{v, s} = \left\{p \in X \;|\; p\in \pi_{v, t} \; \mathrm{ for \; some }\; t < s\right\}
+\end{align*}
+Let $X_{v, s}^\pi$ be the reflection of $X_{v, s}$ about $\pi_{v, s}$. We can then define: 
+\begin{align*}
+m_v &= \sup\left\{s \in I \;|\; X_{v, s}^\pi \subset \Omega \; \mathrm{ for \; every }\; t < s \right\}\\
+ &= \sup\left\{s \in I \;|\; X \cap X_{v, s}^\pi =\emptyset \; \mathrm{ for \; every }\; t < s \right\}
+\end{align*}
+The last time at which the hypersurface and its reflection do not touch. Please note that at $m_v$ the two surfaces are tangent at some point, which can be either in the interior of X, or on the boundary. The hyperplane $\pi_{v, m_v}$ is the critical hyperplane. 
 
-
-{\vspace{10pt}\LARGE \bf [DA SCRIVERE]}
-
-\section{The Alexandrov soap-bubble theorem (da scrivere)}
+\section{The Alexandrov soap-bubble theorem}
 
 To give some justification to the method we descrived, we will outline the proof an important result that uses this method, the so-called Alexandrov soap bubble theorem. For more details, see \cite{italiani}. 
-{\vspace{10pt}\LARGE \bf [DA SCRIVERE]}
+\begin{defin}
+	{\vspace{10pt}\LARGE \bf [DISTANCE SPHERES]}
+\end{defin}
+\begin{theorem}
+	The only $C^2$-regular connected hypersurfaces embedded in $\mathbb{M}^{n+1}_+$ and such that the mean curvature is constant are the distance spheres.\label{Alexandrov theorem} 
+\end{theorem}
+In \cite{italiani} this theorem is proved more generally: let $H_X$ be a $C^2$ function of the ordered principal curvatures $H_X=f(\kappa_1, \dots, \kappa_n)$, and
+\begin{align*}
+	f:\{(x_1, \dots, x_n)\in \R^n \;|\;x_1\leq x_2\leq \dots \leq x_n \}\rightarrow \R
+\end{align*}
+is such that
+\begin{align*}
+	f(x)>0 \;\mathrm{if \;} x_i>0 \; \mathrm{for \; every \;} i=1, \dots, n
+\end{align*}
+
+and it is concave on the component of $\{x\in \R^n \;|\; f(x)>0\}$ containing $\{x\in \R^n \;|\;  x_i>0 \}$. Then the following more general theorem holds: 
+
+\begin{theorem}
+	The only $C^2$-regular connected hypersurfaces embedded in $\mathbb{M}^{n+1}_+$ and such that $H_X$ is constant are the distance spheres. 
+\end{theorem}
+
+The following proposition holds:
+
+\begin{proposition}
+	Let $X=\partial\Omega$ be a $C^2$-regular, connected, closed hypersurface embedded in $\mathbb{M}^{n+1}_+$, where $\Omega$ is a bounded domain. Assume that for every geodesic $\gamma:\R\rightarrow \mathbb{M}^{n+1}$ there exists a hyperplane orthogonal to $\gamma$ such that $X$ is symmetric about $\pi$. Then $X$ is a distance sphere about its center of mass $O$, i.e. the unique minimum of 
+	\begin{align*}
+		P_\Omega(x)=\int_\Omega d(x, a)^2 da
+	\end{align*}
+\end{proposition}
+
+The proof of this proposition is in \cite{italiani} and is omitted here. We now move on to the proof of Theorem \ref{Alexandrov theorem}:
+\begin{proof}
+	Assume that $X$ is a manifold with constant mean curvature. 
+	We want to show that, for every direction $v\in T_O\mathbb{M}^{n+1}$, where $O$ is the center of mass of $\Omega$, $X$ is symmetric about $\pi_v$. We put ourselves in the hypothesis of the method of the moving planes described in section \ref{method moving planes}. At $m_v$, $X \cap X_{v, s}^\pi$ is non-empty by definition of $m_v$ and therefore it is closed in $X_{v, s}^\pi$. We want to show that  $X \cap X_{v, s}^\pi$ is an open set in $X_{v, s}^\pi$. 
+	
+	Let $p\in X\cap X_{v, s}^\pi$. As the two manifolds are tangent
+	\begin{align*}
+		T_p X=T_p X_{v, s}^\pi.
+	\end{align*} By Theorem \ref{localgraphcorollary}, we can represent both manifold as the Euclidean graph of two functions $C^2$ functions $u$ and $\tilde{u}$ defined in a neighbourhood of $p$ inside the tangent space. Consider now the differential equation: 
+	\begin{align*}
+		K(u(x))=K(\tilde{u}(x))=\;\mathrm{constant} 
+	\end{align*}
+	where $K$ is the mean-curvature operator. As $X$ is a manifold with constant mean curvature, it holds everywhere. 
+	Looking at \ref{Weingarten1}, we see that, given that the principal curvature are a function of the $h_{ij}$, the operator $K$ is an elliptic operator. Reasoning exactly like we did in section \ref{non linear pde parabolic section} for parabolic differential equations, we see that $u-\tilde{u}$ is the solution of a linear elliptic differential equation of the form $L (u-\tilde{u})=0$, with $u(p)=\tilde{u}(p)=0$. 
+	
+	Without loss of generality, we can assume that, in the neighbourhood where we defined $u$ and $\tilde{u}$, $u-\tilde{u}\geq 0$. 
+	
+	If $p$ is an interior point in $X_{v, s}^\pi$, we can then apply the maximum principle for elliptic equations (see section 6.4 in \cite{Evans}) and obtain that  $u=\tilde{u}$ in the neighbourhood. 
+	
+	Otherwise, if $p\in\pi_{v,s}$, $\nabla u (p)=\nabla \tilde{u} (p)=0$ and one can apply Hopf's boundary point lemma for elliptic equations (see section 6.4 in \cite{Evans}) to conclude again that $u=\tilde{u}$ in the neighbourhood.
+	
+	Therefore, the whole neighbourhood is in $X\cap X_{v, s}^\pi$, hence the intersection is open, as every point $p$ is contained in an open ball. This proves the theorem. 	
+\end{proof}
+
+\begin{oss}
+	\em To prove the theorem in the aforementioned more general setting, one would need to only prove that the differential equation $H_X(u(x))= \mathrm{constant}$ is an elliptic equation. Its ellipticity is a standard result in Geometric Analysis, and can be found in the literature. 
+\end{oss}
