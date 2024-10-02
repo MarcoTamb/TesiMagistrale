@@ -479,7 +479,7 @@ and it is concave on the component of $\{x\in \R^n \;|\; f(x)>0\}$ containing $\
 The following proposition holds:
 
 \begin{proposition}
-	Let $X=\partial\Omega$ be a $C^2$-regular, connected, closed hypersurface embedded in $\mathbb{M}^{n+1}_+$, where $\Omega$ is a bounded domain. Assume that for every geodesic $\gamma:\R\rightarrow \mathbb{M}^{n+1}$ there exists a hyperplane orthogonal to $\gamma$ such that $X$ is symmetric about $\pi$. Then $X$ is a distance sphere about its center of mass $O$, i.e. the unique minimum of 
+	\label{proposition symmetry conclusion}	Let $X=\partial\Omega$ be a $C^2$-regular, connected, closed hypersurface embedded in $\mathbb{M}^{n+1}_+$, where $\Omega$ is a bounded domain. Assume that for every geodesic $\gamma:\R\rightarrow \mathbb{M}^{n+1}$ there exists a hyperplane orthogonal to $\gamma$ such that $X$ is symmetric about $\pi$. Then $X$ is a distance sphere about its center of mass $O$, i.e. the unique minimum of 
 	\begin{align*}
 		P_\Omega(x)=\int_\Omega d(x, a)^2 da
 	\end{align*}
@@ -488,11 +488,11 @@ The following proposition holds:
 The proof of this proposition is in \cite{italiani} and is omitted here. We now move on to the proof of Theorem \ref{Alexandrov theorem}:
 \begin{proof}
 	Assume that $X$ is a manifold with constant mean curvature. 
-	We want to show that, for every direction $v\in T_O\mathbb{M}^{n+1}$, where $O$ is the center of mass of $\Omega$, $X$ is symmetric about $\pi_v$. We put ourselves in the hypothesis of the method of the moving planes described in section \ref{method moving planes}. At $m_v$, $X \cap X_{v, s}^\pi$ is non-empty by definition of $m_v$ and therefore it is closed in $X_{v, s}^\pi$. We want to show that  $X \cap X_{v, s}^\pi$ is an open set in $X_{v, s}^\pi$. 
+	We want to show that, for any point $O$ and for every direction $v\in T_O\mathbb{M}^{n+1}$, $X$ is symmetric about a plane perpendicular to the geodesic $\exp_O(tv)$. We put ourselves in the hypothesis of the method of the moving planes described in section \ref{method moving planes}. At $m_v$, $X \cap X_{v, m_v}^\pi$ is non-empty by definition of $m_v$ and therefore it is closed in $X_{v, m_v}^\pi$. We want to show that  $X \cap X_{v, m_v}^\pi$ is an open set in $X_{v, m_v}^\pi$. 
 	
-	Let $p\in X\cap X_{v, s}^\pi$. As the two manifolds are tangent
+	Let $p\in X\cap X_{v, m_v}^\pi$. As the two manifolds are tangent
 	\begin{align*}
-		T_p X=T_p X_{v, s}^\pi.
+		T_p X=T_p X_{v, m_v}^\pi.
 	\end{align*} By Theorem \ref{localgraphcorollary}, we can represent both manifold as the Euclidean graph of two functions $C^2$ functions $u$ and $\tilde{u}$ defined in a neighbourhood of $p$ inside the tangent space. Consider now the differential equation: 
 	\begin{align*}
 		K(u(x))=K(\tilde{u}(x))=\;\mathrm{constant} 
@@ -502,11 +502,11 @@ The proof of this proposition is in \cite{italiani} and is omitted here. We now 
 	
 	Without loss of generality, we can assume that, in the neighbourhood where we defined $u$ and $\tilde{u}$, $u-\tilde{u}\geq 0$. 
 	
-	If $p$ is an interior point in $X_{v, s}^\pi$, we can then apply the maximum principle for elliptic equations (see section 6.4 in \cite{Evans}) and obtain that  $u=\tilde{u}$ in the neighbourhood. 
+	If $p$ is an interior point in $X_{v, m_v}^\pi$, we can then apply the maximum principle for elliptic equations (see section 6.4 in \cite{Evans}) and obtain that  $u=\tilde{u}$ in the neighbourhood. 
 	
 	Otherwise, if $p\in\pi_{v,s}$, $\nabla u (p)=\nabla \tilde{u} (p)=0$ and one can apply Hopf's boundary point lemma for elliptic equations (see section 6.4 in \cite{Evans}) to conclude again that $u=\tilde{u}$ in the neighbourhood.
 	
-	Therefore, the whole neighbourhood is in $X\cap X_{v, s}^\pi$, hence the intersection is open, as every point $p$ is contained in an open ball. This proves the theorem. 	
+	Therefore, the whole neighbourhood is in $X\cap X_{v, m_v}^\pi$, hence the intersection is open, as every point $p$ is contained in an open ball. This proves that $X$ is symmetric about $\pi_{v, m_v}$. The theorem is then consequence of Proposition \ref{proposition symmetry conclusion}
 \end{proof}
 
 \begin{oss}
