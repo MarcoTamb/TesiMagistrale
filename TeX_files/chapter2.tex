@@ -1,11 +1,10 @@
 % !TeX spellcheck = en_GB
 \chapter{The Chow-Gulliver Critical Planes Result}
 
-{\vspace{10pt}\LARGE \bf [FIX PARAGRAPH]}
-The main result we want to establish in this chapter is theorem \ref{reflection}, a result in Geometric Analysis and the main topic of the thesis. Before we can tackle it, one has to go first through a couple of classical results. 
+The main result we want to establish in this chapter is theorem \ref{reflection}, a result about critical hyperplanes when applying the method of the moving planes to solution of a large class of non-linear parabolic partial differential equations, and whose proof is somewhat similar to Theorem \ref{Alexandrov theorem}. 
 
+We will first describe the differential equations we are analysing, then prove that they are parabolic, then prove the theorem. 
 
-\noindent{\vspace{10pt}\LARGE \bf [READ CHAPTER AND DOUBLE CHECK IT]}
 \section{Class of Equations we analyze}
 
 We consider manifolds $M^n$ embedded in $\R^{n+1}$, i.e. there is an embedding $X_0 : M^n \rightarrow \R^{n+1}$ parametrizing the hypersurface $X_0(M^n)$. 
@@ -30,8 +29,7 @@ where $\nu$ is the inward normal to $X_t(M^n)$ at the point $X_t(x)$ and $\kappa
 
 The condition (\ref{parabolicità}) will  guarantee that equation (\ref{evolutioneq}) is a parabolic equation. This may be confusing, as (\ref{evolutioneq}) does not make it obvious how to apply definition \ref{nonlinearpde}. 
 
-{\vspace{10pt}\LARGE \bf [FIX PARAGRAPH]}
-In order to classify a non-linear partial differential equation one has to understand how it behaves ``close to a solution" in the solutions space. We want to prove that very close to any solution, ``moving in any direction", the change in the equation is always a parabolic PDE. This will then tell us that our equation is parabolic, and that the theorems that apply to solutions of parabolic partial differential equations apply to our equation as well. 
+In order to classify a non-linear partial differential equation one has to understand how it behaves ``close to a solution" in the solutions space. We want to prove that very close to any solution, ``moving in any direction", the change in the equation is always a parabolic PDE. This will then tell us that our equation is parabolic, and that the theorems that apply to solutions of parabolic partial differential equations apply to our equation as well. To do so, we are going to ``linearise" the differential equation about a solution.
 
 Like in \cite{huisken}, as $F$ is a symmetric function in the principal curvatures, we may interchangeably take $F$ to be a function of the Weingarten map tensor or of the second fundamental form, and thus we get:
 
@@ -57,24 +55,26 @@ We can use the Weingarten equation (\ref{Weingarten1}) to write the RHS explicit
 	&+\varepsilon^2\left(\overline{\Gamma}^\alpha_{\beta \delta}\frac{\partial u_t^\beta}{\partial x^i}\frac{\partial u_t^\delta}{\partial x^k}\right) \\
 	v^\alpha=&\; w +\varepsilon\left(\frac{\partial^2 u_t^\alpha}{\partial x^i \partial x^j} + \mathrm{lower \; order \;  terms}\right) + o(\varepsilon)
 \end{align*}
-where $h_{ij}(X_t)=-\left\langle w, \nu_{(X_t+\varepsilon u_t)}\right\rangle$. Putting it all together in the first line:
+where $h_{ij}(X_t)=-\left\langle w, \nu_{X_t}\right\rangle$.
+
+Putting it all together in the first line:
 \begin{align*}
 	h_{ij}(X_t + \varepsilon u_t ) &=-\left\langle  w +\varepsilon\left(\frac{\partial^2 u_t}{\partial x^i \partial x^j} + \mathrm{lower \; order \;  terms}\right) + o(\varepsilon), \nu_{(X_t+\varepsilon u_t)}\right\rangle\\
-	&= h_{ij}(X_t) -\varepsilon\left\langle  \left(\frac{\partial^2 u_t}{\partial x^i \partial x^j} + \mathrm{lower \; order \;  terms}\right), \nu_{(X_t+\varepsilon u_t)}\right\rangle + o(\varepsilon)\\
-	&= h_{ij}(X_t) -\varepsilon H + o(\varepsilon)
+	&= \left\langle  w, \nu_{(X_t+\varepsilon u_t)}\right\rangle -\varepsilon\left\langle  \left(\frac{\partial^2 u_t}{\partial x^i \partial x^j} + \mathrm{lower \; order \;  terms}\right), \nu_{(X_t+\varepsilon u_t)}\right\rangle + o(\varepsilon)\\
+	&= h_{ij}(X_t) + \left\langle  w, \nu_{(X_t+\varepsilon u_t)}-\nu_{X_t}\right\rangle -\varepsilon H_{ij} + o(\varepsilon)\\
+	&= h_{ij}(X_t) -\varepsilon H_{ij} + o(\varepsilon)
 \end{align*}
+Were on the last step we are using the fact that $\nu_{(X_t+\varepsilon u_t)}-\nu_{X_t} = O(\varepsilon)$, and as this gets smaller the component of w parallel to the difference also is $O(\varepsilon)$, as $w$ is parallel to $\nu_{X_t}$.
 We can then expand F in the RHS of the equation (\ref{linearizingevolutioneq}) to the first order, as it is a $C^1$ function: 
-
-\noindent{\vspace{10pt}\LARGE \bf [PROBABILMENTE HAI PERSO UN \\ PRODOTTO SCALARE PER LA STRADA]}
 \begin{align*}
 	\cancel{\frac{\partial X_t}{\partial t}} + \varepsilon\frac{\partial u_t}{\partial t}  &= \left(\cancel{F(h_{ij}(X_t)) }
-	- \varepsilon DF (H) + o(\varepsilon)\right)\nu_{(X_t+\varepsilon u_t)}\\
+	- \varepsilon \langle DF, H\rangle + o(\varepsilon)\right)\nu_{(X_t+\varepsilon u_t)}\\
 	\varepsilon\frac{\partial u_t}{\partial t}  &= - \varepsilon\left(
-	\frac{\partial F}{\partial h_{i j}} g^{i k}g^{jl}\frac{\partial^2 u_t}{\partial x^i \partial x^j}  + \mathrm{lower \; order \;  terms}\right)\nu_{(X_t+\varepsilon u_t)} + o(\varepsilon)\\
+	\frac{\partial F}{\partial h_{i j}} g^{i k}g^{jl}\left\langle \frac{\partial^2 u_t}{\partial x^k \partial x^l},  \nu_{(X_t+\varepsilon u_t)}\right\rangle + \mathrm{lower \; order \;  terms}\right)\nu_{(X_t+\varepsilon u_t)} + o(\varepsilon)\\
 	\frac{\partial u_t}{\partial t}  &= 
-	- \frac{\partial F}{\partial h_{i j}} g^{i k}g^{jl}\frac{\partial^2 u_t}{\partial x^i \partial x^j} \nu_{(X_t+\varepsilon u_t)} + \mathrm{lower \; order \;  terms} + o(1)
+	- \frac{\partial F}{\partial h_{i j}} g^{i k}g^{jl}\left\langle \frac{\partial^2 u_t}{\partial x^k \partial x^l},  \nu_{(X_t+\varepsilon u_t)}\right\rangle \nu_{(X_t+\varepsilon u_t)} + \mathrm{lower \; order \;  terms} + o(1)
 \end{align*}
-Using a similar line of reasoning for $\nu_{(X_t+\varepsilon u_t)}$ to only keep the highest order terms, using \ref{Weingarten2} and the fact that in it there are no higher order terms,  and letting $\varepsilon\rightarrow 0$, we get to: 
+Letting $\varepsilon\rightarrow 0$, we get to: 
 
 %Here, $\delta h_{ij}(u_t)=\frac{h_{ij}(X_t+\varepsilon u_t)-h_{ij}(X_t)}{\varepsilon}=\frac{h_{ij}(\varepsilon u_t)}{\varepsilon}=h_{ij}(u_t)$ by linearity of the definition of the second fundamental form. 
 %\begin{align*}
@@ -185,10 +185,14 @@ Where the matrix $(H_{ij})_{ij}$ is the hessian of $f$. Thus, if one considers t
 
 %The Alexandrov Reflection method is a technique based on the Maximum Principle. 
 
+{\vspace{10pt}\LARGE \bf [ESPANDI]}
 The key idea of the main result in this chapter is as follows: suppose we have an embedded smooth hypersurface $M^n$ evolving according to (\ref{evolutioneq}) and a fixed hyperplane $\Pi$, intersecting $M^n$. We can also consider $M^n_\Pi$, the reflection of $M^n$ with respect to $\Pi$, which will also evolve according to (\ref{evolutioneq}). Suppose that, at some time $t$, $M^n$ and  $M^n_\Pi$ touch outside of $\Pi$. We can consider $M^n$ and  $M^n_\Pi$ as local graphs over the same hyperplane $\Pi$, and we can show that these function evolve according to the same differential equation. Using the strong maximum principle and the Hopf boundary point lemma, then, one can conclude that the two functions coincide, and have been coinciding up until that point. We can then conclude that if  $M^n$ and  $M^n_\Pi$ only touch on $M^n\cap\Pi$ at the beginning of the evolution, then they will never touch elsewhere. We shall make this more precise in the following paragraph, loosely based on paragraph 2 in \cite{Chow}. 
 
 \section{Theorem 2.2 Chow [RENAME and adjust notation]}
 
+
+
+{\vspace{10pt}\LARGE \bf [CAMBIA NOTAZIONE IN MODO CHE SIA PIÙ SIMILE AL METODO]}
 
 
 Let $\Pi$ be a hyperplane in $\R^{n+1}$. We may assume $\Pi$ orthogonal to a unit vector $V\in\R^{n+1}$, i.e. $\langle\Pi, V\rangle= C$ for some constant $C$. 
