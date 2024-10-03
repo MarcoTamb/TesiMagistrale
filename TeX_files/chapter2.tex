@@ -181,82 +181,84 @@ Where the matrix $(H_{ij})_{ij}$ is the hessian of $f$. Thus, if one considers t
 
 
 
-\section{The Alexandrov Reflection Method and the Chow result}
+\section{The Moving Planes Method and the Chow result}
 
-%The Alexandrov Reflection method is a technique based on the Maximum Principle. 
-
-{\vspace{10pt}\LARGE \bf [ESPANDI]}
-The key idea of the main result in this chapter is as follows: suppose we have an embedded smooth hypersurface $M^n$ evolving according to (\ref{evolutioneq}) and a fixed hyperplane $\Pi$, intersecting $M^n$. We can also consider $M^n_\Pi$, the reflection of $M^n$ with respect to $\Pi$, which will also evolve according to (\ref{evolutioneq}). Suppose that, at some time $t$, $M^n$ and  $M^n_\Pi$ touch outside of $\Pi$. We can consider $M^n$ and  $M^n_\Pi$ as local graphs over the same hyperplane $\Pi$, and we can show that these function evolve according to the same differential equation. Using the strong maximum principle and the Hopf boundary point lemma, then, one can conclude that the two functions coincide, and have been coinciding up until that point. We can then conclude that if  $M^n$ and  $M^n_\Pi$ only touch on $M^n\cap\Pi$ at the beginning of the evolution, then they will never touch elsewhere. We shall make this more precise in the following paragraph, loosely based on paragraph 2 in \cite{Chow}. 
-
-\section{Theorem 2.2 Chow [RENAME and adjust notation]}
+We will now present the Chow-Gulliver result, presented more or less as in paragraph 2 in \cite{Chow}.
+Suppose that we have a hypersurface embedded in $\R^n$ evolving according to equation (\ref{evolutioneq}). For a fixed time $t$, we can apply the method of the moving planes as described in section \ref{method moving planes}: we can take parallel hyperplanes $\pi_{v,s}$ orthogonal to $v$ intersecting $X$, and consider the reflection  $X_{v,s}^\pi$. There will be a hyperplane $\pi_{v,m_v}$ where $X$ and $X_{v,s}^\pi$ are tangent. As the hypersurface evolves, we may wonder how this critical threshold changes over time. If it behaves in a predictable way, we can hope to use the technique on the evolving manifold, otherwise, it may be hopeless if the critical plane moves back and forth multiple times. In the next section, we are going to prove a result in this general direction, to show a form of "regularity" in this sense. First, however, we need to introduce a marginally stricter definition for the concept of "reflecting inside itself". 
 
 
 
-{\vspace{10pt}\LARGE \bf [CAMBIA NOTAZIONE IN MODO CHE SIA PIÙ SIMILE AL METODO]}
+Let $\pi$ be a hyperplane in $\R^{n+1}$. We may assume $\pi$ orthogonal to a unit vector $v\in\R^{n+1}$, i.e. $\langle x, v\rangle= C$ for all $x\in \pi$ for some constant $C$. In our notation for the the method of moving planes we pick the origin as a starting point , this means that $\pi = \pi_{v, C}$. 
 
-
-Let $\Pi$ be a hyperplane in $\R^{n+1}$. We may assume $\Pi$ orthogonal to a unit vector $V\in\R^{n+1}$, i.e. $\langle\Pi, V\rangle= C$ for some constant $C$. 
-
-Then, $R^{n+1}$ is divided by $\Pi$ into two half-spaces, which we will name  $H^+(\Pi)=\{x \in \R : \langle x, V\rangle > C\}$ and  $H^-(\Pi)=\{x \in \R | \langle x, V\rangle < C\}$. 
+Then, $R^{n+1}$ is divided by $\pi$ into two half-spaces, which we will name 
+\begin{align*}
+H^+(\pi)&=\{x \in \R^{n+1} : \langle x, v\rangle > C\}= \bigcup_{s>C} \pi_{v, s} \;\;\mathrm{and}\\
+H^-(\pi)&=\{x \in \R^{n+1} : \langle x, v\rangle < C\}= \bigcup_{s<C} \pi_{v, s}.
+\end{align*} 
 
 \begin{defin}
-	We say we can reflect $M^n$ strictly with respect to $\Pi$ if 
-	\begin{align*}
-		M^n_\Pi\cap H^-(\Pi)\subset \mathrm{int}(M^n)\cap H^-(\Pi)
-	\end{align*} 
-	and $V\notin TM^n_x$ for all $x\in M^n \cap\Pi$, where $\mathrm{int}(M^n)$ is the region inside $M^n$. 
+	We say {\em we can reflect $X: M^n\rightarrow \R^{n+1}$ strictly with respect to $\pi$} if both:
+	\begin{itemize}
+		\item $X^\pi\cap H^-(\pi)\subset \mathrm{int}(X)\cap H^-(\pi)$ where $X^\pi$ is the reflection of $X$ about $\pi$ and $\mathrm{int}(X)$ is the region inside $X$.
+		\item $V\notin T_xM^n$ for all $x\in M^n \cap\pi$
+	\end{itemize} 
 \end{defin}
-This fundamentally means that the reflection of one of the halves of $M^n$ on the other side of $\Pi$ is contained in the region inside $M^n$ and the tangent spaces of $M^n$ and of the half-reflection do not form a ninety degree angle with $\Pi$, at all points on $\Pi\cap M^n$. 
+This fundamentally means that the reflection of one of the halves of $X$ on the other side of $\pi$ is contained in the region inside $M^n$ and the tangent spaces of $X$ and of the half-reflection do not form a ninety degree angle with $\pi$, at all points on $\pi\cap X$. As the two tangent spaces are one the reflection of the other, this means that they do not coincide.   
 \begin{defin}
-	We say we can reflect $M^n$ strictly up to $(\Pi,V)$ if we can reflect $M^n$ strictly with respect to $\Pi_K$ for all hyperplanes $\Pi_K=\{x \in \R | \langle x, V\rangle = K\}$ such that $K<C$.  
+	We say {\em we can reflect $X: M^n\rightarrow \R^{n+1}$ strictly up to $(\pi,V)$} if we can reflect $M^n$ strictly with respect to $\pi_s$ for all hyperplanes $\pi_{v, s}$ such that $s<C$.  
 \end{defin}
+
+The key idea of the main result in the next section is as follows: suppose we have an embedded smooth hypersurface $X$ evolving according to (\ref{evolutioneq}) and a fixed hyperplane $\pi$, intersecting $X$. Suppose that, at some time $t$, $X$ and  $X_\pi$ touch outside of $\pi$. We can consider $X$ and  $X_\pi$ as local graphs over the same hyperplane $\pi$, and we can show that these function evolve according to the same differential equation. Using the strong maximum principle and the Hopf boundary point lemma, then, one can conclude that the two functions coincide, and have been coinciding up until that point. We can then conclude that if  $X$ and  $X_\pi$ only touch in $X\cap\pi$ at the beginning of the evolution, then they will never touch elsewhere.  
+
+
+\section{Theorem 2.2 Chow [RENAME]}
 
 The main theorem is the following: 
 
 \begin{theorem}[Chow-Gulliver]
-	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ solution to \ref{evolutioneq}. Then, if we can reflect $X(M^n, 0)=M_0$ strictly with respect to $\Pi$, then for all $t\in [0,T)$ we can reflect $X(M^n, t)=M_t$ strictly with respect to $\Pi$. \label{reflection} 
+	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ solution to \ref{evolutioneq}. Then, if we can reflect $X(M^n, 0)=M_0$ strictly with respect to $\pi$, then for all $t\in [0,T)$ we can reflect $X(M^n, t)=M_t$ strictly with respect to $\pi$. \label{reflection} 
 \end{theorem}
 
 \begin{proof}
-	By contradiction, suppose that there is a time $t$ such that the thesis is false, and that it is the smallest such $t$. Then, for all $\tau \in [0,t)$, $M_{\tau,\Pi}\cap H^-(\Pi)\subset \mathrm{int}(M_{\tau})\cap H^-(\Pi)$; the unit vector orthogonal to $\Pi$, $V$, is such that $V\notin T_xM_\tau$ for all $x\in M_\tau\cap \Pi$ and $\tau \in [0,t)$; and either of the conditions fails at $t$, i.e. either: 
+	By contradiction, suppose that there is a time $t$ such that the thesis is false, and that it is the smallest such $t$. Then, for all $\tau \in [0,t)$, $M_{\tau,\pi}\cap H^-(\pi)\subset \mathrm{int}(M_{\tau})\cap H^-(\pi)$; the unit vector orthogonal to $\pi$, $V$, is such that $V\notin T_xM_\tau$ for all $x\in M_\tau\cap \pi$ and $\tau \in [0,t)$; and either of the conditions fails at $t$, i.e. either: 
 	\begin{itemize}
-		\item[(i)] $M_{t,\Pi}\cap H^-(\Pi)\cap M_{t}\neq \emptyset$
-		\item[(ii)] $V\in T_xM_t$  for some $x\in\Pi$. 
+		\item[(i)] $M_{t,\pi}\cap H^-(\pi)\cap M_{t}\neq \emptyset$
+		\item[(ii)] $V\in T_xM_t$  for some $x\in\pi$. 
 	\end{itemize} 
 	
-	(i) Suppose the first case is true. Then, there exists $x_0 \in M_{t,\Pi}\cap H^-(\Pi)\cap M_{t}$ such that at $x_0$ the two manifolds are tangent. \\
-	We can take a neighbourhood of $(x_0, t)\in M_{t}\times \R$ such that  both $M_{t,\Pi}$ and $M_{t}$ are graphs over $T_{x_0}M_{t}$ by \ref{localgraph}. \\
-	We can explicitly write the functions $f:U\times (t-\varepsilon, t+\varepsilon)\rightarrow M_t$, where $U\subset T_{x_0}M_{t}$, and the corresponding $f_\Pi$ for $M_{t,\Pi}$. 
+	(i) Suppose the first case is true. Then, there exists $x_0 \in M_{t,\pi}\cap H^-(\pi)\cap M_{t}$ such that at $x_0$ the two manifolds are tangent. \\
+	We can take a neighbourhood of $(x_0, t)\in M_{t}\times \R$ such that  both $M_{t,\pi}$ and $M_{t}$ are graphs over $T_{x_0}M_{t}$ by \ref{localgraph}. \\
+	We can explicitly write the functions $f:U\times (t-\varepsilon, t+\varepsilon)\rightarrow M_t$, where $U\subset T_{x_0}M_{t}$, and the corresponding $f_\pi$ for $M_{t,\pi}$. 
 	We can also write 
 	\begin{align*}
 		f \; : \; (x, t) &\mapsto x+\tilde{f}(x, t)\nu \\
-		f_\Pi \; : \; (x, t) &\mapsto x+\tilde{f}_\Pi(x, t)\nu 
+		f_\pi \; : \; (x, t) &\mapsto x+\tilde{f}_\pi(x, t)\nu 
 	\end{align*}
-	for appropriate functions $\tilde{f}:U\times (t-\varepsilon, t+\varepsilon)\rightarrow \R$ and $\tilde{f}_\Pi:U\times (t-\varepsilon, t+\varepsilon)\rightarrow \R$, where $\nu$ is a fixed unit vector normal to $T_{x_0}M_{t}$.  $\tilde{f}$ and $\tilde{f_\Pi}$ are solutions to the same second order PDE, which is parabolic by what was discussed in paragraph \ref{parabolic}, hence we can apply Proposition \ref{firstapplication} to conclude that $\tilde{f}\equiv\tilde{f_\Pi}$, and thus $M_{t,\Pi}$ and $M_{t}$ coincide in a neighbourhood of $(x, t)$, a contradiction as we assumed that $t$ is the first $t$ where the flows touch.
+	for appropriate functions $\tilde{f}:U\times (t-\varepsilon, t+\varepsilon)\rightarrow \R$ and $\tilde{f}_\pi:U\times (t-\varepsilon, t+\varepsilon)\rightarrow \R$, where $\nu$ is a fixed unit vector normal to $T_{x_0}M_{t}$.  $\tilde{f}$ and $\tilde{f_\pi}$ are solutions to the same second order PDE, which is parabolic by what was discussed in paragraph \ref{parabolic}, hence we can apply Proposition \ref{firstapplication} to conclude that $\tilde{f}\equiv\tilde{f_\pi}$, and thus $M_{t,\pi}$ and $M_{t}$ coincide in a neighbourhood of $(x, t)$, a contradiction as we assumed that $t$ is the first $t$ where the flows touch.
 	
-	(ii) Suppose instead that $V\in T_xM_t$  for some $t\in [0, t)$ and some $x\in M_t\cap \Pi$. Then $T_xM_t= T_xM_{t, \Pi}$ and in a neighbourhood of $(x, t)$ both $M_t$ and $M_{t, \Pi}$ are graphs of two smooth functions over $T_xM_t$ by \ref{localgraph}, i.e. again
+	(ii) Suppose instead that $V\in T_xM_t$  for some $t\in [0, t)$ and some $x\in M_t\cap \pi$. Then $T_xM_t= T_xM_{t, \pi}$ and in a neighbourhood of $(x, t)$ both $M_t$ and $M_{t, \pi}$ are graphs of two smooth functions over $T_xM_t$ by \ref{localgraph}, i.e. again
 	\begin{align*}
 		f \; : \; (x, t) &\mapsto x+\tilde{f}(x, t)\nu \\
-		f_\Pi \; : \; (x, t) &\mapsto x+\tilde{f}_\Pi(x, t)\nu 
+		f_\pi \; : \; (x, t) &\mapsto x+\tilde{f}_\pi(x, t)\nu 
 	\end{align*} 
-	Moreover, in $\overline{H^-(\Pi)}$, $f_\Pi\geq f$, because $M^n_\Pi\cap H^-(\Pi)\subset \mathrm{int}(M^n)\cap H^-(\Pi)$. Finally, $f(x, t)=f_\Pi (x, t)$, hence $f_\Pi-f (x, t)=0$, and thus  $(x, t)$ is a minimum point on the boundary for $f_\Pi-f$. Also, we must have
+	Moreover, in $\overline{H^-(\pi)}$, $f_\pi\geq f$, because $M^n_\pi\cap H^-(\pi)\subset \mathrm{int}(M^n)\cap H^-(\pi)$. Finally, $f(x, t)=f_\pi (x, t)$, hence $f_\pi-f (x, t)=0$, and thus  $(x, t)$ is a minimum point on the boundary for $f_\pi-f$. Also, we must have
 	\begin{align*}
-		\frac{\partial f}{\partial V}(x,t)=\frac{\partial f_\Pi}{\partial V}(x,t)
+		\frac{\partial f}{\partial V}(x,t)=\frac{\partial f_\pi}{\partial V}(x,t)
 	\end{align*}
 	because the graphs are both tangent to $T_xM_t$, and $V$ here is the outward pointing normal to the boundary by definition of the reflection. Thus, 
 	\begin{align*}
-		\frac{\partial (f- f_\Pi)}{\partial V}(x,t)=0
+		\frac{\partial (f- f_\pi)}{\partial V}(x,t)=0
 	\end{align*}
 	But we must have 
 	\begin{align*}
-		\frac{\partial (f- f_\Pi)}{\partial V}(x,t)>0
+		\frac{\partial (f- f_\pi)}{\partial V}(x,t)>0
 	\end{align*}
 	at a minimum on the boundary by Proposition \ref{secondapplication}, a contradiction.  
 \end{proof}
 The following is an immediate consequence of the main result:
 \begin{cor}
-	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ solution to \ref{evolutioneq}. Then, if we can reflect $M_0$ strictly up to $(\Pi, V)$, then for all $t\in [0,T)$ we can reflect $X(M, t)$ strictly up to $(\Pi, V)$.  
+	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ solution to \ref{evolutioneq}. Then, if we can reflect $M_0$ strictly up to $(\pi, V)$, then for all $t\in [0,T)$ we can reflect $X(M, t)$ strictly up to $(\pi, V)$.  
 \end{cor}
 \begin{proof}
-	The hypothesis of the theorem are true for each $\Pi_K$ in the definition, thus we can reflect strictly with respect to each $\Pi_K$ for all $t\in[0,T)$, and thus we can reflect $X(M, t)$ strictly up to $(\Pi, V)$.
+	The hypothesis of the theorem are true for each $\pi_K$ in the definition, thus we can reflect strictly with respect to each $\pi_K$ for all $t\in[0,T)$, and thus we can reflect $X(M, t)$ strictly up to $(\pi, V)$.
 \end{proof}
