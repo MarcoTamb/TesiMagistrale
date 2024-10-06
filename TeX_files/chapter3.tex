@@ -1,9 +1,24 @@
-\chapter{Third Chapter Title}
-{\vspace{10pt}\LARGE \bf [DA SCRIVERE]}
+\chapter{Extension to constant curvature spaces}
+In this chapter we want to extend the Chow-Gulliver result to constant curvature spaces. We will use the same notation as in section 
+\ref{reflections definitions} and \ref{method moving planes}. 
 
 \section{The equation in constant curvature spaces (da scrivere)}	
-{\vspace{10pt}\LARGE \bf [DA SCRIVERE]}
+As shown in \cite{huisken}, the equation we analysed in the previous chapter can be also considered in non-flat ambient spaces. In particular, we will analyse the case where the ambient space is one of those described  in section \ref{reflections definitions}: $\R^{n+1}$, $\mathbb{H}^{n+1}$, or $\mathbb{S}^n_+$. We again use the symbol $\mathbb{M}^{n+1}_+$ to indicate any of these spaces. 
+Let $X_0 : M^n \rightarrow \mathbb{M}^{n+1}_+$ be a manifold embedded in $\mathbb{M}^{n+1}_+$. 
+Let $F:\{(\kappa_1, \dots , \kappa_n)\in \R^n\vert \kappa_1\leq \dots \leq \kappa_n\}\rightarrow \R$ be a $C^1$ function satisfying:
+\begin{equation}
+	\frac{\partial F}{\partial \kappa_i} > 0 \mathrm{\; for \; all } \; i=1,\dots, n \label{parabolicità}
+\end{equation}
+and consider the evolution equation 
+\begin{align}
+	\begin{dcases}
+		\frac{\partial X_t}{\partial t} = F(\kappa_1(x), \dots , \kappa_n(x)) \nu\\
+		X(0)= X_0
+	\end{dcases} \label{evolutioneq}
+\end{align}
+where $\nu$ is the inward normal to $X_t(M^n)$ at the point $X_t(x)$ and $\kappa_1\leq \dots \leq \kappa_n$ are the principal curvatures at $X_t(x)$. 
 
-\clearpage
+As we saw in the previous chapter, it is a non-linear parabolic differential equation, as the calculation in chapter \ref{parabolic} is valid for any metric on $\R{n+1}$, and in particular, for the metrics in our models for $\mathbb{M}^{n+1}_+$ in section \ref{reflections definitions}. The existence result in \cite{huisken} also holds as well in this case. Finally, the result in \ref{representation as graph} is not using the metric tensor, and therefore is valid in this setting as well. 
+
 \section{Extension of the result(da scrivere)}	
 {\vspace{10pt}\LARGE \bf [DA SCRIVERE]}

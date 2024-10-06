@@ -4,7 +4,10 @@
 \section{Geometry of immersed hypersurfaces}
 
 
-The study of immersed hypersurfaces is a fundamental topic in differential geometry, and is especially important in the field of geometric analysis. An immersed hypersurface $X: M^n \rightarrow \overline{M}^{n+1}$ is a submanifold of a higher-dimensional space that is embedded in that space in such a way that the submanifold has the same dimension as the space in which it is embedded minus one. In other words, it is a submanifold of codimension one. We will always assume the embedding to be smooth. The most common case is $\overline{M}^{n+1}=\R^{n+1}$, usually extensively studied in undergraduate courses when $n=2$. We will be assuming that the embedding is also isometric, i.e. the metric $g$ on $M^n$ is the one induced by $(\overline{M}^{n+1}, \overline{g})$. \\
+The study of immersed hypersurfaces is a fundamental topic in differential geometry, and is especially important in the field of geometric analysis. An immersed hypersurface $X: M^n \rightarrow \overline{M}^{n+1}$ is a submanifold of a higher-dimensional space that is embedded in that space in such a way that the submanifold has the same dimension as the space in which it is embedded minus one. In other words, it is a submanifold of codimension one. We will always assume the embedding to be smooth. The most common case is $\overline{M}^{n+1}=\R^{n+1}$, usually extensively studied in undergraduate courses when $n=2$. We will be assuming that the embedding is also isometric, i.e. the metric $g$ on $M^n$ is the one induced by $(\overline{M}^{n+1}, \overline{g})$. 
+
+Symbols referring to $(\overline{M}^{n+1}, \overline{g})$ will have a line on top, otherwise the symbol will refer to $(M^{n}, g)$.
+
 The pullback of the tangent bundle of $\overline{M}^{n+1}$ to
 $M^{n}$ is a smooth vector bundle on $M^{n}$:
 \begin{align*}
@@ -130,7 +133,7 @@ We are going to use these equations in local coordinates, in the form shown belo
 
 \section{Local representation as a graph}
 
-A well known result, Dini's Theorem\footnote{also known as Implicit Function Theorem}, states that, given a smooth function $F$ defined on an open subset of the product space $R^n \times R^m$, if $F(x,y) = 0$ and the partial derivative of $F$ with respect to $y$ is nonzero at a point $(x_0, y_0)$, then there exists an open neighborhood of $x_0$ in $R^n$ and a unique smooth function $y = g(x)$ defined on that neighborhood such that $y_0$ is a regular value of $g$ and $(x, g(x))$ is a smooth solution to the equation $F(x, y) = 0$.
+A well known result, Dini's Theorem\footnote{also known as Implicit Function Theorem}, states that, given a smooth function $F$ defined on an open subset of the product space $\R^n \times \R^m$, if $F(x,y) = 0$ and the partial derivative of $F$ with respect to $y$ is nonzero at a point $(x_0, y_0)$, then there exists an open neighborhood of $x_0$ in $\R^n$ and a unique smooth function $y = g(x)$ defined on that neighborhood such that $y_0$ is a regular value of $g$ and $(x, g(x))$ is a smooth solution to the equation $F(x, y) = 0$.
 
 Consequence of the Dini's theorem is a powerful result that allows one to locally represent a submanifold of $\R^n \times \R^m$ as the graph of a smooth function. This theorem is widely used in differential geometry, geometric analysis, and many other fields of mathematics and physics. We provide a version of this theorem below:
 
@@ -356,6 +359,7 @@ We can thus see that this new problem must be parabolic, and apply the maximum p
 \end{proof}
 
 \section{Reflections on spheres and hyperbolic spaces}	
+\label{reflections definitions}
 
 In what follows, we will focus on manifolds embedded in spaces which have constant sectional curvature. Constant curvature manifolds are classified into three types based on the sign of the curvature:
 \begin{itemize}

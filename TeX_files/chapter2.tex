@@ -142,6 +142,7 @@ The paper from Huisken and Polden \cite{huisken} states the following comforting
 
 
 \section{Local representation as a graph of a solution of (\ref{evolutioneq})}
+\label{representation as graph}
 As a first step, from the Corollary \ref{localgraphcorollary}, we can establish the following:
 
 \begin{theorem}[Local representation as a graph of a solution of (\ref{evolutioneq})]
@@ -184,13 +185,13 @@ Where the matrix $(H_{ij})_{ij}$ is the hessian of $f$. Thus, if one considers t
 \section{The Moving Planes Method and the Chow result}
 
 We will now present the Chow-Gulliver result, presented more or less as in paragraph 2 in \cite{Chow}.
-Suppose that we have a hypersurface embedded in $\R^n$ evolving according to equation (\ref{evolutioneq}). For a fixed time $t$, we can apply the method of the moving planes as described in section \ref{method moving planes}: we can take parallel hyperplanes $\pi_{v,s}$ orthogonal to $v$ intersecting $X$, and consider the reflection  $X_{v,s}^\pi$. There will be a hyperplane $\pi_{v,m_v}$ where $X$ and $X_{v,s}^\pi$ are tangent. As the hypersurface evolves, we may wonder how this critical threshold changes over time. If it behaves in a predictable way, we can hope to use the technique on the evolving manifold, otherwise, it may be hopeless if the critical plane moves back and forth multiple times. In the next section, we are going to prove a result in this general direction, to show a form of "regularity" in this sense. First, however, we need to introduce a marginally stricter definition for the concept of "reflecting inside itself". 
+Suppose that we have a hypersurface embedded in $\R^{n+1}$ evolving according to equation (\ref{evolutioneq}). For a fixed time $t$, we can apply the method of the moving planes as described in section \ref{method moving planes}: we can take parallel hyperplanes $\pi_{v,s}$ orthogonal to $v$ intersecting $X$, and consider the reflection  $X_{v,s}^\pi$. There will be a hyperplane $\pi_{v,m_v}$ where $X$ and $X_{v,s}^\pi$ are tangent. As the hypersurface evolves, we may wonder how this critical threshold changes over time. If it behaves in a predictable way, we can hope to use the technique on the evolving manifold, otherwise, it may be hopeless if the critical plane moves back and forth multiple times. In the next section, we are going to prove a result in this general direction, to show a form of "regularity" in this sense. First, however, we need to introduce a marginally stricter definition for the concept of "reflecting inside itself". 
 
 
 
-Let $\pi$ be a hyperplane in $\R^{n+1}$. We may assume $\pi$ orthogonal to a unit vector $v\in\R^{n+1}$, i.e. $\langle x, v\rangle= C$ for all $x\in \pi$ for some constant $C$. In our notation for the the method of moving planes we pick the origin as a starting point , this means that $\pi = \pi_{v, C}$. 
+Let $\pi$ be a hyperplane in $\R^{n+1}$. We may assume $\pi$ orthogonal to a unit vector $v\in\R^{n+1}$, i.e. $\langle x, v\rangle= C$ for all $x\in \pi$ for some constant $C$. In our notation for the method of moving planes, assuming we pick the origin as a starting point, this means that $\pi = \pi_{v, C}$. 
 
-Then, $R^{n+1}$ is divided by $\pi$ into two half-spaces, which we will name 
+Then, $\R^{n+1}$ is divided by $\pi$ into two half-spaces, which we will name 
 \begin{align*}
 H^+(\pi)&=\{x \in \R^{n+1} : \langle x, v\rangle > C\}= \bigcup_{s>C} \pi_{v, s} \;\;\mathrm{and}\\
 H^-(\pi)&=\{x \in \R^{n+1} : \langle x, v\rangle < C\}= \bigcup_{s<C} \pi_{v, s}.
@@ -200,7 +201,7 @@ H^-(\pi)&=\{x \in \R^{n+1} : \langle x, v\rangle < C\}= \bigcup_{s<C} \pi_{v, s}
 	We say {\em we can reflect $X: M^n\rightarrow \R^{n+1}$ strictly with respect to $\pi$} if both:
 	\begin{itemize}
 		\item $X^\pi\cap H^-(\pi)\subset \mathrm{int}(X)\cap H^-(\pi)$ where $X^\pi$ is the reflection of $X$ about $\pi$ and $\mathrm{int}(X)$ is the region inside $X$.
-		\item $V\notin T_xM^n$ for all $x\in M^n \cap\pi$
+		\item $V\notin T_xM$ for all $x\in M^n \cap\pi$
 	\end{itemize} 
 \end{defin}
 This fundamentally means that the reflection of one of the halves of $X$ on the other side of $\pi$ is contained in the region inside $M^n$ and the tangent spaces of $X$ and of the half-reflection do not form a ninety degree angle with $\pi$, at all points on $\pi\cap X$. As the two tangent spaces are one the reflection of the other, this means that they do not coincide.   
@@ -211,7 +212,7 @@ This fundamentally means that the reflection of one of the halves of $X$ on the 
 The key idea of the main result in the next section is as follows: suppose we have an embedded smooth hypersurface $X$ evolving according to (\ref{evolutioneq}) and a fixed hyperplane $\pi$, intersecting $X$. Suppose that, at some time $t$, $X$ and  $X_\pi$ touch outside of $\pi$. We can consider $X$ and  $X_\pi$ as local graphs over the same hyperplane $\pi$, and we can show that these function evolve according to the same differential equation. Using the strong maximum principle and the Hopf boundary point lemma, then, one can conclude that the two functions coincide, and have been coinciding up until that point. We can then conclude that if  $X$ and  $X_\pi$ only touch in $X\cap\pi$ at the beginning of the evolution, then they will never touch elsewhere.  
 
 
-\section{Theorem 2.2 Chow [RENAME]}
+\section{The Chow-Gulliver result}
 
 The main theorem is the following: 
 
