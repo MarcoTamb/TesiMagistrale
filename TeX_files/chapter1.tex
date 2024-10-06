@@ -420,9 +420,15 @@ We will also use use the symbol $\mathbb{M}^n_+$ to indicate a Riemannian manifo
 We will now define reflections in $\mathbb{M}^n$: 
 
 \begin{itemize}	
-	\item On $\R^n$ we choose an hyperplane and use the usual reflection 
-	\item On  $S^n$, reflections are those induced by $\R^n+1$ when the fixed plane passes through the origin. Each one can be identified by vector orthogonal to the plane we chose. 
-	\item On $\mathbb{H}^n$ we have to be more careful: 
+	\item On $\R^n$ we choose an hyperplane and use the usual reflections.  
+	\item On  $S^n$, reflections are those induced by $\R^{n+1}$ when the fixed plane passes through the origin. Each one can be identified by vector orthogonal to the plane we chose. Each hyperplane through the origin in $\R^{n+1}$ defines a $(n-1)$-sphere through intersection with $S^n$, which can all be rotated into each other. We can parametrize each point in $S^n_+$ the following way: 
+	\begin{itemize}
+		\item choose a point $O$ and a direction $v\in T_O S^n$, and consider the geodesic $\gamma_v$ such that $\gamma_v (0) = O$ and $\dot{\gamma_v} (0) = v$. Assume that $\gamma$ is parametrised by arc-length. 
+		\item Consider the $(n-1)$-sphere $\pi_0$ passing through $\gamma_v(0)$ and orthogonal to  $\dot{\gamma_v}(0)$. One can rotate that sphere along the geodesic $\gamma_v$ so that it touches each point in $S^n_+$. We will call the sphere passing through $\gamma_v(t)$ $\pi_{v, t}$. Each point $x$ is in a unique $\pi_{v, t}$.
+		\item We can then assign to each point in $S^n_+$ a unique couple of coordinates $(x, t)$, where $x$ is the coordinate in $S^{n-1}\cap S^n_+$ when rotating it back to $\pi_0$, and $t$ is the unique $t$ such that the point is in $\pi_{v, t}$.
+	\end{itemize}
+	Observe that a reflection about $\pi_{v, s}$ is $(x, t) \mapsto (x, 2s-t)$. This assignment can actually be extended to any point on $S^n_-$ as well (the other hemisphere) minus any point on the plane orthogonal to $v$ passing through $O$.
+	\item On $\mathbb{H}^n$ we can also construct a similarly constructed foliation: 
 	\begin{itemize}	
 		\item As a first step, choose a point a point $O \in \mathbb{H}^n$. $\mathbb{M}^n$ is a homogeneous space, so the construction does not depend on the choice we make.
 		\item Choose any direction in $v\in T_O\mathbb{H}^n$ and consider the geodesic $\gamma_v: \R \rightarrow \mathbb{H}^n$ satisfying $\gamma_v (0) = O$ and $\dot{\gamma_v} (0) = v$. Assume that $\gamma$ is parametrised by arc-length. 

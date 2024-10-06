@@ -1,24 +1,80 @@
 \chapter{Extension to constant curvature spaces}
-In this chapter we want to extend the Chow-Gulliver result to constant curvature spaces. We will use the same notation as in section 
+In this chapter we want to extend the Chow-Gulliver result (theorem \ref{chow gulliver}) to constant curvature spaces. We will use the same notation as in section 
 \ref{reflections definitions} and \ref{method moving planes}. 
 
-\section{The equation in constant curvature spaces (da scrivere)}	
+\section{The equation in constant curvature spaces}	
 As shown in \cite{huisken}, the equation we analysed in the previous chapter can be also considered in non-flat ambient spaces. In particular, we will analyse the case where the ambient space is one of those described  in section \ref{reflections definitions}: $\R^{n+1}$, $\mathbb{H}^{n+1}$, or $\mathbb{S}^n_+$. We again use the symbol $\mathbb{M}^{n+1}_+$ to indicate any of these spaces. 
 Let $X_0 : M^n \rightarrow \mathbb{M}^{n+1}_+$ be a manifold embedded in $\mathbb{M}^{n+1}_+$. 
 Let $F:\{(\kappa_1, \dots , \kappa_n)\in \R^n\vert \kappa_1\leq \dots \leq \kappa_n\}\rightarrow \R$ be a $C^1$ function satisfying:
 \begin{equation}
-	\frac{\partial F}{\partial \kappa_i} > 0 \mathrm{\; for \; all } \; i=1,\dots, n \label{parabolicità}
+	\frac{\partial F}{\partial \kappa_i} > 0 \mathrm{\; for \; all } \; i=1,\dots, n \label{parabolicità_ext}
 \end{equation}
 and consider the evolution equation 
 \begin{align}
 	\begin{dcases}
 		\frac{\partial X_t}{\partial t} = F(\kappa_1(x), \dots , \kappa_n(x)) \nu\\
 		X(0)= X_0
-	\end{dcases} \label{evolutioneq}
+	\end{dcases} \label{evolutioneq_ext}
 \end{align}
 where $\nu$ is the inward normal to $X_t(M^n)$ at the point $X_t(x)$ and $\kappa_1\leq \dots \leq \kappa_n$ are the principal curvatures at $X_t(x)$. 
 
-As we saw in the previous chapter, it is a non-linear parabolic differential equation, as the calculation in chapter \ref{parabolic} is valid for any metric on $\R{n+1}$, and in particular, for the metrics in our models for $\mathbb{M}^{n+1}_+$ in section \ref{reflections definitions}. The existence result in \cite{huisken} also holds as well in this case. Finally, the result in \ref{representation as graph} is not using the metric tensor, and therefore is valid in this setting as well. 
+As we saw in the previous chapter, it is a non-linear parabolic differential equation, as the calculation in chapter \ref{parabolic} is valid for any metric on $\R{n+1}$, and in particular, for the metrics in our models for $\mathbb{M}^{n+1}_+$ in section \ref{reflections definitions}. The existence result in \cite{huisken} also holds as well in this case. Finally, the result in section \ref{representation as graph} is not using the metric tensor, and therefore is valid in this setting as well, again because there are models on $\R^{n+1}$. 
 
 \section{Extension of the result(da scrivere)}	
-{\vspace{10pt}\LARGE \bf [DA SCRIVERE]}
+
+
+Assume the hypothesis in section \ref{reflections definitions}: $X:M^n\rightarrow \mathbb{M}^{n+1}_+$ is a hypersurface in a constant curvature ambient space, and we choose a point and a direction $v$ to foliate the ambient space. Consider a hyperplane in the foliation, $\pi=\pi_{v, c}$. As in section \ref{reflections definitions} we can define the reflection about $\pi$. As in the previous chapter, let $X^\pi$ be the reflection of X about $\pi$.
+
+Then, $\mathbb{M}^{n+1}_+$ is divided by $\pi$ into two half-spaces:
+\begin{align*}
+	H^+(\pi)= \bigcup_{s>C} \pi_{v, s} \;\;\mathrm{and}\;\;	H^-(\pi)= \bigcup_{s<C} \pi_{v, s}.
+\end{align*} 
+
+\begin{defin}
+	We say {\em we can reflect $X: M^n\rightarrow \mathbb{M}^{n+1}_+$ strictly with respect to $\pi$} if both:
+	\begin{itemize}
+		\item $X^\pi\cap H^-(\pi)\subset \mathrm{int}(X)\cap H^-(\pi)$ 
+		\item The tangent spaces $T_xX$ and $T_xX^\pi$ do not coincide for each $x\in X(M^n) \cap \pi$ (when seen as subspaces of  $T_x\mathbb{M}^{n+1}$)
+	\end{itemize} 
+\end{defin}
+This fundamentally means that the reflection of one of the halves of $X$ on the other side of $\pi$ is contained in the region inside $M^n$ and the tangent spaces of $X$ and of the half-reflection do not form a ninety degree angle with $\pi$, at all points on $\pi\cap X$. As the two tangent spaces are one the reflection of the other, this means that they do not coincide.   
+\begin{defin}
+	We say {\em we can reflect $X: M^n\rightarrow \R^{n+1}$ strictly up to $(\pi,V)$} if we can reflect $M^n$ strictly with respect to $\pi_s$ for all hyperplanes $\pi_{v, s}$ such that $s<C$.  
+\end{defin}
+
+The result then becomes:
+
+
+\begin{theorem}[Extended Chow-Gulliver]\label{chow gulliver extended}
+	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ solution to equation (\ref{evolutioneq_ext}). Then, if we can reflect $X(M^n, 0)=M_0$ strictly with respect to $\pi$, then for all $t\in [0,T)$ we can reflect $X(M^n, t)=M_t$ strictly with respect to $\pi$. 
+\end{theorem}
+
+\begin{proof}
+	As before, by contradiction, suppose that there is a time $t$ such that the thesis is false, and that it is the smallest such $t$. Then, for all $\tau \in [0,t)$, $M_{\tau,\pi}\cap H^-(\pi)\subset \mathrm{int}(M_{\tau})\cap H^-(\pi)$; the unit vector orthogonal to $\pi$, $V$, is such that $V\notin T_xM_\tau$ for all $x\in M_\tau\cap \pi$ and $\tau \in [0,t)$; and either of the conditions fails at $t$, i.e. either: 
+	\begin{itemize}
+		\item[(i)] $M_{t,\pi}\cap H^-(\pi)\cap M_{t}\neq \emptyset$
+		\item[(ii)] The tangent spaces $T_xX$ and $T_xX^\pi$ coincide for some $x\in\pi$. 
+	\end{itemize} 
+	
+	(i) Suppose the first case is true. Then, there exists $x_0 \in M_{t,\pi}\cap H^-(\pi)\cap M_{t}$ such that at $x_0$ the two manifolds are tangent. \\
+	We can then reason as in the proof of theorem \ref{chow gulliver}.
+	
+	(ii) Suppose instead that  $T_xM_t= T_xM_t^\pi$ and in a neighbourhood of $(x, t)$ both $M_t$ and $M_t^\pi$ are graphs of two smooth functions over $T_xM_t$ by \ref{localgraph}, i.e. again
+	\begin{align*}
+		f \; : \; (x, t) &\mapsto x+\tilde{f}(x, t)\nu \\
+		f_\pi \; : \; (x, t) &\mapsto x+\tilde{f}_\pi(x, t)\nu 
+	\end{align*} 
+	Reasoning again as in the proof of theorem \ref{chow gulliver}, in $\overline{H^-(\pi)}$, $f_\pi\geq f$, because $M^n_\pi\cap H^-(\pi)\subset \mathrm{int}(M^n)\cap H^-(\pi)$. Finally, $f(x, t)=f_\pi (x, t)$, hence $f_\pi-f (x, t)=0$, and thus  $(x, t)$ is a minimum point on the boundary for $f_\pi-f$. Also, for the outward pointing normal to the boundary $V$
+	\begin{align*}
+		\frac{\partial f}{\partial V}(x,t)=\frac{\partial f_\pi}{\partial V}(x,t)
+	\end{align*}
+	because the graphs are both tangent to $T_xM_t$. We note also that the models in section \ref{reflections definitions} are conformal, so a vector is orthogonal to the boundary if and only if it is orthogonal to the corresponding region when seen as a region in $\R^{n+1}$. Thus, 
+	\begin{align*}
+		\frac{\partial (f- f_\pi)}{\partial V}(x,t)=0
+	\end{align*}
+	But we must have 
+	\begin{align*}
+		\frac{\partial (f- f_\pi)}{\partial V}(x,t)>0
+	\end{align*}
+	at a minimum on the boundary by Proposition \ref{secondapplication}, a contradiction.  
+\end{proof}
