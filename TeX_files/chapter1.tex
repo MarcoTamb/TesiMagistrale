@@ -6,13 +6,27 @@
 
 The study of immersed hypersurfaces is a fundamental topic in differential geometry, and is especially important in the field of geometric analysis. An immersed hypersurface $X: M^n \rightarrow \overline{M}^{n+1}$ is a submanifold of a higher-dimensional space that is embedded in that space in such a way that the submanifold has the same dimension as the space in which it is embedded minus one. In other words, it is a submanifold of codimension one. We will always assume the embedding to be smooth. The most common case is $\overline{M}^{n+1}=\R^{n+1}$, usually extensively studied in undergraduate courses when $n=2$. We will be assuming that the embedding is also isometric, i.e. the metric $g$ on $M^n$ is the one induced by $(\overline{M}^{n+1}, \overline{g})$. 
 
+\begin{figure}
+	\centering
+	\includegraphics[width=0.713\textwidth]{figures/embedded_manifold.pdf}
+	\caption{A (hyper)surface immersed in $\R^3$}
+\end{figure}
+
 Symbols referring to $(\overline{M}^{n+1}, \overline{g})$ will have a line on top, otherwise the symbol will refer to $(M^{n}, g)$.
+
 
 The pullback of the tangent bundle of $\overline{M}^{n+1}$ to
 $M^{n}$ is a smooth vector bundle on $M^{n}$:
 \begin{align*}
 	X^{*}T\overline{M}^{n+1}=T\overline{M}^{n+1}|_{M^n}= \amalg_{p \in M^n} T_p\overline{M}^{n+1}
 \end{align*} 
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{figures/tangent_and_normal_bundles}
+	\caption{The tangent and the normal bundle at a point $p$}
+\end{figure}
+
 
 One of the most important concepts in the geometry of immersed hypersurfaces is the concept of a normal vector field. The normal vector field $\nu$ is a section of the pullback vector bundle $X^* TM^{n+1}$ on the manifold $M^n$ that is perpendicular to the tangent space of $M^n$ at each point. At each point $p$:
 \begin{align*}
