@@ -227,14 +227,11 @@ It is often used to obtain estimates on the behavior of solutions near the bound
 	at P.\label{HopfBPL}
 \end{theorem}
 
-
 \begin{figure}
 	\centering
-	\includegraphics[width=0.713\textwidth]{figures/3_Hopf_boundary_point_lemma}
-	\caption{The setup in the proof at time $t$ when there are two space dimensions. The region $R$ also extends for times $t<s$ between the two spheres.}
+	\includegraphics[width=\textwidth]{figures/3_Hopf_boundary_point_lemma}
+	\caption{The setup in the proof at time $t$ when there are two space dimensions. The region $R$ also extends for times $s<t$ between the two spheres. The centre of $B_1$ can have time-coordinate different from $t$ if the domain $E$ is not ''straight" in the time direction.}
 \end{figure}
-
-
 \begin{proof}
 	Let the sphere through $P$ be $B_1$. We may construct a smaller sphere $B_2$ centred at $P$. Let now:
 	\begin{align*}
@@ -418,6 +415,11 @@ We will also use use the symbol $\mathbb{M}^n_+$ to indicate a Riemannian manifo
 	where $\langle\cdot, \cdot \rangle$ is the Euclidean dot product on $\R^n$.
 \end{oss}
 
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{figures/5_geodesics_hyperbolic_plane}
+	\caption{On the half-space model of $\mathbb{H}^n$, geodesics are half lines parallel to the $x_n$ axis and circumferences with centre on the $x_n=0$ hyperplane (see \cite{LeeRiemannian2ndEd}).}
+\end{figure}
 \begin{oss}
 	\em Let $\mathbb{S}^n \setminus \{P\}$ be the standard $n$-dimensional unitary sphere minus a point, with the standard induced Euclidean metric. Through stereographic projection it is isometric to $\R^n$ with metric:
 	\begin{align*}
@@ -463,7 +465,7 @@ We will now define reflections in $\mathbb{M}^n$:
 		\item Consider the hyperplane $\pi_0$ passing through $\gamma_v(0)$ and orthogonal to  $\dot{\gamma_v}(0)$. Then consider the 1-parameter group of isometries of $\mathrm{H}^n$ such that $g_t(\gamma_v (0) )=\gamma_v (t) $ and such that the curves $t \mapsto g_t(x)$ are orthogonal to $\pi_0$ for each $x\in \pi_0$. This allows us to assign to each point in $\mathrm{H}^n$ coordinates $(x, t)$ where $x\in\pi_0$ and $t\in \R$.  
 		\item consider now any hyperplane  $\pi_t$ passing through $\gamma_v(t)$ and orthogonal to  $\dot{\gamma_v}(t)$. The reflection fixing $\pi_t$ will be the one given by the formula $(x, t)\mapsto (x, 2s-t)$.
 	\end{itemize}
-	One may find this confusing, as there is no guarantee that this construction exists, but it is easy to convince oneself that it does: through rotations and translations it is possible to assume without loss of generality that the point we chose is $e_n$ and the direction is $e_1$ (assuming the model in the definition above). Then the planes orthogonal to $e_1$ restricted to the half space constitute the desired foliation. To get the general case, one just takes the preimage of the isometry. 
+	One may find this insufficient, as there is no guarantee that this construction exists, but it is easy to convince oneself that it does: through rotations and translations it is possible to assume without loss of generality that the point we chose is $e_n$ and the direction is $e_1$ (assuming the half-space model in the definition above). We can do this because $\mathbb{H}^n$ is frame-homogenous. Then, the planes orthogonal to $e_1$ - restricted to the half space - constitute the desired foliation. To get the general case, one just takes the preimage of the isometry. For a proof that $\mathbb{H}^n$ is frame-homogenous, see proposition 3.9 in \cite{LeeRiemannian2ndEd}.
 \end{itemize}
 
 
@@ -549,5 +551,5 @@ The proof of this proposition is in \cite{italiani} and is omitted here. We now 
 \end{proof}
 
 \begin{oss}
-	\em To prove the theorem in the aforementioned more general setting, one would need to only prove that the differential equation $H_X(u(x))= \mathrm{constant}$ is an elliptic equation. Its ellipticity is a standard result in Geometric Analysis, and can be found in the literature. 
+	\em To prove the theorem in the aforementioned more general setting, one would need to only prove that the differential equation $H_X(u(x))= \mathrm{constant}$ is an elliptic equation. Its ellipticity is a standard result in Geometric Analysis, and can be found in the literature. It is similar to the proof that equation (\ref{evolutioneq}) is parabolic (see section \ref{parabolic}).
 \end{oss}
