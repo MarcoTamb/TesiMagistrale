@@ -17,11 +17,11 @@ Let $F:\{(\kappa_1, \dots , \kappa_n)\in \R^n\vert \kappa_1\leq \dots \leq \kapp
 and consider the evolution equation 
 \begin{align}
 	\begin{dcases}
-		\frac{\partial X_t}{\partial t} = F(\kappa_1(x), \dots , \kappa_n(x)) \nu\\
+		\frac{\partial X_t}{\partial t} = - F(\kappa_1(x), \dots , \kappa_n(x)) \nu\\
 		X(0)= X_0
 	\end{dcases} \label{evolutioneq}
 \end{align}
-where $\nu$ is the inward normal to $X_t(M^n)$ at the point $X_t(x)$ and $\kappa_1\leq \dots \leq \kappa_n$ are the principal curvatures at $X_t(x)$. 
+where $\nu$ is the outward normal to $X_t(M^n)$ at the point $X_t(x)$ and $\kappa_1\leq \dots \leq \kappa_n$ are the principal curvatures at $X_t(x)$. 
 
 
 \section{Parabolicity of the differential equation (\ref{evolutioneq})}\label{parabolic}
@@ -34,13 +34,13 @@ In order to classify a non-linear partial differential equation one has to under
 Like in \cite{huisken}, as $F$ is a symmetric function in the principal curvatures, we may interchangeably take $F$ to be a function of the Weingarten map tensor or of the second fundamental form, and thus we get:
 
 \begin{align*}
-	\frac{\partial X_t}{\partial t} &= F(h_{ij}(X_t)) \nu
+	\frac{\partial X_t}{\partial t} &= - F(h_{ij}(X_t)) \nu
 \end{align*}
 
 To understand the behaviour close to a solution, we can substitute in our equation $X_t$ with a $X_t+\varepsilon u_t$ to get:
 
 \begin{align}
-	\frac{\partial X_t}{\partial t} + \varepsilon\frac{\partial u_t}{\partial t}  &= F(h_{ij}(X_t+\varepsilon u_t)) \nu_{(X_t+\varepsilon u_t)}\label{linearizingevolutioneq}
+	\frac{\partial X_t}{\partial t} + \varepsilon\frac{\partial u_t}{\partial t}  &= - F(h_{ij}(X_t+\varepsilon u_t)) \nu_{(X_t+\varepsilon u_t)}\label{linearizingevolutioneq}
 \end{align}
 where we mean that  $\nu_{(X_t+\varepsilon u_t)}$ is the normal to the perturbed immersion. 
 We are interested in the behaviour of this equation for a small $\varepsilon$. This equation when taking the limit for $\varepsilon \rightarrow 0$ is the so-called linearisation of the PDE; we want this PDE to be a parabolic equation to apply our results.
@@ -67,12 +67,12 @@ Putting it all together in the first line:
 Were on the last step we are using the fact that $\nu_{(X_t+\varepsilon u_t)}-\nu_{X_t} = O(\varepsilon)$, and as this gets smaller the component of w parallel to the difference also is $O(\varepsilon)$, as $w$ is parallel to $\nu_{X_t}$.
 We can then expand F in the RHS of the equation (\ref{linearizingevolutioneq}) to the first order, as it is a $C^1$ function: 
 \begin{align*}
-	\cancel{\frac{\partial X_t}{\partial t}} + \varepsilon\frac{\partial u_t}{\partial t}  &= \left(\cancel{F(h_{ij}(X_t)) }
-	- \varepsilon \langle DF, H\rangle + o(\varepsilon)\right)\nu_{(X_t+\varepsilon u_t)}\\
-	\varepsilon\frac{\partial u_t}{\partial t}  &= - \varepsilon\left(
+	\cancel{\frac{\partial X_t}{\partial t}} + \varepsilon\frac{\partial u_t}{\partial t}  &= - \left(\cancel{F(h_{ij}(X_t)) }
+	+ \varepsilon \langle DF, H\rangle + o(\varepsilon)\right)\nu_{(X_t+\varepsilon u_t)}\\
+	\varepsilon\frac{\partial u_t}{\partial t}  &= \varepsilon\left(
 	\frac{\partial F}{\partial h_{i j}} g^{i k}g^{jl}\left\langle \frac{\partial^2 u_t}{\partial x^k \partial x^l},  \nu_{(X_t+\varepsilon u_t)}\right\rangle + \mathrm{lower \; order \;  terms}\right)\nu_{(X_t+\varepsilon u_t)} + o(\varepsilon)\\
 	\frac{\partial u_t}{\partial t}  &= 
-	- \frac{\partial F}{\partial h_{i j}} g^{i k}g^{jl}\left\langle \frac{\partial^2 u_t}{\partial x^k \partial x^l},  \nu_{(X_t+\varepsilon u_t)}\right\rangle \nu_{(X_t+\varepsilon u_t)} + \mathrm{lower \; order \;  terms} + o(1)
+	\frac{\partial F}{\partial h_{i j}} g^{i k}g^{jl}\left\langle \frac{\partial^2 u_t}{\partial x^k \partial x^l},  \nu_{(X_t+\varepsilon u_t)}\right\rangle \nu_{(X_t+\varepsilon u_t)} + \mathrm{lower \; order \;  terms} + o(1)
 \end{align*}
 Letting $\varepsilon\rightarrow 0$, we get to: 
 
@@ -94,7 +94,7 @@ must be positive definite. Or equivalently, as the principal curvatures are the 
 \begin{align*}
 	\frac{\partial F}{\partial \kappa_{i}} > 0
 \end{align*}
-
+A more general approach proving that the differential equation is parabolic can be found in \cite{Gerhardt Curvature}. 
 \begin{comment}
 	{\em Looking more closely at what we are doing, one can prove that it is equivalent to follow this linearisation procedure or to take the derivatives of $F$ with respect to the second order terms.}
 \end{comment}
@@ -139,6 +139,7 @@ In \cite{huisken} one finds the following comforting existence result for the cl
 	Suppose $X_0 : M^n \rightarrow \R^{n+1}$ is a smooth, closed hypersurface in $\R^{n+1}$, such that (\ref{parabolicità}) holds at all points in $X_0$, i.e. for all the values of the principal curvatures $\kappa_{i}$ realized at some point on $X_0$. Then, (\ref{evolutioneq}) has a smooth solution, at least on some short time interval $[0, T)$, $T > 0$.  \label{existence}
 \end{theorem}
 
+A much more extended analysis of the problem of the existence of solution to the equation can be found in \cite{Gerhardt Curvature}. 
 
 
 \section{Local representation as a graph of a solution of (\ref{evolutioneq})}
