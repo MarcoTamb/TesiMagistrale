@@ -207,7 +207,7 @@ H^-(\pi)&=\{x \in \R^{n+1} : \langle x, v\rangle < C\}= \bigcup_{s<C} \pi_{v, s}
 \end{defin}
 This fundamentally means that the reflection of one of the halves of $X$ on the other side of $\pi$ is contained in the region inside $M^n$ and the tangent spaces of $X$ and of the half-reflection do not form a ninety degree angle with $\pi$, at all points on $\pi\cap X$. As the two tangent spaces are one the reflection of the other, this means that they do not coincide.   
 \begin{defin}
-	We say {\em we can reflect $X: M^n\rightarrow \R^{n+1}$ strictly up to $(\pi,V)$} if we can reflect $M^n$ strictly with respect to $\pi_s$ for all hyperplanes $\pi_{v, s}$ such that $s<C$.  
+	We say {\em we can reflect $X: M^n\rightarrow \R^{n+1}$ strictly up to $(\pi,v)$} if we can reflect $M^n$ strictly with respect to $\pi_{v, s}$ for all hyperplanes $\pi_{v, s}$ such that $s<C$.  
 \end{defin}
 
 The key idea of the main result in the next section is as follows: suppose we have an embedded smooth hypersurface $X$ evolving according to (\ref{evolutioneq}) and a fixed hyperplane $\pi$, intersecting $X$. Suppose that, at some time $t$, $X$ and  $X_\pi$ touch outside of $\pi$. We can consider $X$ and  $X_\pi$ as local graphs over the same hyperplane $\pi$, and we can show that these function evolve according to the same differential equation. Using the strong maximum principle and the Hopf boundary point lemma, then, one can conclude that the two functions coincide, and have been coinciding up until that point. We can then conclude that if  $X$ and  $X_\pi$ only touch in $X\cap\pi$ at the beginning of the evolution, then they will never touch elsewhere.  
@@ -257,21 +257,36 @@ The main theorem is the following:
 	\end{align*}
 	at a minimum on the boundary by Proposition \ref{secondapplication}, a contradiction.  
 \end{proof}
-The following is an immediate consequence of the main result:
+The following are an immediate consequence of the main result:
 \begin{cor}
-	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ solution to \ref{evolutioneq}. Then, if we can reflect $M_0$ strictly up to $(\pi, V)$, then for all $t\in [0,T)$ we can reflect $X(M, t)$ strictly up to $(\pi, V)$.  
+	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ embedded solution to \ref{evolutioneq}. Then, if we can reflect $M_0$ strictly up to $(\pi_{v,C},v)$, then for all $t\in [0,T)$ $v\notin T_xX_t$ for all $x\in X_t\cap\overline{H^+(\pi)}$. In particular,  $ X_t\cap\overline{H^+(\pi)}$ is a graph over $\pi$
+\end{cor}
+
+
+\begin{cor}
+	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ embedded solution to \ref{evolutioneq}. Let $s_v:[0,T) \rightarrow \R$ be such that we can reflect $X_t$ strictly at $\pi_{c, v}$ for all $c<s_v(t)$ but we cannot reflect $X_t$ strictly at $\pi_{v, s_v(t)}$. Then $s_v(t)$ is a non-decreasing function. 
 \end{cor}
 \begin{proof}
-	The hypothesis of the theorem are true for each $\pi_K$ in the definition, thus we can reflect strictly with respect to each $\pi_K$ for all $t\in[0,T)$, and thus we can reflect $X(M, t)$ strictly up to $(\pi, V)$.
+We can reflect $X_t$ 
 \end{proof}
+
+
+Another immediate consequence of Theorem \ref{chow gulliver} is the following:
+\begin{cor}
+	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ solution to \ref{evolutioneq}. Then, if we can reflect $M_0$ strictly up to $(\pi_{v,C},v)$, then for all $t\in [0,T)$ we can reflect $X(M, t)$ strictly up to $(\pi_{v,C},v)$.  
+\end{cor}
+\begin{proof}
+	The hypothesis of the theorem are true for each $\pi_K$ in the definition, thus we can reflect strictly with respect to each $\pi_K$ for all $t\in[0,T)$, and thus we can reflect $X(M, t)$ strictly up to $(\pi_{v,C},v)$.
+\end{proof}
+
+
 
 \section{Some corollaries of the result (da scrivere)}
 
-{\LARGE \textbf{[It is locally a graph on the reflection plane (2.3) - DA SCRIVERE]}}
 
 {\LARGE \textbf{[can uniformly reflect a small bit (2.6) - DA SCRIVERE]}}
 
-{\LARGE \textbf{[limit to the difference between max and min |x| (2.9a) DA SCRIVERE]}}
+{\LARGE \textbf{[limit to the difference between max and min $|x|$ (2.9a) DA SCRIVERE]}}
 
 \section{Applying the result to find gradient estimates (da scrivere)}
 
