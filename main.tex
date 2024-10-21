@@ -72,7 +72,7 @@
 \begin{document}
 
 %\maketitle 
-\frontmatter
+%\frontmatter
 \begin{localsize}{11}
 	\include{./TeX_files/frontespizio}
 \end{localsize}
@@ -81,7 +81,7 @@
 \phantomsection
 \include{./TeX_files/introduzione}
 
-\mainmatter
+%\mainmatter
 
 \include{./TeX_files/chapter1}
 
@@ -92,9 +92,10 @@
 \backmatter
 % bibliography, glossary and index would go here.
 
-%\phantomsection
+\phantomsection
 
-\clearpage
+%\clearpage
+\addcontentsline{toc}{chapter}{Bibliography}
 \begin{thebibliography}{11} 
 	\bibitem{Chow} Chow B.; {\em Geometric Aspects of Aleksandrov Reflection and Gradient Estimates for Parabolic Equations}, Communications in Analysis and Geometry, Volume 5, Number 2, 389-409, 1997.
 	
@@ -127,7 +128,6 @@
 	
 	%\bibitem{hamilton}  R.S. Hamilton, {\em Three-Manifolds with Positive Ricci Curvature}
 \end{thebibliography}
-\addcontentsline{toc}{chapter}{Bibliography}
 %\include{./TeX_files/ringraziamenti}
 
 
