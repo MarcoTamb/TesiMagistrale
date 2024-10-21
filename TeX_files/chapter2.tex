@@ -218,27 +218,27 @@ The key idea of the main result in the next section is as follows: suppose we ha
 The main theorem is the following: 
 
 \begin{theorem}[Chow-Gulliver]\label{chow gulliver}
-	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ solution to equation (\ref{evolutioneq}). Then, if we can reflect $X(M^n, 0)=M_0$ strictly with respect to $\pi$, then for all $t\in [0,T)$ we can reflect $X(M^n, t)=M_t$ strictly with respect to $\pi$. 
+	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ solution to equation (\ref{evolutioneq}). Then, if we can reflect $X(M^n, 0)=X_0$ strictly with respect to $\pi$, then for all $t\in [0,T)$ we can reflect $X(M^n, t)=X_t$ strictly with respect to $\pi$. 
 \end{theorem}
 
 \begin{proof}
-	By contradiction, suppose that there is a time $t$ such that the thesis is false, and that it is the smallest such $t$. Then, for all $\tau \in [0,t)$, $M_{\tau,\pi}\cap H^-(\pi)\subset \mathrm{int}(M_{\tau})\cap H^-(\pi)$; the unit vector orthogonal to $\pi$, $V$, is such that $V\notin T_xM_\tau$ for all $x\in M_\tau\cap \pi$ and $\tau \in [0,t)$; and either of the conditions fails at $t$, i.e. either: 
+	By contradiction, suppose that there is a time $t$ such that the thesis is false, and that it is the smallest such $t$. Then, for all $\tau \in [0,t)$, $X_{\tau,\pi}\cap H^-(\pi)\subset \mathrm{int}(X_{\tau})\cap H^-(\pi)$; the unit vector orthogonal to $\pi$, $V$, is such that $V\notin T_xX_\tau$ for all $x\in X_\tau\cap \pi$ and $\tau \in [0,t)$; and either of the conditions fails at $t$, i.e. either: 
 	\begin{itemize}
-		\item[(i)] $M_{t,\pi}\cap H^-(\pi)\cap M_{t}\neq \emptyset$
-		\item[(ii)] $V\in T_xM_t$  for some $x\in\pi$. 
+		\item[(i)] $X_{t,\pi}\cap H^-(\pi)\cap X_{t}\neq \emptyset$
+		\item[(ii)] $V\in T_xX_t$  for some $x\in\pi$. 
 	\end{itemize} 
 	
-	(i) Suppose the first case is true. Then, there exists $x_0 \in M_{t,\pi}\cap H^-(\pi)\cap M_{t}$ such that at $x_0$ the two manifolds are tangent. \\
-	We can take a neighbourhood of $(x_0, t)\in M_{t}\times \R$ such that  both $M_{t,\pi}$ and $M_{t}$ are graphs over $T_{x_0}M_{t}$ by \ref{localgraph}. \\
-	We can explicitly write the functions $f:U\times (t-\varepsilon, t+\varepsilon)\rightarrow M_t$, where $U\subset T_{x_0}M_{t}$, and the corresponding $f_\pi$ for $M_{t,\pi}$. 
+	(i) Suppose the first case is true. Then, there exists $x_0 \in X_{t,\pi}\cap H^-(\pi)\cap X_{t}$ such that at $x_0$ the two manifolds are tangent. \\
+	We can take a neighbourhood of $(x_0, t)\in X_{t}\times \R$ such that  both $X_{t,\pi}$ and $X_{t}$ are graphs over $T_{x_0}X_{t}$ by \ref{localgraph}. \\
+	We can explicitly write the functions $f:U\times (t-\varepsilon, t+\varepsilon)\rightarrow X_t$, where $U\subset T_{x_0}X_{t}$, and the corresponding $f_\pi$ for $X_{t,\pi}$. 
 	We can also write 
 	\begin{align*}
 		f \; : \; (x, t) &\mapsto x+\tilde{f}(x, t)\nu \\
 		f_\pi \; : \; (x, t) &\mapsto x+\tilde{f}_\pi(x, t)\nu 
 	\end{align*}
-	for appropriate functions $\tilde{f}:U\times (t-\varepsilon, t+\varepsilon)\rightarrow \R$ and $\tilde{f}_\pi:U\times (t-\varepsilon, t+\varepsilon)\rightarrow \R$, where $\nu$ is a fixed unit vector normal to $T_{x_0}M_{t}$.  $\tilde{f}$ and $\tilde{f_\pi}$ are solutions to the same second order PDE, which is parabolic by what was discussed in paragraph \ref{parabolic}, hence we can apply Proposition \ref{firstapplication} to conclude that $\tilde{f}\equiv\tilde{f_\pi}$, and thus $M_{t,\pi}$ and $M_{t}$ coincide in a neighbourhood of $(x, t)$, a contradiction as we assumed that $t$ is the first $t$ where the flows touch.
+	for appropriate functions $\tilde{f}:U\times (t-\varepsilon, t+\varepsilon)\rightarrow \R$ and $\tilde{f}_\pi:U\times (t-\varepsilon, t+\varepsilon)\rightarrow \R$, where $\nu$ is a fixed unit vector normal to $T_{x_0}X_{t}$.  $\tilde{f}$ and $\tilde{f_\pi}$ are solutions to the same second order PDE, which is parabolic by what was discussed in paragraph \ref{parabolic}, hence we can apply Proposition \ref{firstapplication} to conclude that $\tilde{f}\equiv\tilde{f_\pi}$, and thus $X_{t,\pi}$ and $X_{t}$ coincide in a neighbourhood of $(x, t)$, a contradiction as we assumed that $t$ is the first $t$ where the flows touch.
 	
-	(ii) Suppose instead that $V\in T_xM_t$  for some $t\in [0, t)$ and some $x\in M_t\cap \pi$. Then $T_xM_t= T_xM_{t, \pi}$ and in a neighbourhood of $(x, t)$ both $M_t$ and $M_{t, \pi}$ are graphs of two smooth functions over $T_xM_t$ by \ref{localgraph}, i.e. again
+	(ii) Suppose instead that $V\in T_xX_t$  for some $t\in [0, t)$ and some $x\in X_t\cap \pi$. Then $T_xX_t= T_xX_{t, \pi}$ and in a neighbourhood of $(x, t)$ both $X_t$ and $X_{t, \pi}$ are graphs of two smooth functions over $T_xX_t$ by \ref{localgraph}, i.e. again
 	\begin{align*}
 		f \; : \; (x, t) &\mapsto x+\tilde{f}(x, t)\nu \\
 		f_\pi \; : \; (x, t) &\mapsto x+\tilde{f}_\pi(x, t)\nu 
@@ -247,7 +247,7 @@ The main theorem is the following:
 	\begin{align*}
 		\frac{\partial f}{\partial V}(x,t)=\frac{\partial f_\pi}{\partial V}(x,t)
 	\end{align*}
-	because the graphs are both tangent to $T_xM_t$, and $V$ here is the outward pointing normal to the boundary by definition of the reflection. Thus, 
+	because the graphs are both tangent to $T_xX_t$, and $V$ here is the outward pointing normal to the boundary by definition of the reflection. Thus, 
 	\begin{align*}
 		\frac{\partial (f- f_\pi)}{\partial V}(x,t)=0
 	\end{align*}
@@ -257,33 +257,63 @@ The main theorem is the following:
 	\end{align*}
 	at a minimum on the boundary by Proposition \ref{secondapplication}, a contradiction.  
 \end{proof}
-The following are an immediate consequence of the main result:
+
+
+\section{Some corollaries of the result (da scrivere)} 
+In this section we collect a number of corollaries to the main result above. This first one is an immediate consequence of the main result:
 \begin{cor}
-	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ embedded solution to \ref{evolutioneq}. Then, if we can reflect $M_0$ strictly up to $(\pi_{v,C},v)$, then for all $t\in [0,T)$ $v\notin T_xX_t$ for all $x\in X_t\cap\overline{H^+(\pi)}$. In particular,  $ X_t\cap\overline{H^+(\pi)}$ is a graph over $\pi$
+	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ embedded solution to \ref{evolutioneq}. Then, if we can reflect $X_0$ strictly up to $(\pi_{v,C},v)$, then for all $t\in [0,T)$ $v\notin T_xX_t$ for all $x\in X_t\cap\overline{H^+(\pi)}$. In particular,  $ X_t\cap\overline{H^+(\pi)}$ is a graph over $\pi$ for all $t\in [0,T)$.
 \end{cor}
 
 
-\begin{cor}
-	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ embedded solution to \ref{evolutioneq}. Let $s_v:[0,T) \rightarrow \R$ be such that we can reflect $X_t$ strictly at $\pi_{c, v}$ for all $c<s_v(t)$ but we cannot reflect $X_t$ strictly at $\pi_{v, s_v(t)}$. Then $s_v(t)$ is a non-decreasing function. 
-\end{cor}
 
 
 Another immediate consequence of Theorem \ref{chow gulliver} is the following:
 \begin{cor}
-	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ solution to \ref{evolutioneq}. Then, if we can reflect $M_0$ strictly up to $(\pi_{v,C},v)$, then for all $t\in [0,T)$ we can reflect $X(M, t)$ strictly up to $(\pi_{v,C},v)$.  
+	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ solution to \ref{evolutioneq}. Then, if we can reflect $X_0$ strictly up to $(\pi_{v,C},v)$, then for all $t\in [0,T)$ we can reflect $X(M, t)$ strictly up to $(\pi_{v,C},v)$.  
 \end{cor}
 \begin{proof}
 	The hypothesis of the theorem are true for each $\pi_K$ in the definition, thus we can reflect strictly with respect to each $\pi_K$ for all $t\in[0,T)$, and thus we can reflect $X(M, t)$ strictly up to $(\pi_{v,C},v)$.
 \end{proof}
 
+ Furthermore, it is clear that for every direction $v$ there exists a hyperplane $\Pi$ perpendicular to $v$ such that we can reflect $X_0$ up to $(\Pi, v)$ and $\Pi$ intersects the interior of $X_0$. To be more precise, for every direction $v$ there exists a hyperplane $\Pi_0^v$ tangent to $X_0$ and such that $X_0\cap H^+(\Pi_0^v)=\emptyset$; we can find a plane $\Pi_0^v +\epsilon v$ such that we can reflect $X_0$ up to $(\Pi_0^v +\epsilon v, v)$ and $\Pi_0^v +\epsilon v$ intersects the interior of $X_0$. Thus, we obtain the following by compactness:
 
 
-\section{Some corollaries of the result (da scrivere)}
+\begin{cor}
+	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ embedded solution to \ref{evolutioneq}. There exists $\varepsilon>0$ depending only on $X_0$ such that for all $t\in[0, T)$ we can reflect $X_t$ up to $(\Pi_0^v +\epsilon v, v)$ for every $v \in S^n$. In particular, if $X_0 \in B_R (C)$, then we can always reflect $X_t$ up to $(\Pi, v)$ whenever $H^+(\Pi)\cap B_{R-\varepsilon}(C)=\emptyset$.
+\end{cor}
+In other words, we can always reflect a little $\varepsilon$ in any direction, uniformly. We can use the fact that we can always reflect about a plane outside a sphere containing $X_0$ to prove the following estimate:
 
 
-{\LARGE \textbf{[can uniformly reflect a small bit (2.6) - DA SCRIVERE]}}
 
-{\LARGE \textbf{[limit to the difference between max and min $|x|$ (2.9a) DA SCRIVERE]}}
+
+\begin{cor}
+	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ embedded solution to \ref{evolutioneq}. There exists $C>0$ depending only on $X_0$ such that for all $t\in[0, T)$: 
+	\begin{align*}
+		\max_{x\in X_t} |x| - \min_{x\in X_t} |x| \leq C
+	\end{align*}
+\end{cor}
+\begin{proof}
+	{\LARGE \textbf{[DA SCRIVERE]}}
+\end{proof}
+
+
+Lastly: 
+\begin{cor}
+	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ embedded solution to \ref{evolutioneq}. Let $s_v:[0,T) \rightarrow I$ be such that 
+	\begin{align*}
+		s_v(t)= \sup\left\{s \in I \;|\;  \; \mathrm{we \; can \; reflect \;} X_t \mathrm{ \; strictly \; up \; to }\; (\pi_{v, s}, v) \right\}.
+	\end{align*}
+	Then $s_v(t)$ is a non-decreasing function. Also, if $X_0$ is compact, the limit
+	\begin{align*}
+		\lim_{t\rightarrow T^-} s_v(t)
+	\end{align*}
+	exists and is finite.
+\end{cor}
+\begin{proof}
+	When taking $X_t$ as the starting manifold, the hypothesis of the theorem are still true, therefore we can reflect about $\pi_{c, v}$  for all $c<s_v(t)$ at all subsequent times. Thus $s_v(t)$ is non-decreasing. $\lim_{t\rightarrow T^-} s_v(t) = sup s_v(t)$, therefore the limit exists. Also, if $X_0$ is bounded, there exists $R>0$ such that $X_0\subset B_R(0)$, therefore we can reflect $X_0$ strictly about any plane non intersecting $B_R(0)$, as it does not touch $X_0$, and therefore we can also reflect $X_t$ strictly about the same planes by theorem \ref{chow gulliver}. At the same time, there exists a plane such that $X_t$ cannot be reflected strictly about it, because there will always be a straight line parallel to $v$ intersecting $X_t$ in multiple points, and we can always consider the plane orthogonal to $v$ passing through their midpoint, about which $X_t$ cannot be reflected strictly, and $s_v(t) \neq +\infty$. Therefore  $s_v(t)\in [-R, R]$, and the limit above is finite. 
+\end{proof}
+
 
 \section{Applying the result to find gradient estimates (da scrivere)}
 
