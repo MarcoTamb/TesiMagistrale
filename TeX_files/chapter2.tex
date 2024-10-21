@@ -290,11 +290,24 @@ In other words, we can always reflect a little $\varepsilon$ in any direction, u
 \begin{cor}
 	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ embedded solution to \ref{evolutioneq}. There exists $C>0$ depending only on $X_0$ such that for all $t\in[0, T)$: 
 	\begin{align*}
-		\max_{x\in X_t} |x| - \min_{x\in X_t} |x| \leq C
+		\max_{x\in X_t} |x| - \min_{x\in X_t} |x| < C
 	\end{align*}
 \end{cor}
 \begin{proof}
-	{\LARGE \textbf{[DA SCRIVERE]}}
+	We can reflect $X_0\subset B_R(0)$ up to any plane tangent to  $B_R(0)$, i.e. any plane $\pi_{v, K}$ for any $K\geq R$ and $v$ unit vector, i.e.  $\pi_{v, K}=\{p \in \R^{n+1} : \langle p, v \rangle = K\}$. Let $x_1, x_2\in X_t$ such that $|x_1|=\min_{x\in X_t} |x|$ and  $|x_2|=\max_{x\in X_t} |x|$. Let $v=\frac{x_2-x_1}{\vert x_2-x_1 \vert}$: we can reflect $X_t$ up to $(\pi_{v, R}, v)$ by theorem \ref{chow gulliver}, therefore $\mathrm{dist}(x_2, \pi_{v, R}) < \mathrm{dist}(x_1, \pi_{v, R})$, or in other words:
+	\begin{align*}
+		 \left\langle x_2, \frac{x_2-x_1}{\vert x_2-x_1 \vert} \right\rangle - R &< 
+		 \left\langle x_1, \frac{x_1-x_2}{\vert x_2-x_1 \vert} \right\rangle + R\\
+		 \frac{|x_2|^2}{\vert x_2-x_1 \vert} + \cancel{\frac{\left\langle x_2, x_1\right\rangle}{\vert x_2-x_1 \vert}}  - R &< 
+		 \frac{|x_1|^2}{\vert x_2-x_1 \vert} - \cancel{\frac{\left\langle x_2, x_1\right\rangle}{\vert x_2-x_1 \vert}}  + R\\
+		 \frac{|x_2|^2 - |x_1|^2}{\vert x_2-x_1 \vert} &< 
+		  2R\\
+		  |x_2|^2 - |x_1|^2 &< 
+		  2R \vert x_2-x_1 \vert \leq 4R |x_2|\\
+		  |x_2|^2 &<|x_1|^2 + 4R |x_2|\\
+		  |x_2| &< |x_1| \frac{|x_1|}{|x_2|} + 4R < |x_1| + 4R\\
+		  |x_2| -|x_1| &<4R
+	\end{align*}
 \end{proof}
 
 
@@ -311,7 +324,7 @@ Lastly:
 	exists and is finite.
 \end{cor}
 \begin{proof}
-	When taking $X_t$ as the starting manifold, the hypothesis of the theorem are still true, therefore we can reflect about $\pi_{c, v}$  for all $c<s_v(t)$ at all subsequent times. Thus $s_v(t)$ is non-decreasing. $\lim_{t\rightarrow T^-} s_v(t) = sup s_v(t)$, therefore the limit exists. Also, if $X_0$ is bounded, there exists $R>0$ such that $X_0\subset B_R(0)$, therefore we can reflect $X_0$ strictly about any plane non intersecting $B_R(0)$, as it does not touch $X_0$, and therefore we can also reflect $X_t$ strictly about the same planes by theorem \ref{chow gulliver}. At the same time, there exists a plane such that $X_t$ cannot be reflected strictly about it, because there will always be a straight line parallel to $v$ intersecting $X_t$ in multiple points, and we can always consider the plane orthogonal to $v$ passing through their midpoint, about which $X_t$ cannot be reflected strictly, and $s_v(t) \neq +\infty$. Therefore  $s_v(t)\in [-R, R]$, and the limit above is finite. 
+	When taking $X_t$ as the starting manifold, the hypothesis of the theorem are still true, therefore we can reflect about $\pi_{c, v}$  for all $c<s_v(t)$ at all subsequent times. Thus $s_v(t)$ is non-decreasing. $\lim_{t\rightarrow T^-} s_v(t) = \sup s_v(t)$, therefore the limit exists. Also, if $X_0$ is bounded, there exists $R>0$ such that $X_0\subset B_R(0)$, therefore we can reflect $X_0$ strictly about any plane non intersecting $B_R(0)$, as it does not touch $X_0$, and therefore we can also reflect $X_t$ strictly about the same planes by theorem \ref{chow gulliver}. At the same time, there exists a plane such that $X_t$ cannot be reflected strictly about it, because there will always be a straight line parallel to $v$ intersecting $X_t$ in multiple points, and we can always consider the plane orthogonal to $v$ passing through their midpoint, about which $X_t$ cannot be reflected strictly, and $s_v(t) \neq +\infty$. Therefore  $s_v(t)\in [-R, R]$, and the limit above is finite. 
 \end{proof}
 
 
