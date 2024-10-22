@@ -259,10 +259,10 @@ The main theorem is the following:
 \end{proof}
 
 
-\section{Some corollaries of the result (da scrivere)} 
+\section{Some corollaries of the result} 
 In this section we collect a number of corollaries to the main result above. This first one is an immediate consequence of the main result:
 \begin{cor}
-	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ embedded solution to \ref{evolutioneq}. Then, if we can reflect $X_0$ strictly up to $(\pi_{v,C},v)$, then for all $t\in [0,T)$ $v\notin T_xX_t$ for all $x\in X_t\cap\overline{H^+(\pi)}$. In particular,  $ X_t\cap\overline{H^+(\pi)}$ is a graph over $\pi$ for all $t\in [0,T)$.
+	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ embedded solution to equation (\ref{evolutioneq}). Then, if we can reflect $X_0$ strictly up to $(\pi_{v,C},v)$, then for all $t\in [0,T)$ $v\notin T_xX_t$ for all $x\in X_t\cap\overline{H^+(\pi)}$. In particular,  $ X_t\cap\overline{H^+(\pi)}$ is a graph over $\pi$ for all $t\in [0,T)$.
 \end{cor}
 
 
@@ -270,7 +270,7 @@ In this section we collect a number of corollaries to the main result above. Thi
 
 Another immediate consequence of Theorem \ref{chow gulliver} is the following:
 \begin{cor}
-	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ solution to \ref{evolutioneq}. Then, if we can reflect $X_0$ strictly up to $(\pi_{v,C},v)$, then for all $t\in [0,T)$ we can reflect $X(M, t)$ strictly up to $(\pi_{v,C},v)$.  
+	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ solution to equation (\ref{evolutioneq}). Then, if we can reflect $X_0$ strictly up to $(\pi_{v,C},v)$, then for all $t\in [0,T)$ we can reflect $X(M, t)$ strictly up to $(\pi_{v,C},v)$.  
 \end{cor}
 \begin{proof}
 	The hypothesis of the theorem are true for each $\pi_K$ in the definition, thus we can reflect strictly with respect to each $\pi_K$ for all $t\in[0,T)$, and thus we can reflect $X(M, t)$ strictly up to $(\pi_{v,C},v)$.
@@ -280,7 +280,7 @@ Another immediate consequence of Theorem \ref{chow gulliver} is the following:
 
 
 \begin{cor}
-	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ embedded solution to \ref{evolutioneq}. There exists $\varepsilon>0$ depending only on $X_0$ such that for all $t\in[0, T)$ we can reflect $X_t$ up to $(\Pi_0^v +\epsilon v, v)$ for every $v \in S^n$. In particular, if $X_0 \in B_R (C)$, then we can always reflect $X_t$ up to $(\Pi, v)$ whenever $H^+(\Pi)\cap B_{R-\varepsilon}(C)=\emptyset$.
+	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ embedded solution to equation (\ref{evolutioneq}). There exists $\varepsilon>0$ depending only on $X_0$ such that for all $t\in[0, T)$ we can reflect $X_t$ up to $(\Pi_0^v +\epsilon v, v)$ for every $v \in S^n$. In particular, if $X_0 \in B_R (C)$, then we can always reflect $X_t$ up to $(\Pi, v)$ whenever $H^+(\Pi)\cap B_{R-\varepsilon}(C)=\emptyset$.
 \end{cor}
 In other words, we can always reflect a little $\varepsilon$ in any direction, uniformly. We can use the fact that we can always reflect about a plane outside a sphere containing $X_0$ to prove the following estimate:
 
@@ -288,7 +288,7 @@ In other words, we can always reflect a little $\varepsilon$ in any direction, u
 
 
 \begin{cor}
-	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ embedded solution to \ref{evolutioneq}. There exists $C>0$ depending only on $X_0$ such that for all $t\in[0, T)$: 
+	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ embedded solution to equation (\ref{evolutioneq}). There exists $C>0$ depending only on $X_0$ such that for all $t\in[0, T)$: 
 	\begin{align*}
 		\max_{x\in X_t} |x| - \min_{x\in X_t} |x| < C
 	\end{align*}
@@ -298,8 +298,8 @@ In other words, we can always reflect a little $\varepsilon$ in any direction, u
 	\begin{align*}
 		 \left\langle x_2, \frac{x_2-x_1}{\vert x_2-x_1 \vert} \right\rangle - R &< 
 		 \left\langle x_1, \frac{x_1-x_2}{\vert x_2-x_1 \vert} \right\rangle + R\\
-		 \frac{|x_2|^2}{\vert x_2-x_1 \vert} + \cancel{\frac{\left\langle x_2, x_1\right\rangle}{\vert x_2-x_1 \vert}}  - R &< 
-		 \frac{|x_1|^2}{\vert x_2-x_1 \vert} - \cancel{\frac{\left\langle x_2, x_1\right\rangle}{\vert x_2-x_1 \vert}}  + R\\
+		 \frac{|x_2|^2}{\vert x_2-x_1 \vert} - \cancel{\frac{\left\langle x_2, x_1\right\rangle}{\vert x_2-x_1 \vert}}  - R &< 
+		 \frac{\vert x_1\vert^2}{\vert x_2-x_1 \vert} - \cancel{\frac{\left\langle x_2, x_1\right\rangle}{\vert x_2-x_1 \vert}}  + R\\
 		 \frac{|x_2|^2 - |x_1|^2}{\vert x_2-x_1 \vert} &< 
 		  2R\\
 		  |x_2|^2 - |x_1|^2 &< 
@@ -313,7 +313,7 @@ In other words, we can always reflect a little $\varepsilon$ in any direction, u
 
 Lastly: 
 \begin{cor}
-	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ embedded solution to \ref{evolutioneq}. Let $s_v:[0,T) \rightarrow I$ be such that 
+	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ embedded solution to  equation (\ref{evolutioneq}). Let $s_v:[0,T) \rightarrow I$ be such that 
 	\begin{align*}
 		s_v(t)= \sup\left\{s \in I \;|\;  \; \mathrm{we \; can \; reflect \;} X_t \mathrm{ \; strictly \; up \; to }\; (\pi_{v, s}, v) \right\}.
 	\end{align*}
@@ -330,11 +330,118 @@ Lastly:
 
 \section{Applying the result to find gradient estimates (da scrivere)}
 
-{\LARGE \textbf{[normal displacement estimate (2.4) - DA SCRIVERE]}}
+{\LARGE \textbf{[Intro - DA SCRIVERE]}}
 
-{\LARGE \textbf{[support function for convex hypersurfaces (2.5) - DA SCRIVERE]}}
+\begin{cor}
+	Let $ X : M^n \times [0, T) \to \mathbb{R}^{n+1} $ be an embedded solution to equation (\ref{evolutioneq}). There exists a constant $ C $, depending only on the initial hypersurface $ X_0 $, such that for all points $ x \in X_t $ and $ t \in [0, T) $, the following inequality holds:
+	\begin{align*}
+		| x - \langle x \cdot \nu\rangle \nu | \leq C,
+	\end{align*}
+	where $ \nu $ is the unit normal to $ X_t $ at the point $ x $.
+	\label{x projection estimate}
+\end{cor}
+
+
+\begin{proof}: 
+	Choose $ C > 0 $ such that $ X_0 \subset B_C(0) $. By Theorem \ref{chow gulliver}, we can reflect $ X_t $ strictly up to any plane tangent to the ball, like in the previous corollaries.	
+	Thus, for any point $ x \in X_t $ and outside the ball, we know that whenever $ (x, V) > C $, then $ V \notin T_x X_t $.
+	This is equivalent to saying that for all $ W \in T_x X_t $, we have:
+	\begin{align*}
+		(x, W) \leq C.
+	\end{align*}
+	If we take now the projection of $x$ on $T_x X_t$, $ W = \frac{x - (x \cdot \nu) \nu}{|x - (x \cdot \nu) \nu|} \in T_x X_t $, then we obtain:
+	\begin{align*}
+		C \geq (x, W) = \frac{|x - (x \cdot \nu) \nu|}{|W|} = |x - (x \cdot \nu) \nu|.
+	\end{align*}	
+	Thus, the corollary is proved.
+\end{proof}
+
+Let's now assume that the hypersurfaces in the solution to the equation are convex. For a convex hypersurface we can define a support function: 
+{\LARGE \textbf{[support function definition - DA SCRIVERE]}}
+
+
+\begin{cor}
+	Let $ u : S^n \times [0, T) \to \mathbb{R} $ be the support function of convex hypersurfaces $ X_t $, solving the equation  (\ref{evolutioneq}). There exists a constant $ C $, depending only on $ u(0) $, such that:
+	\begin{align*}
+		|\nabla u(\nu, t)| \leq C,
+	\end{align*}
+	for all $ (\nu, t) \in S^n \times [0, T)$.
+\end{cor}
+
+
+\begin{proof} 
+	For each unit normal vector $ \nu \in S^n $, let $ x_t \in X_t $ be the unique point such that $ \nu $ is the outward unit normal to $ X_t $ at $ x_t $. We compute $\nabla u(\nu)$: let $R_\theta$ be a rotation of an angle $\theta$ in the direction $\partial_i\in T_\nu S^n$:	
+	\begin{align*}
+		\partial_i u(\nu)  &= \lim_{\theta \rightarrow 0} \left[\langle x_t(R_\theta \nu) , R_\theta \nu\rangle - \langle x_t(\nu) ,  \nu\rangle\right]/\theta\\
+		 &= \lim_{\theta \rightarrow 0} \left[\langle x_t(R_\theta \nu) , \nu - \nu + R_\theta \nu\rangle - \langle x_t(\nu) ,  \nu\rangle\right]/\theta\\
+		 &= \lim_{\theta \rightarrow 0} \left[\langle x_t(R_\theta \nu) ,  R_\theta \nu - \nu\rangle + \langle  x_t(R_\theta \nu)  - x_t(\nu) ,  \nu\rangle\right]/\theta\\ 
+		 &= \lim_{\theta \rightarrow 0}\left[ \left\langle x_t(R_\theta \nu) , \frac{ R_\theta \nu - \nu}{\theta}\right\rangle + \left\langle  \frac{x_t(R_\theta \nu)  - x_t(\nu)}{\theta} ,  \nu\right\rangle\right]\\
+		 &= \left\langle x_t(\nu) , \partial_i\right\rangle + \cancel{\left\langle  (dx_t)_{\nu}(\partial_i),  \nu\right\rangle}
+	\end{align*}
+	where $\left\langle  (dx_t)_{\nu}(\partial_i),  \nu\right\rangle=0$ because $ (dx_t)_{\nu}(\partial_i) in T_{x_t}X_t$. Therefore
+	\begin{align*}
+		\nabla u(\nu) &= (x_t)^\top =x_t - (x_t)^\bot \\
+		\nabla u(\nu) &= x_t - \langle x_t , \nu\rangle \nu= x_t - u(\nu) \nu\\
+		|\nabla u(\nu, t)| &= | x_t - \langle x_t , \nu\rangle \nu |\leq C 
+	\end{align*}
+	by applying Corollary \ref{x projection estimate},  which completes the proof.
+\end{proof}
+
+
+Now, let’s consider the case where the hypersurfaces $ X_t $ are starshaped for all $ t \in [0, T) $. We obtain a new gradient estimate for the radial function at points outside a certain compact starshaped region associated with the initial hypersurface $ X_0 $.
+\begin{defin}
+	Suppose that $ X : M^n \times [0, T) \to \mathbb{R}^{n+1} $ parametrizes starshaped hypersurfaces $ X_t $ with respect to the origin. The {\em radial function} $ r : S^n \times [0, T) \to \mathbb{R}^+ $ is defined so that for each $ (z, t) \in S^n \times [0, T) $, the point $ r(z, t) z $ belongs to $ X_t $. 
+\end{defin}
+
+
 
 {\LARGE \textbf{[gradient estimate for starshaped surfaces (2.7) - DA SCRIVERE]}}
 
-{\LARGE \textbf{[ (2.9b) DA SCRIVERE]}}
 
+---
+
+{\LARGE \textbf{[UNCHECKED CHATGPT DRAFTING BELOW]}}
+
+
+
+---
+
+
+\begin{proposition}
+	There exists a constant $ C $, depending only on $ X_0 $, such that for all $ (z, t) \in S^n \times [0, T) $, if $ r(z, t) z \in H^+(H_V) $, then:
+	\begin{align*}
+		| \nabla r(z, t) | \leq C.
+	\end{align*}
+\end{proposition}
+
+\begin{proof}
+	By Corollary 2.6, there exists a constant $ \epsilon > 0 $, depending only on $ X_0 $, such that for all $ (z, t) \in S^n \times [0, T) $ with $ r(z, t) z \in H^+(H_V) $, and for all $ W \in S^n $ with $ \langle W, z \rangle > 1 - \epsilon $, we can reflect $ X_t $ up to the hyperplane $ H_W $. This means that $ W \notin T_{r(z,t) z} X_t $, i.e., $ W $ is not tangent to $ X_t $. Thus, the gradient estimate follows.
+\end{proof}
+---
+
+
+\begin{cor}
+	There exists a constant $ C $, depending only on $ X_0 $, such that for all points $ (z, t) \in S^n \times [0, T) $, we have:
+	\begin{align*}
+		r^2 |\nabla r|^2 \leq C (r^2 + |\nabla r|^2).
+	\end{align*}
+	In particular, if $ r^2 > C $, then:
+	\begin{align*}
+		|\nabla r|^2 \leq \frac{C r^2}{r^2 - C}.
+	\end{align*}
+\end{cor}
+\begin{proof}
+	Substituting the expressions $ x = r(z) z $ and $ \nabla r(z) $ into the inequality from Corollary \ref{x projection estimate}, we obtain:
+	\begin{align*}
+		HALLUCINATION
+	\end{align*}
+	Simplifying this inequality leads to:
+	\begin{align*}
+		r^2 |\nabla r|^4 + r^4 |\nabla r|^2 \leq C (r^2 + |\nabla r|^2)^2.
+	\end{align*}
+	From here, the lemma follows.
+\end{proof}
+
+---
+
+{\LARGE \textbf{[(2.9b) DA RIGUARDARE]}} perché non ho capito cosa dice ed è lasciato per esercizio
