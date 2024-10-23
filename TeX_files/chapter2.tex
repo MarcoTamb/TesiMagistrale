@@ -280,7 +280,7 @@ Another immediate consequence of Theorem \ref{chow gulliver} is the following:
 
 
 \begin{cor}
-	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ embedded solution to equation (\ref{evolutioneq}). There exists $\varepsilon>0$ depending only on $X_0$ such that for all $t\in[0, T)$ we can reflect $X_t$ up to $(\Pi_0^v +\epsilon v, v)$ for every $v \in S^n$. In particular, if $X_0 \in B_R (C)$, then we can always reflect $X_t$ up to $(\Pi, v)$ whenever $H^+(\Pi)\cap B_{R-\varepsilon}(C)=\emptyset$.
+	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ embedded solution to equation (\ref{evolutioneq}). There exists $\varepsilon>0$ depending only on $X_0$ such that for all $t\in[0, T)$ we can reflect $X_t$ up to $(\Pi_0^v +\epsilon v, v)$ for every $v \in S^n$. In particular, if $X_0 \in B_R (C)$, then we can always reflect $X_t$ up to $(\Pi, v)$ whenever $H^+(\Pi)\cap B_{R-\varepsilon}(C)=\emptyset$.\label{reflect a small bit}
 \end{cor}
 In other words, we can always reflect a little $\varepsilon$ in any direction, uniformly. We can use the fact that we can always reflect about a plane outside a sphere containing $X_0$ to prove the following estimate:
 
@@ -388,40 +388,15 @@ Let's now assume that the hypersurfaces in the solution to the equation are conv
 \end{proof}
 
 
-Now, let’s consider the case where the hypersurfaces $ X_t $ are starshaped for all $ t \in [0, T) $. We obtain a new gradient estimate for the radial function at points outside a certain compact starshaped region associated with the initial hypersurface $ X_0 $.
+Now, let’s consider the case where the hypersurfaces $ X_t $ are starshaped for all $ t \in [0, T) $. We obtain a gradient estimate for the radial function at points outside a certain compact starshaped region associated with the initial hypersurface $ X_0 $.
 \begin{defin}
 	Suppose that $ X : M^n \times [0, T) \to \mathbb{R}^{n+1} $ parametrizes starshaped hypersurfaces $ X_t $ with respect to the origin. The {\em radial function} $ r : S^n \times [0, T) \to \mathbb{R}^+ $ is defined so that for each $ (z, t) \in S^n \times [0, T) $, the point $ r(z, t) z $ belongs to $ X_t $. 
 \end{defin}
 
+We will need the following lemma: 
 
-
-{\LARGE \textbf{[gradient estimate for starshaped surfaces (2.7) - DA SCRIVERE]}}
-
-
----
-
-{\LARGE \textbf{[UNCHECKED CHATGPT DRAFTING BELOW]}}
-
-
-
----
-
-
-\begin{proposition}
-	There exists a constant $ C $, depending only on $ X_0 $, such that for all $ (z, t) \in S^n \times [0, T) $, if $ r(z, t) z \in H^+(H_V) $, then:
-	\begin{align*}
-		| \nabla r(z, t) | \leq C.
-	\end{align*}
-\end{proposition}
-
-\begin{proof}
-	By Corollary 2.6, there exists a constant $ \epsilon > 0 $, depending only on $ X_0 $, such that for all $ (z, t) \in S^n \times [0, T) $ with $ r(z, t) z \in H^+(H_V) $, and for all $ W \in S^n $ with $ \langle W, z \rangle > 1 - \epsilon $, we can reflect $ X_t $ up to the hyperplane $ H_W $. This means that $ W \notin T_{r(z,t) z} X_t $, i.e., $ W $ is not tangent to $ X_t $. Thus, the gradient estimate follows.
-\end{proof}
----
-
-
-\begin{cor}
-	There exists a constant $ C $, depending only on $ X_0 $, such that for all points $ (z, t) \in S^n \times [0, T) $, we have:
+\begin{lemma}
+	In the hypothesis of the definition above, there exists a constant $ C $, depending only on $ X_0 $, such that for all points $ (v, t) \in S^n \times [0, T) $, we have:
 	\begin{align*}
 		r^2 |\nabla r|^2 \leq C (r^2 + |\nabla r|^2).
 	\end{align*}
@@ -429,19 +404,85 @@ Now, let’s consider the case where the hypersurfaces $ X_t $ are starshaped fo
 	\begin{align*}
 		|\nabla r|^2 \leq \frac{C r^2}{r^2 - C}.
 	\end{align*}
-\end{cor}
+\end{lemma}
+
+
 \begin{proof}
-	Substituting the expressions $ x = r(z) z $ and $ \nabla r(z) $ into the inequality from Corollary \ref{x projection estimate}, we obtain:
+	As $ x = r(z) z $, let $\partial_i\in T_zS^n$ and $\overline{\partial_i}=\partial_i x \in T_zX_t$ for $i=1 \dots n$ be corresponding bases in the tangent spaces. Computing this explicitly in $\R^{n+1}$ yields:
 	\begin{align*}
-		HALLUCINATION
+		\overline{\partial_i} &= \partial_i x\\
+		&=\partial_i (r(z) z)\\ 
+		&= (\partial_i r(z))z + r(z)\partial_i 
 	\end{align*}
-	Simplifying this inequality leads to:
+	Notice here that $z$ and the $\partial_i$ are orthogonal, therefore $|az+b^i\partial_i|^2 = a^2+\sum_i (b^i)^2$. 
+	Computing this vector's scalar product with $r(z) z - \nabla r(z)$ yields: 
 	\begin{align*}
-		r^2 |\nabla r|^4 + r^4 |\nabla r|^2 \leq C (r^2 + |\nabla r|^2)^2.
+		\langle  r(z) z - \nabla r(z), \overline{\partial_i} \rangle&= 
+		\langle  r(z) z - \sum_j\partial_j r(z) \partial_j, \overline{\partial_i} \rangle\\&= 
+		\langle  r(z) z, \overline{\partial_i} \rangle -
+		\langle  \sum_j\partial_j r(z) \partial_j, \overline{\partial_i} \rangle\\
+		 &=  r(z) \langle z , \overline{\partial_i} \rangle - \sum_j \partial_j r(z) \langle  \partial_j, \overline{\partial_i} \rangle\\
+		&=   r(z)(\partial_i r(z)) - \partial_i r(z)r(z) 
+		\\&= 0
+	\end{align*}
+	Moreover, notice that $\nabla r(z)\in T_zX_t$, which is orthogonal to $z$. 
+	Therefore, the following formula holds for the normal at a point with respect to the radial function: 
+	\begin{align*}
+		\nu = \frac{ r(z) z - \nabla r(z) }{\sqrt{r(z)^2  + |\nabla r(z)|^2}}
+	\end{align*}
+	when taking $ x = r(z) z $. Substituting the expressions above into the inequality from Corollary \ref{x projection estimate}, we obtain:
+	\begin{align*}
+		C&\geq\left\vert r(z) z - \langle r(z) z ,  r(z) z - \nabla r(z) \rangle \frac{ r(z) z - \nabla r(z) }{r(z)^2  + |\nabla r(z)|^2} \right\vert \\
+		&\geq\left\vert r(z) z -  \frac{ r(z)^2(r(z) z - \nabla r(z)) }{r(z)^2  + |\nabla r(z)|^2} \right\vert \\
+		&\geq\left\vert\frac{ r(z) z (r(z)^2  + |\nabla r(z)|^2)  -r(z)^2(r(z) z - \nabla r(z)) }{r(z)^2  + |\nabla r(z)|^2} \right\vert \\
+		&\geq\left\vert\frac{ r(z)|\nabla r(z)|^2z    + r(z)^2 \nabla r(z) }{r(z)^2  + |\nabla r(z)|^2} \right\vert
+	\end{align*}
+	Multiplying by $r(z)^2  + |\nabla r(z)|^2$ and squaring (still using the fact that $z$ and $\nabla r(z)$ are orthogonal):
+	\begin{align*}
+		\left\vert r(z)|\nabla r(z)|^2z  + r(z)^2 \nabla r(z) \right\vert &\leq C (r(z)^2  + |\nabla r(z)|^2)\\
+		r(z)^2|\nabla r(z)|^4  + r(z)^4 |\nabla r(z)|^2  &\leq C^2 (r(z)^2  + |\nabla r(z)|^2)^2\\
+		r^2 |\nabla r|^4 + r^4 |\nabla r|^2 &\leq C^2 (r^2 + |\nabla r|^2)^2.
 	\end{align*}
 	From here, the lemma follows.
 \end{proof}
 
+The estimate is:
+
+\begin{proposition}
+	With the same hypotheses as the lemma above, there exists a constant $ C $, depending only on $ X_0 $, such that for all $ (v, t) \in S^n \times [0, T) $, taking $\Pi_0^v$ as in corollary \ref{reflect a small bit}, if $ r(v, t) v \in \overline{H^+(\Pi_0^v)} $, then:
+	\begin{align*}
+		| \nabla r(v, t) | \leq K.
+	\end{align*}
+\end{proposition}
+
+\begin{proof}
+	By Corollary \ref{reflect a small bit}, there exists a constant $ \epsilon > 0 $, depending only on $ X_0 $, such that for all $ (z, t) \in S^n \times [0, T) $ with $ r(z, t) z \in H^+(H_V) $, and for all $ w \in S^n $ with $ \langle W, z \rangle > 1 - \epsilon $, we can reflect $ X_t $ up to the hyperplane $ H_W $. This means that $ w \notin T_{r(z,t) z} X_t $, i.e., $ W $ is not tangent to $ X_t $. In the proof of the previous lemma we proved that $r(z) z - \nabla r(z)$ is normal to the tangent at $r(z) z$, so, letting $w_z$ be the projection of $w$ in the $z$ direction: 
+	\begin{align*}
+		0&< \langle w, r(z) z - \nabla r(z)  \rangle\\
+		\langle w,  \nabla r(z)  \rangle &< \langle w, r(z) z   \rangle\\
+		\langle w - w_z,  \nabla r(z)  \rangle &< r(z) \langle w,  z   \rangle\\
+		|w - w_z||\nabla r(z)|  &<  r(z) \langle w,  z   \rangle\\
+		|\nabla r(z)| &<  \frac{r(z) \langle w,  z   \rangle}{|w - w_z|}
+	\end{align*}
+	by the fact that $w$ is arbitrary, and estimating $|w - w_z|$ as $\sqrt{1^2 - (1-\epsilon)^2}$:
+	\begin{align*}
+		|\nabla r(z)|  &<\frac{r(z) (1-\epsilon)}{\sqrt{1^2 - (1-\epsilon)^2}}\\
+		|\nabla r(z)|  &<r(z)\frac{ (1-\epsilon)}{\sqrt{\epsilon (2-\epsilon)}}
+	\end{align*}
+	By the preceding lemma, if $ r^2 > C $, then:
+	\begin{align*}
+		|\nabla r|^2 &\leq \frac{C r^2}{r^2 - C} < C\\
+		|\nabla r| &\leq \sqrt{C}
+	\end{align*}
+	otherwise, 
+	\begin{align*}
+		|\nabla r(z)|  &<C\frac{ (1-\epsilon)}{\sqrt{\epsilon (2-\epsilon)}}
+	\end{align*}
+	Hence:
+	\begin{align*}
+		|\nabla r(z)| < \max\left(\sqrt{C}, C\frac{ (1-\epsilon)}{\sqrt{\epsilon (2-\epsilon)}}\right)
+	\end{align*} 
+\end{proof}
 ---
 
 {\LARGE \textbf{[(2.9b) DA RIGUARDARE]}} perché non ho capito cosa dice ed è lasciato per esercizio
