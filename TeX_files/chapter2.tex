@@ -205,6 +205,20 @@ H^-(\pi)&=\{x \in \R^{n+1} : \langle x, v\rangle < C\}= \bigcup_{s<C} \pi_{v, s}
 		\item $V\notin T_xM$ for all $x\in M^n \cap\pi$
 	\end{itemize} 
 \end{defin}
+
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{"figures/7_reflects_strictly"}
+	\caption{Example: We can reflect $X: M^n\rightarrow \R^{n+1}$ strictly with respect to $\pi$}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{"figures/8_interior_contact"}
+	\caption{Example: We cannot reflect $X: M^n\rightarrow \R^{n+1}$ strictly with respect to $\pi$, because there is an interior contact}
+\end{figure}
+
 This fundamentally means that the reflection of one of the halves of $X$ on the other side of $\pi$ is contained in the region inside $M^n$ and the tangent spaces of $X$ and of the half-reflection do not form a ninety degree angle with $\pi$, at all points on $\pi\cap X$. As the two tangent spaces are one the reflection of the other, this means that they do not coincide.   
 \begin{defin}
 	We say {\em we can reflect $X: M^n\rightarrow \R^{n+1}$ strictly up to $(\pi,v)$} if we can reflect $M^n$ strictly with respect to $\pi_{v, s}$ for all hyperplanes $\pi_{v, s}$ such that $s<C$.  
@@ -456,7 +470,7 @@ The estimate is:
 \end{proposition}
 
 \begin{proof}
-	By Corollary \ref{reflect a small bit}, there exists a constant $ \epsilon > 0 $, depending only on $ X_0 $, such that for all $ (z, t) \in S^n \times [0, T) $ with $ r(z, t) z \in H^+(H_V) $, and for all $ w \in S^n $ with $ \langle W, z \rangle > 1 - \epsilon $, we can reflect $ X_t $ up to the hyperplane $ H_W $. This means that $ w \notin T_{r(z,t) z} X_t $, i.e., $ W $ is not tangent to $ X_t $. In the proof of the previous lemma we proved that $r(z) z - \nabla r(z)$ is normal to the tangent at $r(z) z$, so, letting $w_z$ be the projection of $w$ in the $z$ direction: 
+	By Corollary \ref{reflect a small bit}, there exists a constant $ \epsilon > 0 $, depending only on $ X_0 $, such that for all $ (z, t) \in S^n \times [0, T) $ with $ r(z, t) z \in H^+(H_V) $, and for all $ w \in S^n $ with $ \langle W, z \rangle > 1 - \epsilon $, we can reflect $ X_t $ up to the hyperplane $ H_W $. This means that $ w \notin T_{r(z,t) z} X_t $, i.e., $ W $ is not tangent to $ X_t $. In the proof of the previous lemma we showed that $r(z) z - \nabla r(z)$ is normal to the manifold's tangent plane at $r(z) z$, so, letting $w_z$ be the projection of $w$ in the $z$ direction: 
 	\begin{align*}
 		0&< \langle w, r(z) z - \nabla r(z)  \rangle\\
 		\langle w,  \nabla r(z)  \rangle &< \langle w, r(z) z   \rangle\\
