@@ -342,10 +342,9 @@ Lastly:
 \end{proof}
 
 
-\section{Applying the result to find gradient estimates (da scrivere)}
+\section{Applying the result to find gradient estimates}
 
-{\LARGE \textbf{[Intro - DA SCRIVERE]}}
-
+In this section we collect some applications of theorem \ref{chow gulliver} to gradient estimates for the support function and the radial function. Central in what will follow is this corollary providing an estimate for the tangent component of the position vector $x$ of a point on the hypersurface in its own tangent space: 
 \begin{cor}
 	Let $ X : M^n \times [0, T) \to \mathbb{R}^{n+1} $ be an embedded solution to equation (\ref{evolutioneq}). There exists a constant $ C $, depending only on the initial hypersurface $ X_0 $, such that for all points $ x \in X_t $ and $ t \in [0, T) $, the following inequality holds:
 	\begin{align*}
@@ -370,9 +369,17 @@ Lastly:
 	Thus, the corollary is proved.
 \end{proof}
 
-Let's now assume that the hypersurfaces in the solution to the equation are convex. For a convex hypersurface we can define a support function: 
-{\LARGE \textbf{[support function definition - DA SCRIVERE]}}
+Let's now assume that the hypersurfaces in the solution to the equation are convex. We are going to show a gradient estimate for the support function of the hypersurface. Support functions are one of the most important concepts stemming from the study of convex sets. 
+\begin{defin}
+	Let $K$ be a non-empty compact convex set in $\R^n$. We define the {\em support function} $u_K:  S^n \to \mathbb{R} $ as 
+	\begin{align*}
+		u_K (\nu) = \sup\{\langle x, \nu \rangle : x\in K \}
+	\end{align*}
+\end{defin}
 
+\begin{oss}
+	Many authors define the support function on the whole euclidean space. As its gradient scales linearly with $\nabla u_K$, we will not be doing so out of simplicity. Notice that given two convex sets $K_1$ and $K_2$, $K_1 \subseteq K_2$ if and only if   $u_{K_1} \leq u_{K_2}$. In this sense, a convex set is determined by its support function. Also, the tangent plane at the point in $\partial K$ which has $\nu$ as a normal vector is  $h_\nu=\{x\in \R^n : x \cdot \nu = u_K (\nu)\}$. 
+\end{oss}
 
 \begin{cor}
 	Let $ u : S^n \times [0, T) \to \mathbb{R} $ be the support function of convex hypersurfaces $ X_t $, solving the equation  (\ref{evolutioneq}). There exists a constant $ C $, depending only on $ u(0) $, such that:
@@ -470,6 +477,7 @@ The estimate is:
 \end{proposition}
 
 \begin{proof}
+	{\LARGE \textbf{[sistema refuso piani]}} 
 	By Corollary \ref{reflect a small bit}, there exists a constant $ \epsilon > 0 $, depending only on $ X_0 $, such that for all $ (z, t) \in S^n \times [0, T) $ with $ r(z, t) z \in H^+(H_V) $, and for all $ w \in S^n $ with $ \langle W, z \rangle > 1 - \epsilon $, we can reflect $ X_t $ up to the hyperplane $ H_W $. This means that $ w \notin T_{r(z,t) z} X_t $, i.e., $ W $ is not tangent to $ X_t $. In the proof of the previous lemma we showed that $r(z) z - \nabla r(z)$ is normal to the manifold's tangent plane at $r(z) z$, so, letting $w_z$ be the projection of $w$ in the $z$ direction: 
 	\begin{align*}
 		0&< \langle w, r(z) z - \nabla r(z)  \rangle\\
