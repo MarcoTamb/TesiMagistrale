@@ -344,7 +344,7 @@ Lastly:
 
 \section{Applying the result to find gradient estimates}
 
-In this section we collect some applications of theorem \ref{chow gulliver} to gradient estimates for the support function and the radial function. Central in what will follow is this corollary providing an estimate for the tangent component of the position vector $x$ of a point on the hypersurface in its own tangent space: 
+In this section we collect some applications of theorem \ref{chow gulliver} to gradient estimates for the support function and the radial function from \cite{Chow}. Central in what will follow is this corollary providing an estimate for the tangent component of the position vector $x$ of a point on the hypersurface in its own tangent space: 
 \begin{cor}
 	Let $ X : M^n \times [0, T) \to \mathbb{R}^{n+1} $ be an embedded solution to equation (\ref{evolutioneq}). There exists a constant $ C $, depending only on the initial hypersurface $ X_0 $, such that for all points $ x \in X_t $ and $ t \in [0, T) $, the following inequality holds:
 	\begin{align*}
@@ -477,8 +477,7 @@ The estimate is:
 \end{proposition}
 
 \begin{proof}
-	{\LARGE \textbf{[sistema refuso piani]}} 
-	By Corollary \ref{reflect a small bit}, there exists a constant $ \epsilon > 0 $, depending only on $ X_0 $, such that for all $ (z, t) \in S^n \times [0, T) $ with $ r(z, t) z \in H^+(H_V) $, and for all $ w \in S^n $ with $ \langle W, z \rangle > 1 - \epsilon $, we can reflect $ X_t $ up to the hyperplane $ H_W $. This means that $ w \notin T_{r(z,t) z} X_t $, i.e., $ W $ is not tangent to $ X_t $. In the proof of the previous lemma we showed that $r(z) z - \nabla r(z)$ is normal to the manifold's tangent plane at $r(z) z$, so, letting $w_z$ be the projection of $w$ in the $z$ direction: 
+		By Corollary \ref{reflect a small bit}, there exists a constant $ \epsilon > 0 $, depending only on $ X_0 $, such that for all $ (z, t) \in S^n \times [0, T) $ with $ r(z, t) z \in H^+(\Pi_0^v) $, and for all $ w \in S^n $ with $ \langle W, z \rangle > 1 - \epsilon $, we can reflect $ X_t $ up to the hyperplane $ \Pi_w = \{r(z, t) z + p : \langle p , w\rangle=0 \}$. This means that $ w \notin T_{r(z,t) z} X_t $, i.e., $ W $ is not tangent to $ X_t $. In the proof of the previous lemma we showed that $r(z) z - \nabla r(z)$ is normal to the manifold's tangent plane at $r(z) z$, so, letting $w_z$ be the projection of $w$ in the $z$ direction: 
 	\begin{align*}
 		0&< \langle w, r(z) z - \nabla r(z)  \rangle\\
 		\langle w,  \nabla r(z)  \rangle &< \langle w, r(z) z   \rangle\\
