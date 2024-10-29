@@ -465,10 +465,15 @@ We will now define reflections in $\mathbb{M}^n$:
 		\item Consider the hyperplane $\pi_0$ passing through $\gamma_v(0)$ and orthogonal to  $\dot{\gamma_v}(0)$. Then consider the 1-parameter group of isometries of $\mathrm{H}^n$ such that $g_t(\gamma_v (0) )=\gamma_v (t) $ and such that the curves $t \mapsto g_t(x)$ are orthogonal to $\pi_0$ for each $x\in \pi_0$. This allows us to assign to each point in $\mathrm{H}^n$ coordinates $(x, t)$ where $x\in\pi_0$ and $t\in \R$.  
 		\item consider now any hyperplane  $\pi_t$ passing through $\gamma_v(t)$ and orthogonal to  $\dot{\gamma_v}(t)$. The reflection fixing $\pi_t$ will be the one given by the formula $(x, t)\mapsto (x, 2s-t)$.
 	\end{itemize}
-	One may find this insufficient, as there is no guarantee that this construction exists, but it is easy to convince oneself that it does: through rotations and translations it is possible to assume without loss of generality that the point we chose is $e_n$ and the direction is $e_1$ (assuming the half-space model in the definition above). We can do this because $\mathbb{H}^n$ is frame-homogenous. Then, the plane orthogonal to $e_1$ passing through $e_n$ - restricted to the half space - constitute the desired hyperplane, and we can take its image through the exponential map valued at $t e_1$. For a proof that $\mathbb{H}^n$ is frame-homogenous, see proposition 3.9 in \cite{LeeRiemannian2ndEd}.
-	{\LARGE \textbf{[RIGUARDA INSIEME \cite{italiani} PERCHÉ NON MI TORNA LA LORO DESCRIZIONE]}}
+	One may find this insufficient, as there is no guarantee that this construction exists, but it is easy to convince oneself that it does: through rotations and translations it is possible to assume without loss of generality that the point we chose is $e_n$ and the direction is $e_1$ (assuming the half-space model in the definition above). We can do this because $\mathbb{H}^n$ is frame-homogenous. Then the geodesic is the unit circle in the plane spanned by $e_1$ and $e_n$, and the (euclidean) hemispheres centred on the $x_n=0$ plane and normal to the geodesic at one of its points are the hyperplanes (see figure \ref{moving hyperplanes hyperbolic}). For a proof that $\mathbb{H}^n$ is frame-homogenous, see proposition 3.9 in \cite{LeeRiemannian2ndEd}.
 \end{itemize}
 
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{figures/5b_moving_planes_hyperbolic}
+	\caption{The moving hyperplanes in $\mathbb{H}^n$ when the point we chose is $e_n$ and the direction is $e_1$, projected onto the plane spanned by these two vectors. The centres of the hemispheres are the intersection of the $x_n=0$ plane with the line spanned by the tangent vector.}
+	\label{moving hyperplanes hyperbolic}
+\end{figure}
 
 \section{The Method of Moving Planes}
 \label{method moving planes}
