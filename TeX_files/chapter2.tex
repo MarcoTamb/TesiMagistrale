@@ -281,7 +281,7 @@ The main theorem is the following:
 \section{Some corollaries of the result} 
 In this section we collect a number of corollaries to the main result above. This first one is an immediate consequence of the main result:
 \begin{cor}
-	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ embedded solution to equation (\ref{evolutioneq}). Then, if we can reflect $X_0$ strictly up to $(\pi_{v,C},v)$, then for all $t\in [0,T)$ $v\notin T_xX_t$ for all $x\in X_t\cap\overline{H^+(\pi)}$. In particular,  $ X_t\cap\overline{H^+(\pi)}$ is a graph over $\pi$ for all $t\in [0,T)$.
+	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ embedded solution to equation (\ref{evolutioneq}). Then, if we can reflect $X_0$ strictly up to $(\pi_{v,C},v)$, then for all $t\in [0,T)$ $v\notin T_xX_t$ for all $x\in X_t\cap\overline{H^+(\pi)}$. In particular,  $ X_t\cap\overline{H^+(\pi)}$ is a graph over $\pi$ for all $t\in [0,T)$.\label{graph}
 \end{cor}
 
 
@@ -299,7 +299,7 @@ Another immediate consequence of Theorem \ref{chow gulliver} is the following:
 
 
 \begin{cor}
-	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ embedded solution to equation (\ref{evolutioneq}). There exists $\varepsilon>0$ depending only on $X_0$ such that for all $t\in[0, T)$ we can reflect $X_t$ up to $(\Pi_0^v +\epsilon v, v)$ for every $v \in S^n$. In particular, if $X_0 \in B_R (C)$, then we can always reflect $X_t$ up to $(\Pi, v)$ whenever $H^+(\Pi)\cap B_{R-\varepsilon}(C)=\emptyset$.\label{reflect a small bit}
+	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ embedded solution to equation (\ref{evolutioneq}). There exists $\varepsilon>0$ depending only on $X_0$ such that for all $t\in[0, T)$ we can reflect $X_t$ up to $(\Pi_0^v +\epsilon v, v)$ for every $v \in S^n$. In particular, if $X_0 \subset B_R (C)$, then we can always reflect $X_t$ up to $(\Pi, v)$ whenever $H^+(\Pi)\cap B_{R-\varepsilon}(C)=\emptyset$.\label{reflect a small bit}
 \end{cor}
 In other words, we can always reflect a little $\varepsilon$ in any direction, uniformly. We can use the fact that we can always reflect about a plane outside a sphere containing $X_0$ to prove the following estimate:
 
@@ -516,6 +516,15 @@ The estimate is:
 		|\nabla r(z)| < \max\left(\sqrt{C}, C\frac{ (1-\epsilon)}{\sqrt{\epsilon (2-\epsilon)}}\right)
 	\end{align*} 
 \end{proof}
----
 
-{\LARGE \textbf{[(2.9b) DA RIGUARDARE]}} perché non ho capito cosa dice ed è lasciato per esercizio
+Finally, we include the following result about the part of $X_t$ outside a ball: 
+
+
+
+\begin{cor}
+	Let $ X : M^n \times [0, T) \to \mathbb{R}^{n+1} $ be an embedded solution to equation (\ref{evolutioneq}). Then, if for a sphere $B$ $X_0\subset B$, at all times $t \in [0, T)$ $X_t\setminus B$ is star-shaped with respect to the centre of $B$.
+\end{cor}
+
+\begin{proof}
+	 $X_0\subset B$ therefore we can reflect $X_t$ about any plane tangent to $B$ by Corollary \ref{reflect a small bit}. By Corollary \ref{graph} $X_t\cap\overline{H^+(\pi)}$ is a graph over $\pi$, therefore, it is not possible that a normal line coming out of $B$ and orthogonal to $\pi$ intersects  $X_t\cap\overline{H^+(\pi)}$ more than once. This implies that  $X_t\setminus B$ is star-shaped with respect to the centre of $B$
+\end{proof}
