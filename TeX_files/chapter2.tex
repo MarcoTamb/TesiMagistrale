@@ -203,7 +203,7 @@ H^-(\pi)&=\{x \in \R^{n+1} : \langle x, v\rangle < C\}= \bigcup_{s<C} \pi_{v, s}
 	\begin{itemize}
 		\item $X^\pi\cap H^-(\pi)\subset \mathrm{int}(X)\cap H^-(\pi)$ where $X^\pi$ is the reflection of $X$ about $\pi$ and $\mathrm{int}(X)$ is the region inside $X$.
 		\item $V\notin T_xM$ for all $x\in M^n \cap\pi$
-	\end{itemize} 
+	\end{itemize} \label{strict-reflection-definition}
 \end{defin}
 
 
@@ -295,9 +295,8 @@ Another immediate consequence of Theorem \ref{chow gulliver} is the following:
 	The hypothesis of the theorem are true for each $\pi_K$ in the definition, thus we can reflect strictly with respect to each $\pi_K$ for all $t\in[0,T)$, and thus we can reflect $X(M, t)$ strictly up to $(\pi_{v,C},v)$.
 \end{proof}
 
- Furthermore, it is clear that for every direction $v$ there exists a hyperplane $\Pi$ perpendicular to $v$ such that we can reflect $X_0$ up to $(\Pi, v)$ and $\Pi$ intersects the interior of $X_0$. To be more precise, for every direction $v$ there exists a hyperplane $\Pi_0^v$ tangent to $X_0$ and such that $X_0\cap H^+(\Pi_0^v)=\emptyset$; we can find a plane $\Pi_0^v +\epsilon v$ such that we can reflect $X_0$ up to $(\Pi_0^v +\epsilon v, v)$ and $\Pi_0^v +\epsilon v$ intersects the interior of $X_0$. Thus, we obtain the following by compactness:
-
-
+ Furthermore, it is clear that for every direction $v$ there exists a hyperplane $\Pi$ perpendicular to $v$ such that we can reflect $X_0$ up to $(\Pi, v)$ and $\Pi$ intersects the interior of $X_0$. To be more precise, for every direction $v$ there exists a hyperplane $\Pi_0^v$ tangent to $X_0$ and such that $X_0\cap H^+(\Pi_0^v)=\emptyset$. Suppose that for every $\varepsilon>0$ we can find a plane $\pi_\varepsilon$ such $H^+(\pi_\varepsilon)\cap B_{R-\varepsilon}(C)=\emptyset$ and we cannot reflect $X_0$ strictly at $\pi_\varepsilon$, where $R$ is such that $X_0 \subset B_R (C)$. We can take the corresponding plane $\Pi_0^\varepsilon$ parallel to $\pi_\varepsilon$ and tangent to $X_0$ at the point $p_\varepsilon$. Taking a sequence $\varepsilon_n \rightarrow 0$ we find a corresponding limited sequence $p_{\varepsilon_n}$ which, by compactness, converges to a point $p\in X_0$. This point $p$ is such that arbitrarily close to it there is a point such that we cannot reflect by more than any chosen $\varepsilon>0$ in the direction of its normal. As we can always represent $X_0$ as the graph of a function in a neighbourhood of $p$, we get a contradiction, because strict reflection in the direction of the normal by at least a fixed uniform amount $\varepsilon$ at each point is always possible locally for any graph of a smooth function. Thus, we obtain the following:
+ 
 \begin{cor}
 	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ embedded solution to equation (\ref{evolutioneq}). There exists $\varepsilon>0$ depending only on $X_0$ such that for all $t\in[0, T)$ we can reflect $X_t$ up to $(\Pi_0^v +\epsilon v, v)$ for every $v \in S^n$. In particular, if $X_0 \subset B_R (C)$, then we can always reflect $X_t$ up to $(\Pi, v)$ whenever $H^+(\Pi)\cap B_{R-\varepsilon}(C)=\emptyset$.\label{reflect a small bit}
 \end{cor}
@@ -343,13 +342,13 @@ Lastly:
 	exists and is finite.
 \end{cor}
 \begin{proof}
-	When taking $X_t$ as the starting manifold, the hypothesis of the theorem are still true, therefore we can reflect about $\pi_{c, v}$  for all $c<s_v(t)$ at all subsequent times. Thus $s_v(t)$ is non-decreasing. $\lim_{t\rightarrow T^-} s_v(t) = \sup s_v(t)$, therefore the limit exists. Also, if $X_0$ is bounded, there exists $R>0$ such that $X_0\subset B_R(0)$, therefore we can reflect $X_0$ strictly about any plane non intersecting $B_R(0)$, as it does not touch $X_0$, and therefore we can also reflect $X_t$ strictly about the same planes by theorem \ref{chow gulliver}. At the same time, there exists a plane such that $X_t$ cannot be reflected strictly about it, because there will always be a straight line parallel to $v$ intersecting $X_t$ in multiple points, and we can always consider the plane orthogonal to $v$ passing through their midpoint, about which $X_t$ cannot be reflected strictly, and $s_v(t) \neq +\infty$. Therefore  $s_v(t)\in [-R, R]$, and the limit above is finite. 
+	When taking $X_t$ as the starting manifold, the hypothesis of the theorem are still true, therefore we can reflect about $\pi_{c, v}$  for all $c<s_v(t)$ at all subsequent times. Thus $s_v(t)$ is non-decreasing. $\lim_{t\rightarrow T^-} s_v(t) = \sup s_v(t)$, therefore the limit exists. Also, if $X_0$ is bounded, there exists $R>0$ such that $X_0\subset B_R(0)$, therefore we can reflect $X_0$ strictly about any hyperplane non intersecting $B_R(0)$, as it does not touch $X_0$, and therefore we can also reflect $X_t$ strictly about the same hyperplanes by theorem \ref{chow gulliver}. At the same time, there exists a hyperplane such that $X_t$ cannot be reflected strictly about it, because there will always be a straight line parallel to $v$ intersecting $X_t$ in multiple points, and we can always consider the hyperplane orthogonal to $v$ passing through their midpoint, about which $X_t$ cannot be reflected strictly, and $s_v(t) \neq +\infty$. Therefore  $s_v(t)\in [-R, R]$, and the limit above is finite. 
 \end{proof}
 
 
 \section{Applying the result to find gradient estimates}
 
-In this section we collect some applications of theorem \ref{chow gulliver} to gradient estimates for the support function and the radial function from \cite{Chow}. Central in what will follow is this corollary providing an estimate for the tangent component of the position vector $x$ of a point on the hypersurface in its own tangent space: 
+In this section we collect some applications of theorem \ref{chow gulliver} to gradient estimates for the support function and the radial function from \cite{Chow} (a more in-depth definition these two functions can be found in the introduction of \cite{tomography}). Central in what will follow is this corollary providing an estimate for the tangent component of the position vector $x$ of a point on the hypersurface in its own tangent space: 
 \begin{cor}
 	Let $ X : M^n \times [0, T) \to \mathbb{R}^{n+1} $ be an embedded solution to equation (\ref{evolutioneq}). There exists a constant $ C $, depending only on the initial hypersurface $ X_0 $, such that for all points $ x \in X_t $ and $ t \in [0, T) $, the following inequality holds:
 	\begin{align*}
@@ -526,5 +525,48 @@ Finally, we include the following result about the part of $X_t$ outside a ball:
 \end{cor}
 
 \begin{proof}
-	 $X_0\subset B$ therefore we can reflect $X_t$ about any plane tangent to $B$ by Corollary \ref{reflect a small bit}. By Corollary \ref{graph} $X_t\cap\overline{H^+(\pi)}$ is a graph over $\pi$, therefore, it is not possible that a normal line coming out of $B$ and orthogonal to $\pi$ intersects  $X_t\cap\overline{H^+(\pi)}$ more than once. This implies that  $X_t\setminus B$ is star-shaped with respect to the centre of $B$
+	 $X_0\subset B$ therefore we can reflect $X_t$ about any hyperplane tangent to $B$ by Corollary \ref{reflect a small bit}. By Corollary \ref{graph} $X_t\cap\overline{H^+(\pi)}$ is a graph over $\pi$, therefore, it is not possible that a normal line coming out of $B$ and orthogonal to $\pi$ intersects  $X_t\cap\overline{H^+(\pi)}$ more than once. This implies that  $X_t\setminus B$ is star-shaped with respect to the centre of $B$
 \end{proof}
+
+\section{Ancient solutions}
+
+In this section, roughly following \cite{SinestRisa}, we consider solutions to \ref{evolutioneq} which are defined on a larger interval $(T_0, T_1)$, with  $-\infty \leq T_0 \leq 0 < T_1 \leq \infty$. 
+
+{\Large \textbf{[intro - DA SCRIVERE]}}
+
+{\Large \textbf{[Ancient solutions - DA SCRIVERE]}}
+
+\begin{defin}
+	We say that a solution to \ref{evolutioneq} is {\em expansive} if $F<0$. 
+\end{defin}
+\begin{oss}	
+	This assumption on $F$ implies that the flow is  {\em expansive}, in the sense that whenever $t<s$, $X_t \subset \mathrm{int}(X_s)$. This is implied by the fact that, in the equation, the time derivative is always an outward pointing non-zero vector.\label{expansive flow remark}
+\end{oss}
+
+{\Large \textbf{[DA SCRIVERE]}}
+
+\begin{defin}
+	Let $ X : M^n \times (T_0, T_1) \to \mathbb{R}^{n+1} $ be an embedded expansive solution to equation (\ref{evolutioneq}). We say that {\em $X$ comes out of a point} if there exists a point $y_\infty$ such that for every $\varepsilon>0$, there exists a time $\tau \in  (T_0, T_1)$ such that $X_\tau \subset B_\varepsilon(y_\infty)$.
+\end{defin}
+
+\begin{oss}	
+	If we take the optimal $\tau$ in the definition above, Remark \ref{expansive flow remark} implies that the function $\tau(\varepsilon)$ mapping $\varepsilon$ to the last time where $X_\tau$ is contained in the ball is non-increasing.
+\end{oss}
+{\Large \textbf{[DA SCRIVERE]}}
+
+\begin{theorem}
+	Let $ X : M^n \times (T_0, T_1) \to \mathbb{R}^{n+1} $ be a smooth, closed, embedded expansive solution to equation (\ref{evolutioneq}) coming out of a point. Then it is a family of expanding spheres.
+\end{theorem}
+
+
+\begin{proof}
+	Fix any hyperplane $\pi$ not passing through $y_\infty$. There is $R>0$ such that $B_{2R}(y_\infty)$ does not intersect it. By definition, there is also a time  $\tau \in  (T_0, T_1)$ such that $X_\tau \subset B_R(y_\infty)$. 
+	By Corollary \ref{reflect a small bit}, then, we can reflect strictly $X_t$ up to $\pi$ for any $t>\tau$. 
+	
+	Now consider a sequence  $\epsilon_n\rightarrow 0$. Up to a subsequence, we can then find a corresponding converging non-increasing sequence $\tau_n\rightarrow \overline{t}\in [T_0, T_1)$ (here note that $\overline{t}$ can be $-\infty$) such that $X_{\tau_n}\subseteq B_{\epsilon_n}(y_\infty)$, therefore in $(\tau_n, T_1)$ I can reflect up to any hyperplane tangent to  $B_{\epsilon_n}(y_\infty)$ in any direction, reasoning like we just did. At time $\overline{t}$, $X_{\overline{t}} \subseteq \cap_r B_{r}(y_\infty) = \{y_\infty\}$, thus we would have a singularity at $\overline{t}$ if  $\overline{t}\in(T_0, T_1)$ and therefore $\overline{t}=T_0$. 
+	
+	On the other hand, by construction, we can reflect $X_{t}$ strictly about any hyperplane not intersecting $\cap_r B_{r}(y_\infty) = \{y_\infty\}$ at any time $t>\overline{t}=T_0$, hence we can reflect $X_{t}$ strictly up to any hyperplane passing through $y_\infty$, in both directions, at any  time $t\in (T_0, T_1)$. We observe that in the limit, the reflection property becomes non-strict, in the sense that we have to replace the interior of $X$ in definition \ref{strict-reflection-definition} with its closure, therefore $X_{t}$ may touch its reflection at the limit plane, i.e. the one passing through $y_\infty$. Similarly, it cannot be that the other condition is the one causing the strict reflection definition to fail, as the other condition stays instead strict. 
+	
+	This implies that, taking a hyperplane passing through $y_\infty$ and considering opposite directions for the reflection, $X_{t}$ is symmetric about said hyperplane for any time $t\in (T_0, T_1)$. By Proposition \ref{proposition symmetry conclusion}, then, we conclude that $X_{t}$ must therefore be a ball.	
+\end{proof}
+
