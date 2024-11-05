@@ -309,7 +309,7 @@ In other words, we can always reflect a little $\varepsilon$ in any direction, u
 	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ embedded solution to equation (\ref{evolutioneq}). There exists $C>0$ depending only on $X_0$ such that for all $t\in[0, T)$: 
 	\begin{align*}
 		\max_{x\in X_t} |x| - \min_{x\in X_t} |x| < C
-	\end{align*}
+	\end{align*}\label{sandwich estimate}
 \end{cor}
 \begin{proof}
 	We can reflect $X_0\subset B_R(0)$ up to any plane tangent to  $B_R(0)$, i.e. any plane $\pi_{v, K}$ for any $K\geq R$ and $v$ unit vector, i.e.  $\pi_{v, K}=\{p \in \R^{n+1} : \langle p, v \rangle = K\}$. Let $x_1, x_2\in X_t$ such that $|x_1|=\min_{x\in X_t} |x|$ and  $|x_2|=\max_{x\in X_t} |x|$. Let $v=\frac{x_2-x_1}{\vert x_2-x_1 \vert}$: we can reflect $X_t$ up to $(\pi_{v, R}, v)$ by theorem \ref{chow gulliver}, therefore $\mathrm{dist}(x_2, \pi_{v, R}) < \mathrm{dist}(x_1, \pi_{v, R})$, or in other words:
@@ -389,7 +389,7 @@ Let's now assume that the hypersurfaces in the solution to the equation are conv
 \end{defin}
 
 \begin{oss}
-	Many authors define the support function on the whole euclidean space. As its gradient scales linearly with $\nabla u_K$, we will not be doing so out of simplicity. Notice that given two convex sets $K_1$ and $K_2$, $K_1 \subseteq K_2$ if and only if   $u_{K_1} \leq u_{K_2}$. In this sense, a convex set is determined by its support function. Also, the tangent plane at the point in $\partial K$ which has $\nu$ as a normal vector is  $h_\nu=\{x\in \R^n : x \cdot \nu = u_K (\nu)\}$. 
+	\em Many authors define the support function on the whole euclidean space. As its gradient scales linearly with $\nabla u_K$, we will not be doing so out of simplicity. Notice that given two convex sets $K_1$ and $K_2$, $K_1 \subseteq K_2$ if and only if   $u_{K_1} \leq u_{K_2}$. In this sense, a convex set is determined by its support function. Also, the tangent plane at the point in $\partial K$ which has $\nu$ as a normal vector is  $h_\nu=\{x\in \R^n : x \cdot \nu = u_K (\nu)\}$. 
 \end{oss}
 
 \begin{cor}
@@ -536,20 +536,21 @@ We will limit our analysis to a sub-class of solutions to \ref{evolutioneq}:
 \begin{defin}
 	We say that a solution to \ref{evolutioneq} is {\em expansive} if $F<0$. 
 \end{defin}
+An example of such a flow is the inverse curvature flow, extensively studied in the literature. 
 \begin{oss}	
-	This assumption on $F$ implies that whenever $t<s$, $X_t \subset \mathrm{int}(X_s)$. This is implied by the fact that, in the equation, the time derivative is always an outward pointing non-zero vector.\label{expansive flow remark} In this sense, the hypersurface is expanding in the ambient space.
+	\em This assumption on $F$ implies that whenever $t<s$, $X_t \subset \mathrm{int}(X_s)$. This is implied by the fact that, in the equation, the time derivative is always an outward pointing non-zero vector.\label{expansive flow remark} In this sense, the hypersurface is expanding in the ambient space.
 \end{oss}
 \begin{defin}
 	Let $ X : M^n \times (T_0, T_1) \to \mathbb{R}^{n+1} $ be an embedded expansive solution to equation (\ref{evolutioneq}). We say that {\em $X$ comes out of a point} if there exists a point $y_\infty$ such that for every $\varepsilon>0$, there exists a time $\tau \in  (T_0, T_1)$ such that $X_\tau \subset B_\varepsilon(y_\infty)$.
 \end{defin}
 
 \begin{oss}	
-	If we take the optimal $\tau$ in the definition above, Remark \ref{expansive flow remark} implies that the function $\tau(\varepsilon)$ mapping $\varepsilon$ to the last time where $X_\tau$ is contained in the ball is non-increasing.
+	\em If we take the optimal $\tau$ in the definition above, Remark \ref{expansive flow remark} implies that the function $\tau(\varepsilon)$ mapping $\varepsilon$ to the last time where $X_\tau$ is contained in the ball is non-increasing.
 \end{oss} 
 
 
 In particular, we will show that expansive solutions "coming out of a point" must be expanding spheres.
-It is easy to check that expanding spheres do satisfy the equation: Any spherical solution is completely determined by its radius at time $t$, because the equation is invariant at each point, being the principal curvatures constant: solving the ordinary differential equation $r'(t) = \varphi(r(t))$ completely determines the flow, where $\varphi(r) = -F(\frac{1}{r}, \dots, \frac{1}{r})$.
+It is easy to check that homothetically expanding spheres do satisfy the equation: Any spherical solution is completely determined by its radius at time $t$, because the equation is invariant at each point, being the principal curvatures constant: thus, solving the ordinary differential equation $r'(t) = \varphi(r(t))$ completely determines the flow, where $\varphi(r) = -F(\frac{1}{r}, \dots, \frac{1}{r})$.
 
 We say that a solution to the equation is ancient if $T_0=-\infty$. 
 In the case of the spherical solution coming out of a point, there exists an ancient solution if and only if

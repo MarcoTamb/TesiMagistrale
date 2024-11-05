@@ -475,6 +475,26 @@ We will now define reflections in $\mathbb{M}^n$:
 	\label{moving hyperplanes hyperbolic}
 \end{figure}
 
+\begin{oss}
+	\em Another choice of direction on the hyperbolic plane allows one to write an explicit formula for the reflection about each hyperplanes, which may be more enlightening than the construction above. One can repeat the construction, taking the point $e_n$ and direction $e_n$. The geodesic is then the vertical $x_n$ axis and the totally geodesic hyperplanes are therefore the euclidean spheres centred at the origin. Assume without loss of generality that curvature is $\pm 1$, and take the sphere of radius $r$. We claim that the reflection about the sphere of radius $r$ is the spherical inversion about the sphere. We remind the reader that a spherical inversion about a sphere of centre $O$ is a transformation mapping a point $P$ to the point $P'$ on the (euclidean) line through $O$ and $P$ such that $\overline{OP}\cdot \overline{OP'} = r^2$. Therefore the point $(\underline{0}, a)$ on the geodesic is mapped to $(\underline{0}, \frac{r^2}{a})$ by the inversion. Computing the geodesic distance of these two points to  $(\underline{0}, r)$:
+	\begin{align*}
+		&\int_{r}^{a} \frac{1}{x} dx = \left[\ln{x} \right]_{r}^{a} = \ln{a} - \ln{r} \\
+		&\int_{\frac{r^2}{a}}^{r} \frac{1}{x} dx = \left[\ln{x} \right]_{\frac{r^2}{a}}^{r} = \ln{r} - 2 \ln{r} + \ln{a} - \ln{ r} = \ln{a} - \ln{r}
+	\end{align*}
+	we see that the points are the equidistant from $(\underline{0}, r)$ and therefore the corresponding spheres/hyperplanes have to map to each other. On the other hand, it is a standard result that inversions are orientation-reversing isometries in hyperbolic space. Please note however that, if we consider $I_r(P)$ fix a point $P\in H^n$ and let $r$ vary, it does not move along a geodesic unless it is on the geodesic generating the motion. Therefore, as the geodesic is the shortest path, taking $r$ to be varying between $R_0$ and $R_1$
+	\begin{align*}
+		\mathrm{dist}(I_{R_0}(P), I_{R_1}(P)) \leq \mathrm{length} (I_r(P))
+	\end{align*}
+	in general, with a strict inequality unless $P$ is on the geodesic. This is unlike the situation on the plane, where equality holds everywhere. 
+\end{oss}
+\begin{oss}
+	\em The inequality
+	\begin{align}
+		\mathrm{dist}(I_{R_0}(P), I_{R_1}(P)) \leq \mathrm{length} (I_r(P))
+	\end{align}
+	taking corresponding objects, holds also on $S^n$. 
+\end{oss}
+
 \section{The Method of Moving Planes}
 \label{method moving planes}
 
