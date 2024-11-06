@@ -5,6 +5,10 @@ The main result we want to establish in this chapter is theorem \ref{chow gulliv
 
 We will first describe the differential equations we are analysing, then prove that they are parabolic, then prove the theorem. 
 
+After proving the theorem we will include some corollaries of the result and use it to find some estimates for the gradient of the support function and the gradient radial function. 
+
+Finally, an application of the result is presented, showing that the condition of \textit{coming out of a point} is particularly rigid on expansive flows. 
+
 \section{Class of Equations we analyze}
 
 We consider manifolds $M^n$ embedded in $\R^{n+1}$, i.e. there is an embedding $X_0 : M^n \rightarrow \R^{n+1}$ parametrizing the hypersurface $X_0(M^n)$. 
@@ -278,7 +282,7 @@ The main theorem is the following:
 \end{proof}
 
 
-\section{Some corollaries of the result} 
+\section{Some corollaries of the result} \label{Some corollaries of the result}
 In this section we collect a number of corollaries to the main result above. This first one is an immediate consequence of the main result:
 \begin{cor}
 	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ embedded solution to equation (\ref{evolutioneq}). Then, if we can reflect $X_0$ strictly up to $(\pi_{v,C},v)$, then for all $t\in [0,T)$ $v\notin T_xX_t$ for all $x\in X_t\cap\overline{H^+(\pi)}$. In particular,  $ X_t\cap\overline{H^+(\pi)}$ is a graph over $\pi$ for all $t\in [0,T)$.\label{graph}
@@ -287,7 +291,7 @@ In this section we collect a number of corollaries to the main result above. Thi
 
 
 
-Another immediate consequence of Theorem \ref{chow gulliver} is the following:
+Another immediate consequence of theorem \ref{chow gulliver} is the following:
 \begin{cor}
 	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ solution to equation (\ref{evolutioneq}). Then, if we can reflect $X_0$ strictly up to $(\pi_{v,C},v)$, then for all $t\in [0,T)$ we can reflect $X(M, t)$ strictly up to $(\pi_{v,C},v)$.  
 \end{cor}
@@ -346,7 +350,7 @@ Lastly:
 \end{proof}
 
 
-\section{Applying the result to find gradient estimates}
+\section{Applying the result to find gradient estimates}\label{Applying the result to find gradient estimates}
 
 In this section we collect some applications of theorem \ref{chow gulliver} to gradient estimates for the support function and the radial function from \cite{Chow} (a more in-depth definition these two functions can be found in the introduction of \cite{tomography}). Central in what will follow is this corollary providing an estimate for the tangent component of the position vector $x$ of a point on the hypersurface in its own tangent space: 
 \begin{cor}
@@ -575,7 +579,7 @@ Indeed, the property of coming out a point is particularly rigid, as shown in th
 Previous results in geometric flows have shown multiple non-trivial examples of contracting flows sweeping the whole space.
 This could therefore be somewhat surprising, because it shows an opposite result, when running the equation in the opposite direction. It can however be explained intuitively by the idea that parabolic flows tend to \textit{smooth things out}: it is thus possible to arrive to a point from a more irregular hypersurface, however the only thing that can ``come out" of a point is something just as symmetric as a point, i.e. a sphere. 
 
-The outline of the proof in \cite{SinestRisa} is the same as the one below, but using Corollary \ref{reflect a small bit} makes it a bit simpler: 
+The proof is a relatively simple application of the reflection technique. The outline of the proof in \cite{SinestRisa} is the same as the one below, but using Corollary \ref{reflect a small bit} makes it a bit simpler: 
 
 \begin{proof}
 	Fix any hyperplane $\pi$ not passing through $y_\infty$. There is $R>0$ such that $B_{2R}(y_\infty)$ does not intersect it. By definition, there is also a time  $\tau \in  (T_0, T_1)$ such that $X_\tau \subset B_R(y_\infty)$. 
@@ -585,7 +589,7 @@ The outline of the proof in \cite{SinestRisa} is the same as the one below, but 
 	
 	On the other hand, by construction, we can reflect $X_{t}$ strictly about any hyperplane not intersecting $\cap_r B_{r}(y_\infty) = \{y_\infty\}$ at any time $t>\overline{t}=T_0$, hence we can reflect $X_{t}$ strictly up to any hyperplane passing through $y_\infty$, in both directions, at any  time $t\in (T_0, T_1)$. We observe that in the limit, the reflection property becomes non-strict, in the sense that we have to replace the interior of $X$ in definition \ref{strict-reflection-definition} with its closure, therefore $X_{t}$ may touch its reflection at the limit plane, i.e. the one passing through $y_\infty$. Similarly, it cannot be that the other condition is the one causing the strict reflection definition to fail, as the other condition stays instead strict. 
 	
-	This implies that, taking a hyperplane passing through $y_\infty$ and considering opposite directions for the reflection, $X_{t}$ is symmetric about said hyperplane for any time $t\in (T_0, T_1)$. By Proposition \ref{proposition symmetry conclusion}, then, we conclude that $X_{t}$ must therefore be a ball.	
+	This implies that, taking any hyperplane passing through $y_\infty$ and considering opposite directions for the reflection, $X_{t}$ is symmetric about said hyperplane for any time $t\in (T_0, T_1)$. By Proposition \ref{proposition symmetry conclusion}, then, we conclude that $X_{t}$ must be a ball.	
 \end{proof}
 
 
