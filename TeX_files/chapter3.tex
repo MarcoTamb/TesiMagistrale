@@ -1,6 +1,8 @@
+% !TeX spellcheck = en_GB
 \chapter{Extension to constant curvature spaces}
 In this chapter we want to extend the Chow-Gulliver result (theorem \ref{chow gulliver}) to constant curvature spaces. We will use the same notation as in section 
 \ref{reflections definitions} and \ref{method moving planes}. 
+Throughout the chapter, by hyperplane we mean a totally geodesic hyperplane. 
 
 \section{The equation in constant curvature spaces}	
 As shown in \cite{huisken}, the equation we analysed in the previous chapter can be also considered in non-flat ambient spaces. In particular, we will analyse the case where the ambient space is one of those described  in section \ref{reflections definitions}: $\R^{n+1}$, $\mathbb{H}^{n+1}$, or $\mathbb{S}^n_+$. We again use the symbol $\mathbb{M}^{n+1}_+$ to indicate any of these spaces. 
@@ -23,7 +25,7 @@ As we saw in the previous chapter, it is a non-linear parabolic differential equ
 \section{Extension of the result}	
 
 
-Assume the hypothesis in section \ref{reflections definitions}: $X:M^n\rightarrow \mathbb{M}^{n+1}_+$ is a hypersurface in a constant curvature ambient space, and we choose a point and a direction $v$ to foliate the ambient space. Consider a hyperplane in the foliation, $\pi=\pi_{v, c}$. As in section \ref{reflections definitions} we can define the reflection about $\pi$. As in the previous chapter, let $X^\pi$ be the reflection of X about $\pi$.
+Assume the hypothesis in section \ref{reflections definitions}: $X:M^n\rightarrow \mathbb{M}^{n+1}_+$ is a hypersurface in a constant curvature ambient space, and we choose a point and a direction $v$ to foliate the ambient space. Consider a hyperplane in the foliation, $\pi=\pi_{v, C}$. As in section \ref{reflections definitions} we can define the reflection about $\pi$. As in the previous chapter, let $X^\pi$ be the reflection of X about $\pi$.
 
 Then, $\mathbb{M}^{n+1}_+$ is divided by $\pi$ into two half-spaces:
 \begin{align*}
@@ -39,7 +41,7 @@ Then, $\mathbb{M}^{n+1}_+$ is divided by $\pi$ into two half-spaces:
 \end{defin}
 This fundamentally means that the reflection of one of the halves of $X$ on the other side of $\pi$ is contained in the region inside $M^n$ and the tangent spaces of $X$ and of the half-reflection do not form a ninety degree angle with $\pi$, at all points on $\pi\cap X$. As the two tangent spaces are one the reflection of the other, this means that they do not coincide.   
 \begin{defin}
-	We say {\em we can reflect $X: M^n\rightarrow \R^{n+1}$ strictly up to $(\pi,V)$} if we can reflect $M^n$ strictly with respect to $\pi_s$ for all hyperplanes $\pi_{v, s}$ such that $s<C$.  
+	We say {\em we can reflect $X: M^n\rightarrow \R^{n+1}$ strictly up to $(\pi,v)$} if we can reflect $M^n$ strictly with respect to $\pi_{v, s}$ for all hyperplanes $\pi_{v, s}$ such that $s<C$.  
 \end{defin}
 
 The result then becomes:
@@ -83,13 +85,28 @@ The result then becomes:
 
 We now shift the focus to extending the corollaries of theorem \ref{chow gulliver} in section \ref{Some corollaries of the result}. 
 
-The author is not aware of a standard definition of a support and a radial function in a curved setting, so we do not attempt to extend the results in section \ref{Applying the result to find gradient estimates}. 
+The author is not aware of a standard definition of a support and a radial function in a curved setting, so we do not attempt to extend the results in section \ref{Applying the result to find gradient estimates}. { \textbf{[DA RIMUOVERE SE CAMBIAMO IDEA]}}
 
-{\Large \textbf{[DA SCRIVERE]}}
+Clearly, corollary \ref{upto} has a direct equivalent in this setting:
+\begin{cor}
+	Let $X:M^n\times [0,T) \rightarrow \mathbb{M}^{n+1}_+$ be a $C^2$ solution to equation (\ref{evolutioneq}). Then, if we can reflect $X_0$ strictly up to $(\pi_{v,C},v)$, for all $t\in [0,T)$ we can reflect $X_t$ strictly up to $(\pi_{v,C},v)$.  
+\end{cor}
 
-{\Large \textbf{[Corollary \ref{graph} - DA SCRIVERE]}}
+The second result that we can extend is Corollary \ref{graph}, although the meaning of \textit{graph} in curved spaces is ambiguous. We adapt the corollary as follows: 
 
-{\Large \textbf{[Corollary \ref{reflect a small bit} - DA SCRIVERE]}}
+
+\begin{cor}
+	Let $X:M^n\times [0,T) \rightarrow \mathbb{M}^{n+1}_+$ be a $C^2$ embedded solution to equation (\ref{evolutioneq_ext}). Then, if we can reflect $X_0$ strictly up to $(\pi_{v,C},v)$, then for all $t\in [0,T)$, $X_t \cap H^+(\pi_{v,C})$ is such that the projection of the coordinates of its points onto $\pi_{v,C}$, $(p, \tau)\mapsto p$, is surjective. 
+\end{cor}
+This condition guarantees that we can build a map from $s:\overline{\mathrm{int}(X_t \cap \pi_{v,C})}\rightarrow \R$ such that $(p, s(p))\in X_t$, making $p\mapsto (p, s(p))$ act as a sort of curved graph. 
+\begin{proof}
+	By  theorem \ref{chow gulliver extended} we can reflect up to $(\pi_{v,C},v)$ at all times in $[0,T)$. Let $\gamma_p(s)=(p, s+C)$ be the path followed by $p\in \pi_{v,C}$ as the planes sweep through the ambient space. If two points exist with the same $p$ coordinate, say $(p, C_1)$ and $(p, C_2)$, the reflection about the hyperplane $\pi_{v,\frac{ C_1 +  C_2}{2}}$ would map one onto the other, but as both $C_1$ and $C_2$ are greater than $C$, then we should also be able to reflect strictly about it, as we would have $\frac{ C_1 +  C_2}{2}>C$. 
+\end{proof}
+
+Let $\tilde{B}_r(y) = \{ p \in \mathbb{M}^{n+1}_+  : \mathrm{dist}(p, y) < r \}$. Reasoning exactly like in corollary \ref{reflect a small bit}, we also can extend it to this setting:  
+\begin{cor}
+	Let $X:M^n\times [0,T) \rightarrow \mathbb{M}^{n+1}_+$ be a $C^2$ embedded solution to equation (\ref{evolutioneq_ext}). There exists $\varepsilon>0$ depending only on $X_0$ such that for all $t\in[0, T)$ we can reflect $X_t$ up to $(\Pi_0^v +\epsilon v, v)$ for every $v \in S^n$. In particular, if $X_0 \subset \tilde{B}_R(C)$, then we can always reflect $X_t$ up to $(\Pi, v)$ whenever $H^+(\Pi)\cap \tilde{B}_{R-\varepsilon}(C)=\emptyset$.\label{reflect a small bit ext}
+\end{cor}
 
 {\Large \textbf{[Corollary \ref{x projection estimate} - If/when it can be done  - DA SCRIVERE]}}
 
@@ -99,3 +116,32 @@ The author is not aware of a standard definition of a support and a radial funct
 \section{Extending Ancient solutions section}
 
 {\Large \textbf{[DA SCRIVERE]}}
+
+Like before: 
+\begin{defin}
+	We say that a solution to \ref{evolutioneq_ext} is {\em expansive} if $F<0$. 
+\end{defin}
+\begin{defin}
+	Let $ X : M^n \times (T_0, T_1) \to \mathbb{M}^{n+1}_+ $ be an embedded expansive solution to equation (\ref{evolutioneq_ext}). We say that {\em $X$ comes out of a point} if there exists a point $y_\infty$ such that for every $\varepsilon>0$, there exists a time $\tau \in  (T_0, T_1)$ such that $X_\tau \subset \tilde{B}_\varepsilon(y_\infty)$, where $\tilde{B}_r(y) = \{ p \in \mathbb{M}^{n+1}_+  : \mathrm{dist}(p, y) < r \}$.
+\end{defin}
+
+{\Large \textbf{[DA SCRIVERE]}}
+
+
+\begin{theorem}
+	Let $ X : M^n \times (T_0, T_1) \to \mathbb{M}^{n+1}_+ $ be a smooth, closed, embedded expansive solution to equation (\ref{evolutioneq_ext}) coming out of a point. Then it is a family of expanding distance spheres.
+\end{theorem}
+
+
+\begin{proof}
+	{\Large \textbf{[DA CONTROLLARE]}}
+	
+	Fix any hyperplane $\pi$ not passing through $y_\infty$. There is $R>0$ such that $ \tilde{B}_{2R}(y_\infty)$ does not intersect it. By definition, there is also a time  $\tau \in  (T_0, T_1)$ such that $X_\tau \subset \tilde{B}_R(y_\infty)$. 
+	By Corollary \ref{reflect a small bit ext}, then, we can reflect strictly $X_t$ up to $\pi$ for any $t>\tau$. 
+	
+	Now consider a sequence  $\epsilon_n\rightarrow 0$. Up to a subsequence, we can then find a corresponding converging non-increasing sequence $\tau_n\rightarrow \overline{t}\in [T_0, T_1)$ (here note that $\overline{t}$ can be $-\infty$) such that $X_{\tau_n}\subseteq B_{\epsilon_n}(y_\infty)$, therefore in $(\tau_n, T_1)$ I can reflect up to any hyperplane outside  $\tilde{B}_{\epsilon_n}(y_\infty)$ in any direction, reasoning like we just did. At time $\overline{t}$, $X_{\overline{t}} \subseteq \cap_r  \tilde{B}_{r}(y_\infty) = \{y_\infty\}$, thus we would have a singularity at $\overline{t}$ if  $\overline{t}\in(T_0, T_1)$ and therefore $\overline{t}=T_0$. 
+	
+	On the other hand, by construction, we can reflect $X_{t}$ strictly about any hyperplane not intersecting $\cap_r B_{r}(y_\infty) = \{y_\infty\}$ at any time $t>\overline{t}=T_0$, hence we can reflect $X_{t}$ strictly up to any hyperplane passing through $y_\infty$, in both directions, at any  time $t\in (T_0, T_1)$. We observe that in the limit, the reflection property becomes non-strict, in the sense that we have to replace the interior of $X$ in definition \ref{strict-reflection-definition} with its closure, therefore $X_{t}$ may touch its reflection at the limit plane, i.e. the one passing through $y_\infty$. Similarly, it cannot be that the other condition is the one causing the strict reflection definition to fail, as the other condition stays instead strict. 
+	
+	This implies that, taking any hyperplane passing through $y_\infty$ and considering opposite directions for the reflection, $X_{t}$ is symmetric about said hyperplane for any time $t\in (T_0, T_1)$. By Proposition \ref{proposition symmetry conclusion}, then, we conclude that $X_{t}$ must be a ball.	
+\end{proof}
