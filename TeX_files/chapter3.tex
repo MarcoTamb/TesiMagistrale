@@ -21,8 +21,11 @@ and consider the evolution equation
 where $\nu$ is the outward normal to $X_t(M^n)$ at the point $X_t(x)$ and $\kappa_1\leq \dots \leq \kappa_n$ are the principal curvatures at $X_t(x)$. 
 
 As we saw in the previous chapter, it is a non-linear parabolic differential equation, as the calculation in chapter \ref{parabolic} is valid for any metric on $\R{n+1}$, and in particular, for the metrics in our models for $\mathbb{M}^{n+1}_+$ in section \ref{reflections definitions}. The existence result in \cite{huisken} also holds as well in this case. Finally, the result in section \ref{representation as graph} is not using the metric tensor, and therefore is valid in this setting as well, again because there are models on $\R^{n+1}$. 
-
-\section{Extension of the result}	
+\begin{oss}
+	\em
+	The hemisphere has a finite diameter in each direction. It is therefore possible that the flow stops in a finite time when it touches the equator. One could extend it a little bit by rotating the hypersurface in $S^{n+1}$ so that it only touches the equator at the last possible moment. It is however possible that the hypersurface touches its reflection {\em on the wrong side} if we let it expand past the equator, (a sphere is, after all, round). It is easier to avoid this possibility by considering only flows defined in the hemisphere. 
+\end{oss}
+\section{Extension of theorem \ref{chow gulliver}}	
 
 
 Assume the hypothesis in section \ref{reflections definitions}: $X:M^n\rightarrow \mathbb{M}^{n+1}_+$ is a hypersurface in a constant curvature ambient space, and we choose a point and a direction $v$ to foliate the ambient space. Consider a hyperplane in the foliation, $\pi=\pi_{v, C}$. As in section \ref{reflections definitions} we can define the reflection about $\pi$. As in the previous chapter, let $X^\pi$ be the reflection of X about $\pi$.
@@ -107,35 +110,41 @@ Let $\tilde{B}_r(y) = \{ p \in \mathbb{M}^{n+1}_+  : \mathrm{dist}(p, y) < r \}$
 \begin{cor}
 	Let $X:M^n\times [0,T) \rightarrow \mathbb{M}^{n+1}_+$ be a $C^2$ embedded solution to equation (\ref{evolutioneq_ext}). There exists $\varepsilon>0$ depending only on $X_0$ such that for all $t\in[0, T)$ we can reflect $X_t$ up to $(\Pi_0^v +\epsilon v, v)$ for every $v \in S^n$. In particular, if $X_0 \subset \tilde{B}_R(C)$, then we can always reflect $X_t$ up to $(\Pi, v)$ whenever $H^+(\Pi)\cap \tilde{B}_{R-\varepsilon}(C)=\emptyset$.\label{reflect a small bit ext}
 \end{cor}
-
+Other corollaries of the section, like Corollary \ref{x projection estimate} and Corollary \ref{sandwich estimate} are harder to extend, as they rely on the points at each plane moving along geodesics on the plane, which is not true in the curved case. 
+\begin{comment}
 {\Large \textbf{[Corollary \ref{x projection estimate} - If/when it can be done  - DA SCRIVERE]}}
 
 {\Large \textbf{[Corollary \ref{sandwich estimate} - If/when it can be done  - DA SCRIVERE]}} I fear that this one cannot be done because the line mapping the minimum into the maximum in the reflection is not a geodesic anymore in the hyperbolic case
+\end{comment}
 
 
-\section{Extending Ancient solutions section}
+\section{Extending theorem \ref{pointexpanding}}
 
-{\Large \textbf{[DA SCRIVERE]}}
-
-Like before: 
+It is also possible to extend the result in section \ref{SinestRisaResult} to $\mathbb{M}^{n+1}_+$. We consider {\em expansive} solutions to \ref{evolutioneq_ext} which are defined on a larger interval $(T_0, T_1)$, with  $-\infty \leq T_0 \leq 0 < T_1 \leq \infty$. Like before: 
 \begin{defin}
-	We say that a solution to \ref{evolutioneq_ext} is {\em expansive} if $F<0$. 
+	We say that a solution to equation (\ref{evolutioneq_ext}) is {\em expansive} if $F<0$. 
 \end{defin}
+Like in the euclidean case, expansive solutions are those where $\frac{\partial X_t}{\partial t}$ is an outward pointing vector. 
 \begin{defin}
 	Let $ X : M^n \times (T_0, T_1) \to \mathbb{M}^{n+1}_+ $ be an embedded expansive solution to equation (\ref{evolutioneq_ext}). We say that {\em $X$ comes out of a point} if there exists a point $y_\infty$ such that for every $\varepsilon>0$, there exists a time $\tau \in  (T_0, T_1)$ such that $X_\tau \subset \tilde{B}_\varepsilon(y_\infty)$, where $\tilde{B}_r(y) = \{ p \in \mathbb{M}^{n+1}_+  : \mathrm{dist}(p, y) < r \}$.
 \end{defin}
 
-{\Large \textbf{[DA SCRIVERE]}}
 
+Like in the euclidean case, homothetically expanding distance spheres satisfy the equation: distance spheres have constant principal curvatures in $\mathrm{M}^{n+1}_+$ as well; thus, any spherical solution is completely determined by its radius at time $t$, because the equation is invariant at each point. Again, the ordinary differential equation $r'(t) = \varphi(r(t))$ completely determines the flow, where $\varphi(r) = -F(\frac{1}{r}, \dots, \frac{1}{r})$. Like before, we can find an ancient solution if and only if
+\begin{align*}
+	\int_{0}^{c}\frac{1}{\varphi(r)} dr =+\infty.
+\end{align*}
+It is no surprise that in constant curvature spaces we can prove a statement equivalent to theorem \ref{pointexpanding}:
 
 \begin{theorem}
-	Let $ X : M^n \times (T_0, T_1) \to \mathbb{M}^{n+1}_+ $ be a smooth, closed, embedded expansive solution to equation (\ref{evolutioneq_ext}) coming out of a point. Then it is a family of expanding distance spheres.
+	Let $ X : M^n \times (T_0, T_1) \to \mathbb{M}^{n+1}_+ $ be a smooth, closed, embedded expansive solution to equation (\ref{evolutioneq_ext}) coming out of a point. Then it is a family of expanding distance spheres. \label{expandingflowext}
 \end{theorem}
+\begin{oss}
+	At a glance, it could be confusing why the shape changes, after all it is not immediately apparent what changes in equation  	\ref{evolutioneq_ext} from the previous chapter, as we do not find the metric in it, and one might wonder if it could be seen as a version of equation  \ref{evolutioneq} with a different $F$. This is not the case, as computing the principal curvatures interacts with the metric at a fundamental level, making it so that the two equations are not comparable.
+\end{oss}
 
-
+The proof is effectively the same as before: 
 \begin{proof}
-	{\Large \textbf{[DA CONTROLLARE]}}
-	
 	Fix any hyperplane $\pi$ not passing through $y_\infty$. There is $R>0$ such that $ \tilde{B}_{2R}(y_\infty)$ does not intersect it. By definition, there is also a time  $\tau \in  (T_0, T_1)$ such that $X_\tau \subset \tilde{B}_R(y_\infty)$. 
 	By Corollary \ref{reflect a small bit ext}, then, we can reflect strictly $X_t$ up to $\pi$ for any $t>\tau$. 
 	
@@ -145,3 +154,27 @@ Like before:
 	
 	This implies that, taking any hyperplane passing through $y_\infty$ and considering opposite directions for the reflection, $X_{t}$ is symmetric about said hyperplane for any time $t\in (T_0, T_1)$. By Proposition \ref{proposition symmetry conclusion}, then, we conclude that $X_{t}$ must be a ball.	
 \end{proof}
+
+\section{Shrinking flows on the sphere}
+
+As noted in \cite{summary}, something can be said about the opposite problem for a shrinking flow on the sphere $S^{n+1}$. In fact, shrinking flows of convex manifolds on a sphere are also quite rigid, and are limited under certain condition to being shrinking spheres. This was shown in \cite{BryanIvakiScheuer}. 
+
+\begin{defin}
+	We say that a solution to equation (\ref{evolutioneq_ext}) is {\em shrinking} if $F\geq 0$, and $F(0)=0$. 
+\end{defin}
+The condition $F(0)=0$ ensures that equators on the sphere are static solutions to equation (\ref{evolutioneq_ext}). On the whole sphere one must choose a conventional direction for the unit normal. 
+
+
+\begin{theorem}
+	Let $ X : M^n \times (T_0, T_1) \to \mathbb{M}^{n+1}_+ $ be a smooth, convex, embedded shrinking solution to equation (\ref{evolutioneq_ext}). Suppose also that:
+	\begin{align*}
+		\limsup_{t\rightarrow T_0} \max_{X_t} \sum_i \kappa_i(x)<\infty
+	\end{align*}
+	Then $X_t$ is a distance sphere for all $t\in  (T_0, T_1)$.
+\end{theorem}
+
+The proof of this result is long and involved, and the main result in \cite{BryanIvakiScheuer}. It also uses Alexandrov reflection. 
+\begin{oss}
+	\em
+	This result acts as a sort of converse for theorem \ref{expandingflowext} on the hemisphere, showing that all ancient convex shrinking solutions on the sphere are the trivial shrinking spheres. 
+\end{oss}

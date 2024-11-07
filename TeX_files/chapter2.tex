@@ -332,6 +332,16 @@ In other words, we can always reflect a little $\varepsilon$ in any direction, u
 	\end{align*}
 \end{proof}
 
+\begin{oss}
+	\em This result has an important meaning if the hypersurface uniformly expands to infinity, i.e. $\lim_{t\rightarrow T}\min_{x\in X_t} |x| =\infty$. We can then consider the rescaled hypersurfaces 
+	\begin{align*}
+		\widetilde{X_t} = \frac{1}{\min_{x\in X_t} |x|} X_t
+	\end{align*}
+	Immediately, we find that  the $\widetilde{X_t}$ must converge uniformly to a sphere, because $\frac{C}{\min_{x\in X_t} |x|}\rightarrow 0$, and therefore 
+	\begin{align*}
+		\max_{x\in \widetilde{X_t}} |x| - \min_{x\in \widetilde{X_t}}\rightarrow 0
+	\end{align*}
+\end{oss}
 
 Lastly: 
 \begin{cor}
@@ -532,13 +542,13 @@ Finally, we include the following result about the part of $X_t$ outside a ball:
 	 $X_0\subset B$ therefore we can reflect $X_t$ about any hyperplane tangent to $B$ by Corollary \ref{reflect a small bit}. By Corollary \ref{graph} $X_t\cap\overline{H^+(\pi)}$ is a graph over $\pi$, therefore, it is not possible that a normal line coming out of $B$ and orthogonal to $\pi$ intersects  $X_t\cap\overline{H^+(\pi)}$ more than once. This implies that  $X_t\setminus B$ is star-shaped with respect to the centre of $B$
 \end{proof}
 
-\section{Expansive flows and ancient solutions}
+\section{Expansive flows and ancient solutions}\label{SinestRisaResult}
 
 In this section, roughly following \cite{SinestRisa}, we consider solutions to \ref{evolutioneq} which are defined on a larger interval $(T_0, T_1)$, with  $-\infty \leq T_0 \leq 0 < T_1 \leq \infty$. 
 
 We will limit our analysis to a sub-class of solutions to \ref{evolutioneq}:
 \begin{defin}
-	We say that a solution to \ref{evolutioneq} is {\em expansive} if $F<0$. 
+	We say that a solution to equation (\ref{evolutioneq}) is {\em expansive} if $F<0$. 
 \end{defin}
 An example of such a flow is the inverse curvature flow, extensively studied in the literature. 
 \begin{oss}	
@@ -573,7 +583,7 @@ The idea of ancient solutions was introduced by Richard Hamilton in his work on 
 Indeed, the property of coming out a point is particularly rigid, as shown in the following result:
 
 \begin{theorem}
-	Let $ X : M^n \times (T_0, T_1) \to \mathbb{R}^{n+1} $ be a smooth, closed, embedded expansive solution to equation (\ref{evolutioneq}) coming out of a point. Then it is a family of expanding spheres.
+	Let $ X : M^n \times (T_0, T_1) \to \mathbb{R}^{n+1} $ be a smooth, closed, embedded expansive solution to equation (\ref{evolutioneq}) coming out of a point. Then it is a family of expanding spheres.\label{pointexpanding}
 \end{theorem}
 
 Previous results in geometric flows have shown multiple non-trivial examples of contracting flows sweeping the whole space.
