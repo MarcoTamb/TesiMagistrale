@@ -332,7 +332,7 @@ Secondly, we remind the reader of the following generalized version of the theor
 \end{theorem}
 Suppose that we have a solution to a non-linear parabolic problem $v$, i.e. $v$ solves (\ref{nonlinearexample}):
 \begin{align*}
-	Lu= F\left(t, x, v, \frac{\partial v}{\partial x_i} , \frac{\partial^2 v}{\partial x_i \partial x_j}\right)-v_t = f(x, t)
+	Lv= F\left(t, x, v, \frac{\partial v}{\partial x_i} , \frac{\partial^2 v}{\partial x_i \partial x_j}\right)-v_t = f(x, t)
 \end{align*}
 for a non-linear elliptic operator $L$ in some region $E$, where we assume $F(t, x, y_i, z_{i,j})$ to be a given $C^1$ function. Suppose also that there is a $w$ which is a solution of the corresponding differential inequality:
 \begin{align*}
@@ -341,13 +341,13 @@ for a non-linear elliptic operator $L$ in some region $E$, where we assume $F(t,
 One can then consider $u = v-w$, and by combining the above we get: 
 
 \begin{align*}
-	Lv= \left( F\left(t, x, v, \frac{\partial v}{\partial x_i} , \frac{\partial^2 v}{\partial x_i \partial x_j}\right) - F\left(t, x, w, \frac{\partial w}{\partial x_i} , \frac{\partial^2 w}{\partial x_i \partial x_j}\right)\right)-u_t \leq 0
+	\left( F\left(t, x, v, \frac{\partial v}{\partial x_i} , \frac{\partial^2 v}{\partial x_i \partial x_j}\right) - F\left(t, x, w, \frac{\partial w}{\partial x_i} , \frac{\partial^2 w}{\partial x_i \partial x_j}\right)\right)-u_t \leq 0
 \end{align*}
 
 Now, we can apply Lagrange's theorem to $F$ to get 
 
 \begin{align*}
-	Lv= \left\langle \nabla F(\xi(x, t)), \left(t, x, u, \frac{\partial u}{\partial x_i} , \frac{\partial^2 u}{\partial x_i \partial x_j}\right) \right\rangle-u_t \leq 0
+	\tilde{L}u= \left\langle \nabla F(\xi(x, t)), \left(t, x, u, \frac{\partial u}{\partial x_i} , \frac{\partial^2 u}{\partial x_i \partial x_j}\right) \right\rangle-u_t \leq 0
 \end{align*}
 for a fixed $\xi(x, t)$.
 
