@@ -1,16 +1,86 @@
 % !TeX spellcheck = en_GB
 \chapter{Area- and volume-preserving flows}
+In this chapter area-preserving and volume-preserving flows are discussed. These are flows similar to the equation (\ref{evolutioneq}), with a non-local term added. It can be shown that the theorems in chapter 2 also apply to these flows. Finally, we discuss an application of these flows. 
+\section{The flows we consider in this chapter}
+Volume-preserving flows were introduced by Gerhard Huisken in 1987 (see \cite{volpres}).  Unlike the mean curvature flow, which contracts hypersurfaces to a point, volume-preserving flows maintain a constant enclosed volume while reducing the hypersurface area. These flows are governed by the modified evolution equation:
+\begin{align*}
+	\frac{\partial X}{\partial t} = \left[h(t) - H(x, t)\right]\nu,
+\end{align*}
+where $ H(x, t)$ is the is the mean curvature at a point $x\in X_t$ and $h(t)$ is the average mean curvature at time $t$, a non-local term defined as 
+\begin{align*}
+	h(t) = \frac{\int_{X_t} H(x, t) \, d\mu}{\int_{X_t} 1 \, d\mu}= \frac{\int_{M_t} H(x, t) \, d\mu}{|M_t|},
+\end{align*}
+where $d\mu$ is the volume element on the hypersurface \( X_t \).
+Notice that mean-curvature flows ($\frac{\partial X}{\partial t} = - H(t)\nu$) is a possible choice of $F$ in (\ref{evolutioneq}), therefore compared to the previous chapters we are just adding the global term $h(t)$. 
 
-\section{introduction}
-The flows, some history, the result we want as proven by McCoy
+A more general approach is in \cite{calcvar15}. Consider flows: 
+\begin{align}
+	\begin{dcases}
+		\frac{\partial X_t}{\partial t} = \left[- H^k(x, t) + \phi(t)\right] \nu\\
+		X(0)= X_0
+	\end{dcases} \label{chapter 4 equation}
+\end{align}
+where $\phi(t)$ is an appropriate non-local term and $k\in (0, \infty)$. A possible choice for $\phi$ is as before: 
+\begin{align}
+	\phi(t) = \frac{\int_{X_t} H^k(x, t) \, d\mu}{|X_t|}, \label{phi-volume-preserving}
+\end{align}
+corresponding to volume-preserving flows. Another possible choice is
+\begin{align}
+	\phi(t) = \frac{\int_{X_t} H^{k+1}(x, t) \, d\mu}{\int_{X_t} H(x, t) \, d\mu}, \label{phi-area-preserving}
+\end{align}
+which corresponds to area-preserving flows. It can be shown that if we choose $\phi$ as in (\ref{phi-volume-preserving}), the volume of the domain enclosed by $X_t$ remains constant, while choosing $\phi$ as in (\ref{phi-area-preserving}) keeps the area $|X_t|$ constant. 
 
+The fact that choosing $\phi$ as in \ref{phi-volume-preserving} preserves the volume is immediately apparent by direct calculation, as the change of the volume inside the hypersurface is the integral over $X_t$ of $\frac{\partial X_t}{\partial t}\cdot \nu$ (by Reynolds transport theorem on a constant function): 
+
+\begin{align*}
+		\int_{X_t}\frac{\partial X_t}{\partial t}\cdot \nu \;d\mu= \int_{X_t} \left[- H^k(x, t) + \phi(t)\right] d\mu = - \int_{X_t}  H^k(x, t) d\mu + \phi(t)|X_t|=0
+\end{align*}
+On the other hand, for the second choice, the formula for the first variation of area says that 
+\begin{align*}
+	\frac{d}{d t}\int_{X_t} d\mu = -  \int_{X_t} \left\langle\frac{\partial X_t}{\partial t} , H \nu \right\rangle d\mu  +\cancel{\int_{\partial X_t}\iota_{\frac{\partial X_t}{\partial t}}  d\mu}
+\end{align*}
+where the second term is cancelled because $\frac{\partial X_t}{\partial t}$ is orthogonal to the surface. Therefore
+\begin{align*}
+	\frac{d}{d t}\int_{X_t} d\mu &= -  \int_{X_t}  \left[- H^k + \phi(t)\right] H d\mu \\
+	&=  \int_{X_t}  H^{k+1} d\mu  + \phi(t)\int_{X_t} H d\mu = 0
+\end{align*}
+Another choice for an area-preserving flow is in \cite{mccoy} where he considers a flow 
+\begin{align}
+	\begin{dcases}
+		\frac{\partial X_t}{\partial t} = \left[1 - H^k(x, t)\phi(t)\right] \nu\\
+		X(0)= X_0
+	\end{dcases} \label{mccoy equation}
+\end{align}
+where 
+\begin{align*}
+	\phi(t) = \frac{\int_{X_t} H^k(x, t) \, d\mu}{\int_{X_t} H^{k+1}(x, t) \, d\mu}
+\end{align*}
+Again, computing the first variation of the area:
+\begin{align*}
+	\frac{d}{d t}\int_{X_t} d\mu &= -  \int_{X_t}  \left[1 - H^k(x, t)\phi(t)\right] H d\mu \\
+	&=  \int_{X_t}  H^k d\mu  + \phi(t)\int_{X_t} H^{k+1} d\mu = 0
+\end{align*}
 \section{Parabolicity of the equations}
-The trick is basically considering the flow with a time-dependant term which happens to coincide with the extra term we add (taken as a constant independent of the manifold). As the first one clearly is parabolic, we can apply theorems for parabolic PDE to the second (it is the same equation!). 
+While not really parabolic flows, because of the non-local term, it is possible to apply theorems on parabolic flows to equation (\ref{chapter 4 equation}). Given a solution $X_t$, we can consider the evolution equation 
+\begin{align}
+	\begin{dcases}
+		\frac{\partial X_t}{\partial t} = \left[- H^k(x, t) + \varphi_{X_t}(t)\right] \nu\\
+		X(0)= X_0
+	\end{dcases} \label{parabolic version}
+\end{align}
+where $\varphi_{X_t}$ is the constant function independent of $X$ given by $\phi$ when computed on the specific solution $X_t$. 
+Clearly, $X_t$ is a solution also to the second equation, as the values of  $\phi$ and $\varphi_{X_t}$ coincide when one considers the solution $X_t$. At the same time, equation (\ref{parabolic version}) is a parabolic equation: the only difference with (\ref{evolutioneq}) is the addition of a constant function $\varphi_{X_t}$ independent of the solution multiplied by the normal vector, which cannot affect the second order terms (the normal vector only depends on first-order derivatives). Therefore, following this line of reasoning, one can apply theorems like the maximum principle (Proposition \ref{firstapplication}) and the boundary point lemma (Proposition \ref{secondapplication}) also to solutions of (\ref{chapter 4 equation}), as they must hold for solutions of the associated parabolic equation (\ref{parabolic version}). A similar argument can also be used to apply the same results to solutions of equation (\ref{mccoy equation})
 
 \section{Theorem \ref{chow gulliver} and corollaries}
 
-EVERYTHING works
+Immediate consequence of the above is the fact that theorem \ref{chow gulliver} extends immediately:
 
+\begin{theorem}
+	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ solution to equation (\ref{chapter 4 equation}). Then, if we can reflect $X(M^n, 0)=X_0$ strictly with respect to $\pi$, then for all $t\in [0,T)$ we can reflect $X(M^n, t)=X_t$ strictly with respect to $\pi$. 
+\end{theorem}
+
+The proof is word for word identical to that of theorem \ref{chow gulliver}. 
+Similarly, also its corollaries can be extended. 
 \section{The solution stays inside a ball}
 
 I believe that $X_0\subset B_R(p)$ implies  $X_t\subset B_{2R}(p)$, but I have to check that.
