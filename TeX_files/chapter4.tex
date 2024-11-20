@@ -47,20 +47,20 @@ where the second term is cancelled because $\frac{\partial X_t}{\partial t}$ is 
 Another choice for an area-preserving flow is in \cite{mccoy} where he considers a flow 
 \begin{align}
 	\begin{dcases}
-		\frac{\partial X_t}{\partial t} = \left[1 - H^k(x, t)\phi(t)\right] \nu\\
+		\frac{\partial X_t}{\partial t} = \left[1 - H^k(x, t)  \phi(t)\right] \nu\\
 		X(0)= X_0
 	\end{dcases} \label{mccoy equation}
 \end{align}
 where 
 \begin{align*}
-	\phi(t) = \frac{\int_{X_t} H^k(x, t) \, d\mu}{\int_{X_t} H^{k+1}(x, t) \, d\mu}
+	\phi(t) = \frac{\int_{X_t} H(x, t) \, d\mu}{\int_{X_t} H^{k+1}(x, t) \, d\mu}
 \end{align*}
 Again, computing the first variation of the area:
 \begin{align*}
-	\frac{d}{d t}\int_{X_t} d\mu &= -  \int_{X_t}  \left[1 - H^k(x, t)\phi(t)\right] H d\mu \\
-	&=  \int_{X_t}  H^k d\mu  + \phi(t)\int_{X_t} H^{k+1} d\mu = 0
+	\frac{d}{d t}\int_{X_t} d\mu &= -  \int_{X_t}  \left[1 - H^k\phi(t)\right] H d\mu \\
+	&= - \int_{X_t}  H d\mu  + \phi(t)\int_{X_t} H^{k+1} d\mu = 0
 \end{align*}
-\section{Parabolicity of the equations}
+\section{Theorem \ref{chow gulliver} and corollaries}
 While not really parabolic flows, because of the non-local term, it is possible to apply theorems on parabolic flows to equation (\ref{chapter 4 equation}). Given a solution $X_t$, we can consider the evolution equation 
 \begin{align}
 	\begin{dcases}
@@ -69,18 +69,21 @@ While not really parabolic flows, because of the non-local term, it is possible 
 	\end{dcases} \label{parabolic version}
 \end{align}
 where $\varphi_{X_t}$ is the constant function independent of $X$ given by $\phi$ when computed on the specific solution $X_t$. 
-Clearly, $X_t$ is a solution also to the second equation, as the values of  $\phi$ and $\varphi_{X_t}$ coincide when one considers the solution $X_t$. At the same time, equation (\ref{parabolic version}) is a parabolic equation: the only difference with (\ref{evolutioneq}) is the addition of a constant function $\varphi_{X_t}$ independent of the solution multiplied by the normal vector, which cannot affect the second order terms (the normal vector only depends on first-order derivatives). Therefore, following this line of reasoning, one can apply theorems like the maximum principle (Proposition \ref{firstapplication}) and the boundary point lemma (Proposition \ref{secondapplication}) also to solutions of (\ref{chapter 4 equation}), as they must hold for solutions of the associated parabolic equation (\ref{parabolic version}). A similar argument can also be used to apply the same results to solutions of equation (\ref{mccoy equation})
+Clearly, $X_t$ is a solution also to the second equation, as the values of  $\phi$ and $\varphi_{X_t}$ coincide when one considers the solution $X_t$. At the same time, equation (\ref{parabolic version}) is a parabolic equation: the only difference with (\ref{evolutioneq}) is the addition of a constant function $\varphi_{X_t}$ independent of the solution multiplied by the normal vector, which cannot affect the second order terms (the normal vector only depends on first-order derivatives). Therefore, following this line of reasoning, one can apply theorems like the maximum principle (Proposition \ref{firstapplication}) and the boundary point lemma (Proposition \ref{secondapplication}) also to solutions of (\ref{chapter 4 equation}), as they must hold for solutions of the associated parabolic equation (\ref{parabolic version}). %A similar argument can also be used to apply the same results to solutions of equation (\ref{mccoy equation}).
 
-\section{Theorem \ref{chow gulliver} and corollaries}
-
-Immediate consequence of the above is the fact that theorem \ref{chow gulliver} extends immediately:
+Immediate consequence of the above is the fact that theorem \ref{chow gulliver} extends to solutions of equation (\ref{chapter 4 equation}):
 
 \begin{theorem}
 	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ solution to equation (\ref{chapter 4 equation}). Then, if we can reflect $X(M^n, 0)=X_0$ strictly with respect to $\pi$, then for all $t\in [0,T)$ we can reflect $X(M^n, t)=X_t$ strictly with respect to $\pi$. 
 \end{theorem}
 
-The proof is word for word identical to that of theorem \ref{chow gulliver}. 
-Similarly, also its corollaries can be extended. 
-\section{The solution stays inside a ball}
+The proof is word for word identical to that of theorem \ref{chow gulliver}, once one notices that it is possible to apply the maximum principle and Hopf's boundary point lemma. 
+
+\begin{oss}\em
+	There is also a simpler approach to apply the maximum principle in this specific case: in the proof of the maximum principle one considers the difference of two solutions; in principle the extra term $\phi(t) \nu$ could be different, providing an obstruction in the proof, as there is no guarantee that $u$ is a solution to a parabolic equation, but in the situation where we need it in the proof of this theorem the two $\phi(t)$ must have the same value, as the two surfaces in this case are just one the reflection of the other, and therefore this non-local term cancels out completely. Thus, the maximum principle can be extended to this situation. Similarly, this also applies to Hopf's boundary point lemma. 
+\end{oss}
+
+As a direct consequence, all the corollaries of theorem \ref{chow gulliver} can be extended. 
+\section{The solution stays inside a compact}
 
 I believe that $X_0\subset B_R(p)$ implies  $X_t\subset B_{2R}(p)$, but I have to check that.
