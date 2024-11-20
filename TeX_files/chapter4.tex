@@ -1,6 +1,6 @@
 % !TeX spellcheck = en_GB
 \chapter{Area- and volume-preserving flows}
-{\huge \textbf{[SISTEMA PARABOLICITÀ (credo serva $H>0$ quando $k\neq 1$)]}}
+
 
 In this chapter area-preserving and volume-preserving flows are discussed. These are flows similar to the equation (\ref{evolutioneq}), with a non-local term added. It can be shown that the theorems in chapter 2 also apply to these flows. Finally, we discuss an application of these flows. 
 \section{The flows we consider in this chapter}
@@ -22,7 +22,23 @@ A more general family of flows is in \cite{calcvar15}. Consider flows:
 		X(0)= X_0
 	\end{dcases} \label{chapter 4 equation}
 \end{align}
-where $\phi(t)$ is an appropriate non-local term and $k\in (0, \infty)$. A possible choice for $\phi$ is: 
+where $\phi(t)$ is an appropriate non-local term and $k\in (0, \infty)$. If $k\neq 1$, we will assume that  $H>0$ everywhere on $X_t$ for all $t$ (see remark below). 
+\begin{oss}\em
+	When considering $\frac{a+b}{2}$, the derivatives with respect to $a$ and $b$ are $\frac{1}{2}>0$. However, when one considers $ \left(\frac{a+b}{2}\right)^2=\frac{a^2}{4} + \frac{ab}{2} +\frac{b^2}{4} $,
+	the derivatives depend on the values of $a$ and $b$, and in particular it may be negative depending on their values. $a$ and $b$ here can be our mean curvatures, and therefore this simple observation shows that there is no guarantee that the flow 
+	\begin{align*}
+		\begin{dcases}
+			\frac{\partial X_t}{\partial t} = - H^k(x, t)  \nu\\
+			X(0)= X_0
+		\end{dcases} 
+	\end{align*}
+	is parabolic. One needs stronger hypothesis to guarantee this. By the formula for the derivative of the composite function, one gets easily
+	\begin{align*}
+		\frac{\partial }{\partial \kappa_i}  H^k =  k H^{k-1} \frac{\partial }{\partial \kappa_i}  H = \frac{k}{n} H^{k-1}
+	\end{align*}
+	and therefore to guarantee that $\frac{\partial F}{\partial \kappa_i} > 0$ we need to assume that $H>0$. We will assume this on the hypersurface at all times whenever $k\neq 1$, as we need the underlying flow to be parabolic.
+\end{oss}
+A possible choice for $\phi$ is: 
 \begin{align}
 	\phi(t) = \frac{\int_{X_t} H^k(x, t) \, d\mu}{|X_t|}, \label{phi-volume-preserving}
 \end{align}
@@ -46,22 +62,25 @@ where the second term is cancelled because $\frac{\partial X_t}{\partial t}$ is 
 	\frac{d}{d t}\int_{X_t} d\mu &= -  \int_{X_t}  \left[- H^k + \phi(t)\right] H d\mu \\
 	&=  \int_{X_t}  H^{k+1} d\mu  + \phi(t)\int_{X_t} H d\mu = 0
 \end{align*}
-Another choice for an area-preserving flow is in \cite{mccoy} where he considers a flow 
+
+\begin{oss}\em
+Another possible choice for an area-preserving flow is in \cite{mccoy} where he considers a flow 
 \begin{align}
 	\begin{dcases}
-		\frac{\partial X_t}{\partial t} = \left[1 - H^k(x, t)  \phi(t)\right] \nu\\
+		\frac{\partial X_t}{\partial t} = \left[1 - H(x, t)  \phi(t)\right] \nu\\
 		X(0)= X_0
 	\end{dcases} \label{mccoy equation}
 \end{align}
 where 
 \begin{align*}
-	\phi(t) = \frac{\int_{X_t} H(x, t) \, d\mu}{\int_{X_t} H^{k+1}(x, t) \, d\mu}
+	\phi(t) = \frac{\int_{X_t} H(x, t) \, d\mu}{\int_{X_t} H^{2}(x, t) \, d\mu}
 \end{align*}
 Again, computing the first variation of the area:
 \begin{align*}
-	\frac{d}{d t}\int_{X_t} d\mu &= -  \int_{X_t}  \left[1 - H^k\phi(t)\right] H d\mu \\
-	&= - \int_{X_t}  H d\mu  + \phi(t)\int_{X_t} H^{k+1} d\mu = 0
+	\frac{d}{d t}\int_{X_t} d\mu &= -  \int_{X_t}  \left[1 - H\phi(t)\right] H d\mu \\
+	&= - \int_{X_t}  H d\mu  + \phi(t)\int_{X_t} H^{2} d\mu = 0
 \end{align*}
+\end{oss}
 \section{Theorem \ref{chow gulliver} and corollaries}
 While not really parabolic flows, because of the non-local term, it is possible to apply theorems on parabolic flows to equation (\ref{chapter 4 equation}). Given a solution $X_t$, we can consider the evolution equation 
 \begin{align}
