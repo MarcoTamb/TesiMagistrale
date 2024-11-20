@@ -11,16 +11,16 @@ where $ H(x, t)$ is the is the mean curvature at a point $x\in X_t$ and $h(t)$ i
 	h(t) = \frac{\int_{X_t} H(x, t) \, d\mu}{\int_{X_t} 1 \, d\mu}= \frac{\int_{M_t} H(x, t) \, d\mu}{|M_t|},
 \end{align*}
 where $d\mu$ is the volume element on the hypersurface \( X_t \).
-Notice that mean-curvature flows ($\frac{\partial X}{\partial t} = - H(t)\nu$) is a possible choice of $F$ in (\ref{evolutioneq}), therefore compared to the previous chapters we are just adding the global term $h(t)$. 
+Notice that mean-curvature flows ($\frac{\partial X}{\partial t} = - H(t)\nu$) is a possible choice of $F$ in (\ref{evolutioneq}), therefore compared to the previous chapters we are just adding the global term $h(t)$. Huisken's results demonstrate that such flows lead to the convergence of the hypersurfaces to round spheres, provided the initial hypersurface is uniformly convex. 
 
-A more general approach is in \cite{calcvar15}. Consider flows: 
+A more general family of flows is in \cite{calcvar15}. Consider flows: 
 \begin{align}
 	\begin{dcases}
 		\frac{\partial X_t}{\partial t} = \left[- H^k(x, t) + \phi(t)\right] \nu\\
 		X(0)= X_0
 	\end{dcases} \label{chapter 4 equation}
 \end{align}
-where $\phi(t)$ is an appropriate non-local term and $k\in (0, \infty)$. A possible choice for $\phi$ is as before: 
+where $\phi(t)$ is an appropriate non-local term and $k\in (0, \infty)$. A possible choice for $\phi$ is: 
 \begin{align}
 	\phi(t) = \frac{\int_{X_t} H^k(x, t) \, d\mu}{|X_t|}, \label{phi-volume-preserving}
 \end{align}
@@ -30,12 +30,12 @@ corresponding to volume-preserving flows. Another possible choice is
 \end{align}
 which corresponds to area-preserving flows. It can be shown that if we choose $\phi$ as in (\ref{phi-volume-preserving}), the volume of the domain enclosed by $X_t$ remains constant, while choosing $\phi$ as in (\ref{phi-area-preserving}) keeps the area $|X_t|$ constant. 
 
-The fact that choosing $\phi$ as in \ref{phi-volume-preserving} preserves the volume is immediately apparent by direct calculation, as the change of the volume inside the hypersurface is the integral over $X_t$ of $\frac{\partial X_t}{\partial t}\cdot \nu$ (by Reynolds transport theorem on a constant function): 
+The fact that choosing $\phi$ as in (\ref{phi-volume-preserving}) preserves the volume is immediately apparent, as the change of the volume inside the hypersurface is the integral over $X_t$ of $\frac{\partial X_t}{\partial t}\cdot \nu$ (by Reynolds transport theorem for a constant function): 
 
 \begin{align*}
 		\int_{X_t}\frac{\partial X_t}{\partial t}\cdot \nu \;d\mu= \int_{X_t} \left[- H^k(x, t) + \phi(t)\right] d\mu = - \int_{X_t}  H^k(x, t) d\mu + \phi(t)|X_t|=0
 \end{align*}
-On the other hand, for the second choice, the formula for the first variation of area says that 
+On the other hand, choosing $\phi$ as in (\ref{phi-area-preserving}), the formula for the first variation of area says that 
 \begin{align*}
 	\frac{d}{d t}\int_{X_t} d\mu = -  \int_{X_t} \left\langle\frac{\partial X_t}{\partial t} , H \nu \right\rangle d\mu  +\cancel{\int_{\partial X_t}\iota_{\frac{\partial X_t}{\partial t}}  d\mu}
 \end{align*}
