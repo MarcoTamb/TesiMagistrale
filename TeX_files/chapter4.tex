@@ -55,12 +55,12 @@ The fact that choosing $\phi$ as in (\ref{phi-volume-preserving}) preserves the 
 \end{align*}
 On the other hand, choosing $\phi$ as in (\ref{phi-area-preserving}), the formula for the first variation of area says that 
 \begin{align*}
-	\frac{d}{d t}\int_{X_t} d\mu = -  \int_{X_t} \left\langle\frac{\partial X_t}{\partial t} , H \nu \right\rangle d\mu  +\cancel{\int_{\partial X_t}\iota_{\frac{\partial X_t}{\partial t}}  d\mu}
+	\frac{d}{d t}\int_{X_t} d\mu = \int_{X_t} \left\langle\frac{\partial X_t}{\partial t} , H \nu \right\rangle d\mu  +\cancel{\int_{\partial X_t}\iota_{\frac{\partial X_t}{\partial t}}  d\mu}
 \end{align*}
 where the second term is cancelled because $\frac{\partial X_t}{\partial t}$ is orthogonal to the surface. Therefore
 \begin{align*}
-	\frac{d}{d t}\int_{X_t} d\mu &= -  \int_{X_t}  \left[- H^k + \phi(t)\right] H d\mu \\
-	&=  \int_{X_t}  H^{k+1} d\mu  + \phi(t)\int_{X_t} H d\mu = 0
+	\frac{d}{d t}\int_{X_t} d\mu &= \int_{X_t}  \left[- H^k + \phi(t)\right] H d\mu \\
+	&= \phi(t)\int_{X_t} H d\mu  - \int_{X_t}  H^{k+1} d\mu  = 0
 \end{align*}
 
 \begin{oss}\em
@@ -77,8 +77,8 @@ where
 \end{align*}
 Again, computing the first variation of the area:
 \begin{align*}
-	\frac{d}{d t}\int_{X_t} d\mu &= -  \int_{X_t}  \left[1 - H\phi(t)\right] H d\mu \\
-	&= - \int_{X_t}  H d\mu  + \psi(t)\int_{X_t} H^{2} d\mu = 0
+	\frac{d}{d t}\int_{X_t} d\mu &= \int_{X_t}  \left[1 - H\phi(t)\right] H d\mu \\
+	&= \int_{X_t}  H d\mu  - \psi(t)\int_{X_t} H^{2} d\mu = 0
 \end{align*}
 Notice, however, that it is almost the same flow as (\ref{chapter 4 equation}) with $k=1$, where we divided the RHS by $\phi(t)$.
 \end{oss}
@@ -96,7 +96,7 @@ Clearly, $X_t$ is a solution also to the second equation, as the values of  $\ph
 Immediate consequence of the above is the fact that theorem \ref{chow gulliver} extends to solutions of equation (\ref{chapter 4 equation}):
 
 \begin{theorem}
-	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ solution to equation (\ref{chapter 4 equation}). Then, if we can reflect $X(M^n, 0)=X_0$ strictly with respect to $\pi$, then for all $t\in [0,T)$ we can reflect $X(M^n, t)=X_t$ strictly with respect to $\pi$. 
+	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ solution to equation (\ref{chapter 4 equation}). Then, if we can reflect $X(M^n, 0)=X_0$ strictly with respect to $\pi$, then for all $t\in [0,T)$ we can reflect $X(M^n, t)=X_t$ strictly with respect to $\pi$. \label{chow gulliver chapter 4}
 \end{theorem}
 
 The proof is word for word identical to that of theorem \ref{chow gulliver}, once one notices that it is possible to apply the maximum principle and Hopf's boundary point lemma. 
@@ -105,7 +105,92 @@ The proof is word for word identical to that of theorem \ref{chow gulliver}, onc
 	There is also a simpler approach to apply the maximum principle in this specific case: in the proof of the maximum principle one considers the difference of two solutions; in principle the extra term $\phi(t) \nu$ could be different, providing an obstruction in the proof, as there is no guarantee that $u$ is a solution to a parabolic equation, but in the situation where we need it in the proof of this theorem the two $\phi(t)$ must have the same value, as the two surfaces in this case are just one the reflection of the other, and therefore this non-local term cancels out completely. Thus, the maximum principle can be extended to this situation. Similarly, this also applies to Hopf's boundary point lemma. 
 \end{oss}
 
-As a direct consequence, all the corollaries of theorem \ref{chow gulliver} can be extended. 
+As a direct consequence, all the corollaries of theorem \ref{chow gulliver} can be extended. In particular:
+
+
+\begin{cor}
+	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ solution to equation (\ref{chapter 4 equation}). Then, if we can reflect $X_0$ strictly up to $(\pi_{v,C},v)$, for all $t\in [0,T)$ we can reflect $X(M, t)$ strictly up to $(\pi_{v,C},v)$. 
+\end{cor}
+
+\begin{cor}
+	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ embedded solution to equation (\ref{chapter 4 equation}). Then, if we can reflect $X_0$ strictly up to $(\pi_{v,C},v)$, for all $t\in [0,T)$ $v\notin T_xX_t$ for all $x\in X_t\cap\overline{H^+(\pi)}$. In particular,  $ X_t\cap\overline{H^+(\pi)}$ is a graph over $\pi$ for all $t\in [0,T)$.
+\end{cor}
+
+
+\begin{cor}
+	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ embedded solution to equation (\ref{chapter 4 equation}). There exists $C>0$ depending only on $X_0$ such that for all $t\in[0, T)$: 
+	\begin{align*}
+		\max_{x\in X_t} |x| - \min_{x\in X_t} |x| < C
+	\end{align*}\label{new sandwich estimate}
+\end{cor}
+ 
+
+\begin{cor}
+	Let $ X : M^n \times [0, T) \to \mathbb{R}^{n+1} $ be an embedded solution to equation (\ref{chapter 4 equation}). Then, if, for a sphere $B$, $X_0\subset B$, at all times $t \in [0, T)$ $X_t\setminus B$ is star-shaped with respect to the centre of $B$.\label{starshaped ch4}
+\end{cor}
+
+These correspond to corollaries \ref{upto}, \ref{graph}, \ref{sandwich estimate} and \ref{starshaped}
+ 
 \section{The solution stays inside a compact}
 
-I believe that $X_0\subset B_R(p)$ implies  $X_t\subset B_{2R}(p)$, but I have to check that.
+One of the results that is proven in \cite{mccoy} is that the solution to (\ref{mccoy equation}) remains inside a bounded region of euclidean space. As a final application of the technique, a simple proof of this fact for solutions to (\ref{chapter 4 equation}) is presented. The only result we need do show this is the well known:
+\begin{theorem}[Isoperimetric inequality]
+	Among all sets in $\R^n$ with a given volume and $C^1$ boundary, the a sphere has the smallest possible surface area.
+\end{theorem} 
+We show that the solution does not leave a compact ball if it has a sufficiently large radius.
+\begin{comment}
+First, we want to prove the following lemma: 
+	
+	\begin{lemma}
+		Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ embedded solution to equation (\ref{chapter 4 equation}), let $\pi$ be a plane. If $X_0 \subset H^-(\pi)$, then it is not possible that $X_t \subset H^+(\pi)$ for all times $t \in [0,T)$\label{cannot cross plane ch4}
+	\end{lemma}
+	In other words, a solution cannot completely cross from one side of a given plane to the other side.
+	\begin{proof}
+		Suppose by contradiction that this happens. We can always reflect $X_t$ strictly about $\pi$, by theorem \ref{chow gulliver chapter 4}, because it does not intersect $X_0$. This implies that $X_t^\pi\cap H^-(\pi) \subset \mathrm{int}(X_t)\cap  H^-(\pi)$. But $X_t \subset H^+(\pi)$  implies that $\mathrm{int}(X_t)\cap  H^-(\pi)=\emptyset$ and  $\emptyset \neq X_t^\pi \subset H^-(\pi)$, a contradiction
+	\end{proof}
+	Finally, we show that the solution does not leave a compact ball if it has a sufficiently large radius. 
+\end{comment}
+\begin{proposition}
+	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ embedded solution to equation (\ref{chapter 4 equation}). There exists $C>0$ depending only on $X_0$ such that for all $t\in[0, T)$ such that 
+	\begin{align*}
+		X_t \subset B_C(0)
+	\end{align*}
+\end{proposition}
+\begin{proof}
+	The thesis can be written as 
+	\begin{align*}
+		\max_{x\in X_t} |x| < C
+	\end{align*}
+	In light of corollary \ref{new sandwich estimate}, it suffices to prove that 
+	\begin{align*}
+		\min_{x\in X_t} |x| < K
+	\end{align*}
+	as in that case 
+	\begin{align*}
+		\max_{x\in X_t} |x| < C + \min_{x\in X_t} |x| < C+K
+	\end{align*}
+	Like in the proof of corollary \ref{new sandwich estimate}, assume $X_0\subset B_K(0)$. We may take, without loss of generality, $K$ such that the surface area of $\partial B_K(0)$ is greater than the surface area of $X_0$. 
+	Suppose that, at some time $t$, $\min_{x\in X_t} |x| > K$. Then, all the points in $X_t$ are outside $B_K(0)$. Therefore, we conclude that the hypersurface is star-shaped with respect to the origin by corollary \ref{starshaped ch4}, and $B_K(0)\subset \int(X_t)$. If we chose $\phi(t)$ such that it is an area-preserving flow, this is a contradiction, because in this case we would have found an $X_t$ with a bigger volume than the sphere $B_K(0)$ but smaller surface area. For the volume-preserving flows, instead, we can calculate the change in surface-area: 
+	\begin{align*}
+		\frac{d}{d t}\int_{X_t} d\mu &=  \int_{X_t}  \left[- H^k + \phi(t)\right] H d\mu \\
+		&= - \int_{X_t}  H^{k+1} d\mu  + \phi(t)\int_{X_t} H d\mu\\
+		&= - \int_{X_t}  H^{k+1} d\mu  + \frac{1}{|X_t|}\left(\int_{X_t} H^k(x, t) \, d\mu\right)\left(\int_{X_t} H d\mu\right)
+	\end{align*}
+	We find that 
+	\begin{align*}
+		\frac{1}{|X_t|}\int_{X_t}  H^{k+1} d\mu &=\left(\frac{1}{|X_t|}\int_{X_t}  H^{k+1} d\mu\right)^{\frac{k}{k+1}}\left(\frac{1}{|X_t|}\int_{X_t}  H^{k+1} d\mu\right)^{\frac{1}{k+1}}\\ &=\left(\frac{1}{|X_t|}\int_{X_t}  \left(H^{k}\right)^{\frac{k+1}{k}} d\mu\right)^{\frac{k}{k+1}}  \left(\frac{1}{|X_t|}\int_{X_t}  H^{k+1} d\mu\right)^{\frac{1}{k+1}}\\
+		&\geq \left(\frac{1}{|X_t|}\int_{X_t}  H^{k} d\mu\right) \left(\frac{1}{|X_t|}\int_{X_t}  H d\mu\right)
+	\end{align*}
+	by Jensen's inequality. Therefore, 
+	\begin{align*}
+		\frac{1}{|X_t|} \left(\int_{X_t}  H^{k} d\mu\right) \left(\int_{X_t}  H d\mu\right)&\leq \int_{X_t}  H^{k+1} d\mu\\
+		\frac{d}{d t}\int_{X_t} d\mu &\leq 0
+	\end{align*}
+	which means that the surface area decreases over time, and we have a contradiction similar to the one for the area-preserving case: $X_t$ is a hypersurface containing the sphere $B_K(0)$, while having a smaller surface area than said sphere. This implies that 
+	\begin{align*}
+		\min_{x\in X_t} |x| < K
+	\end{align*}
+	and the theorem is proven. 
+\end{proof}
+
+
