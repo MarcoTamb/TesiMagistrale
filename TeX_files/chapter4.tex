@@ -91,7 +91,7 @@ While not really parabolic flows, because of the non-local term, it is possible 
 	\end{dcases} \label{parabolic version}
 \end{align}
 where $\varphi_{X_t}$ is the constant function independent of $X$ given by $\phi$ when computed on the specific solution $X_t$. 
-Clearly, $X_t$ is a solution also to the second equation, as the values of  $\phi$ and $\varphi_{X_t}$ coincide when one considers the solution $X_t$. At the same time, equation (\ref{parabolic version}) is a parabolic equation: the only difference with (\ref{evolutioneq}) is the addition of a constant function $\varphi_{X_t}$ independent of the solution multiplied by the normal vector, which cannot affect the second order terms (the normal vector only depends on first-order derivatives). Therefore, following this line of reasoning, one can apply theorems like the maximum principle (Proposition \ref{firstapplication}) and the boundary point lemma (Proposition \ref{secondapplication}) also to solutions of (\ref{chapter 4 equation}), as they must hold for solutions of the associated parabolic equation (\ref{parabolic version}). %A similar argument can also be used to apply the same results to solutions of equation (\ref{mccoy equation}).
+Clearly, $X_t$ is a solution also to the second equation, as the values of  $\phi$ and $\varphi_{X_t}$ coincide when one considers the solution $X_t$. At the same time, equation (\ref{parabolic version}) is a parabolic equation: the only difference with (\ref{evolutioneq}) is the addition of a constant function $\varphi_{X_t}$ independent of the solution multiplied by the normal vector, which cannot affect the second order terms (the normal vector only depends on first-order derivatives). Therefore, following this line of reasoning, one can apply theorems like the maximum principle (Proposition \ref{firstapplication}) and the boundary point lemma (Proposition \ref{secondapplication}) also to solutions of (\ref{chapter 4 equation}) as long as they share the same $\varphi_{X_t}$ (which is the case for reflections), as they must hold for solutions of the associated parabolic equation (\ref{parabolic version}). %A similar argument can also be used to apply the same results to solutions of equation (\ref{mccoy equation}).
 
 Immediate consequence of the above is the fact that theorem \ref{chow gulliver} extends to solutions of equation (\ref{chapter 4 equation}):
 
@@ -102,7 +102,7 @@ Immediate consequence of the above is the fact that theorem \ref{chow gulliver} 
 The proof is word for word identical to that of theorem \ref{chow gulliver}, once one notices that it is possible to apply the maximum principle and Hopf's boundary point lemma. 
 
 \begin{oss}\em
-	There is also a simpler approach to apply the maximum principle in this specific case: in the proof of the maximum principle one considers the difference of two solutions; in principle the extra term $\phi(t) \nu$ could be different, providing an obstruction in the proof, as there is no guarantee that $u$ is a solution to a parabolic equation, but in the situation where we need it in the proof of this theorem the two $\phi(t)$ must have the same value, as the two surfaces in this case are just one the reflection of the other, and therefore this non-local term cancels out completely. Thus, the maximum principle can be extended to this situation. Similarly, this also applies to Hopf's boundary point lemma. 
+	There is also a simpler approach to apply the maximum principle in this specific case: in the proof of the maximum principle one considers the difference of two solutions; in principle the extra term $\phi(t) \nu$ could be different, providing an obstruction in the proof, because there is no guarantee that $u$ is a solution to a parabolic equation, but for the reflections for which we need it in the proof of the theorem the two $\phi(t)$ must have the same value, as the two surfaces in this case are just one the reflection of the other, and therefore this non-local term cancels out completely. Thus, the maximum principle can be extended to this situation. Similarly, this also applies to Hopf's boundary point lemma. 
 \end{oss}
 
 As a direct consequence, all the corollaries of theorem \ref{chow gulliver} can be extended. In particular:
@@ -135,7 +135,7 @@ These correspond to corollaries \ref{upto}, \ref{graph}, \ref{sandwich estimate}
 
 One of the results that is proven in \cite{mccoy} is that the solution to (\ref{mccoy equation}) remains inside a bounded region of euclidean space. As a final application of the technique, a simple proof of this fact for solutions to (\ref{chapter 4 equation}) is presented. The only result we need do show this is the well known:
 \begin{theorem}[Isoperimetric inequality]
-	Among all sets in $\R^n$ with a given volume and $C^1$ boundary, the a sphere has the smallest possible surface area.
+	Among all measurable sets in $\R^n$ with a given volume and $C^1$ boundary, the sphere has the smallest possible surface area.
 \end{theorem} 
 We show that the solution does not leave a compact ball if it has a sufficiently large radius.
 \begin{comment}
@@ -170,7 +170,7 @@ First, we want to prove the following lemma:
 		\max_{x\in X_t} |x| < C + \min_{x\in X_t} |x| < C+K
 	\end{align*}
 	Like in the proof of corollary \ref{new sandwich estimate}, assume $X_0\subset B_K(0)$. We may take, without loss of generality, $K$ such that the surface area of $\partial B_K(0)$ is greater than the surface area of $X_0$. 
-	Suppose that, at some time $t$, $\min_{x\in X_t} |x| > K$. Then, all the points in $X_t$ are outside $B_K(0)$. Therefore, we conclude that the hypersurface is star-shaped with respect to the origin by corollary \ref{starshaped ch4}, and $B_K(0)\subset \int(X_t)$. If we chose $\phi(t)$ such that it is an area-preserving flow, this is a contradiction, because in this case we would have found an $X_t$ with a bigger volume than the sphere $B_K(0)$ but smaller surface area. For the volume-preserving flows, instead, we can calculate the change in surface-area: 
+	Suppose that, at some time $t$, $\min_{x\in X_t} |x| > K$. Then, all the points in $X_t$ are outside $B_K(0)$.  By corollary \ref{starshaped ch4}, therefore, the hypersurface is star-shaped with respect to the origin and $B_K(0)\subset \mathrm{int}(X_t)$. If we chose $\phi(t)$ such that it is an area-preserving flow, this is a contradiction, because in this case we would have found an $X_t$ with a bigger volume than the sphere $B_K(0)$ but smaller surface area. For the volume-preserving flows, instead, we can calculate the change in surface-area: 
 	\begin{align*}
 		\frac{d}{d t}\int_{X_t} d\mu &=  \int_{X_t}  \left[- H^k + \phi(t)\right] H d\mu \\
 		&= - \int_{X_t}  H^{k+1} d\mu  + \phi(t)\int_{X_t} H d\mu\\
