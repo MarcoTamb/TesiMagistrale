@@ -343,6 +343,18 @@ In other words, we can always reflect a little $\varepsilon$ in any direction, u
 	\end{align*}
 \end{oss}
 
+The following result about the part of $X_t$ outside a ball is also a surprisingly powerful tool: 
+
+
+
+\begin{cor}
+	Let $ X : M^n \times [0, T) \to \mathbb{R}^{n+1} $ be an embedded solution to equation (\ref{evolutioneq}). Then, if, for a sphere $B$, $X_0\subset B$, at all times $t \in [0, T)$ $X_t\setminus B$ is star-shaped with respect to the centre of $B$.\label{starshaped}
+\end{cor}
+
+\begin{proof}
+	$X_0\subset B$ therefore we can reflect $X_t$ about any hyperplane tangent to $B$ by Corollary \ref{reflect a small bit}. By Corollary \ref{graph} $X_t\cap\overline{H^+(\pi)}$ is a graph over $\pi$, therefore, it is not possible that a normal line coming out of $B$ and orthogonal to $\pi$ intersects  $X_t\cap\overline{H^+(\pi)}$ more than once. This implies that  $X_t\setminus B$ is star-shaped with respect to the centre of $B$
+\end{proof}
+
 Lastly: 
 \begin{cor}
 	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ embedded solution to  equation (\ref{evolutioneq}). Let $s_v:[0,T) \rightarrow I$ be such that 
@@ -358,6 +370,9 @@ Lastly:
 \begin{proof}
 	When taking $X_t$ as the starting manifold, the hypothesis of the theorem are still true, therefore we can reflect about $\pi_{c, v}$  for all $c<s_v(t)$ at all subsequent times. Thus $s_v(t)$ is non-decreasing. $\lim_{t\rightarrow T^-} s_v(t) = \sup s_v(t)$, therefore the limit exists. Also, if $X_0$ is bounded, there exists $R>0$ such that $X_0\subset B_R(0)$, therefore we can reflect $X_0$ strictly about any hyperplane non intersecting $B_R(0)$, as it does not touch $X_0$, and therefore we can also reflect $X_t$ strictly about the same hyperplanes by theorem \ref{chow gulliver}. At the same time, there exists a hyperplane such that $X_t$ cannot be reflected strictly about it, because there will always be a straight line parallel to $v$ intersecting $X_t$ in multiple points, and we can always consider the hyperplane orthogonal to $v$ passing through their midpoint, about which $X_t$ cannot be reflected strictly, and $s_v(t) \neq +\infty$. Therefore  $s_v(t)\in [-R, R]$, and the limit above is finite. 
 \end{proof}
+
+
+
 
 
 \section{Applying the result to find gradient estimates}\label{Applying the result to find gradient estimates}
@@ -529,19 +544,6 @@ The estimate is:
 		|\nabla r(z)| < \max\left(\sqrt{C}, C\frac{ (1-\epsilon)}{\sqrt{\epsilon (2-\epsilon)}}\right)
 	\end{align*} 
 \end{proof}
-
-Finally, we include the following result about the part of $X_t$ outside a ball: 
-
-
-
-\begin{cor}
-	Let $ X : M^n \times [0, T) \to \mathbb{R}^{n+1} $ be an embedded solution to equation (\ref{evolutioneq}). Then, if, for a sphere $B$, $X_0\subset B$, at all times $t \in [0, T)$ $X_t\setminus B$ is star-shaped with respect to the centre of $B$.
-\end{cor}
-
-\begin{proof}
-	 $X_0\subset B$ therefore we can reflect $X_t$ about any hyperplane tangent to $B$ by Corollary \ref{reflect a small bit}. By Corollary \ref{graph} $X_t\cap\overline{H^+(\pi)}$ is a graph over $\pi$, therefore, it is not possible that a normal line coming out of $B$ and orthogonal to $\pi$ intersects  $X_t\cap\overline{H^+(\pi)}$ more than once. This implies that  $X_t\setminus B$ is star-shaped with respect to the centre of $B$
-\end{proof}
-
 \section{Expansive flows and ancient solutions}\label{SinestRisaResult}
 
 In this section, roughly following \cite{SinestRisa}, we consider solutions to \ref{evolutioneq} which are defined on a larger interval $(T_0, T_1)$, with  $-\infty \leq T_0 \leq 0 < T_1 \leq \infty$. 
