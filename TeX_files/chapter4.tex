@@ -86,11 +86,11 @@ Notice, however, that it is almost the same flow as (\ref{chapter 4 equation}) w
 While not really parabolic flows, because of the non-local term, it is possible to apply theorems on parabolic flows to equation (\ref{chapter 4 equation}). Given a solution $X_t$, we can consider the evolution equation 
 \begin{align}
 	\begin{dcases}
-		\frac{\partial X_t}{\partial t} = \left[- H^k(x, t) + \varphi_{X_t}(t)\right] \nu\\
-		X(0)= X_0
+		\frac{\partial Y_t}{\partial t} = \left[- H^k(x, t) + \varphi_{X_t}(t)\right] \nu\\
+		Y(0)= Y_0
 	\end{dcases} \label{parabolic version}
 \end{align}
-where $\varphi_{X_t}$ is the constant function independent of $X$ given by $\phi$ when computed on the specific solution $X_t$. 
+where $\varphi_{X_t}$ is the constant function independent of $Y$ given by $\phi$ when computed on the specific solution $X_t$. 
 Clearly, $X_t$ is a solution also to the second equation, as the values of  $\phi$ and $\varphi_{X_t}$ coincide when one considers the solution $X_t$. At the same time, equation (\ref{parabolic version}) is a parabolic equation: the only difference with (\ref{evolutioneq}) is the addition of a constant function $\varphi_{X_t}$ independent of the solution multiplied by the normal vector, which cannot affect the second order terms (the normal vector only depends on first-order derivatives). Therefore, following this line of reasoning, one can apply theorems like the maximum principle (Proposition \ref{firstapplication}) and the boundary point lemma (Proposition \ref{secondapplication}) also to solutions of (\ref{chapter 4 equation}) as long as they share the same $\varphi_{X_t}$ (which is the case for reflections), as they must hold for solutions of the associated parabolic equation (\ref{parabolic version}). %A similar argument can also be used to apply the same results to solutions of equation (\ref{mccoy equation}).
 
 Immediate consequence of the above is the fact that theorem \ref{chow gulliver} extends to solutions of equation (\ref{chapter 4 equation}):
@@ -129,11 +129,11 @@ As a direct consequence, all the corollaries of theorem \ref{chow gulliver} can 
 	Let $ X : M^n \times [0, T) \to \mathbb{R}^{n+1} $ be an embedded solution to equation (\ref{chapter 4 equation}). Then, if, for a sphere $B$, $X_0\subset B$, at all times $t \in [0, T)$ $X_t\setminus B$ is star-shaped with respect to the centre of $B$.\label{starshaped ch4}
 \end{cor}
 
-These correspond to corollaries \ref{upto}, \ref{graph}, \ref{sandwich estimate} and \ref{starshaped}
+These correspond to corollaries \ref{upto}, \ref{graph}, \ref{sandwich estimate} and \ref{starshaped}, respectively.
  
 \section{The solution stays inside a compact}
 
-One of the results that is proven in \cite{mccoy} is that the solution to (\ref{mccoy equation}) remains inside a bounded region of euclidean space. As a final application of the technique, a simple proof of this fact for solutions to (\ref{chapter 4 equation}) is presented. The only result we need do show this is the well known:
+One of the results that is proven in \cite{mccoy} is that the solution to (\ref{mccoy equation}) remains inside a bounded region of euclidean space. As a final application of the technique, a simple proof of this fact for solutions to (\ref{chapter 4 equation}) is presented. The only other result we need do prove this is the well known:
 \begin{theorem}[Isoperimetric inequality]
 	Among all measurable sets in $\R^n$ with a given volume and $C^1$ boundary, the sphere has the smallest possible surface area.
 \end{theorem} 
@@ -170,7 +170,7 @@ First, we want to prove the following lemma:
 		\max_{x\in X_t} |x| < C + \min_{x\in X_t} |x| < C+K
 	\end{align*}
 	Like in the proof of corollary \ref{new sandwich estimate}, assume $X_0\subset B_K(0)$. We may take, without loss of generality, $K$ such that the surface area of $\partial B_K(0)$ is greater than the surface area of $X_0$. 
-	Suppose that, at some time $t$, $\min_{x\in X_t} |x| > K$. Then, all the points in $X_t$ are outside $B_K(0)$.  By corollary \ref{starshaped ch4}, therefore, the hypersurface is star-shaped with respect to the origin and $B_K(0)\subset \mathrm{int}(X_t)$. If we chose $\phi(t)$ such that it is an area-preserving flow, this is a contradiction, because in this case we would have found an $X_t$ with a bigger volume than the sphere $B_K(0)$ but smaller surface area. For the volume-preserving flows, instead, we can calculate the change in surface-area: 
+	Suppose that, at some time $t$, $\min_{x\in X_t} |x| > K$. Then, all the points in $X_t$ are outside $B_K(0)$.  By corollary \ref{starshaped ch4}, therefore, the hypersurface is star-shaped with respect to the origin and $B_K(0)\subset \mathrm{int}(X_t)$. If we chose $\phi(t)$ such that it is an area-preserving flow, this is a contradiction, because in this case we would have found an $X_t$ with a bigger volume than the sphere $B_K(0)$ but smaller surface area. For the volume-preserving flows, instead, we can compute the derivative of the total surface-area: 
 	\begin{align*}
 		\frac{d}{d t}\int_{X_t} d\mu &=  \int_{X_t}  \left[- H^k + \phi(t)\right] H d\mu \\
 		&= - \int_{X_t}  H^{k+1} d\mu  + \phi(t)\int_{X_t} H d\mu\\
