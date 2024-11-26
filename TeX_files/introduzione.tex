@@ -1,3 +1,48 @@
+% !TeX spellcheck = en_GB
 \chapter*{Introduction}
 \addcontentsline{toc}{chapter}{Introduction}
-To be confirmed
+
+This Master's thesis analyses the Alexandrov Moving Planes Method and its applications to Geometric Flows. 
+
+The main original results in this thesis is the extension of a result from Chow and Gulliver to constant curvature spaces. Moreover, in the last chapter, we include a new proof - using the moving planes method - of the well known result stating that some area-preserving and volume-preserving flows do not leave a large enough compact. 
+
+The Moving Planes Method is a technique in Analysis that can be used to prove radial symmetry of certain solutions to some differential equations. To apply the method, one considers a solution and its reflections about a foliation of the ambient space by geodesic hyperplanes. The method consists of reflecting the part of a solution ``below" the hyperplane into the top part, and using properties of both copies of the solution together, generally some form of maximum principle, to prove some property of the non-reflected solutions. The method was originally used to analyse geometric elliptic PDEs, and it is now an important tool in Geometric Analysis
+
+The central result is a theorem by Chow and Gulliver (theorem \ref{chow gulliver}) contained in a 1997 paper \cite{Chow}, who proved that the method \textit{behaves well} with respect to certain parabolic geometric flows. 
+
+
+We consider manifolds $M^n$ embedded in $\R^{n+1}$, i.e. there is an embedding $X_0 : M^n \rightarrow \R^{n+1}$ parametrizing the hypersurface $X_0(M^n)$ evolving according to a geometric flow in the form: 
+
+\begin{align*}
+	\begin{dcases}
+		\frac{\partial X_t}{\partial t} = - F(\kappa_1(x), \dots , \kappa_n(x)) \nu\\
+		X(0)= X_0
+	\end{dcases} 
+\end{align*}
+where $\nu$ is the outward normal to $X_t(M^n)$ at the point $X_t(x)$, $\kappa_1\leq \dots \leq \kappa_n$ are the principal curvatures at $X_t(x)$, and 
+\begin{align*}
+	\frac{\partial F}{\partial \kappa_i} > 0 \mathrm{\; for \; all } \; i=1,\dots, n
+\end{align*}
+
+The Chow-Gulliver result states:
+
+\begin{theorem*}[Chow-Gulliver]
+	Let $X:M^n\times [0,T) \rightarrow \R^{n+1}$ be a $C^2$ solution to equation the equation above. Then, if we can reflect $X(M^n, 0)=X_0$ strictly with respect to $\pi$, then for all $t\in [0,T)$ we can reflect $X(M^n, t)=X_t$ strictly with respect to $\pi$. 
+\end{theorem*}
+
+Here by strict reflection we mean that the following two conditions are met: 
+\begin{itemize}
+	\item The half of the manifold above the plane reflects inside the other half of the manifold, without touching it.
+	\item The tangent spaces of the manifold and its reflection about the plane do not coincide at any point on the plane.
+\end{itemize}
+
+The key idea in the proof of the result is as follows: suppose we have an embedded smooth hypersurface $X$ evolving according to the equation above and a fixed hyperplane $\pi$, intersecting $X$. Suppose that, at some time $t$, $X$ and  its reflection about the hyperplane $X_\pi$ touch at a point not on $\pi$. We can consider $X$ and  $X_\pi$ as local graphs over the same hyperplane $\pi$, and we can show that these function evolve according to the same differential equation. Using the strong maximum principle and the Hopf boundary point lemma, then, one can conclude that the two functions coincide, and have been coinciding up until that point. In particular, if we as some time $t$ a solution and its reflection do not touch, they will not touch for all subsequent times. 
+
+In the first chapter, some foundational results are collected. Firstly, some equations in local coordinates for immersed hypersurfaces are derived and some well known theorems in differential geometry and on parabolic differential equations are stated, and proved when necessary. A version of the maximum principle and of Hopf's boundary point lemma for non-linear equations is introduced in section \ref{non linear pde parabolic section}. After that, in section \ref{reflections definitions} and 
+\ref{method moving planes} we introduce the notation for reflections in constant-curvature spaces and the Alexandrov Moving Planes Method. A sketch of the proof of the Alexandrov soap-bubble theorem is included in the last section of the chapter, to show an application of the technique to elliptic differential equations. 
+
+In the second chapter, in the first few sections we give justification to why these equations are parabolic, and introduce the Moving Planes Method for parabolic flows. In section \ref{main theorem section} the proof of the theorem from Chow and Gulliver is included. Some corollaries are then proved in section \ref{Some corollaries of the result}, and applied in section \ref{Applying the result to find gradient estimates} to find gradient estimates for the the support function and the radial function. Finally, in section \ref{SinestRisaResult} a result on ancient solutions to expansive flows from \cite{SinestRisa} is included. 
+
+In the third chapter, we analyse the Chow-Gulliver result in spaces of constant curvature, extending some of its corollaries, as well as the result from section \ref{SinestRisaResult}.
+
+In the fourth chapter, finally, area-preserving and volume-preserving flows are introduced, justify their name, and we extend the theorem from Chow and Gulliver to this new setting in section \ref{Theorem CG and corollaries}. Finally, in section \ref{The solution stays inside a compact}, an original proof that the solution stays inside a compact is included.
