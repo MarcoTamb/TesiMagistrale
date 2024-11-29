@@ -3,7 +3,7 @@
 
 
 In this chapter area-preserving and volume-preserving flows are discussed. These are flows similar to the equation (\ref{evolutioneq}), with a non-local term added. It can be shown that the theorems in chapter 2 also apply to these flows. Finally, we discuss an application of these flows. 
-\section{The flows we consider in this chapter}
+\section{The flows we consider in this chapter}\label{Area- and volume-preserving flows}
 Volume-preserving flows were introduced by Gerhard Huisken in 1987 (see \cite{volpres}). Unlike the mean curvature flow, which contracts hypersurfaces to a point, volume-preserving flows maintain a constant enclosed volume while reducing the hypersurface area. These flows are governed by the modified evolution equation:
 \begin{align*}
 	\frac{\partial X}{\partial t} = \left[h(t) - H(x, t)\right]\nu,
@@ -36,7 +36,7 @@ where $\phi(t)$ is an appropriate non-local term and $k\in (0, \infty)$. If $k\n
 	\begin{align*}
 		\frac{\partial }{\partial \kappa_i}  H^k =  k H^{k-1} \frac{\partial }{\partial \kappa_i}  H = \frac{k}{n} H^{k-1}
 	\end{align*}
-	and therefore to guarantee that $\frac{\partial F}{\partial \kappa_i} > 0$ we need to assume that $H>0$. We will assume this on the hypersurface at all times whenever $k\neq 1$, as we need the underlying flow to be parabolic.
+	To guarantee that $\frac{\partial F}{\partial \kappa_i} > 0$ we need to assume that $H>0$. We will assume this on the hypersurface at all times whenever $k\neq 1$.
 \end{oss}
 A possible choice for $\phi$ is: 
 \begin{align}
@@ -46,7 +46,7 @@ corresponding to volume-preserving flows. Another possible choice is
 \begin{align}
 	\phi(t) = \frac{\int_{X_t} H^{k+1}(x, t) \, d\mu}{\int_{X_t} H(x, t) \, d\mu}, \label{phi-area-preserving}
 \end{align}
-which corresponds to area-preserving flows. It can be shown that if we choose $\phi$ as in (\ref{phi-volume-preserving}), the volume of the domain enclosed by $X_t$ remains constant, while choosing $\phi$ as in (\ref{phi-area-preserving}) keeps the area $|X_t|$ constant. 
+which corresponds to area-preserving flows. We know that, indeed, if we choose $\phi$ as in (\ref{phi-volume-preserving}), the volume of the domain enclosed by $X_t$ remains constant, while choosing $\phi$ as in (\ref{phi-area-preserving}) keeps the area $|X_t|$ constant. 
 
 The fact that choosing $\phi$ as in (\ref{phi-volume-preserving}) preserves the volume is immediately apparent, as the change of the volume inside the hypersurface is the integral over $X_t$ of $\frac{\partial X_t}{\partial t}\cdot \nu$ (by Reynolds transport theorem for a constant function): 
 
@@ -102,7 +102,7 @@ Immediate consequence of the above is the fact that theorem \ref{chow gulliver} 
 The proof is word for word identical to that of theorem \ref{chow gulliver}, once one notices that it is possible to apply the maximum principle and Hopf's boundary point lemma. 
 
 \begin{oss}\em
-	There is also a simpler approach to apply the maximum principle in this specific case: in the proof of the maximum principle one considers the difference of two solutions; in principle the extra term $\phi(t) \nu$ could be different, providing an obstruction in the proof, because there is no guarantee that $u$ is a solution to a parabolic equation, but for the reflections for which we need it in the proof of the theorem the two $\phi(t)$ must have the same value, as the two surfaces in this case are just one the reflection of the other, and therefore this non-local term cancels out completely. Thus, the maximum principle can be extended to this situation. Similarly, this also applies to Hopf's boundary point lemma. 
+	There is also a simpler approach to apply the maximum principle in this specific case: in the proof of the maximum principle one considers the difference of two solutions; in principle the extra term $\phi(t) \nu$ could be different, providing an obstruction in the proof. However, reflections have the same $\phi(t)$, as the two surfaces in this case are just one the reflection of the other, and therefore this non-local term cancels out completely when considering the equation of the difference, leaving only the same terms as we had when dealing with equation (\ref{evolutioneq}). Thus, the maximum principle \ref{firstapplication} can be extended to this situation. Similarly, this also applies to Hopf's boundary point lemma \ref{secondapplication}. 
 \end{oss}
 
 As a direct consequence, all the corollaries of theorem \ref{chow gulliver} can be extended. In particular:
@@ -186,11 +186,11 @@ First, we want to prove the following lemma:
 		\frac{1}{|X_t|} \left(\int_{X_t}  H^{k} d\mu\right) \left(\int_{X_t}  H d\mu\right)&\leq \int_{X_t}  H^{k+1} d\mu\\
 		\frac{d}{d t}\int_{X_t} d\mu &\leq 0
 	\end{align*}
-	which means that the surface area decreases over time, and we have a contradiction similar to the one for the area-preserving case: $X_t$ is a hypersurface containing the sphere $B_K(0)$, while having a smaller surface area than said sphere. This implies that 
+	which implies that the surface area is non-increasing, and we have a contradiction similar to the one for the area-preserving case: $X_t$ is a hypersurface containing the sphere $B_K(0)$, while having a smaller surface area than said sphere. This implies that 
 	\begin{align*}
 		\min_{x\in X_t} |x| < K
 	\end{align*}
-	and the theorem is proven. 
+	and the final theorem is proven. 
 \end{proof}
 
 

@@ -103,14 +103,14 @@ The second result that we can extend is Corollary \ref{graph}, although the mean
 \end{cor}
 This condition guarantees that we can build a map from $s:\overline{\mathrm{int}(X_t \cap \pi_{v,C})}\rightarrow \R$ such that $(p, s(p))\in X_t$, making $p\mapsto (p, s(p))$ act as a sort of curved graph. 
 \begin{proof}
-	By  theorem \ref{chow gulliver extended} we can reflect up to $(\pi_{v,C},v)$ at all times in $[0,T)$. Let $\gamma_p(s)=(p, s+C)$ be the path followed by $p\in \pi_{v,C}$ as the planes sweep through the ambient space. If two points exist with the same $p$ coordinate, say $(p, C_1)$ and $(p, C_2)$, the reflection about the hyperplane $\pi_{v,\frac{ C_1 +  C_2}{2}}$ would map one onto the other, but as both $C_1$ and $C_2$ are greater than $C$, then we should also be able to reflect strictly about it, as we would have $\frac{ C_1 +  C_2}{2}>C$. 
+	By  theorem \ref{chow gulliver extended} we can reflect up to $(\pi_{v,C},v)$ at all times in $[0,T)$. Let $\gamma_p(s)=(p, s+C)$ be the path followed by $p\in \pi_{v,C}$ as the planes sweep through the ambient space. If two points exist with the same $p$ coordinate, say $(p, C_1)$ and $(p, C_2)$, the reflection about the hyperplane $\pi_{v,\frac{ C_1 +  C_2}{2}}$ would map one onto the other, but as both $C_1$ and $C_2$ are greater than $C$, then we should also be able to reflect strictly about it by theorem \ref{chow gulliver extended}, as we would have $\frac{ C_1 +  C_2}{2}>C$. 
 \end{proof}
 
 Let $\tilde{B}_r(y) = \{ p \in \mathbb{M}^{n+1}_+  : \mathrm{dist}(p, y) < r \}$. Reasoning exactly like in corollary \ref{reflect a small bit}, we also can extend it to this setting:  
 \begin{cor}
 	Let $X:M^n\times [0,T) \rightarrow \mathbb{M}^{n+1}_+$ be a $C^2$ embedded solution to equation (\ref{evolutioneq_ext}). There exists $\varepsilon>0$ depending only on $X_0$ such that for all $t\in[0, T)$ we can reflect $X_t$ up to $(\Pi_0^v +\epsilon v, v)$ for every $v \in S^n$. In particular, if $X_0 \subset \tilde{B}_R(C)$, then we can always reflect $X_t$ up to $(\Pi, v)$ whenever $H^+(\Pi)\cap \tilde{B}_{R-\varepsilon}(C)=\emptyset$.\label{reflect a small bit ext}
 \end{cor}
-Other corollaries of the section, like Corollary \ref{x projection estimate} and Corollary \ref{sandwich estimate} are harder to extend, as they rely on the points at each plane moving along geodesics on the plane, which is not true in the curved case. 
+Other corollaries of the section, like Corollary \ref{x projection estimate} and Corollary \ref{sandwich estimate} are harder to extend, as they rely on the points at each plane moving along geodesics on the plane, which is not true in the curved case. (see remarks \ref{inequality1} and \ref{inequality2})
 \begin{comment}
 {\Large \textbf{[Corollary \ref{x projection estimate} - If/when it can be done  - DA SCRIVERE]}}
 
@@ -166,14 +166,14 @@ The condition $F(0)=0$ ensures that equators on the sphere are static solutions 
 
 
 \begin{theorem}
-	Let $ X : M^n \times (T_0, T_1) \to \mathbb{M}^{n+1}_+ $ be a smooth, convex, embedded shrinking solution to equation (\ref{evolutioneq_ext}), and $ (T_0, T_1)$ be the maximum interval where the solution is defined. Suppose also that:
+	Let $ X : M^n \times (T_0, T_1) \to S^{n+1}_+ $ be a smooth, convex, embedded shrinking solution to equation (\ref{evolutioneq_ext}), and $ (T_0, T_1)$ be the maximum interval where the solution is defined. Suppose also that:
 	\begin{align*}
 		\limsup_{t\rightarrow T_0} \max_{X_t} \sum_i \kappa_i(x)<\infty
 	\end{align*}
 	Then $X_t$ is a distance sphere for all $t\in  (T_0, T_1)$.
 \end{theorem}
 
-The proof of this result is long and involved, and the main result in \cite{BryanIvakiScheuer}. It also uses a reflection argument. 
+The proof of this result is long and involved, and the main result in \cite{BryanIvakiScheuer}. It also uses a reflection argument, but not precisely the Alexandrov Moving Planes method. 
 \begin{oss}
 	\em
 	This result acts as a sort of converse for theorem \ref{expandingflowext} on the hemisphere, showing that all ancient convex shrinking solutions on the sphere are the trivial shrinking spheres. 
