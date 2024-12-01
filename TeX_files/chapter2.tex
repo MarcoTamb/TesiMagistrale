@@ -33,7 +33,7 @@ where $\nu$ is the outward normal to $X_t(M^n)$ at the point $X_t(x)$ and $\kapp
 
 The condition (\ref{parabolicità}) will  guarantee that equation (\ref{evolutioneq}) is a parabolic equation. This may be confusing, as (\ref{evolutioneq}) does not make it obvious how to apply definition \ref{nonlinearpde}. 
 
-In order to justify that this is a parabolic non-linear partial differential equation we can also try to understand how it behaves ``close to a solution" in the solutions space. We want to prove that very close to any solution, ``moving in any direction", the change in the equation is always a parabolic PDE. This will then tell us that our equation is parabolic, and that the theorems that apply to solutions of parabolic partial differential equations apply to our equation as well. To do so, we are going to ``linearise" the differential equation about a solution.
+In order to justify that this is a parabolic non-linear partial differential equation we can also try to understand how it behaves ``close to a solution" in the solutions space. We want to prove that very close to any solution, ``moving in any direction", the change in the equation is always a parabolic PDE. This will then tell us that our equation is parabolic, and that the theorems that apply to solutions of parabolic partial differential equations apply to our equation as well. To do so, we are going to ``linearise" the differential equation about a solution. 
 
 Following the approach in \cite{huisken}, as $F$ is a symmetric function in the principal curvatures, we may interchangeably take $F$ to be a function of the Weingarten map tensor or of the second fundamental form, and thus we get:
 
@@ -137,14 +137,12 @@ A more general approach proving that the differential equation is parabolic can 
 \end{comment}
 
 \section{An existence result}
-In \cite{huisken} one finds the following comforting existence result for the class of equations we are analysing under very broad hypothesis. The same paper also includes a proof of the result with some more restrictive hypotheses. A complete proof is quite more involved. We will not use it, nor prove it, but it is included here for completeness and peace of mind: 
+In \cite{huisken} one finds the following comforting existence result for the class of equations we are analysing under very broad hypothesis. The same paper also includes a proof of the result with some more restrictive hypotheses. A complete proof is quite more involved. A much more extended analysis of the problem of the existence of solution to the equation can be found in \cite{Gerhardt Curvature}. 
+
 
 \begin{theorem}[Short term existence of a solution for (\ref{evolutioneq})]
 	Suppose $X_0 : M^n \rightarrow \R^{n+1}$ is a smooth, closed hypersurface in $\R^{n+1}$, such that (\ref{parabolicità}) holds at all points in $X_0$, i.e. for all the values of the principal curvatures $\kappa_{i}$ realized at some point on $X_0$. Then, (\ref{evolutioneq}) has a smooth solution, at least on some short time interval $[0, T)$, $T > 0$.  \label{existence}
 \end{theorem}
-
-A much more extended analysis of the problem of the existence of solution to the equation can be found in \cite{Gerhardt Curvature}. 
-
 
 \section{Local representation as a graph of a solution of (\ref{evolutioneq})}
 \label{representation as graph}
@@ -553,7 +551,7 @@ We will limit our analysis to a sub-class of solutions to (\ref{evolutioneq}):
 \begin{defin}
 	We say that a solution to equation (\ref{evolutioneq}) is {\em expansive} if $F<0$. 
 \end{defin}
-An example of such a flow is the inverse curvature flow, extensively studied in the literature. 
+An example of such a flow is the inverse mean curvature flow ($F=-\frac{1}{\kappa_1+\dots + \kappa_n}$), extensively studied in the literature. 
 \begin{oss}	
 	\em This assumption on $F$ implies that whenever $t<s$, $X_t \subset \mathrm{int}(X_s)$. This is implied by the fact that, in the equation, the time derivative is always an outward pointing non-zero vector.\label{expansive flow remark} In this sense, the hypersurface is expanding in the ambient space.
 \end{oss}
@@ -577,7 +575,7 @@ In the case of the spherical solution coming out of a point, there exists an anc
 \begin{align*}
 	\int_{0}^{c}\frac{1}{\varphi(r)} dr =+\infty
 \end{align*}
-This equation allows us to determine, given $F$, if an ancient solution can exist (even if not coming out of a point). Solutions to (\ref{evolutioneq}) obey a comparison principle: if a solution is inside another one, it stays inside it at all times. This can be proven similarly to theorem \ref{chow gulliver}, if at some $(x, t)$ this fails and they are tangent, one can apply the maximum principle to show that they coincide in a neighbourhood, which is a contradiction if one takes the first or the last $t$ where this happens. A generic solution, then, will be sandwiched between two expanding sphere solutions, one inside and one outside, and therefore cannot be ancient if no ancient expanding sphere solution exists. 
+This equation allows us to determine, given $F$, if an ancient solution can exist (even if not coming out of a point). Solutions to (\ref{evolutioneq}) obey an avoidance principle: if a solution is inside another one, it stays inside it at all times. This can be proven similarly to theorem \ref{chow gulliver}: if at some $(x, t)$ this fails and they are tangent, one can apply the maximum principle to show that they coincide in a neighbourhood, which is a contradiction if one takes the first or the last $t$ where this happens. A generic solution, then, will be sandwiched between two expanding sphere solutions, one inside and one outside, and therefore cannot be ancient if no ancient expanding sphere solution exists. 
 
 
 The idea of ancient solutions was introduced by Richard Hamilton in his work on the Ricci flow. It has since been applied to other geometric flows as well as to other partial differential equations. Ancient solutions are significant because they capture key asymptotic features of the flow and often have unique, rigid properties that distinguish them from other solutions. For instance, in contractive flows, ancient solutions can form complex, non-spherical shapes, whereas in expansive flows, they tend to exhibit strong rigidity, commonly resulting in spherical shapes under certain conditions. These solutions thus help in understanding the geometry and topology of hypersurfaces as they evolve, especially in applications like mean curvature flow and inverse mean curvature flow in mathematics and physics.
@@ -598,7 +596,7 @@ The proof is a relatively simple application of the reflection technique. The ou
 	Fix any hyperplane $\pi$ not passing through $y_\infty$. There is $R>0$ such that $B_{2R}(y_\infty)$ does not intersect it. By definition, there is also a time  $\tau \in  (T_0, T_1)$ such that $X_\tau \subset B_R(y_\infty)$. 
 	By Corollary \ref{reflect a small bit}, then, we can reflect strictly $X_t$ up to $\pi$ for any $t>\tau$. 
 	
-	Now consider a sequence  $\epsilon_n\rightarrow 0$. Up to a subsequence, we can then find a corresponding converging non-increasing sequence $\tau_n\rightarrow \overline{t}\in [T_0, T_1)$ (here note that $\overline{t}$ can be $-\infty$) such that $X_{\tau_n}\subseteq B_{\epsilon_n}(y_\infty)$, therefore in $(\tau_n, T_1)$ I can reflect up to any hyperplane tangent to  $B_{\epsilon_n}(y_\infty)$ in any direction, reasoning like we just did. At time $\overline{t}$, $X_{\overline{t}} \subseteq \cap_r B_{r}(y_\infty) = \{y_\infty\}$, thus we would have a singularity at $\overline{t}$ if  $\overline{t}\in(T_0, T_1)$ and therefore $\overline{t}=T_0$. 
+	Now consider a sequence  $\epsilon_n\rightarrow 0$. Up to a subsequence, we can then find a corresponding converging non-increasing sequence $\tau_n\rightarrow \overline{t}\in [T_0, T_1)$ (here note that $\overline{t}$ can be $-\infty$) such that $X_{\tau_n}\subseteq B_{\epsilon_n}(y_\infty)$, therefore in $(\tau_n, T_1)$ we can reflect up to any hyperplane tangent to  $B_{\epsilon_n}(y_\infty)$ in any direction, reasoning like we just did. At time $\overline{t}$, $X_{\overline{t}} \subseteq \cap_r B_{r}(y_\infty) = \{y_\infty\}$, thus we would have a singularity at $\overline{t}$ if  $\overline{t}\in(T_0, T_1)$ and therefore $\overline{t}=T_0$. 
 	
 	On the other hand, by construction, we can reflect $X_{t}$ strictly about any hyperplane not intersecting $\cap_r B_{r}(y_\infty) = \{y_\infty\}$ at any time $t>\overline{t}=T_0$, hence we can reflect $X_{t}$ strictly up to any hyperplane passing through $y_\infty$, in both directions, at any  time $t\in (T_0, T_1)$. We observe that in the limit, the reflection property becomes non-strict, in the sense that we have to replace the interior of $X$ in definition \ref{strict-reflection-definition} with its closure, therefore $X_{t}$ may touch its reflection at the limit plane, i.e. the one passing through $y_\infty$. Similarly, it cannot be that the other condition is the one causing the strict reflection definition to fail, as the other condition stays instead strict. 
 	

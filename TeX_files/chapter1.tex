@@ -1,10 +1,12 @@
 % !TeX spellcheck = en_GB
 \chapter{The Alexandrov Reflection Method}
 
+
 \section{Geometry of immersed hypersurfaces}
 
 
-The study of immersed hypersurfaces is a fundamental topic in differential geometry, and is especially important in the field of geometric analysis. An immersed hypersurface $X: M^n \rightarrow \overline{M}^{n+1}$ is a submanifold of a higher-dimensional space that is embedded in that space in such a way that the submanifold has the same dimension as the space in which it is embedded minus one. In other words, it is a submanifold of codimension one. We will always assume the embedding to be smooth. The most common case is $\overline{M}^{n+1}=\R^{n+1}$, usually extensively studied in undergraduate courses when $n=2$. We will be assuming that the embedding is also isometric, i.e. the metric $g$ on $M^n$ is the one induced by $(\overline{M}^{n+1}, \overline{g})$. 
+We will be assuming the reader is familiar with the fundamental definitions and proofs in Differential and Riemannian Geometry, but we collect here some definitions and properties of immersed hypersurfaces. 
+The study of immersed hypersurfaces is a fundamental topic in differential geometry, and is especially important in the field of geometric analysis. An hypersurface $X: M^n \rightarrow \overline{M}^{n+1}$ is a submanifold of a higher-dimensional space that is embedded in that space in such a way that the submanifold has the same dimension as the space in which it is embedded minus one. In other words, it is a submanifold of codimension one. We will always assume the embedding to be smooth. The most common case is $\overline{M}^{n+1}=\R^{n+1}$, usually extensively studied in undergraduate courses when $n=2$. We will be assuming that the embedding is also isometric, i.e. the metric $g$ on $M^n$ is the one induced by $(\overline{M}^{n+1}, \overline{g})$. 
 
 \begin{figure}
 	\centering
@@ -28,7 +30,8 @@ $M^{n}$ is a smooth vector bundle on $M^{n}$:
 \end{figure}
 
 
-One of the most important concepts in the geometry of immersed hypersurfaces is the concept of a normal vector field. The normal vector field $\nu$ is a section of the pullback vector bundle $X^* TM^{n+1}$ on the manifold $M^n$ that is perpendicular to the tangent space of $M^n$ at each point. At each point $p$:
+%One of the most important concepts in the geometry of immersed hypersurfaces is the concept of a normal vector field.
+The normal vector field $\nu$ is a section of the pullback vector bundle $X^* TM^{n+1}$ on the manifold $M^n$ that is perpendicular to the tangent space of $M^n$ at each point. At each point $p$:
 \begin{align*}
 	T_p\overline{M}^{n+1}=T_pM^{n}\oplus N_pM^{n}
 \end{align*} 
@@ -147,9 +150,9 @@ We are going to use these equations in local coordinates, in the form shown belo
 
 \section{Local representation as a graph}
 
-A well known result, Dini's Theorem\footnote{also known as Implicit Function Theorem}, states that, given a smooth function $F$ defined on an open subset of the product space $\R^n \times \R^m$, if $F(x,y) = 0$ and the partial derivative of $F$ with respect to $y$ is non-zero at a point $(x_0, y_0)$, then there exists an open neighbourhood of $x_0$ in $\R^n$ and a unique smooth function $y = g(x)$ defined on that neighbourhood such that $y_0$ is a regular value of $g$ and $(x, g(x))$ is a smooth solution to the equation $F(x, y) = 0$.
+A well known result, Dini's Theorem\footnote{also known as Implicit Function Theorem}, states that, given a smooth function $F$ defined on an open subset of the product space $\R^n \times \R^m$, if $F(x,y) = 0$ and the partial derivative matrix of $F$ with respect to $y$ is invertible at a point $(x_0, y_0)$, then there exists an open neighbourhood of $x_0$ in $\R^n$ and a unique smooth function $y = g(x)$ defined on that neighbourhood such that $y_0$ is a regular value of $g$ and $(x, g(x))$ is a smooth solution to the equation $F(x, y) = 0$.
 
-Consequence of the Dini's theorem is a powerful result that allows one to locally represent a submanifold of $\R^n \times \R^m$ as the graph of a smooth function. This theorem is widely used in differential geometry, geometric analysis, and many other fields of mathematics and physics. We provide a version of this theorem below:
+Consequence of the Dini's theorem is a powerful result that allows one to locally represent a submanifold of $\R^n \times \R^m$ as the graph of a smooth function. We provide a version of this theorem below:
 
 \begin{theorem}[Local representation as a graph]
 	Let $X^n$ be a submanifold $X^n\subset\R^{n+1}$ and let $x_0\in X$. Then there exists a neighbourhood of $x_0$, $U\subset X^n$, such that $U$ is the graph of a function. 
@@ -192,18 +195,18 @@ The maximum principle can be used to prove the existence, uniqueness, and regula
 	\begin{align}
 		-\frac{\partial u}{\partial t} + \left(\sum_{i, j=1}^n a_{ij}\frac{\partial^2 }{\partial x_i\partial x_j}+\sum_{i}^n b_{i}\frac{\partial }{\partial x_i} + c\right)  u = -u_t + Lu \geq 0 \label{condition_max_principle}
 	\end{align}
-	where $L$ is an elliptic differential operator, i.e. there exists $\theta>0$ such that $\sum_{i,j=1}^{n} a_{ij}(x, t) \xi_i\xi_j \geq \theta |\xi |$ for all $\xi \in \R^n$ and $(x, t) \in \Omega\times[0, T]]$. Suppose also that $c\equiv 0$ in $\Omega$. Then: \begin{itemize}
+	where $L$ is an elliptic differential operator, i.e. there exists $\theta>0$ such that $\sum_{i,j=1}^{n} a_{ij}(x, t) \xi_i\xi_j \geq \theta |\xi |^2$ for all $\xi \in \R^n$ and $(x, t) \in \Omega\times[0, T]$. Suppose also that $c\equiv 0$ in $\Omega$. Then: \begin{itemize}
 		\item if $u$ attains its maximum in an interior point $(x_0, t_0)\in\Omega\times [0, T]$, then $u$ is constant in $\Omega\times [0, t_0]$.
-		\item If, instead, under the same conditions, $u_t+ Lu \geq 0$ and attains its minimum in an interior point of $\Omega\times [0, T]$, then $u$ is constant in $\Omega\times [0, t_0]$
+		\item If, instead, under the same conditions, $u_t- Lu \geq 0$ and attains its minimum in an interior point of $\Omega\times [0, T]$, then $u$ is constant in $\Omega\times [0, t_0]$
 	\end{itemize}
 \end{theorem}
-A proof of this result can be found, for example, in \cite{Evans}. The theorem extends also to situations where the condition holds in a convex bounded connected region $R\subseteq \Omega \times [0, T]$: in that case, if $u$ attains its maximum in an interior point then $u$ has the same value at any point in $R$ that can be connected to it through a segment going in the backwards direction of time and a "horizontal" line contained in $\Omega$. This version of the theorem can be found for example in \cite{protterweinberger}: 
+A proof of this result can be found, for example, in \cite{Evans}. The theorem extends also to situations where the condition holds in a bounded connected region $R\subseteq \Omega \times [0, T]$: in that case, if $u$ attains its maximum in an interior point then $u$ has the same value at any point in $R$ that can be connected to it through a segment going in the backwards direction of time and a "horizontal" line contained in $\Omega$. This version of the theorem can be found for example in \cite{protterweinberger}: 
 \begin{theorem}
 	Let $u$ satisfy the uniformly parabolic differential inequality (\ref{condition_max_principle}) with $c(x)\leq 0$
-	in a region $R_T =\{(x_1,x_2, \dots ,x_n ,t)\vert t\leq T\}$ where $R$ is a non-empty connected open set, and suppose that the coefficients of $L$ are bounded. Suppose that the maximum of $u$ in $R_T$ is $M$ and that it is attained at a point $(x, t)$ of $R_T$. Thus if $(y,s)$ is a point of $R$ which can be connected to $(x,t)$ by a path in $R$ consisting only of horizontal segments and upward vertical segments, then $u(y,s) = M$.\label{maxprincprotterweinberger}
+	in a region $R_T =\{(x_1,x_2, \dots ,x_n ,t)\in R\vert t\leq T\}$ where $R$ is a non-empty connected open set, and suppose that the coefficients of $L$ are bounded. Suppose that the maximum of $u$ in $R_T$ is $M$ and that it is attained at a point $(x, t)$ of $R_T$. Thus if $(y,s)$ is a point of $R$ which can be connected to $(x,t)$ by a path in $R$ consisting only of horizontal segments and upward vertical segments, then $u(y,s) = M$.\label{maxprincprotterweinberger}
 \end{theorem}
 
-Hopf's boundary point lemma is another important classical tool in the study of PDEs that provides a criterion for determining the behaviour of solutions to certain types of elliptic or parabolic PDEs near the boundary of the domain. The lemma states that if one has a solutions to some kinds of partial differential inequalities, then the normal derivative of the solution at that point is strictly positive.
+Hopf's boundary point lemma is another important classical tool in the study of PDEs that provides a criterion for determining the behaviour of solutions to certain types of elliptic or parabolic PDEs near the boundary of the domain. The lemma states that if one has a solution to some kinds of partial differential inequalities, then the normal derivative of the solution at that point is strictly positive.
 
 It is often used to obtain estimates on the behaviour of solutions near the boundary, and to prove the existence and uniqueness of solutions to boundary value problems. The lemma is named after the German mathematician Eberhard Hopf, who first formulated it in the 1950s. In \cite{protterweinberger} we find the following version of the Hopf's boundary point lemma:
 
@@ -213,7 +216,7 @@ It is often used to obtain estimates on the behaviour of solutions near the boun
 		-u_t+Lu\geq 0
 	\end{align*} 
 	with $L$ an elliptic linear differential operator with bounded coefficients such that $c(x)\leq 0$,in a domain $E$, and let $E_t = \{(x, s) \in E | s \leq t\}$. Suppose the maximum $M$ of $u$ is attained at a point $P=(x, t)$ on the boundary $\partial E$. \\
-	Assume that a sphere through $P$ can be constructed which is in $E_s$ such that
+	Assume that a sphere through $P$ can be constructed which is in $E$ such that
 	\begin{itemize}\itemsep0em 
 		\item tangent to $\partial E$ at $P$
 		\item the set of point of its interior $(y, s)$ such that $s\leq t$ lies in $E_s$, 
@@ -292,7 +295,7 @@ Following the approach in \cite{protterweinberger}, it is easy to show that the 
 	\begin{align}
 		Lu= F\left(t, x, v, \frac{\partial v}{\partial x_i} , \frac{\partial^2 v}{\partial x_i \partial x_j}\right)-v_t = f(x, t)\label{nonlinearexample}
 	\end{align} 
-	given a smooth $F$ is parabolic if for any real vector $\xi$
+	given a smooth $F$ is parabolic at a function $v$ if for any real vector $\xi$
 	\begin{align*}
 		\sum_{i, j=1}^n F_{ij}\xi_i\xi_j >0
 	\end{align*} 
@@ -363,7 +366,7 @@ We can thus see that this new problem must be parabolic, because by definition \
 
 \begin{proposition}[Maximum principle for parabolic non-linear differential equations]
 	\label{firstapplication}
-	Suppose we have two solution $v$ and $w$ in the interval $[0, T]$ to the same parabolic non-linear differential equation (\ref{nonlinearexample}) on an bounded open set $\Omega$, but with different values at $t=0$. Suppose also that $F$ is smooth on  $\overline{\Omega}$. Then, if $v>w$ in the interior of $\Omega$ at $t=0$ and $v\geq w$ on $\partial\Omega$,  $v>w$ for all $t\in[0, T]$ in the interior of $\Omega$.
+	Suppose we have two solution $v$ and $w$ with different values at $t=0$ in the interval $[0, T]$ to the same parabolic non-linear differential equation (\ref{nonlinearexample}) on an bounded open set $\Omega$, parabolic at $v$, $w$ and their linear combinations. Suppose also that $F$ is smooth on  $\overline{\Omega}$. Then, if $v>w$ in the interior of $\Omega$ at $t=0$ and $v\geq w$ on $\partial\Omega$,  $v>w$ for all $t\in[0, T]$ in the interior of $\Omega$.
 \end{proposition}
 
 \begin{proof}
@@ -372,7 +375,7 @@ We can thus see that this new problem must be parabolic, because by definition \
 
 \begin{proposition}[Hopf's boundary point lemma for parabolic non-linear differential equations]
 	\label{secondapplication}
-	Suppose we have two solution $v$ and $w$ to the same parabolic non-linear differential equation (\ref{nonlinearexample}) in a region $E$, but with different start conditions. Suppose also that $F$ is smooth on  $\overline{\Omega}$. Let $u=v-w$ and suppose that the maximum of $u$ is attained at the point $P$. Furthermore, assume that the conditions on the shape of the region $E$ from theorem \ref{HopfBPL} hold. Then, 
+	Suppose we have two solution $v$ and $w$ with different starting values to the same parabolic non-linear differential equation (\ref{nonlinearexample}), parabolic at $v$, $w$ and their linear combinations, in a region $E$. Suppose also that $F$ is smooth on  $\overline{\Omega}$. Let $u=v-w$ and suppose that the maximum of $u$ is attained at the point $P$. Furthermore, assume that the conditions on the shape of the region $E$ from theorem \ref{HopfBPL} hold. Then, 
 	\begin{align*}
 		\frac{\partial u}{\partial \nu}(P) >0
 	\end{align*}
@@ -382,7 +385,7 @@ We can thus see that this new problem must be parabolic, because by definition \
 \begin{proof}
 	$u$ is a solution of a parabolic \textit{linear} differential equation, where  $c(x, t)$ is bounded by compactness. We can then apply Theorem \ref{HopfBPL} to $v$ (see also remark \ref{removecpositive}).
 \end{proof}
-
+%\chapter{The Moving Planes Method}
 \section{Reflections on spheres and hyperbolic spaces}	
 \label{reflections definitions}
 
@@ -486,13 +489,14 @@ We will now define reflections in $\mathbb{M}^n$:
 		\mathrm{dist}(I_{R_0}(P), I_{R_1}(P)) \leq \mathrm{length} (I_r(P))
 	\end{align*}
 	in general, with a strict inequality unless $P$ is on the geodesic. This is unlike the situation on the plane, where equality holds everywhere. 
+	The hyperplanes in the euclidean case are equidistant at all points from one another: this cannot be achieved in a curved setting. 
 \end{oss}
-\begin{oss}\label{inequality2}
-	\em The inequality
+\begin{oss}\label{inequality2}\em 
+	The inequality
 	\begin{align}
 		\mathrm{dist}(I_{R_0}(P), I_{R_1}(P)) \leq \mathrm{length} (I_r(P))
 	\end{align}
-	taking corresponding objects, holds also on $S^n$. 
+	where $I_\cdot(P): t \mapsto (P,t)$ is also the path formed by points of the same space coordinate on the hyperplanes, holds also on $S^n$, because said paths are not geodesics in this case either. 
 \end{oss}
 
 \section{The Moving Planes Method}
