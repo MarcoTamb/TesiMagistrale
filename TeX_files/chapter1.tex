@@ -2,7 +2,7 @@
 \chapter{The Alexandrov Reflection Method}
 
 
-\section{Geometry of immersed hypersurfaces}
+\section{Geometry of embedded hypersurfaces}
 
 
 We will be assuming that the reader is familiar with the fundamental definitions and proofs in Differential and Riemannian Geometry, but we collect here some definitions and properties of immersed hypersurfaces. 
@@ -295,7 +295,7 @@ Following the approach in \cite{protterweinberger}, it is easy to show that the 
 	\begin{align}
 		Lu= F\left(t, x, v, \frac{\partial v}{\partial x_i} , \frac{\partial^2 v}{\partial x_i \partial x_j}\right)-v_t = f(x, t)\label{nonlinearexample}
 	\end{align} 
-	given a smooth $F$ is parabolic at a function $v$ if for any real vector $\xi$
+	given a smooth $F$ is {\em parabolic with respect to a function $v$} if for any real vector $\xi$
 	\begin{align*}
 		\sum_{i, j=1}^n F_{ij}\xi_i\xi_j >0
 	\end{align*} 
@@ -350,7 +350,7 @@ One can then consider $u = v-w$, and by combining the above we get:
 Now, we can apply Lagrange's theorem to $F$ to get 
 
 \begin{align*}
-	\tilde{L}u= \left\langle \nabla F(\xi(x, t)), \left(t, x, u, \frac{\partial u}{\partial x_i} , \frac{\partial^2 u}{\partial x_i \partial x_j}\right) \right\rangle-u_t \leq 0
+	\tilde{L}u= \left\langle \nabla F(\xi(x, t)), \left(u, \frac{\partial u}{\partial x_i} , \frac{\partial^2 u}{\partial x_i \partial x_j}\right) \right\rangle-u_t \leq 0
 \end{align*}
 for a fixed $\xi(x, t)$.
 
@@ -366,7 +366,7 @@ We can thus see that this new problem must be parabolic, because by definition \
 
 \begin{proposition}[Maximum principle for parabolic non-linear differential equations]
 	\label{firstapplication}
-	Suppose we have two solution $v$ and $w$ with different values at $t=0$ in the interval $[0, T]$ to the same parabolic non-linear differential equation (\ref{nonlinearexample}) on an bounded open set $\Omega$, parabolic at $v$, $w$ and their linear combinations. Suppose also that $F$ is smooth on  $\overline{\Omega}$. Then, if $v>w$ in the interior of $\Omega$ at $t=0$ and $v\geq w$ on $\partial\Omega$,  $v>w$ for all $t\in[0, T]$ in the interior of $\Omega$.
+	Suppose we have two solution $v$ and $w$ on the interval $[0, T]$ with different values at $t=0$ to the same non-linear differential equation (\ref{nonlinearexample}) on an bounded open set $\Omega$, parabolic at $v$, $w$ and the functions between them. Suppose also that $F$ is smooth on  $\overline{\Omega}$. Then, if $v>w$ in the interior of $\Omega$ at $t=0$ and $v\geq w$ on $\partial\Omega$,  $v>w$ for all $t\in[0, T]$ in the interior of $\Omega$.
 \end{proposition}
 
 \begin{proof}
@@ -375,7 +375,7 @@ We can thus see that this new problem must be parabolic, because by definition \
 
 \begin{proposition}[Hopf's boundary point lemma for parabolic non-linear differential equations]
 	\label{secondapplication}
-	Suppose we have two solution $v$ and $w$ with different starting values to the same parabolic non-linear differential equation (\ref{nonlinearexample}), parabolic at $v$, $w$ and their linear combinations, in a region $E$. Suppose also that $F$ is smooth on  $\overline{\Omega}$. Let $u=v-w$ and suppose that the maximum of $u$ is attained at the point $P$. Furthermore, assume that the conditions on the shape of the region $E$ from theorem \ref{HopfBPL} hold. Then, 
+	Suppose we have two solution $v$ and $w$ with different starting values to the same  non-linear differential equation (\ref{nonlinearexample}), parabolic at $v$, $w$ and the functions between them, in a domain $\Omega$. Suppose also that $F$ is smooth on  $\overline{\Omega}$. Let $u=v-w$ and suppose that the maximum of $u$ is attained at the point $P$. Furthermore, assume that the conditions on the shape of the region $\Omega$ from theorem \ref{HopfBPL} hold. Then, 
 	\begin{align*}
 		\frac{\partial u}{\partial \nu}(P) >0
 	\end{align*}
