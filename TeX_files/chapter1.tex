@@ -451,25 +451,28 @@ We will not be considering other ambient spaces, which can be obtained through q
 	\end{itemize}
 \end{oss}
 
-We will now define reflections in $\mathbb{M}^n$: 
+We will now define reflections in $\mathbb{M}^n$. This is relatively straightforward of $S^n$ and a bit more involved for $\mathbb{H}^n$. The ingredients that we need are three: a geodesic, a family of hyperplanes associated to it, and reflections about those. The first one is easy, just take any point and any direction to get a geodesic. Then, at each point on the geodesic, there is an orthogonal totally geodesic hyperplane passing through that point: this is the family we consider. Finally, for each of these hyperplanes there is a reflection about it, which we can describe also mapping the hyperplanes into each other. While this could certainly be done in a more straightforward way compared to the approach we will follow, as we do not really need to know at this stage about what happens to the other planes in the family, and therefore we could just define a reflection about a plane and be satisfied. Using a heavier notation at this stage, however, will make it easier to introduce the moving planes method later.
+
+We will now describe these choices for each ambient space in greater detail:
 
 \begin{itemize}	
-	\item On $\R^n$ we choose an hyperplane and use the usual reflections.  
-	\item On  $S^n$, reflections are those induced by $\R^{n+1}$ when the fixed plane passes through the origin. Each one can be identified by vector orthogonal to the plane we chose. Each hyperplane through the origin in $\R^{n+1}$ defines a $(n-1)$-sphere through intersection with $S^n$, which can all be rotated into each other. We can parametrize each point in $S^n_+$ the following way: 
+	\item On $\R^n$ we can choose any straight line as a geodesic, the hyperplanes orthogonal to it as the associated family, and use the usual reflections.  
+	\item On  $S^n$, reflections are those induced by $\R^{n+1}$ when the fixed plane passes through the origin. Each one can be identified by vector orthogonal to the plane we chose. Each hyperplane through the origin in $\R^{n+1}$ defines a $(n-1)$-sphere through intersection with $S^n$. What we want to consider are reflections about $n$-planes through the origin in $\R^{n+1}$ orthogonal to a given geodesic of an immersed copy of $S^n$. 	
+	To build an analogy between $S^n$ and $\mathbb{H}^n$, we can parametrize each point in $S^n_+$ in the following way, which will be useful when dealing with both at the same time: 
 	\begin{itemize}
 		\item choose a point $O$ and a direction $v\in T_O S^n$, and consider the geodesic $\gamma_v$ such that $\gamma_v (0) = O$ and $\dot{\gamma_v} (0) = v$. Assume that $\gamma$ is parametrised by arc-length. 
 		\item Consider the $(n-1)$-sphere $\pi_0$ passing through $\gamma_v(0)$ and orthogonal to  $\dot{\gamma_v}(0)$. One can rotate that sphere along the geodesic $\gamma_v$ so that it touches each point in $S^n_+$. We will call the sphere passing through $\gamma_v(t)$ $\pi_{v, t}$. Each point $x$ is in a unique $\pi_{v, t}$.
 		\item We can then assign to each point in $S^n_+$ a unique couple of coordinates $(x, t)$, where $x$ is the coordinate in $S^{n-1}\cap S^n_+$ when rotating it back to $\pi_0$, and $t$ is the unique $t$ such that the point is in $\pi_{v, t}$.
 	\end{itemize}
-	Observe that a reflection about $\pi_{v, s}$ is $(x, t) \mapsto (x, 2s-t)$. This assignment can actually be extended to any point on $S^n_-$ as well (the other hemisphere) minus any point on the plane orthogonal to $v$ passing through $O$.
-	\item On $\mathbb{H}^n$ we can also construct a similarly constructed foliation: 
+	Observe that a reflection about $\pi_{v, s}$ is $(x, t) \mapsto (x, 2s-t)$. This can be either taken as a definition (while being careful dealing with points in the hemisphere opposite to $O$ having ambiguous coordinates) or as a consequence of considering the aforementioned reflection induced on $S^n$ by $\R^{n+1}$ about a plane through the origin. 
+	\item On $\mathbb{H}^n$ we can also take a similar construction: 
 	\begin{itemize}	
 		\item As a first step, choose a point a point $O \in \mathbb{H}^n$. $\mathbb{M}^n$ is a homogeneous space, so the construction does not depend on the choice we make.
 		\item Choose any direction in $v\in T_O\mathbb{H}^n$ and consider the geodesic $\gamma_v: \R \rightarrow \mathbb{H}^n$ satisfying $\gamma_v (0) = O$ and $\dot{\gamma_v} (0) = v$. Assume that $\gamma$ is parametrised by arc-length. 
 		\item Consider the hyperplane $\pi_0$ passing through $\gamma_v(0)$ and orthogonal to  $\dot{\gamma_v}(0)$. Then consider the 1-parameter group of isometries of $\mathrm{H}^n$ such that $g_t(\gamma_v (0) )=\gamma_v (t) $ and such that the curves $t \mapsto g_t(x)$ are orthogonal to $\pi_0$ for each $x\in \pi_0$. This allows us to assign to each point in $\mathrm{H}^n$ coordinates $(x, t)$ where $x\in\pi_0$ and $t\in \R$.  
 		\item consider now any hyperplane  $\pi_t$ passing through $\gamma_v(t)$ and orthogonal to  $\dot{\gamma_v}(t)$. The reflection fixing $\pi_t$ will be the one given by the formula $(x, t)\mapsto (x, 2s-t)$.
 	\end{itemize}
-	One may find this insufficient, as there is no guarantee that this construction exists, but it is easy to convince oneself that it does: through rotations and translations it is possible to assume without loss of generality that the point we chose is $e_n$ and the direction is $e_1$ (assuming the half-space model in the definition above). We can do this because $\mathbb{H}^n$ is frame-homogenous. Then the geodesic is the unit circle in the plane spanned by $e_1$ and $e_n$, and the (euclidean) hemispheres centred on the $x_n=0$ plane and normal to the geodesic at one of its points are the hyperplanes (see figure \ref{moving hyperplanes hyperbolic}). For a proof that $\mathbb{H}^n$ is frame-homogenous, see proposition 3.9 in \cite{LeeRiemannian2ndEd}.
+	Through rotations and translations it is possible to assume without loss of generality that the point we chose is $e_n$ and the direction is $e_1$ (assuming the half-space model in the definition above). We can do this because $\mathbb{H}^n$ is frame-homogenous (which means that we can move isometrically any point into any other and any direction into any other, therefore making any frame of reference identical to each other); for a proof that $\mathbb{H}^n$ is frame-homogenous, see proposition 3.9 in \cite{LeeRiemannian2ndEd}. Then, the geodesic is the unit circle in the plane spanned by $e_1$ and $e_n$, and the (euclidean) hemispheres centred on the $x_n=0$ plane and normal to the geodesic at one of its points are the totally geodesic hyperplanes (see figure \ref{moving hyperplanes hyperbolic}). The reflection at t=0 coincides with the one for $\R^n$ about the same plane. 
 \end{itemize}
 
 \begin{figure}
@@ -480,7 +483,7 @@ We will now define reflections in $\mathbb{M}^n$:
 \end{figure}
 
 \begin{oss}\label{inequality1}
-	\em Another choice of direction on the hyperbolic plane allows one to write an explicit formula for the reflection about each hyperplanes, which may be more enlightening than the construction above. One can repeat the construction, taking the point $e_n$ and direction $e_n$. The geodesic is then the vertical $x_n$ axis and the totally geodesic hyperplanes are therefore the euclidean spheres centred at the origin. Assume without loss of generality that curvature is $\pm 1$, and take the sphere of radius $r$. We claim that the reflection about the sphere of radius $r$ is the spherical inversion about the sphere. We remind the reader that a spherical inversion about a sphere of centre $O$ is a transformation mapping a point $P$ to the point $P'$ on the (euclidean) line through $O$ and $P$ such that $\overline{OP}\cdot \overline{OP'} = r^2$. Therefore the point $(\underline{0}, a)$ on the geodesic is mapped to $(\underline{0}, \frac{r^2}{a})$ by the inversion. Computing the geodesic distance of these two points to  $(\underline{0}, r)$:
+	\em Another choice of direction on the hyperbolic plane allows one to write an explicit formula for the reflection about each hyperplanes, which may be more enlightening than the construction above on another important matter. One can repeat the construction, taking the point $e_n$ and direction $e_n$. The geodesic is then the vertical $x_n$ axis and the totally geodesic hyperplanes are therefore the euclidean spheres centred at the origin. Assume without loss of generality that curvature is $\pm 1$, and take the sphere of radius $r$. We claim that the reflection about the sphere of radius $r$ is the spherical inversion about the sphere. We remind the reader that a spherical inversion about a sphere of centre $O$ is a transformation mapping a point $P$ to the point $P'$ on the (euclidean) line through $O$ and $P$ such that $\overline{OP}\cdot \overline{OP'} = r^2$. Therefore the point $(\underline{0}, a)$ on the geodesic is mapped to $(\underline{0}, \frac{r^2}{a})$ by the inversion. Computing the geodesic distance of these two points to  $(\underline{0}, r)$:
 	\begin{align*}
 		&\int_{r}^{a} \frac{1}{x} dx = \left[\ln{x} \right]_{r}^{a} = \ln{a} - \ln{r} \\
 		&\int_{\frac{r^2}{a}}^{r} \frac{1}{x} dx = \left[\ln{x} \right]_{\frac{r^2}{a}}^{r} = \ln{r} - 2 \ln{r} + \ln{a} - \ln{ r} = \ln{a} - \ln{r}
@@ -489,7 +492,7 @@ We will now define reflections in $\mathbb{M}^n$:
 	\begin{align*}
 		\mathrm{dist}(I_{R_0}(P), I_{R_1}(P)) \leq \mathrm{length} (I_r(P))
 	\end{align*}
-	in general, with a strict inequality unless $P$ is on the geodesic. This is unlike the situation on the plane, where equality holds everywhere. 
+	in general, with a strict inequality unless $P$ is on the vertical geodesic. This is unlike the situation on the plane, where equality holds everywhere. 
 	The hyperplanes in the euclidean case are equidistant at all points from one another: this cannot be achieved in a curved setting. 
 \end{oss}
 \begin{oss}\label{inequality2}\em 
@@ -503,7 +506,7 @@ We will now define reflections in $\mathbb{M}^n$:
 \section{The Moving Planes Method}
 \label{method moving planes}
 
-The Moving Planes Method is a technique that can be used to prove radial symmetry of certain solutions to some differential equations.  The method was originally introduced by Alexandrov to characterize the sphere as the hypersurfaces of constant curvature (see for example \cite{alexandrovexample}), and then used by Serrin on elliptic PDEs (see \cite{serrin1971}) and Gidas-Ni-Nirenberg (see \cite{GidasNirenberg}). 
+The Moving Planes Method is a technique that can be used to prove radial symmetry of certain solutions to some differential equations.  The method was originally introduced by Alexandrov to characterize the sphere as the only hypersurfaces with constant curvature (see for example \cite{alexandrovexample}), and then used by Serrin on elliptic PDEs (see \cite{serrin1971}) and Gidas-Ni-Nirenberg (see \cite{GidasNirenberg}). 
 
 To provide some justification and context to the next chapters, we here describe the method in $\mathbb{M}^{n+1}_+$.  
 
