@@ -335,24 +335,21 @@ Secondly, we remind the reader of the following generalized version of the theor
 \end{theorem}
 Suppose that we have a solution to a non-linear parabolic problem $v$, i.e. $v$ solves (\ref{nonlinearexample}):
 \begin{align*}
-	Lv= F\left(t, x, v, \frac{\partial v}{\partial x_i} , \frac{\partial^2 v}{\partial x_i \partial x_j}\right)-v_t = f(x, t)
+	Lv= F\left(t, x, v, \frac{\partial v}{\partial x_i} , \frac{\partial^2 v}{\partial x_i \partial x_j}\right)-v_t = f(t, x)
 \end{align*}
-for a non-linear elliptic operator $L$ in some region $E$, where we assume $F(t, x, y_i, z_{i,j})$ to be a given $C^1$ function. Suppose also that there is a $w$ which is a solution of the corresponding differential inequality:
+for a non-linear elliptic operator $L$ in some region $E$, where we assume that $F(t, x,  a, b_i, c_{i,j})$ is a given $C^1$ function. Suppose also that there is a $w$ which is a solution of the corresponding differential inequality:
 \begin{align*}
-	Lw= F\left(t, x, w, \frac{\partial w}{\partial x_i} , \frac{\partial^2 w}{\partial x_i \partial x_j}\right)-w_t \leq f(x, t)
+	Lw= F\left(t, x, w, \frac{\partial w}{\partial x_i} , \frac{\partial^2 w}{\partial x_i \partial x_j}\right)-w_t \leq f(t, x)
 \end{align*}
 One can then consider $u = v-w$, and by combining the above we get: 
-
 \begin{align*}
 	\left( F\left(t, x, v, \frac{\partial v}{\partial x_i} , \frac{\partial^2 v}{\partial x_i \partial x_j}\right) - F\left(t, x, w, \frac{\partial w}{\partial x_i} , \frac{\partial^2 w}{\partial x_i \partial x_j}\right)\right)-u_t \leq 0
 \end{align*}
-
 Now, we can apply Lagrange's theorem to $F$ to get 
-
 \begin{align*}
-	\tilde{L}u= \left\langle \nabla F(\xi(x, t)), \left(u, \frac{\partial u}{\partial x_i} , \frac{\partial^2 u}{\partial x_i \partial x_j}\right) \right\rangle-u_t \leq 0
+	\tilde{L}u= \left\langle \left(\frac{\partial F}{\partial a},\frac{\partial F}{\partial  b_i},\frac{\partial F}{\partial c_{i,j}} \right)(\xi(t, x)), \left(u, \frac{\partial u}{\partial x_i} , \frac{\partial^2 u}{\partial x_i \partial x_j}\right) \right\rangle-u_t \leq 0
 \end{align*}
-for a fixed $\xi(x, t)$.
+for a fixed $\xi(t, x) = \theta(t,x) v(t,x)  +  (1-\theta(t,x)) w(t,x) $, $\theta \in [0, 1]$.
 
 
 Thus, the difference $u$ of two sub-solutions to a non-linear differential problem is a sub-solution to a (different) \textit{linear} parabolic problem, as the derivatives of $F$ and $\xi$ do not depend on $u$ ($\xi$ can be chosen a-priori).
