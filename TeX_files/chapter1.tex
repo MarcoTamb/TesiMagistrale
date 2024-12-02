@@ -5,7 +5,7 @@
 \section{Geometry of embedded hypersurfaces}
 
 
-We will be assuming that the reader is familiar with the fundamental definitions and proofs in Differential and Riemannian Geometry, but we collect here some definitions and properties of immersed hypersurfaces. 
+We will be assuming that the reader is familiar with the fundamental definitions and proofs in Differential and Riemannian Geometry, but we collect here some definitions and properties of immersed hypersurfaces, which are sometimes skipped in Differential Geometry courses. 
 The study of immersed hypersurfaces is a fundamental topic in differential geometry, and is especially important in the field of geometric analysis. An hypersurface $X: M^n \rightarrow \overline{M}^{n+1}$ is a submanifold of a higher-dimensional space that is embedded in that space in such a way that the submanifold has the same dimension as the space in which it is embedded minus one. In other words, it is a submanifold of codimension one. We will always assume the embedding to be smooth. The most common case is $\overline{M}^{n+1}=\R^{n+1}$, usually extensively studied in undergraduate courses when $n=2$. We will be assuming that the embedding is also isometric, i.e. the metric $g$ on $M^n$ is the one induced by $(\overline{M}^{n+1}, \overline{g})$. 
 
 \begin{figure}
@@ -150,9 +150,9 @@ We are going to use these equations in local coordinates, in the form shown belo
 
 \section{Local representation as a graph}
 
-A well known result, Dini's Theorem\footnote{also known as Implicit Function Theorem}, states that, given a smooth function $F$ defined on an open subset of the product space $\R^n \times \R^m$, if $F(x,y) = 0$ and the partial derivative matrix of $F$ with respect to $y$ is invertible at a point $(x_0, y_0)$, then there exists an open neighbourhood of $x_0$ in $\R^n$ and a unique smooth function $y = g(x)$ defined on that neighbourhood such that $y_0$ is a regular value of $g$ and $(x, g(x))$ is a smooth solution to the equation $F(x, y) = 0$.
+%A well known result, Dini's Theorem\footnote{also known as Implicit Function Theorem}, states that, given a smooth function $F$ defined on an open subset of the product space $\R^n \times \R^m$, if $F(x,y) = 0$ and the partial derivative matrix of $F$ with respect to $y$ is invertible at a point $(x_0, y_0)$, then there exists an open neighbourhood of $x_0$ in $\R^n$ and a unique smooth function $y = g(x)$ defined on that neighbourhood such that $y_0$ is a regular value of $g$ and $(x, g(x))$ is a smooth solution to the equation $F(x, y) = 0$.
 
-Consequence of the Dini's theorem is a powerful result that allows one to locally represent a submanifold of $\R^n \times \R^m$ as the graph of a smooth function. We provide a version of this theorem below:
+Consequence of the Inverse Function theorem is a powerful result that allows one to locally represent a submanifold of $\R^{n+1}$ as the graph of a smooth function. We provide a version of this theorem below:
 
 \begin{theorem}[Local representation as a graph]
 	Let $X^n$ be a submanifold $X^n\subset\R^{n+1}$ and let $x_0\in X$. Then there exists a neighbourhood of $x_0$, $U\subset X^n$, such that $U$ is the graph of a function. 
@@ -383,6 +383,8 @@ We can thus see that this new problem must be parabolic, because by definition \
 	$u$ is a solution of a parabolic \textit{linear} differential equation, where  $c(x, t)$ is bounded by compactness. We can then apply Theorem \ref{HopfBPL} to $v$ (see also remark \ref{removecpositive}).
 \end{proof}
 \chapter{The Alexandrov Moving Planes Method}
+
+
 \section{Reflections on spheres and hyperbolic spaces}	
 \label{reflections definitions}
 
@@ -501,7 +503,9 @@ We will now define reflections in $\mathbb{M}^n$:
 \section{The Moving Planes Method}
 \label{method moving planes}
 
-To provide some justification and context to the next chapters, we describe Alexandrov reflection, also known as Method of the Moving Planes in $\mathbb{M}^{n+1}_+$.  
+The Moving Planes Method is a technique that can be used to prove radial symmetry of certain solutions to some differential equations.  The method was originally introduced by Alexandrov to characterize the sphere as the hypersurfaces of constant curvature (see for example \cite{alexandrovexample}), and then used by Serrin on elliptic PDEs (see \cite{serrin1971}) and Gidas-Ni-Nirenberg (see \cite{GidasNirenberg}). 
+
+To provide some justification and context to the next chapters, we here describe the method in $\mathbb{M}^{n+1}_+$.  
 
 Let $X:M^n\rightarrow \mathbb{M}^{n+1}_+$ be a hypersurface in a constant curvature ambient space. If the ambient space is a sphere, $X$ must be contained in a hemisphere to avoid issues with multiple self-intersections. Assume also that $X=\partial\Omega$ for a bounded domain $\Omega$ in $\mathbb{M}^{n+1}_+$. 
 \begin{itemize}	

@@ -35,6 +35,9 @@ The condition (\ref{parabolicità}) will  guarantee that equation (\ref{evolutio
 
 In order to justify that this is a parabolic non-linear partial differential equation we can also try to understand how it behaves ``close to a solution" in the solutions space. We want to prove that very close to any solution, ``moving in any direction", the change in the equation is always a parabolic PDE. This will then tell us that our equation is parabolic, and that the theorems that apply to solutions of parabolic partial differential equations apply to our equation as well. To do so, we are going to ``linearise" the differential equation about a solution. 
 
+On a more technical note, what one finds is that the equation is degenerate, as there is a scalar product that "erases" what happens in the tangential direction. It is indeed evident that diffeomorphisms tangential to the manifold do not influence the flow. This issue can be solved using a result from Hamilton (see \cite{hamilton} and related papers) or reformulating the problem as a scalar equation. We will not delve into the details and keep the discussion at an intuitive level. 
+A more systematic approach proving that the differential equation is parabolic can be found in \cite{Gerhardt Curvature}. 
+
 Following the approach in \cite{huisken}, as $F$ is a symmetric function in the principal curvatures, we may interchangeably take $F$ to be a function of the Weingarten map tensor or of the second fundamental form, and thus we get:
 
 \begin{align*}
@@ -98,7 +101,6 @@ must be positive definite. Or equivalently, as the principal curvatures are the 
 \begin{align*}
 	\frac{\partial F}{\partial \kappa_{i}} > 0
 \end{align*}
-A more general approach proving that the differential equation is parabolic can be found in \cite{Gerhardt Curvature}. 
 \begin{comment}
 	{\em Looking more closely at what we are doing, one can prove that it is equivalent to follow this linearisation procedure or to take the derivatives of $F$ with respect to the second order terms.}
 \end{comment}
