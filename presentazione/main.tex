@@ -1,0 +1,59 @@
+% Tor Vergata - Engineering Beamer template.
+% Roberto Masocco <robmasocco[at]gmail.com>
+% Alessandro Tenaglia <alessandro.tenaglia42[at]gmail.com>
+% First version: February 5, 2022
+% Last update: November 16, 2024
+
+% Preferred aspect ratio is 16:9 but feel free to change it here
+\documentclass[aspectratio=169]{beamer}
+
+% Customized document information by setting these string options
+% To leave a field empty, use "{}"
+% If you want to hide navigation symbols, go to line 144 of the style file
+\usepackage[
+    title={The Alexandrov Moving Planes Method\\ and Applications to Geometric Flows},
+    subtitle={},
+    event={Tesi di Laurea Magistrale},
+    author={Marco Tamburro},
+    longauthor={Marco Tamburro},
+    email={marco.tamburro@students.uniroma2.eu},
+    institute={Tor Vergata},
+    longinstitute={Università degli studi di Roma Tor Vergata},
+    department={Relatore: Prof. Carlo Sinestrari},
+    researchgroup={},
+    date={11 Dic 2024}
+]{utvengbeamer}
+\usepackage{comment}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage{mathtools}
+
+\begin{document}
+\graphicspath{{figs/}}
+% --- Title page ---
+\frame{\titlepage}
+
+
+% Include sections here, like this
+% --- Section 1 ---
+\input{sections/introduction}
+% --- Section 2 ---
+\input{sections/movingplanes}
+% --- Section 3 ---
+\input{sections/corollaries}
+% --- Section 3 ---
+\input{sections/summary}
+
+
+
+% Include sections here, like this
+% --- Section 1 ---
+%\input{sections/section1}
+
+% --- Section 2 ---
+%\input{sections/section2}
+
+\end{document}
