@@ -60,34 +60,34 @@
 
 
 % --- Riflessione stretta ---
-\begin{frame}{Riflessione stretta}{Definizione}
+\begin{frame}{Riflessione stretta}{}
 	\begin{block}{Riflessione stretta}
-		 Possiamo riflettere $X : M^n \rightarrow R^{n+1}$ strettamente rispetto a $\pi$ se entrambe le seguenti cose sono vere:
-		 \begin{itemize}
-		 	\item La riflessione di $X$ rispetto a $\pi$ nel semispazio delimitato da $\pi$ resta dentro l'altra metà di $X$, toccandosi solo sul piano
-		 	\item A tutti i punti sul piano, $X$ e la sua riflessione rispetto a $\pi$ non hanno lo stesso vettore normale per nessun punto su $X\cap\pi$
-		 \end{itemize}
+		 Possiamo riflettere $X : M^n \rightarrow \mathbb{R}^{n+1}$ strettamente rispetto a $\pi$ se entrambe le seguenti cose non succedono:
+		 %\begin{itemize}
+		 	%\item La riflessione di $X$ rispetto a $\pi$ nel semispazio delimitato da $\pi$ resta dentro l'altra metà di $X$, toccandosi solo sul piano
+		 	%\item $X$ e la sua riflessione rispetto a $\pi$ non hanno lo stesso vettore normale per nessun punto su $X\cap\pi$
+		 %\end{itemize}
 	\end{block}
-\end{frame}
+%\end{frame}
 
 
 % --- Cosa non deve succedere ---
-\begin{frame}{Riflessione stretta}{Cosa non deve succedere}
+%\begin{frame}{Riflessione stretta}{Cosa non deve succedere}
 	\begin{columns}
 		% First column
 		\column{.5\textwidth}
 		\begin{figure}
 			\begin{center}
-				\includegraphics[width=0.8\textwidth]{8_interior_contact}
-				\caption{Esempio di contatto interno}
+				\includegraphics[width=0.65\textwidth]{8_interior_contact}
+				\caption{Contatto interno}
 			\end{center}
 		\end{figure}
 		% Second column
 		\column{.5\textwidth}
 		\begin{figure}
 			\begin{center}
-				\includegraphics[width=\textwidth]{9_boundary_contact}
-				\caption{Esempio di contatto al bordo}
+				\includegraphics[width=0.84\textwidth]{9_boundary_contact}
+				\caption{Tangenza al bordo}
 			\end{center}
 		\end{figure}
 	\end{columns}
@@ -102,6 +102,6 @@
 		Data una soluzione del flusso che stiamo considerando, se possiamo riflettere il dato iniziale $X_0$ strettamente rispetto ad un piano $\pi$, allora possiamo riflettere $X_t$ strettamente rispetto a $\pi$ per ogni $t\in [0,T)$ (intervallo in cui è definita la soluzione). 
 	\end{block}
 	\begin{block}{}<2->
-		\textbf{Interpretazione intuitiva}: i piani rispetto a cui posso riflettere \textit{aumentano} nel tempo, per cui la varietà diventa \textit{più simmetrica} e tonda. 
+		\textbf{Interpretazione intuitiva}: i piani rispetto a cui posso riflettere \textit{aumentano} nel tempo, per cui la varietà diventa \textit{più simmetrica} e \textit{tonda}. 
 	\end{block}
 \end{frame}
